@@ -2,7 +2,6 @@ import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
 import { type Server } from "http";
-import viteConfig from "../vite.config";
 import { nanoid } from "nanoid";
 import { getMetaTagsHtml } from "./meta";
 
@@ -24,6 +23,7 @@ export async function setupVite(app: Express, server: Server) {
     allowedHosts: true as const,
   };
 
+  const { default: viteConfig } = await import("../vite.config");
   const { createServer: createViteServer, createLogger } = await import("vite");
   const viteLogger = createLogger();
 
