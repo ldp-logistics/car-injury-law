@@ -1,0 +1,17 @@
+upgrade my current Replit website without SSR so that Google, Bing, and anyone who right-clicks → "View Page Source" sees complete, SEO-ready HTML in both <head> and <body>.
+
+Requirements: - 
+1)Never use client-only rendering for headings, text, or images that matter for SEO. 
+2) Perfect On-Page SEO on Every Page - Unique <title> and <meta name="description"> (140–160 chars) - Proper heading hierarchy: exactly one <h1> per page + logical <h2>, <h3> 
+Meta keywords (if needed), viewport, robots meta, canonical URL - Open Graph (og:title, og:description, og:image, og:url, og:type) and Twitter cards - Alt text on every <img>
+Fast-loading images <Image> component - Internal linking between pages 
+3) Full JSON-LD Schema Markup (add all that apply to my site): - Website + Organization schema in the root layout - WebPage schema on every page - BreadcrumbList schema - Article schema (for blog/news pages) -
+ FAQPage schema (if I have FAQs) - LocalBusiness schema (if I have a physical location) - Person schema (if it’s a personal/portfolio site) - Sitemap + Image + Video schema where relevant All schemas must be valid JSON-LD, 
+added via <script type="application/ld+json"> inside <head> using Next.js Head or generateMetadata + dangerouslySetInnerHTML only where necessary. 
+4) SEO Infrastructure Files - Generate robots.txt (allow all, point to sitemap) - 
+Generate sitemap.xml automatically (using next-sitemap or built-in generation) - Add proper <link rel="canonical"> on every page 
+
+5) Clean & Readable Backend Code - Use App Router (app/ folder) - Well-commented, organized components - Separate layout.tsx, page.tsx, and reusable SEO components - Create a reusable <SeoHead> 
+or use generateMetadata + separate schema components - TypeScript preferred but not mandatory 6. Final Proof - When I click “View Page Source” I must see all text, headings, meta tags, and JSON-LD immediately 
+(no “Loading…” or empty <body>) - Google Rich Results Test and Schema Markup Validator must show 0 errors/warnings Migrate my existing pages and content exactly (keep all routes, text, images, and functionality) but make 
+everything 100% SEO and crawler friendly with rich schema markup. Create all pages as separate when I click open in new tab new page should open

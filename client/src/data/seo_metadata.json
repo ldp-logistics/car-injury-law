@@ -1,0 +1,110 @@
+{
+  "/": {
+    "title": "Car Injury Law | Nationwide Accident & Injury Attorneys",
+    "description": "Expert car accident and personal injury representation nationwide. We fight insurance companies to maximize your settlement. Free consultation 24/7."
+  },
+  "/es": {
+    "title": "Car Injury Law | Abogados de Accidentes en Todo el País",
+    "description": "Representación experta en accidentes de auto y lesiones personales. Luchamos contra las aseguradoras para maximizar su compensación. Consulta gratis 24/7."
+  },
+  "/about": {
+    "title": "About Car Injury Law | Premier National Injury Network",
+    "description": "Learn about Car Injury Law's mission to connect accident victims with top-tier trial attorneys across America. We level the playing field against insurers."
+  },
+  "/join-network": {
+    "title": "Attorney Network Join | Car Injury Law Referral Program",
+    "description": "Top trial attorneys: Join the Car Injury Law referral network. Expand your practice with high-quality motor vehicle accident leads in your jurisdiction."
+  },
+  "/settlement-calculator": {
+    "title": "Car Accident Settlement Calculator | Car Injury Law",
+    "description": "How much is your case worth? Use our free settlement calculator to estimate your potential compensation for medical bills, lost wages, and pain & suffering."
+  },
+  "/blog": {
+    "title": "Legal Insights Blog | Car Injury Law Resources",
+    "description": "Expert legal articles and guides on car accidents, truck crashes, and personal injury law. Stay informed about your rights and the claims process."
+  },
+  "/case-results": {
+    "title": "Case Results & Settlements | Car Injury Law Victories",
+    "description": "View our track record of multi-million dollar verdicts and settlements. We have recovered over $500 million for accident victims nationwide."
+  },
+  "/glossary": {
+    "title": "Personal Injury Legal Glossary | Car Injury Law",
+    "description": "Understand legal terms used in your accident claim. Our comprehensive glossary defines common personal injury and insurance terminology."
+  },
+  "/vs-insurance": {
+    "title": "Us vs. Insurance Companies | Car Injury Law Advocacy",
+    "description": "See the difference between handling a claim yourself vs. hiring Car Injury Law. We fight for maximum value while adjusters try to pay you zero."
+  },
+  "/safety-resources": {
+    "title": "Driver Safety Resources & Tools | Car Injury Law",
+    "description": "Free safety tools including our Digital Emergency Card creator and Safe Driver Pledge. Protecting you and your family on the road."
+  },
+  "/privacy": {
+    "title": "Privacy Policy | Car Injury Law Data Protection",
+    "description": "Our commitment to protecting your personal information. Read the Car Injury Law privacy policy and data usage guidelines."
+  },
+  "/terms": {
+    "title": "Terms of Service | Car Injury Law User Agreement",
+    "description": "Terms and conditions for using the Car Injury Law website and services. Legal disclaimers and user responsibilities."
+  },
+  "/sitemap": {
+    "title": "Site Map | Car Injury Law Directory",
+    "description": "Navigate all pages on Car Injury Law. Find local accident lawyers, practice area guides, and legal resources quickly."
+  },
+  "/thank-you": {
+    "title": "Thank You | Car Injury Law",
+    "description": "Thank you for contacting Car Injury Law. A member of our legal team will review your case and contact you shortly."
+  },
+  "/practice-areas/truck-accident": {
+    "title": "Truck Accident Lawyers | Car Injury Law Nationwide",
+    "description": "Injured in a semi-truck crash? Our specialized truck accident attorneys fight aggressive corporate defense teams to get you full compensation."
+  },
+  "/practice-areas/truck-accident/jackknife": {
+    "title": "Jackknife Truck Accident Lawyers | Car Injury Law",
+    "description": "Jackknife truck accidents cause devastating injuries. Our experts understand the physics and liability in these complex commercial vehicle crashes."
+  },
+  "/practice-areas/truck-accident/underride": {
+    "title": "Underride Truck Accident Lawyers | Car Injury Law",
+    "description": "Underride accidents are often fatal. We hold trucking companies accountable for inadequate safety guards and negligence. Free case review."
+  },
+  "/practice-areas/motorcycle-accident": {
+    "title": "Motorcycle Accident Lawyers | Car Injury Law",
+    "description": "We overcome biker bias to win maximum settlements for injured riders. Nationwide representation for motorcycle crash victims."
+  },
+  "/practice-areas/wrongful-death": {
+    "title": "Wrongful Death Attorneys | Car Injury Law",
+    "description": "Compassionate legal support for families who have lost loved ones to negligence. We fight for justice and financial security for your future."
+  },
+  "/practice-areas/personal-injury": {
+    "title": "Personal Injury Lawyers | Car Injury Law Nationwide",
+    "description": "From slip and falls to catastrophic injuries, Car Injury Law connects you with top personal injury attorneys to fight for your rights."
+  },
+  "/practice-areas/rideshare-accident": {
+    "title": "Uber & Lyft Accident Lawyers | Car Injury Law",
+    "description": "Injured in a rideshare? We navigate complex insurance policies to ensure Uber and Lyft pay what you deserve. Passenger and driver representation."
+  },
+  "/practice-areas/car-accident": {
+    "title": "Car Accident Lawyers | Car Injury Law Nationwide",
+    "description": "Don't face the insurance company alone. Our car accident attorneys handle everything from property damage to complex injury litigation."
+  },
+  "/practice-areas/pedestrian-injury": {
+    "title": "Pedestrian Accident Lawyers | Car Injury Law",
+    "description": "Pedestrians have rights. If you were hit by a vehicle, our attorneys fight to cover your medical bills and lost wages. Free consultation."
+  },
+  "/practice-areas/bus-transit-injury": {
+    "title": "Bus Accident Lawyers | Car Injury Law",
+    "description": "Injured on public transit or by a commercial bus? We handle complex claims against municipal and private bus operators nationwide."
+  },
+  "/practice-areas/workplace-injury": {
+    "title": "Workplace Injury Lawyers | Car Injury Law",
+    "description": "Injured on the job? We help you navigate Workers' Comp and identify third-party liability claims to maximize your recovery."
+  },
+  "/practice-areas/medical-malpractice": {
+    "title": "Medical Malpractice Lawyers | Car Injury Law",
+    "description": "When doctors fail, we step in. Expert legal representation for surgical errors, misdiagnosis, and birth injuries. Justice for patients."
+  },
+  "/practice-areas/slip-and-fall": {
+    "title": "Slip and Fall Lawyers | Car Injury Law",
+    "description": "Property owners must keep you safe. If you slipped and fell due to negligence, our premises liability attorneys can help you recover damages."
+  }
+}

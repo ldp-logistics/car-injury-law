@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1. Force WWW
+  # If the hostname does NOT start with 'www.'
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  # Redirect to the same protocol, but with 'www.' prefixed
+  RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
+  # 2. Force HTTPS
+  # If HTTPS is off
+  RewriteCond %{HTTPS} off
+  # Redirect to HTTPS version
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+  # 3. SPA Fallback (Standard for React Apps)
+  # If the requested filename does not exist
+  RewriteCond %{REQUEST_FILENAME} !-f
+  # And the requested directory does not exist
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # Serve index.html
+  RewriteRule . /index.html [L]
+</IfModule>
