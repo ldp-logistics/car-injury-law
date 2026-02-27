@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { FileText, AlertTriangle, Scale } from "lucide-react";
@@ -39,7 +40,7 @@ export default function TermsOfService() {
               <h2 className="text-2xl font-bold text-primary m-0">3. No Guarantee of Results</h2>
             </div>
             <p>
-              Past results described on this site do not guarantee a similar outcome. Every case is different and must be judged on its own merits.
+              <Link href="/case-results" className="text-primary hover:underline font-semibold">Past results</Link> described on this site do not guarantee a similar outcome. Every case is different and must be judged on its own merits.
             </p>
           </section>
         </div>

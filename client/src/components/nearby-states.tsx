@@ -35,7 +35,7 @@ export function NearbyStates({ stateKeys }: NearbyStatesProps) {
                     {state.name}
                   </span>
                   <span className="text-xs text-muted-foreground">
-                    Car Accident Lawyers
+                    <Link href="/practice-areas/car-accident" className="text-primary hover:underline font-semibold">Car Accident</Link> Lawyers
                   </span>
                 </div>
                 <span className="text-xs font-bold bg-white border border-slate-200 px-2 py-1 rounded text-slate-500 group-hover:border-secondary group-hover:text-secondary transition-colors">

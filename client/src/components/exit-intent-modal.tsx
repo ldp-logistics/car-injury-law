@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { useState, useEffect } from "react";
 import { X, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -51,7 +52,7 @@ export function ExitIntentModal() {
             
             <h2 className="text-3xl font-bold text-primary mb-2 font-serif">Wait! Don't Leave Empty Handed.</h2>
             <p className="text-lg text-muted-foreground mb-6">
-              You only have a limited time to file your injury claim. Find out if you qualify for compensation instantly.
+              You only have a limited time to file your <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">injury claim</Link>. Find out if you qualify for <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link> instantly.
             </p>
 
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-100 mb-6">

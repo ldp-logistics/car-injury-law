@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { SeoContentSection } from "@/components/seo-content-section";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
@@ -30,7 +31,7 @@ export default function WrongfulDeathPage() {
                   Compassionate Justice
                 </div>
                 <h1 className="text-4xl lg:text-6xl font-bold font-serif leading-tight">
-                  Wrongful Death <br/>
+                  <Link href="/practice-areas/wrongful-death" className="text-primary hover:underline font-semibold">Wrongful Death</Link> <br/>
                   <span className="text-secondary">Litigation</span>
                 </h1>
                 <p className="text-xl text-gray-300 max-w-xl leading-relaxed">
@@ -58,7 +59,7 @@ export default function WrongfulDeathPage() {
             <section>
               <h2 className="text-3xl font-bold font-serif text-primary mb-6">We Handle The Legal Burden</h2>
               <p className="text-lg text-slate-600 mb-4">
-                During this difficult time, the last thing you should worry about is arguing with insurance companies. Our attorneys handle every aspect of the claim so you can focus on grieving and healing.
+                During this difficult time, the last thing you should worry about is arguing with <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance companies</Link>. <Link href="/about" className="text-primary hover:underline font-semibold">Our attorneys</Link> handle every aspect of the claim so you can focus on grieving and healing.
               </p>
             </section>
 

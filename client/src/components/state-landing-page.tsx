@@ -87,8 +87,8 @@ export default function StateLandingPage({ data }: StateLandingPageProps) {
                   Car Accident Lawyers in <span className="text-secondary">{data.name}</span>
                 </h1>
                 <p className="text-xl text-gray-300 max-w-xl leading-relaxed">
-                  Injured in a crash? Our experienced {data.name} auto injury attorneys 
-                  understand local traffic laws and insurance requirements. We fight for the compensation you deserve.
+                  Injured in a crash? Our experienced {data.name} auto <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">injury</Link> attorneys 
+                  understand local traffic laws and insurance requirements. We fight for the <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link> you deserve.
                 </p>
                 <div className="flex flex-col gap-3 pt-4">
                   <div className="flex items-center gap-3 text-white">
@@ -131,7 +131,7 @@ export default function StateLandingPage({ data }: StateLandingPageProps) {
                       </p>
                       <p>
                         Car accident victims often face mounting medical bills, lost wages, and physical pain. 
-                        Insurance companies often try to settle quickly for less than your case is worth. 
+                        <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance companies</Link> often try to settle quickly for less than your case is worth. 
                         We protect your rights and ensure you pursue the full damages you are entitled to 
                         under {data.name} law.
                       </p>
@@ -167,7 +167,7 @@ export default function StateLandingPage({ data }: StateLandingPageProps) {
                             <h3 className="font-bold text-lg mb-2">Minimum Insurance</h3>
                             <p className="text-sm">
                               Drivers in {data.name} are required to carry minimum liability coverage of {data.minInsurance}. 
-                              However, these minimums may not cover severe injuries, making legal counsel vital.
+                              However, these minimums may not cover severe injuries, making <Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">legal counsel</Link> vital.
                             </p>
                           </CardContent>
                         </Card>
@@ -194,7 +194,7 @@ export default function StateLandingPage({ data }: StateLandingPageProps) {
                         <div>
                           <h3 className="font-bold text-lg text-primary">Local Expertise</h3>
                           <p className="text-gray-600">
-                            We know {data.name} courts, judges, and insurance adjusters. We use this local 
+                            We know {data.name} courts, judges, and <Link href="/blog/dealing-with-insurance-adjusters" className="text-primary hover:underline font-semibold">insurance adjusters</Link>. We use this local 
                             knowledge to build stronger cases.
                           </p>
                         </div>
@@ -217,7 +217,7 @@ export default function StateLandingPage({ data }: StateLandingPageProps) {
                  {/* SEO Content Section */}
                  <SeoContentSection service="Car Accident Lawyer" location={data.name} />
 
-                 {/* H2: Speak With Our Car Accident Lawyer in [STATE] Today. */}
+                 {/* H2: Speak With Our <Link href="/practice-areas/car-accident" className="text-primary hover:underline font-semibold">Car Accident Lawyer</Link> in [STATE] Today. */}
                  <div className="bg-slate-900 text-white p-8 rounded-2xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 opacity-10">
                        <Phone className="h-64 w-64 -mr-16 -mt-16" />

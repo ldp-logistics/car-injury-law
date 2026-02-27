@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import attorneyImg from "@assets/admani_1763525477578.jpg";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -28,7 +29,7 @@ export function TeamSection() {
               
               <div className="absolute -bottom-6 -right-6 bg-white text-primary p-6 rounded shadow-xl z-20 max-w-xs hidden md:block border border-slate-200">
                 <p className="font-serif text-lg font-bold italic leading-relaxed">"We don't just refer cases. We curate victories."</p>
-                <p className="text-xs font-bold text-gray-500 mt-2 uppercase tracking-wider">— Saad Admani, Founder</p>
+                <p className="text-xs font-bold text-gray-500 mt-2 uppercase tracking-wider">— <Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">Saad Admani</Link>, Founder</p>
               </div>
             </div>
           </div>
@@ -46,7 +47,7 @@ export function TeamSection() {
             
             <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
               <p>
-                <strong>CarInjuryLaw.com</strong> is not just a website; it is the digital storefront of a national legal powerhouse. As the founder of <strong className="text-white">ADMANI LAW</strong>, Saad Admani has architected a unique referral network that prioritizes <em>client results</em> above all else.
+                <strong>CarInjuryLaw.com</strong> is not just a website; it is the digital storefront of a national legal powerhouse. As the founder of <strong className="text-white">ADMANI LAW</strong>, Saad Admani has architected a unique <Link href="/join-network" className="text-primary hover:underline font-semibold">referral network</Link> that prioritizes <em>client results</em> above all else.
               </p>
               <p>
                 Licensed in New Jersey and New York, Saad personally oversees the vetting process for every partner firm in our network. He ensures that when a client from Texas, Florida, or California calls us, they are connected not just to <em>a</em> lawyer, but to <em>the right</em> lawyer for their specific case.

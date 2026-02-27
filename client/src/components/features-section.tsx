@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { Shield, BadgeDollarSign, Clock, Scale, MapPin, Trophy } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -29,7 +30,7 @@ export function FeaturesSection() {
     <section id="why-us" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Why Choose Car Injury Law?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Why Choose Car <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">Injury</Link> Law?</h2>
           <p className="text-lg text-muted-foreground">
             When you've been injured, you need a team that treats you like family and fights for you like a warrior.
           </p>

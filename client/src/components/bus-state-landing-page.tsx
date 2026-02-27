@@ -89,7 +89,7 @@ export default function BusStateLandingPage({ data }: BusStateLandingPageProps) 
                 </h1>
                 <p className="text-xl text-gray-300 max-w-xl leading-relaxed">
                   Injured on public transit or hit by a bus? We navigate the complex sovereign immunity laws 
-                  and fight for maximum compensation in {data.name}.
+                  and fight for maximum <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link> in {data.name}.
                 </p>
                 <div className="flex flex-col gap-3 pt-4">
                   <div className="flex items-center gap-3 text-white">
@@ -131,13 +131,13 @@ export default function BusStateLandingPage({ data }: BusStateLandingPageProps) 
                       </p>
                       <p>
                         Whether you were injured on a city bus, school bus, charter bus, or airport shuttle, we investigate 
-                        driver negligence, improper maintenance, and hiring violations. We understand the specific transit 
+                        driver <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">negligence</Link>, improper maintenance, and hiring violations. We understand the specific transit 
                         regulations in {data.name} that protect passengers and other road users.
                       </p>
                     </div>
                  </div>
 
-                 {/* H2: Transit Injury Insurance Coverage in [STATE] */}
+                 {/* H2: <Link href="/practice-areas/bus-transit-injury" className="text-primary hover:underline font-semibold">Transit Injury</Link> <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance</Link> Coverage in [STATE] */}
                  <div>
                     <h2 className="text-3xl font-bold font-serif text-primary mb-6">
                       Transit Injury Insurance Coverage in {data.name}
@@ -216,7 +216,7 @@ export default function BusStateLandingPage({ data }: BusStateLandingPageProps) 
                  {/* SEO Content Section */}
                  <SeoContentSection service="Bus Accident Lawyer" location={data.name} />
 
-                 {/* H2: Speak With Our Bus Injury Lawyer in [STATE] Today. */}
+                 {/* H2: Speak With Our Bus Injury <Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">Lawyer</Link> in [STATE] Today. */}
                  <div className="bg-slate-900 text-white p-8 rounded-2xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 opacity-10">
                        <Bus className="h-64 w-64 -mr-16 -mt-16" />

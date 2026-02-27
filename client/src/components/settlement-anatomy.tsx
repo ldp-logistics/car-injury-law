@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -19,7 +20,7 @@ export function SettlementAnatomy() {
           <div>
             <span className="text-secondary font-bold tracking-wider text-sm uppercase">Educational</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6 font-serif text-primary">
-              Anatomy of a Settlement
+              Anatomy of a <Link href="/case-results" className="text-primary hover:underline font-semibold">Settlement</Link>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
               Understanding what you are entitled to is the first step to getting it. We pursue every single penny across these four key categories.

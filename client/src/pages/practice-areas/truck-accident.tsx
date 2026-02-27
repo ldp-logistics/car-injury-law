@@ -100,7 +100,7 @@ export default function TruckAccidentPage() {
                   Specialized Commercial Vehicle Litigation
                 </span>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif leading-tight" data-testid="hero-heading">
-                  Truck Accident Attorneys
+                  <Link href="/practice-areas/truck-accident" className="text-primary hover:underline font-semibold">Truck Accident Attorneys</Link>
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
                   Trucking companies have rapid response teams to minimize their liability. You need
@@ -144,7 +144,7 @@ export default function TruckAccidentPage() {
                   Truck accident cases are fundamentally different from car accidents. Commercial trucks
                   are governed by the <strong>Federal Motor Carrier Safety Administration (FMCSA)</strong>,
                   which imposes strict regulations on trucking companies and drivers. Violations of these
-                  federal rules often prove negligence and significantly strengthen your case.
+                  federal rules often prove <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">negligence</Link> and significantly strengthen your case.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6 my-10">
@@ -184,7 +184,7 @@ export default function TruckAccidentPage() {
 
                 <p className="text-lg leading-relaxed">
                   Trucking companies often deploy rapid response teams to accident scenes to protect
-                  their interests. Our attorneys act quickly to preserve evidence, send spoliation
+                  their interests. <Link href="/about" className="text-primary hover:underline font-semibold">Our attorneys</Link> act quickly to preserve evidence, send spoliation
                   letters, and ensure nothing is destroyed or hidden.
                 </p>
 
@@ -221,7 +221,7 @@ export default function TruckAccidentPage() {
               >
                 <div className="flex items-center justify-center gap-3 mb-4">
                   <Shield className="h-8 w-8 text-secondary" />
-                  <span className="text-secondary font-bold tracking-wider text-sm uppercase">Insurance Coverage</span>
+                  <span className="text-secondary font-bold tracking-wider text-sm uppercase"><Link href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance</Link> Coverage</span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold font-serif text-primary" data-testid="heading-insurance">
                   Truck Accident Insurance Coverage
@@ -282,7 +282,7 @@ export default function TruckAccidentPage() {
                       <h3 className="text-xl font-bold text-primary mb-4">Multi-Party Liability</h3>
                       <p className="text-muted-foreground leading-relaxed mb-4">
                         Unlike car accidents, truck crashes often involve multiple liable parties.
-                        We identify all responsible parties to maximize your compensation and
+                        We identify all responsible parties to maximize your <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link> and
                         ensure no stone is left unturned.
                       </p>
                       <ul className="space-y-2">
@@ -420,7 +420,7 @@ export default function TruckAccidentPage() {
                 </h2>
                 <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
                   Taking on large trucking corporations requires experience, resources, and determination.
-                  We have a proven track record of holding these companies accountable.
+                  We have a proven <Link href="/case-results" className="text-primary hover:underline font-semibold">track record</Link> of holding these companies accountable.
                 </p>
               </motion.div>
 

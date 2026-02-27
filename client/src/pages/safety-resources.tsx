@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { SafeDriverPledge } from "@/components/safe-driver-pledge";
@@ -17,7 +18,7 @@ export default function SafetyResourcesPage() {
       
       <main className="pt-10 pb-20">
         <div className="container mx-auto px-4 text-center mb-12">
-          <h1 className="text-4xl font-bold font-serif text-primary mb-4">Safety Resources</h1>
+          <h1 className="text-4xl font-bold font-serif text-primary mb-4"><Link href="/safety-resources" className="text-primary hover:underline font-semibold">Safety Resources</Link></h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             We don't just fight for you after an accident. We're committed to preventing them. Use these free tools to keep you and your family safe.
           </p>

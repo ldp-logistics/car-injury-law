@@ -98,7 +98,7 @@ export default function BusTransitInjuryPage() {
                   Fighting Government Bureaucracy
                 </span>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif leading-tight" data-testid="hero-heading">
-                  Bus & Public Transit Injury Lawyers
+                  Bus & Public <Link href="/practice-areas/bus-transit-injury" className="text-primary hover:underline font-semibold">Transit Injury</Link> Lawyers
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
                   When public buses, subways, or trains cause injuries, victims face complex legal 
@@ -141,7 +141,7 @@ export default function BusTransitInjuryPage() {
                 <p className="text-lg leading-relaxed mb-6">
                   Public transit systems and private bus companies are classified as "common carriers" 
                   under the law. This designation means they owe passengers the <strong>highest duty 
-                  of care</strong>—a legal standard that works in your favor when negligence causes injuries.
+                  of care</strong>—a legal standard that works in your favor when <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">negligence</Link> causes injuries.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6 my-10">
@@ -201,7 +201,7 @@ export default function BusTransitInjuryPage() {
               >
                 <div className="flex items-center justify-center gap-3 mb-4">
                   <Shield className="h-8 w-8 text-secondary" />
-                  <span className="text-secondary font-bold tracking-wider text-sm uppercase">Insurance & Liability</span>
+                  <span className="text-secondary font-bold tracking-wider text-sm uppercase"><Link href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance</Link> & Liability</span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold font-serif text-primary" data-testid="heading-insurance">
                   Transit Liability and Coverage

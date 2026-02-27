@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
@@ -31,7 +32,7 @@ export default function JoinNetworkPage() {
             <div className="grid md:grid-cols-2 gap-12">
               {/* Benefits */}
               <div className="space-y-8">
-                <h2 className="text-2xl font-bold text-slate-900">Why Join Our Network?</h2>
+                <h2 className="text-2xl font-bold text-slate-900">Why <Link href="/join-network" className="text-primary hover:underline font-semibold">Join Our Network</Link>?</h2>
                 <ul className="space-y-4">
                   {[
                     "Exclusive Geographic Territories",
@@ -58,7 +59,7 @@ export default function JoinNetworkPage() {
               {/* Application Form */}
               <Card className="shadow-xl border-t-4 border-primary">
                 <CardHeader>
-                  <CardTitle>Attorney Application</CardTitle>
+                  <CardTitle><Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">Attorney</Link> Application</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <form className="space-y-4">
@@ -74,7 +75,7 @@ export default function JoinNetworkPage() {
                     </div>
                     
                     <div className="space-y-2">
-                      <Label htmlFor="firmName">Law Firm Name</Label>
+                      <Label htmlFor="firmName"><Link href="/about" className="text-primary hover:underline font-semibold">Law Firm</Link> Name</Label>
                       <Input id="firmName" placeholder="Smith & Associates, PC" />
                     </div>
 

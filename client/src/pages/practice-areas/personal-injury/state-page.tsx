@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { SeoContentSection } from "@/components/seo-content-section";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
@@ -85,11 +86,11 @@ export default function PersonalInjuryStatePage({ stateData }: PersonalInjurySta
               <p className="text-lg text-slate-700 mb-4 leading-relaxed">
                 If you have been injured due to someone else's negligence in {stateName}, you have specific <strong>Personal Injury legal rights in {stateName}</strong>. A qualified <strong>
                   {(stateName === "New York" || stateName === "New Jersey") ? (
-                    <a href="https://www.admanilaw.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Personal Injury Lawyer in {stateName}</a>
+                    <a href="https://www.admanilaw.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline"><Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">Personal Injury Lawyer</Link> in {stateName}</a>
                   ) : (
                     `Personal Injury Lawyer in ${stateName}`
                   )}
-                </strong> acts as your shield against insurance companies who try to devalue your claim.
+                </strong> acts as your shield against <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance companies</Link> who try to devalue your claim.
               </p>
               <p className="text-lg text-slate-700 mb-4 leading-relaxed">
                 Whether it's a car crash on {stateName} highways, a slip and fall, or a workplace accident, our network of <strong>Personal Injury Attorneys in {stateName}</strong> is dedicated to restoring your financial stability.
@@ -102,7 +103,7 @@ export default function PersonalInjuryStatePage({ stateData }: PersonalInjurySta
             <section className="bg-slate-50 p-8 rounded-xl border border-slate-200">
               <h2 className="text-3xl font-bold font-serif text-primary mb-6">Personal Injury Insurance Coverage in {stateName}</h2>
               <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                Understanding insurance is the cornerstone of any successful claim. Most <strong>Car accident law firms near {stateName}</strong> will tell you that coverage depends heavily on how insurance works in {stateName}.
+                Understanding insurance is the cornerstone of any successful claim. Most <strong><Link href="/practice-areas/car-accident" className="text-primary hover:underline font-semibold">Car accident</Link> law firms near {stateName}</strong> will tell you that coverage depends heavily on how insurance works in {stateName}.
               </p>
               <p className="text-lg text-slate-700 mb-6 leading-relaxed">
                 In {stateName}, the specific rules regarding fault and liability play a crucial role. 
@@ -138,7 +139,7 @@ export default function PersonalInjuryStatePage({ stateData }: PersonalInjurySta
             <section>
               <h2 className="text-3xl font-bold font-serif text-primary mb-6">Why Choose Car Injury Law for Personal Injury Case?</h2>
               <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                Choosing the right representation can mean the difference between a small settlement and full compensation. As a premier referral network serving {stateName}, we offer:
+                Choosing the right representation can mean the difference between a small <Link href="/case-results" className="text-primary hover:underline font-semibold">settlement</Link> and full <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link>. As a premier <Link href="/join-network" className="text-primary hover:underline font-semibold">referral network</Link> serving {stateName}, we offer:
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">

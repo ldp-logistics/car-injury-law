@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { StickyCta } from "@/components/sticky-cta";
@@ -89,7 +90,7 @@ export default function FloridaStatePage() {
                 <p className="text-xl font-serif font-bold text-primary">{STATE_DATA.minInsurance}</p>
               </div>
               <div>
-                <p className="text-sm text-gray-500 uppercase font-bold tracking-wider">Avg. Settlement</p>
+                <p className="text-sm text-gray-500 uppercase font-bold tracking-wider">Avg. <Link href="/case-results" className="text-primary hover:underline font-semibold">Settlement</Link></p>
                 <p className="text-xl font-serif font-bold text-secondary">{STATE_DATA.avgSettlement}</p>
               </div>
             </div>
@@ -101,10 +102,10 @@ export default function FloridaStatePage() {
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2 space-y-12">
               <section>
-                <h2 className="text-3xl font-bold font-serif text-primary mb-6">Why You Need a {STATE_DATA.name} Car Accident Lawyer</h2>
+                <h2 className="text-3xl font-bold font-serif text-primary mb-6">Why You Need a {STATE_DATA.name} <Link href="/practice-areas/car-accident" className="text-primary hover:underline font-semibold">Car Accident <Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">Lawyer</Link></Link></h2>
                 <div className="prose prose-lg text-gray-600 max-w-none">
                   <p>
-                    {STATE_DATA.name}'s traffic laws are unique due to the strict <strong>No-Fault (PIP)</strong> system. This means you must first turn to your own insurance company for coverage, regardless of who caused the crash. However, PIP coverage is often insufficient for serious injuries.
+                    {STATE_DATA.name}'s traffic laws are unique due to the strict <strong>No-Fault (PIP)</strong> system. This means you must first turn to your own <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance company</Link> for coverage, regardless of who caused the crash. However, PIP coverage is often insufficient for serious injuries.
                   </p>
                   <p>
                     Our network of attorneys in {STATE_DATA.name} knows how to break through the "tort threshold" to sue the at-fault driver for pain and suffering, lost wages, and medical bills that exceed your PIP limits. We have recovered millions for clients in cities like {STATE_DATA.cityList.join(", ")}.
@@ -119,7 +120,7 @@ export default function FloridaStatePage() {
                   <div>
                     <h3 className="text-xl font-bold text-destructive mb-2">CRITICAL WARNING: Law Change</h3>
                     <p className="text-gray-700 mb-2">
-                      <strong>Effective March 2023:</strong> {STATE_DATA.name} reduced the Statute of Limitations from 4 years to just <strong>2 years</strong> for negligence claims.
+                      <strong>Effective March 2023:</strong> {STATE_DATA.name} reduced the Statute of Limitations from 4 years to just <strong>2 years</strong> for <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">negligence</Link> claims.
                     </p>
                     <p className="text-gray-700">
                       This means you have half the time to file a lawsuit compared to before. If you wait too long, your case will be thrown out immediately. Do not delay.
@@ -201,7 +202,7 @@ export default function FloridaStatePage() {
                     <div className="space-y-4 mt-6">
                       <div className="bg-white/10 p-3 rounded">
                         <p className="text-2xl font-bold text-secondary">$2,100,000</p>
-                        <p className="text-sm text-gray-300">I-4 Truck Accident</p>
+                        <p className="text-sm text-gray-300">I-4 <Link href="/practice-areas/truck-accident" className="text-primary hover:underline font-semibold">Truck Accident</Link></p>
                       </div>
                       <div className="bg-white/10 p-3 rounded">
                         <p className="text-2xl font-bold text-secondary">$850,000</p>

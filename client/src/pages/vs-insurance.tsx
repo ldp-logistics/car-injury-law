@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
@@ -22,7 +23,7 @@ export default function VsInsurancePage() {
               Us vs. <span className="text-destructive">Them</span>
             </h1>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              The insurance adjuster works for the shareholders. We work for <strong>you</strong>. See the difference in results.
+              The <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance adjuster</Link> works for the shareholders. We work for <strong>you</strong>. See the difference in results.
             </p>
           </div>
 

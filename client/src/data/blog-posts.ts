@@ -69,7 +69,7 @@ export const BLOG_POSTS_DATA = [
       <h2>7. Notify Your Insurance Company—But Be Careful What You Say</h2>
       <p>Most insurance policies require prompt notification of accidents. Call your insurer to report the collision, but keep your statement brief and factual. Provide basic details: date, time, location, and vehicles involved. <strong>Avoid detailed discussions about injuries or fault.</strong> Politely defer comprehensive statements until you've consulted with accident and injury lawyers who can protect your rights.</p>
 
-      <h2>8. Do NOT Speak to the Other Driver's Insurance Without Legal Representation</h2>
+      <h2>8. Do NOT Speak to the Other Driver's Insurance Without <a href="/about" className="text-primary hover:underline font-semibold">Legal Representation</a></h2>
       <p>The other driver's insurance company will likely contact you quickly, often within hours. Their adjusters seem friendly and helpful, but their goal is to minimize payouts. They may record your conversation and use your words against you. <strong>Politely decline to give a statement</strong> and direct them to your attorney. Experienced car accident injury lawyers know the tactics insurers use and can handle all communications on your behalf.</p>
 
       <h2>9. Keep Detailed Records of Everything</h2>
@@ -101,7 +101,7 @@ export const BLOG_POSTS_DATA = [
 
       <div class="bg-slate-100 border border-slate-300 p-6 my-8 rounded-lg text-sm text-slate-600">
         <p class="font-bold mb-2">Legal Disclaimer:</p>
-        <p>The information provided in this blog post is for informational and educational purposes only and does not constitute legal advice. Every accident case is unique, and outcomes depend on specific facts and circumstances. Nothing in this article creates an attorney-client relationship. If you need legal advice regarding a car accident or personal injury claim, please contact Car Injury Law or another qualified attorney in your jurisdiction for a consultation tailored to your situation.</p>
+        <p>The information provided in this blog post is for informational and educational purposes only and does not constitute legal advice. Every accident case is unique, and outcomes depend on specific facts and circumstances. Nothing in this article creates an attorney-client relationship. If you need legal advice regarding a car accident or <a href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">personal injury claim</a>, please contact Car Injury Law or another qualified attorney in your jurisdiction for a consultation tailored to your situation.</p>
       </div>
     `
   },
@@ -195,7 +195,7 @@ export const BLOG_POSTS_DATA = [
       </ul>
       <p>Truck accident lawyers, motorcycle accident attorneys, and auto accident law firms specializing in complex claims know these tactics and neutralize them at every turn.</p>
 
-      <h2>Why You Need Specialized Legal Representation</h2>
+      <h2>Why You Need Specialized <a href="/about" className="text-primary hover:underline font-semibold">Legal Representation</a></h2>
       <p>A general practice attorney—or worse, no attorney at all—puts you at a severe disadvantage in complex crash cases. You're facing billion-dollar corporations with in-house legal teams, national law firms on retainer, and decades of experience minimizing payouts. You need an auto accident law firm that:</p>
       <ul>
         <li>Understands FMCSA regulations and commercial trucking industry practices.</li>
@@ -219,7 +219,7 @@ export const BLOG_POSTS_DATA = [
 
       <div class="bg-primary/10 border-l-4 border-primary p-6 my-8 rounded-r-lg">
         <h3 class="text-xl font-bold text-primary mb-3">Call to Action: Schedule Your Free Consultation</h3>
-        <p class="mb-4">Contact <strong>Car Injury Law</strong> today for a free, no-obligation case review. Our experienced truck accident lawyers, motorcycle accident attorneys, and rideshare claim specialists will evaluate your case, explain your legal options, and fight for the maximum compensation you deserve. We work on a contingency fee basis—you pay nothing unless we win.</p>
+        <p class="mb-4">Contact <strong>Car Injury Law</strong> today for a free, no-obligation case review. Our experienced truck accident lawyers, motorcycle accident attorneys, and rideshare claim specialists will evaluate your case, explain your legal options, and fight for the <a href="/settlement-calculator" className="text-primary hover:underline font-semibold">maximum compensation</a> you deserve. We work on a contingency fee basis—you pay nothing unless we win.</p>
         <p class="font-bold text-primary">📞 Call now or complete our online form to get started.</p>
       </div>
 
@@ -245,7 +245,7 @@ export const BLOG_POSTS_DATA = [
       "Seek medical attention immediately, even if you feel fine."
     ],
     content: `
-      <p class="lead">The first 10 minutes after a crash are critical. The adrenaline is pumping, and it's easy to make mistakes that can destroy your injury claim later. Here is exactly what you need to do to protect yourself.</p>
+      <p class="lead">The first 10 minutes after a crash are critical. The adrenaline is pumping, and it's easy to make mistakes that can destroy your <a href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">injury claim</a> later. Here is exactly what you need to do to protect yourself.</p>
 
       <h2>1. Stop and Ensure Safety</h2>
       <p>Never drive away from the scene of an accident, even a minor one. Stop your vehicle as soon as it is safe to do so. Turn on your hazard lights. If anyone is injured, call 911 immediately.</p>
@@ -269,7 +269,7 @@ export const BLOG_POSTS_DATA = [
       <p>Many injuries, like whiplash or internal bleeding, don't show symptoms immediately due to adrenaline. Go to an urgent care or ER right away. This creates a medical record linking your injury to the accident.</p>
 
       <div class="alert alert-info">
-        <strong>Pro Tip:</strong> Do not speak to the other driver's insurance company until you have spoken to a lawyer. They are trained to trick you into accepting a lowball offer.
+        <strong>Pro Tip:</strong> Do not speak to the other driver's <a href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance company</a> until you have spoken to a lawyer. They are trained to trick you into accepting a lowball offer.
       </div>
     `
   },
@@ -289,7 +289,7 @@ export const BLOG_POSTS_DATA = [
       "You need a lawyer specialized in federal trucking law, not just car accidents."
     ],
     content: `
-      <p class="lead">A crash involving an 80,000-pound semi-truck is not just a "big car accident." It involves complex federal regulations, massive insurance policies, and teams of corporate lawyers fighting to pay you nothing.</p>
+      <p class="lead">A crash involving an 80,000-pound semi-truck is not just a "big <a href="/practice-areas/car-accident" className="text-primary hover:underline font-semibold">car accident</a>." It involves complex federal regulations, massive <a href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance</a> policies, and teams of corporate lawyers fighting to pay you nothing.</p>
 
       <h2>The Stakes Are Higher</h2>
       <p>Commercial trucks carry insurance policies worth $1 million or more. Because the payouts are higher, trucking companies dispatch "Rapid Response Teams" to the crash scene within hours to gather evidence to defend themselves. You need a lawyer who can move just as fast.</p>
@@ -320,14 +320,14 @@ export const BLOG_POSTS_DATA = [
       "Accepting a quick check usually means signing away your right to future compensation."
     ],
     content: `
-      <p class="lead">The most common question we get is 'What is my case worth?' The honest answer is: anyone who gives you a number without seeing your medical records is lying. However, we can explain <em>how</em> value is calculated.</p>
+      <p class="lead">The most common question we get is 'What is my <a href="/settlement-calculator" className="text-primary hover:underline font-semibold">case worth</a>?' The honest answer is: anyone who gives you a number without seeing your medical records is lying. However, we can explain <em>how</em> value is calculated.</p>
 
       <h2>The 3 Pillars of Value</h2>
       <p>Case value is generally determined by three factors:</p>
       <ol>
         <li><strong>Liability:</strong> Is it 100% the other driver's fault? If you are partially at fault, your value drops.</li>
         <li><strong>Damages:</strong> How severe are the injuries? A broken bone is worth more than a bruise. A permanent disability is worth millions.</li>
-        <li><strong>Coverage:</strong> Does the other driver have enough insurance to pay? You can't get blood from a stone (unless you have UM coverage).</li>
+        <li><strong>Coverage:</strong> Does the other driver have enough <a href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance</a> to pay? You can't get blood from a stone (unless you have UM coverage).</li>
       </ol>
 
       <h2>Economic vs. Non-Economic Damages</h2>
@@ -351,7 +351,7 @@ export const BLOG_POSTS_DATA = [
       "You have the right to say 'Talk to my lawyer' and hang up."
     ],
     content: `
-      <p class="lead">The insurance adjuster sounds friendly. They say they want to 'help you close this out quickly.' Don't be fooled. Their job is to pay you as little as possible.</p>
+      <p class="lead">The <a href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance adjuster</a> sounds friendly. They say they want to 'help you close this out quickly.' Don't be fooled. Their job is to pay you as little as possible.</p>
 
       <h2>Trick #1: The Recorded Statement</h2>
       <p>They will ask for a recorded statement 'just for the file.' They will ask tricky questions like 'How are you feeling?' If you say 'I'm okay' (out of politeness), they will use that recording to argue you weren't injured.</p>
@@ -379,7 +379,7 @@ export const BLOG_POSTS_DATA = [
       "You can sue both the rideshare company and the other driver involved."
     ],
     content: `
-      <p class="lead">Rideshare accidents are not like regular car accidents. There is a complex web of insurance policies depending on exactly what the driver was doing at the second of impact.</p>
+      <p class="lead">Rideshare accidents are not like regular car accidents. There is a complex web of <a href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance</a> policies depending on exactly what the driver was doing at the second of impact.</p>
 
       <h2>The 3 Periods of Coverage</h2>
       <ul>
@@ -410,8 +410,8 @@ export const BLOG_POSTS_DATA = [
     content: `
       <p class="lead">Losing a loved one is the hardest thing anyone can go through. When that loss is caused by someone else's negligence, the law provides a path to justice, though no amount of money can replace a life.</p>
 
-      <h2>What is a Wrongful Death Claim?</h2>
-      <p>It is essentially a personal injury claim that the deceased person could have filed had they lived. Since they cannot, the family files it on their behalf to recover the 'value' of that life.</p>
+      <h2>What is a <a href="/practice-areas/wrongful-death" className="text-primary hover:underline font-semibold">Wrongful Death</a> Claim?</h2>
+      <p>It is essentially a <a href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">personal injury claim</a> that the deceased person could have filed had they lived. Since they cannot, the family files it on their behalf to recover the 'value' of that life.</p>
 
       <h2>Types of Damages</h2>
       <p>Families can recover:</p>
@@ -445,7 +445,7 @@ export const BLOG_POSTS_DATA = [
       <p>Even in states where lane splitting is technically illegal, the other driver is often <em>more</em> at fault. If a car swerves into you without signaling, they are negligent. We argue that your lane splitting (even if a citation is issued) was not the <strong>proximate cause</strong> of the accident—the car's unsafe lane change was.</p>
 
       <h2>Overcoming Bias</h2>
-      <p>The biggest hurdle in motorcycle cases is 'Biker Bias.' Insurance adjusters and jurors assume you were being reckless. We fight this by showing your safe driving history, protective gear usage, and expert reconstruction showing you had no escape route.</p>
+      <p>The biggest hurdle in motorcycle cases is 'Biker Bias.' <a href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance</a> adjusters and jurors assume you were being reckless. We fight this by showing your safe driving history, protective gear usage, and expert reconstruction showing you had no escape route.</p>
     `
   },
   {
@@ -492,10 +492,10 @@ export const BLOG_POSTS_DATA = [
       <p class="lead">It's a nightmare scenario: You get T-boned, and the other driver has no insurance (or flees the scene). Do you have to pay your own medical bills? No.</p>
 
       <h2>What is UM Coverage?</h2>
-      <p>Uninsured Motorist (UM) coverage steps into the shoes of the at-fault driver. Your own insurance company acts as if they insured the bad driver. They pay for your pain, suffering, and bills up to your policy limit.</p>
+      <p>Uninsured Motorist (UM) coverage steps into the shoes of the at-fault driver. Your own <a href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance company</a> acts as if they insured the bad driver. They pay for your pain, suffering, and bills up to your policy limit.</p>
 
       <h2>The Conflict of Interest</h2>
-      <p>Even though it's 'your' insurance company, in a UM claim, they become your adversary. They want to prove your injuries aren't worth much to save money. You still need a lawyer to fight your own insurance company in these claims.</p>
+      <p>Even though it's 'your' insurance company, in a UM claim, they become your adversary. They want to prove your injuries aren't worth much to save money. You still need a <a href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">lawyer</a> to fight your own insurance company in these claims.</p>
     `
   },
   {
@@ -548,7 +548,7 @@ export const BLOG_POSTS_DATA = [
       <p class="lead">Pedestrians have zero protection. When flesh meets steel, the results are tragic. Drivers often blame the victim: 'He came out of nowhere!' We investigate to prove otherwise.</p>
 
       <h2>The Myth of Jaywalking</h2>
-      <p>Insurance companies love to deny claims because the pedestrian wasn't in a painted crosswalk. But in many jurisdictions, <em>every</em> intersection is a legal crosswalk, painted or not. Furthermore, drivers have a duty to avoid hitting people, even those breaking the rules.</p>
+      <p><a href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance companies</a> love to deny claims because the pedestrian wasn't in a painted crosswalk. But in many jurisdictions, <em>every</em> intersection is a legal crosswalk, painted or not. Furthermore, drivers have a duty to avoid hitting people, even those breaking the rules.</p>
 
       <h2>Finding Extra Coverage</h2>
       <p>Because pedestrian injuries (broken pelvises, TBIs) are so expensive, the driver's minimum insurance is rarely enough. We look for:</p>
@@ -575,7 +575,7 @@ export const BLOG_POSTS_DATA = [
       "Workers' Comp has a lien on your settlement; a lawyer negotiates this down."
     ],
     content: `
-      <p class="lead">If you are hurt on the job, you file Workers' Comp. But what if someone else caused the injury? You might be leaving millions on the table by not filing a Personal Injury lawsuit too.</p>
+      <p class="lead">If you are hurt on the job, you file Workers' Comp. But what if someone else caused the injury? You might be leaving millions on the table by not filing a <a href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">Personal Injury</a> lawsuit too.</p>
 
       <h2>The 'Exclusive Remedy' Rule</h2>
       <p>You generally cannot sue your employer for negligence. Workers' Comp is your 'exclusive remedy.' It's a trade-off: you get guaranteed benefits without proving fault, but you give up the right to sue.</p>

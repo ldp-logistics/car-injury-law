@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { Smartphone, UploadCloud, FileCheck, Lock } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -15,7 +16,7 @@ export function EvidenceUploadPreview() {
               Manage Your Case From Your Phone
             </h2>
             <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-              No need to drive to our office to drop off paperwork. Our secure app allows you to upload photos, sign documents, and chat with your attorney instantly.
+              No need to drive to our office to drop off paperwork. Our secure app allows you to upload photos, sign documents, and chat with your <Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">attorney</Link> instantly.
             </p>
             
             <div className="space-y-6">

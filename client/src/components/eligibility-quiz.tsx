@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -66,7 +67,7 @@ export function EligibilityQuiz() {
             </div>
             <div>
               <h3 className="text-xl font-bold text-green-700 mb-2">You May Be Eligible</h3>
-              <p className="text-gray-600">Based on your answers, you likely qualify for significant compensation. We recommend a full case review.</p>
+              <p className="text-gray-600">Based on your answers, you likely qualify for significant <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link>. We recommend a full case review.</p>
             </div>
             <Button className="w-full bg-secondary text-primary font-bold h-12 text-lg" onClick={() => document.getElementById("lead-form")?.scrollIntoView({behavior: 'smooth'})}>
               Start Free Case Review

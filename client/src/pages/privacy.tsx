@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { Shield, Lock, Eye } from "lucide-react";
@@ -36,7 +37,7 @@ export default function PrivacyPolicy() {
           <section>
             <div className="flex items-center gap-3 mb-4">
               <Eye className="h-6 w-6 text-secondary" />
-              <h2 className="text-2xl font-bold text-primary m-0">3. Attorney-Client Privilege</h2>
+              <h2 className="text-2xl font-bold text-primary m-0">3. <Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">Attorney</Link>-Client Privilege</h2>
             </div>
             <p>
               Submission of a form or use of our chat widget does not establish an attorney-client relationship. However, we treat all communications as confidential to the fullest extent permitted by law.

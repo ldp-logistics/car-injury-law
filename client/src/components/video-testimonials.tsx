@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { useState, useRef } from "react";
 import { Card } from "@/components/ui/card";
@@ -63,7 +64,7 @@ export function VideoTestimonials() {
                 <p className="font-bold text-lg">{video.name}</p>
                 <p className="text-sm text-gray-300">{video.case}</p>
                 <div className="mt-2 inline-block bg-green-600/90 px-3 py-1 rounded text-xs font-bold">
-                  Settlement: {video.settlement}
+                  <Link href="/case-results" className="text-primary hover:underline font-semibold">Settlement</Link>: {video.settlement}
                 </div>
               </div>
             </div>

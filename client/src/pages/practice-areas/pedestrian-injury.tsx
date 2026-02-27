@@ -98,12 +98,12 @@ export default function PedestrianInjuryPage() {
                   Protecting Those On Foot
                 </span>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif leading-tight" data-testid="hero-heading">
-                  Pedestrian Injury Lawyers
+                  <Link href="/practice-areas/pedestrian-injury" className="text-primary hover:underline font-semibold">Pedestrian Injury</Link> Lawyers
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
                   When drivers fail to yield, run red lights, or drive distracted, pedestrians pay 
                   the price with devastating injuries. We hold negligent drivers accountable and 
-                  fight for the full compensation you deserve.
+                  fight for the full <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link> you deserve.
                 </p>
               </motion.div>
 
@@ -141,8 +141,8 @@ export default function PedestrianInjuryPage() {
                 <p className="text-lg leading-relaxed mb-6">
                   Pedestrians have the right of way in designated areas, but too many drivers ignore 
                   these laws. Whether you were struck in a crosswalk, parking lot, or sidewalk, 
-                  our attorneys understand the complex laws that protect pedestrians and know how 
-                  to prove driver negligence.
+                  <Link href="/about" className="text-primary hover:underline font-semibold">our attorneys</Link> understand the complex laws that protect pedestrians and know how 
+                  to prove driver <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">negligence</Link>.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-6 my-10">
@@ -202,7 +202,7 @@ export default function PedestrianInjuryPage() {
               >
                 <div className="flex items-center justify-center gap-3 mb-4">
                   <Shield className="h-8 w-8 text-secondary" />
-                  <span className="text-secondary font-bold tracking-wider text-sm uppercase">Insurance Coverage</span>
+                  <span className="text-secondary font-bold tracking-wider text-sm uppercase"><Link href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance</Link> Coverage</span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold font-serif text-primary" data-testid="heading-insurance">
                   Pedestrian Accident Insurance Coverage

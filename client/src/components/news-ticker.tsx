@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { TrendingUp } from "lucide-react";
 
 const newsItems = [
@@ -13,7 +14,7 @@ export function NewsTicker() {
     <div className="bg-slate-900 text-white border-b border-slate-800 overflow-hidden h-10 flex items-center relative z-40">
       <div className="bg-destructive px-4 h-full flex items-center gap-2 font-bold text-xs uppercase tracking-wider z-10 shadow-lg shrink-0">
         <TrendingUp className="h-4 w-4" />
-        Legal Updates
+        <Link href="/blog" className="text-primary hover:underline font-semibold">Legal Updates</Link>
       </div>
       <div className="flex whitespace-nowrap overflow-hidden w-full relative">
         {/* Mask to fade edges */}

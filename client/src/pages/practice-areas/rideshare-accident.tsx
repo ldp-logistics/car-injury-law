@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { SeoContentSection } from "@/components/seo-content-section";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
@@ -80,7 +81,7 @@ export default function RideshareAccidentPage() {
             <section>
               <h2 className="text-3xl font-bold font-serif text-primary mb-6">We Represent Passengers & Drivers</h2>
               <p className="text-lg text-slate-600">
-                Whether you were a passenger in the Uber, a driver hit by an Uber, or an Uber driver hit by someone else, we can help. These cases involve multiple insurance companies pointing fingers at each other. We step in and demand payment.
+                Whether you were a passenger in the Uber, a driver hit by an Uber, or an Uber driver hit by someone else, we can help. These cases involve multiple <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance companies</Link> pointing fingers at each other. We step in and demand payment.
               </p>
             </section>
 

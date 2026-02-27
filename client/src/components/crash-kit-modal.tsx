@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { useState } from "react";
 import { FileText, CheckSquare, Download, X } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -17,7 +18,7 @@ export function CrashKitModal() {
               <FileText className="h-12 w-12 text-blue-600" />
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h3 className="text-2xl font-bold text-primary mb-2">Free Car Accident Checklist</h3>
+              <h3 className="text-2xl font-bold text-primary mb-2">Free <Link href="/practice-areas/car-accident" className="text-primary hover:underline font-semibold">Car Accident</Link> Checklist</h3>
               <p className="text-muted-foreground">
                 Don't know what to do after a crash? Download our printable step-by-step guide to keep in your glovebox. It could save your case.
               </p>

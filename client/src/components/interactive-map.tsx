@@ -25,7 +25,7 @@ export function InteractiveMap() {
             National Reach. <span className="text-secondary">Local Power.</span>
           </h3>
           <p className="text-slate-600 text-lg leading-relaxed">
-            We don't just have a license; we have a <strong>network</strong>. Admani Law has boots on the ground in all 50 states. Select your region to find your local legal team.
+            We don't just have a license; we have a <strong>network</strong>. Admani Law has boots on the ground in all 50 states. Select your region to find your local <Link href="/about" className="text-primary hover:underline font-semibold">legal team</Link>.
           </p>
 
           <div className="grid grid-cols-2 gap-4">

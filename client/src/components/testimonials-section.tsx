@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { Star } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -37,7 +38,7 @@ export function TestimonialsSection() {
               We Don't Just Make Promises. <br/> We Deliver Results.
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Our track record speaks for itself. We have helped thousands of injury victims get their lives back on track.
+              Our <Link href="/case-results" className="text-primary hover:underline font-semibold">track record</Link> speaks for itself. We have helped thousands of <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">injury</Link> victims get their lives back on track.
             </p>
             
             <div className="relative rounded-xl overflow-hidden shadow-2xl aspect-video mb-8 md:mb-0">

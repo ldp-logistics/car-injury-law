@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { SeoContentSection } from "@/components/seo-content-section";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
@@ -86,11 +87,11 @@ export default function StatePage() {
                 <p className="text-xl font-serif font-bold text-primary">{STATE_DATA.faultSystem}</p>
               </div>
               <div>
-                <p className="text-sm text-gray-500 uppercase font-bold tracking-wider">Min. Insurance</p>
+                <p className="text-sm text-gray-500 uppercase font-bold tracking-wider">Min. <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance</Link></p>
                 <p className="text-xl font-serif font-bold text-primary">{STATE_DATA.minInsurance}</p>
               </div>
               <div>
-                <p className="text-sm text-gray-500 uppercase font-bold tracking-wider">Avg. Settlement</p>
+                <p className="text-sm text-gray-500 uppercase font-bold tracking-wider">Avg. <Link href="/case-results" className="text-primary hover:underline font-semibold">Settlement</Link></p>
                 <p className="text-xl font-serif font-bold text-secondary">{STATE_DATA.avgSettlement}</p>
               </div>
             </div>
@@ -102,7 +103,7 @@ export default function StatePage() {
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2 space-y-12">
               <section>
-                <h2 className="text-3xl font-bold font-serif text-primary mb-6">Why You Need a {STATE_DATA.name} Car Accident Lawyer</h2>
+                <h2 className="text-3xl font-bold font-serif text-primary mb-6">Why You Need a {STATE_DATA.name} <Link href="/practice-areas/car-accident" className="text-primary hover:underline font-semibold">Car Accident Lawyer</Link></h2>
                 <div className="prose prose-lg text-gray-600 max-w-none">
                   <p>
                     {STATE_DATA.name}'s traffic laws are complex. From navigating the specific "{STATE_DATA.faultSystem}" rules to dealing with aggressive local insurance adjusters, you need a legal team that understands the local landscape.
@@ -186,7 +187,7 @@ export default function StatePage() {
                     <div className="space-y-4 mt-6">
                       <div className="bg-white/10 p-3 rounded">
                         <p className="text-2xl font-bold text-secondary">$1,250,000</p>
-                        <p className="text-sm text-gray-300">Truck Accident Settlement</p>
+                        <p className="text-sm text-gray-300"><Link href="/practice-areas/truck-accident" className="text-primary hover:underline font-semibold">Truck Accident</Link> Settlement</p>
                       </div>
                       <div className="bg-white/10 p-3 rounded">
                         <p className="text-2xl font-bold text-secondary">$450,000</p>
