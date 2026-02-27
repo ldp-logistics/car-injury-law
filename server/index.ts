@@ -1,6 +1,20 @@
-import express, { type Request, Response, NextFunction } from "express";
+import express, { type Express, type Request, type Response, type NextFunction } from "express";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import fs from "fs";
+import path from "path";
+import { getMetaTagsHtml } from "./meta";
+
+export function log(message: string, source = "express") {
+  const formattedTime = new Date().toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  });
+
+  console.log(`${formattedTime} [${source}] ${message}`);
+}
+
 
 const app = express();
 
@@ -61,9 +75,37 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
+    const { setupVite } = await import("./vite");
     await setupVite(app, server);
   } else {
     serveStatic(app);
+  }
+
+  function serveStatic(app: Express) {
+    const distPath = path.resolve(process.cwd(), "dist/public");
+
+    if (!fs.existsSync(distPath)) {
+      throw new Error(
+        `Could not find the build directory: ${distPath}, make sure to build the client first`,
+      );
+    }
+
+    app.use(express.static(distPath));
+
+    // fall through to index.html if the file doesn't exist
+    app.use("*", async (req, res, next) => {
+      try {
+        const indexPath = path.resolve(distPath, "index.html");
+        let template = await fs.promises.readFile(indexPath, "utf-8");
+
+        const metaTags = getMetaTagsHtml(req.originalUrl);
+        template = template.replace("<!-- SEO_META_TAGS -->", metaTags);
+
+        res.status(200).set({ "Content-Type": "text/html" }).end(template);
+      } catch (e) {
+        next(e);
+      }
+    });
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
