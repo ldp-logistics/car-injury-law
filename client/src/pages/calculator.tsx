@@ -20,10 +20,10 @@ export default function CalculatorPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold font-serif text-slate-900 mb-6">
-              <Link href="/practice-areas/car-accident" className="text-primary hover:underline font-semibold">Car Accident</Link> <span className="text-secondary"><Link href="/case-results" className="text-primary hover:underline font-semibold">Settlement</Link> Calculator</span>
+              Car Accident <span className="text-secondary">Settlement Calculator</span>
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Find out what your case could be worth in seconds. Our advanced algorithm considers medical expenses, property damage, and pain & suffering multipliers used by <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance companies</Link>.
+              Find out what your case could be worth in seconds. Our advanced algorithm considers medical expenses, property damage, and pain & suffering multipliers used by <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance companies</Link>.
             </p>
           </div>
 
@@ -32,7 +32,7 @@ export default function CalculatorPage() {
           <div className="max-w-3xl mx-auto mt-16 prose prose-lg text-slate-600">
             <h2 className="text-slate-900 font-serif">How We Calculate Your Settlement</h2>
             <p>
-              <Link href="/blog/dealing-with-insurance-adjusters" className="text-primary hover:underline font-semibold">Insurance adjusters</Link> use specific formulas to determine the value of an <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">injury claim</Link>. Our calculator mimics this process by aggregating your economic damages (bills, lost wages) and applying a multiplier for non-economic damages (pain and suffering) based on the severity of your injury.
+              Insurance adjusters use specific formulas to determine the value of an injury claim. Our calculator mimics this process by aggregating your economic damages (bills, lost wages) and applying a multiplier for non-economic damages (pain and suffering) based on the severity of your injury.
             </p>
             
             <h3 className="text-slate-900 font-serif">Factors That Increase Value</h3>
@@ -46,7 +46,7 @@ export default function CalculatorPage() {
             <div className="bg-slate-100 p-6 rounded-xl border-l-4 border-primary mt-8 not-prose">
               <p className="font-bold text-primary mb-2">Disclaimer</p>
               <p className="text-sm text-slate-600 m-0">
-                This calculator provides an estimate only and does not guarantee a specific result. Every case is unique. For an accurate valuation, you must speak with a licensed <Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">attorney</Link>.
+                This calculator provides an estimate only and does not guarantee a specific result. Every case is unique. For an accurate valuation, you must speak with a licensed attorney.
               </p>
             </div>
           </div>

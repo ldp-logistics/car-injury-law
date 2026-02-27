@@ -30,7 +30,7 @@ export default function JackknifeAccidentPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-flex items-center gap-2 text-secondary font-bold uppercase tracking-wider mb-4 text-sm">
-                  <Truck className="h-4 w-4" /> Specialized <Link href="/about" className="text-primary hover:underline font-semibold">Legal Representation</Link>
+                  <Truck className="h-4 w-4" /> Specialized Legal Representation
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold font-serif mb-6">
                   Jackknife <span className="text-secondary">Truck Accidents</span>

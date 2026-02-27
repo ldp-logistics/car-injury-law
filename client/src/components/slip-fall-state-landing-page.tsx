@@ -130,14 +130,14 @@ export default function SlipFallStateLandingPage({ data }: SlipFallStateLandingP
                         for visitors. When they fail to fix known hazards or warn you about them, they can be held liable.
                       </p>
                       <p>
-                        Our experienced {data.name} slip and fall lawyers know how to prove <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">negligence</Link>. We investigate 
+                        Our experienced {data.name} slip and fall lawyers know how to prove negligence. We investigate 
                         wet floors, uneven pavement, poor lighting, icy walkways, and broken stairs to establish 
                         that the owner knew (or should have known) about the danger and failed to act.
                       </p>
                     </div>
                  </div>
 
-                 {/* H2: Slip and Fall <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance</Link> Coverage in [STATE] */}
+                 {/* H2: Slip and Fall Insurance Coverage in [STATE] */}
                  <div>
                     <h2 className="text-3xl font-bold font-serif text-primary mb-6">
                       Slip and Fall Insurance Coverage in {data.name}
@@ -208,7 +208,7 @@ export default function SlipFallStateLandingPage({ data }: SlipFallStateLandingP
                           <h3 className="font-bold text-lg text-primary">Trial Ready</h3>
                           <p className="text-gray-600">
                             Many firms settle cheap. We are ready to take property owners and their insurance 
-                            companies to court if they refuse to offer a <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">fair <Link href="/case-results" className="text-primary hover:underline font-semibold">settlement</Link></Link>.
+                            companies to court if they refuse to offer a <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">fair settlement</Link>.
                           </p>
                         </div>
                       </div>
@@ -218,7 +218,7 @@ export default function SlipFallStateLandingPage({ data }: SlipFallStateLandingP
                  {/* SEO Content Section */}
                  <SeoContentSection service="Slip and Fall Lawyer" location={data.name} />
 
-                 {/* H2: Speak With Our <Link href="/practice-areas/slip-and-fall" className="text-primary hover:underline font-semibold">Slip and Fall Lawyer</Link> in [STATE] Today. */}
+                 {/* H2: Speak With Our Slip and Fall Lawyer in [STATE] Today. */}
                  <div className="bg-slate-900 text-white p-8 rounded-2xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 opacity-10">
                        <Footprints className="h-64 w-64 -mr-16 -mt-16" />
@@ -228,7 +228,7 @@ export default function SlipFallStateLandingPage({ data }: SlipFallStateLandingP
                         Speak With Our Slip and Fall Lawyer in {data.name} Today
                       </h2>
                       <p className="text-gray-300 text-lg mb-8 max-w-2xl">
-                        Premises liability cases in {data.name} have a statute of limitations ({data.statute}). 
+                        <Link href="/practice-areas/slip-and-fall" className="text-black hover:underline font-semibold">Premises liability</Link> cases in {data.name} have a statute of limitations ({data.statute}). 
                         The longer you wait, the harder it is to prove the dangerous condition existed. 
                         Contact us 24/7 for a free consultation.
                       </p>

@@ -89,7 +89,7 @@ export default function CityLandingPage({ stateData, city }: CityLandingPageProp
                   Serving {city} & Surrounding Areas
                 </div>
                 <h1 className="text-4xl lg:text-5xl font-bold text-white font-serif leading-tight">
-                  {city} <Link href="/practice-areas/car-accident" className="text-primary hover:underline font-semibold">Car Accident</Link> <br/>
+                  {city} Car Accident <br/>
                   <span className="text-secondary">Attorneys</span>
                 </h1>
                 <p className="text-xl text-gray-300 max-w-xl leading-relaxed">
@@ -121,7 +121,7 @@ export default function CityLandingPage({ stateData, city }: CityLandingPageProp
                 <h2 className="text-3xl font-bold font-serif text-primary mb-6">Why Hire a Local {city} Lawyer?</h2>
                 <article className="prose prose-lg text-gray-600 max-w-none">
                   <p>
-                    Accidents in {city} present unique challenges. From high-traffic areas to specific local ordinances in {stateData.name}, you need an <Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">attorney</Link> who understands the landscape.
+                    Accidents in {city} present unique challenges. From high-traffic areas to specific local ordinances in {stateData.name}, you need an attorney who understands the landscape.
                   </p>
                   <p>
                     Our network partners in {city} have successfully handled cases involving:
@@ -129,7 +129,7 @@ export default function CityLandingPage({ stateData, city }: CityLandingPageProp
                   <ul>
                     <li>Intersections with high crash rates in {city}</li>
                     <li>Local hospital lien negotiations</li>
-                    <li>Dealing with {stateData.name} specific <Link href="/blog/dealing-with-insurance-adjusters" className="text-primary hover:underline font-semibold"><Link href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance</Link> adjusters</Link></li>
+                    <li>Dealing with {stateData.name} specific <Link href="/blog/dealing-with-insurance-adjusters" className="text-primary hover:underline font-semibold">insurance adjusters</Link></li>
                   </ul>
                 </article>
               </section>

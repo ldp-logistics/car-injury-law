@@ -21,7 +21,7 @@ export function LegalGlossary() {
     <section className="py-16 bg-white border-t border-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h3 className="text-2xl font-bold font-serif text-primary"><Link href="/glossary" className="text-primary hover:underline font-semibold">Legal Terminology</Link> Decoded</h3>
+          <h3 className="text-2xl font-bold font-serif text-primary">Legal Terminology Decoded</h3>
           <p className="text-muted-foreground">Hover over common terms to understand what they mean.</p>
         </div>
 

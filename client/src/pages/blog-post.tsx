@@ -130,7 +130,7 @@ export default function BlogPostPage() {
             <div className="flex-1 text-center md:text-left">
               <h2 className="text-xl font-bold font-serif text-primary mb-2">About the Author</h2>
               <p className="text-gray-600 mb-4 text-sm">
-                Alicia Dawson is a Senior Paralegal at Car Injury Law with over 15 years of experience in <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">personal injury</Link> claims. She specializes in case management, client advocacy, and navigating complex <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance</Link> procedures to support accident victims.
+                Alicia Dawson is a Senior Paralegal at Car Injury Law with over 15 years of experience in <Link href="/practice-areas/personal-injury" className="text-black hover:underline font-semibold">personal injury</Link> claims. She specializes in case management, client advocacy, and navigating complex insurance procedures to support accident victims.
               </p>
               <Button onClick={scrollToForm} className="bg-secondary text-primary font-bold hover:bg-secondary/90">
                 Get a Free Case Evaluation

@@ -11,15 +11,6 @@ interface MetaTags {
     ogImage: string;
 }
 
-const DEFAULT_META: MetaTags = {
-    title: "Car Injury Law | Nationwide Accident & Injury Attorneys",
-    description: "Top-rated nationwide personal injury firm. We fight insurance companies to get you maximum compensation. Free case review. No win, no fee. Call 1-888-669-5559.",
-    keywords: "car accident lawyer, injury attorney, truck accident, motorcycle crash, wrongful death, settlement calculator, Saad Admani",
-    canonical: "https://www.carinjurylaw.com/",
-    ogTitle: "Car Injury Law | Get Maximum Compensation",
-    ogDescription: "Injured in a crash? We fight the big giants every day. Available 24/7 for a free consultation.",
-    ogImage: "https://www.carinjurylaw.com/og-image.png"
-};
 
 function generateTagsHtml(meta: MetaTags): string {
     // Ensure we escape strings properly to avoid XSS or broken HTML

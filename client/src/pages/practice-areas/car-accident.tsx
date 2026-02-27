@@ -93,10 +93,10 @@ export default function CarAccidentPage() {
                 transition={{ duration: 0.6 }}
               >
                 <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-6 tracking-wide">
-                  Trusted <Link href="/about" className="text-primary hover:underline font-semibold">Legal Representation</Link>
+                  Trusted Legal Representation
                 </span>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif leading-tight" data-testid="hero-heading">
-                  Expert <Link href="/practice-areas/car-accident" className="text-primary hover:underline font-semibold">Car Accident</Link> Lawyers
+                  Expert Car Accident Lawyers
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
                   We fight relentlessly for car accident victims' rights. When insurance companies 
@@ -206,7 +206,7 @@ export default function CarAccidentPage() {
                 </h2>
                 <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
                   Understanding your insurance coverage is crucial after an accident. We help you 
-                  navigate all available coverage options to maximize your <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link>.
+                  navigate all available coverage options to maximize your compensation.
                 </p>
               </motion.div>
 
@@ -253,7 +253,7 @@ export default function CarAccidentPage() {
                       <div className="h-16 w-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6">
                         <Users className="h-8 w-8 text-secondary" />
                       </div>
-                      <h3 className="text-xl font-bold text-primary mb-4">PIP (<Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">Personal Injury</Link> Protection)</h3>
+                      <h3 className="text-xl font-bold text-primary mb-4">PIP (Personal Injury Protection)</h3>
                       <p className="text-muted-foreground leading-relaxed">
                         PIP coverage, required in no-fault states, pays for your medical expenses 
                         and lost wages regardless of who caused the accident. We ensure you receive 
@@ -353,7 +353,7 @@ export default function CarAccidentPage() {
                         </li>
                         <li className="flex items-center gap-3">
                           <CheckCircle className="h-5 w-5 text-secondary flex-shrink-0" />
-                          <span><Link href="/case-results" className="text-primary hover:underline font-semibold">Settlement</Link> demand preparation</span>
+                          <span>Settlement demand preparation</span>
                         </li>
                       </ul>
                     </CardContent>
@@ -372,7 +372,7 @@ export default function CarAccidentPage() {
                       <h3 className="text-2xl font-bold mb-4">Full Damage Calculation</h3>
                       <p className="text-primary/80 leading-relaxed mb-6">
                         We meticulously calculate every element of your damages to ensure you 
-                        receive full compensation. <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance companies</Link> often undervalue claims—we 
+                        receive full compensation. <Link href="/vs-insurance" className="text-black hover:underline font-semibold">Insurance companies</Link> often undervalue claims—we 
                         fight for what you actually deserve.
                       </p>
                       <ul className="space-y-3">

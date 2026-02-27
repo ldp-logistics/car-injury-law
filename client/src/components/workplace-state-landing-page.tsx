@@ -137,7 +137,7 @@ export default function WorkplaceStateLandingPage({ data }: WorkplaceStateLandin
                     </div>
                  </div>
 
-                 {/* H2: Workplace <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance</Link> Coverage in [STATE] */}
+                 {/* H2: Workplace Insurance Coverage in [STATE] */}
                  <div>
                     <h2 className="text-3xl font-bold font-serif text-primary mb-6">
                       Workplace Insurance Coverage in {data.name}
@@ -166,7 +166,7 @@ export default function WorkplaceStateLandingPage({ data }: WorkplaceStateLandin
                             <h3 className="font-bold text-lg mb-2">Third-Party Liability</h3>
                             <p className="text-sm">
                               If a negligent third party (like a subcontractor, equipment manufacturer, or careless driver) 
-                              caused your injury, you can file a <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">personal injury</Link> lawsuit against them in {data.name} courts 
+                              caused your injury, you can file a <Link href="/practice-areas/personal-injury" className="text-black hover:underline font-semibold">personal injury</Link> lawsuit against them in {data.name} courts 
                               for full damages, including pain and suffering.
                             </p>
                           </CardContent>
@@ -216,7 +216,7 @@ export default function WorkplaceStateLandingPage({ data }: WorkplaceStateLandin
                  {/* SEO Content Section */}
                  <SeoContentSection service="Workplace Injury Lawyer" location={data.name} />
 
-                 {/* H2: Speak With Our <Link href="/practice-areas/workplace-injury" className="text-primary hover:underline font-semibold">Workplace Injury <Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">Lawyer</Link></Link> in [STATE] Today. */}
+                 {/* H2: Speak With Our <Link href="/practice-areas/workplace-injury" className="text-primary hover:underline font-semibold">Workplace Injury Lawyer</Link> in [STATE] Today. */}
                  <div className="bg-slate-900 text-white p-8 rounded-2xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 opacity-10">
                        <HardHat className="h-64 w-64 -mr-16 -mt-16" />

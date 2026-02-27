@@ -52,7 +52,7 @@ export default function PersonalInjuryPage() {
                   <span className="text-secondary">Lawyers</span>
                 </h1>
                 <p className="text-xl text-gray-300 max-w-xl leading-relaxed">
-                  When negligence causes harm, you need a powerful advocate. We connect you with top-rated personal injury attorneys across the nation to fight for your rights.
+                  When negligence causes harm, you need a powerful advocate. We connect you with top-rated <Link href="/practice-areas/personal-injury" className="text-black hover:underline font-semibold">personal injury</Link> attorneys across the nation to fight for your rights.
                 </p>
                 <div className="space-y-3 pt-4">
                   {["No Win, No Fee Guarantee", "Millions Recovered for Clients", "Available 24/7 Nationwide"].map((item, i) => (
@@ -77,7 +77,7 @@ export default function PersonalInjuryPage() {
             <section>
               <h2 className="text-3xl font-bold font-serif text-primary mb-6">Experienced Personal Injury Lawyers</h2>
               <p className="text-lg text-slate-700 mb-4 leading-relaxed">
-                If you have been injured due to someone else's negligence, you have specific <strong>Personal Injury legal rights</strong>. A qualified <strong><Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">Personal Injury Lawyer</Link></strong> acts as your shield against insurance companies who try to devalue your claim. Whether it's a car crash, a slip and fall, or a workplace accident, our network of <strong>Personal Injury Attorneys</strong> is dedicated to restoring your financial stability.
+                If you have been injured due to someone else's negligence, you have specific <strong>Personal Injury legal rights</strong>. A qualified <strong>Personal Injury Lawyer</strong> acts as your shield against insurance companies who try to devalue your claim. Whether it's a car crash, a slip and fall, or a workplace accident, our network of <strong>Personal Injury Attorneys</strong> is dedicated to restoring your financial stability.
               </p>
               <p className="text-lg text-slate-700 mb-4 leading-relaxed">
                 We handle complex cases including those requiring a <strong>Rideshare accident attorney</strong> or an <strong>Uber accident attorney</strong>. These cases often involve multi-layered insurance policies that require specialized knowledge to navigate effectively.
@@ -87,7 +87,7 @@ export default function PersonalInjuryPage() {
             <section className="bg-slate-50 p-8 rounded-xl border border-slate-200">
               <h2 className="text-3xl font-bold font-serif text-primary mb-6">Personal Injury Insurance Coverage</h2>
               <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                Understanding insurance is the cornerstone of any successful claim. Most <strong><Link href="/practice-areas/car-accident" className="text-primary hover:underline font-semibold">Car accident</Link> law firms</strong> will tell you that coverage depends heavily on the "At-Fault" vs. "No-Fault" laws in your state.
+                Understanding insurance is the cornerstone of any successful claim. Most <strong>Car accident law firms</strong> will tell you that coverage depends heavily on the "At-Fault" vs. "No-Fault" laws in your state.
               </p>
               
               <div className="grid md:grid-cols-2 gap-6">
@@ -113,7 +113,7 @@ export default function PersonalInjuryPage() {
             <section>
               <h2 className="text-3xl font-bold font-serif text-primary mb-6">Why Choose Car Injury Law for Personal Injury Case?</h2>
               <p className="text-lg text-slate-700 mb-6 leading-relaxed">
-                Choosing the right representation can mean the difference between a small <Link href="/case-results" className="text-primary hover:underline font-semibold">settlement</Link> and full <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link>. As a premier <Link href="/join-network" className="text-primary hover:underline font-semibold">referral network</Link>, we offer:
+                Choosing the right representation can mean the difference between a small settlement and full compensation. As a premier referral network, we offer:
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">

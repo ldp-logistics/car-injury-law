@@ -38,7 +38,7 @@ export function TestimonialsSection() {
               We Don't Just Make Promises. <br/> We Deliver Results.
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Our <Link href="/case-results" className="text-primary hover:underline font-semibold">track record</Link> speaks for itself. We have helped thousands of <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">injury</Link> victims get their lives back on track.
+              Our <Link href="/case-results" className="text-black hover:underline font-semibold">track record</Link> speaks for itself. We have helped thousands of injury victims get their lives back on track.
             </p>
             
             <div className="relative rounded-xl overflow-hidden shadow-2xl aspect-video mb-8 md:mb-0">

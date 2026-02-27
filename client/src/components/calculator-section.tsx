@@ -36,7 +36,7 @@ export function CalculatorSection() {
           <div className="text-center mb-12">
              <span className="text-secondary font-bold tracking-wider text-sm uppercase">Free Tool</span>
             <h2 className="text-3xl md:text-4xl font-bold text-primary mt-2 font-serif">
-              <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">Injury</Link> <Link href="/case-results" className="text-primary hover:underline font-semibold">Settlement</Link> Calculator
+              Injury Settlement Calculator
             </h2>
             <p className="text-muted-foreground mt-4">
               Estimate the potential value of your case in seconds. Note: This is an estimate, not a guarantee.
@@ -127,7 +127,7 @@ export function CalculatorSection() {
                       {formatCurrency(estimatedValue)}
                     </div>
                     <p className="text-sm text-gray-400 max-w-xs mx-auto mt-6">
-                      *This is a preliminary estimate based on your inputs. Actual settlement amounts can vary significantly.
+                      *This is a preliminary estimate based on your inputs. Actual <Link href="/case-results" className="text-black hover:underline font-semibold">settlement</Link> amounts can vary significantly.
                     </p>
                     <Button className="mt-8 bg-white text-primary hover:bg-gray-100 font-bold w-full">
                       Get Official Evaluation

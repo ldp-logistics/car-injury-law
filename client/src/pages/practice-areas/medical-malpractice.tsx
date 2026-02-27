@@ -96,10 +96,10 @@ export default function MedicalMalpracticePage() {
                 transition={{ duration: 0.6 }}
               >
                 <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-6 tracking-wide">
-                  Fighting Healthcare <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">Negligence</Link>
+                  Fighting Healthcare Negligence
                 </span>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif leading-tight" data-testid="hero-heading">
-                  <Link href="/practice-areas/medical-malpractice" className="text-primary hover:underline font-semibold">Medical Malpractice</Link> Lawyers
+                  Medical Malpractice Lawyers
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
                   When healthcare providers fail their duty to patients, the consequences can be 
@@ -142,7 +142,7 @@ export default function MedicalMalpracticePage() {
                 <p className="text-lg leading-relaxed mb-6">
                   Medical malpractice occurs when healthcare providers deviate from the accepted 
                   standard of care, causing patient harm. These cases require specialized legal 
-                  knowledge and medical expertise to prove negligence and secure <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link>.
+                  knowledge and medical expertise to prove negligence and secure compensation.
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6 my-10">
@@ -217,14 +217,14 @@ export default function MedicalMalpracticePage() {
               >
                 <div className="flex items-center justify-center gap-3 mb-4">
                   <Shield className="h-8 w-8 text-secondary" />
-                  <span className="text-secondary font-bold tracking-wider text-sm uppercase"><Link href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance</Link> & Liability</span>
+                  <span className="text-secondary font-bold tracking-wider text-sm uppercase">Insurance & Liability</span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold font-serif text-primary" data-testid="heading-insurance">
                   Medical Liability Insurance
                 </h2>
                 <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
                   Understanding the legal framework for medical malpractice is essential for 
-                  building a <Link href="/case-results" className="text-primary hover:underline font-semibold">successful case</Link> against healthcare providers and institutions.
+                  building a successful case against healthcare providers and institutions.
                 </p>
               </motion.div>
 
@@ -614,7 +614,7 @@ export default function MedicalMalpracticePage() {
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   We have built a network of experienced medical malpractice attorneys across all 50 states 
-                  to ensure you get the best <Link href="/about" className="text-primary hover:underline font-semibold">legal representation</Link> near you.
+                  to ensure you get the best <Link href="/about" className="text-black hover:underline font-semibold">legal representation</Link> near you.
                 </p>
               </div>
               

@@ -89,7 +89,7 @@ export default function MedicalMalpracticeStateLandingPage({ data }: MedicalMalp
                   Medical Malpractice Lawyers in <span className="text-secondary">{data.name}</span>
                 </h1>
                 <p className="text-xl text-gray-300 max-w-xl leading-relaxed">
-                  Injured by a doctor or hospital in {data.name}? We fight powerful healthcare systems and <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance companies</Link> to get you the justice you deserve.
+                  Injured by a doctor or hospital in {data.name}? We fight powerful healthcare systems and <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance companies</Link> to get you the justice you deserve.
                 </p>
                 <div className="flex flex-col gap-3 pt-4">
                   <div className="flex items-center gap-3 text-white">
@@ -127,7 +127,7 @@ export default function MedicalMalpracticeStateLandingPage({ data }: MedicalMalp
                     <div className="prose prose-lg text-gray-600 max-w-none">
                       <p>
                         When you seek medical treatment in {data.name}, you trust that doctors, nurses, and hospitals 
-                        will provide a certain standard of care. When that trust is broken through <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">negligence</Link>, the results 
+                        will provide a certain standard of care. When that trust is broken through negligence, the results 
                         can be life-altering.
                       </p>
                       <p>
@@ -173,7 +173,7 @@ export default function MedicalMalpracticeStateLandingPage({ data }: MedicalMalp
                         Insurance companies often use these laws to minimize payouts. It is crucial to have an attorney who understands {data.name}'s specific malpractice laws to maximize your compensation within these legal frameworks.
                       </p>
                       <p>
-                        We analyze all available insurance coverage, including individual provider malpractice insurance, hospital umbrella policies, and state patient <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link> funds where applicable.
+                        We analyze all available insurance coverage, including individual provider malpractice insurance, hospital umbrella policies, and state patient compensation funds where applicable.
                       </p>
                     </div>
                  </div>
@@ -202,7 +202,7 @@ export default function MedicalMalpracticeStateLandingPage({ data }: MedicalMalp
                         <div>
                           <h3 className="font-bold text-lg text-primary">Trial Ready</h3>
                           <p className="text-gray-600">
-                            Hospitals settle when they know your <Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">lawyer</Link> is ready to go to court. We prepare every case for trial from day one.
+                            Hospitals settle when they know your lawyer is ready to go to court. We prepare every case for trial from day one.
                           </p>
                         </div>
                       </div>
@@ -212,7 +212,7 @@ export default function MedicalMalpracticeStateLandingPage({ data }: MedicalMalp
                  {/* SEO Content Section */}
                  <SeoContentSection service="Medical Malpractice Lawyer" location={data.name} />
 
-                 {/* H2: Speak With Our <Link href="/practice-areas/medical-malpractice" className="text-primary hover:underline font-semibold">Medical Malpractice Lawyer</Link> in [STATE] Today. */}
+                 {/* H2: Speak With Our Medical Malpractice Lawyer in [STATE] Today. */}
                  <div className="bg-slate-900 text-white p-8 rounded-2xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 opacity-10">
                        <Stethoscope className="h-64 w-64 -mr-16 -mt-16" />

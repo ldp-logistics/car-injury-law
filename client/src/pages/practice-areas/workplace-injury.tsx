@@ -98,7 +98,7 @@ export default function WorkplaceInjuryPage() {
                   Beyond Workers' Compensation
                 </span>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif leading-tight" data-testid="hero-heading">
-                  <Link href="/practice-areas/workplace-injury" className="text-primary hover:underline font-semibold">Workplace Injury</Link> Lawyers
+                  Workplace Injury Lawyers
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
                   Workers' compensation often isn't enough. We investigate every angle to find 
@@ -177,7 +177,7 @@ export default function WorkplaceInjuryPage() {
                   <Card className="border-l-4 border-l-secondary">
                     <CardContent className="p-6">
                       <Scale className="h-10 w-10 text-secondary mb-4" />
-                      <h3 className="font-bold text-primary text-lg mb-2">Third-Party <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">Personal Injury</Link></h3>
+                      <h3 className="font-bold text-primary text-lg mb-2">Third-Party Personal Injury</h3>
                       <p className="text-muted-foreground text-sm mb-4">
                         When someone other than your employer caused your injury, you can sue for 
                         full damages:
@@ -226,7 +226,7 @@ export default function WorkplaceInjuryPage() {
               >
                 <div className="flex items-center justify-center gap-3 mb-4">
                   <Shield className="h-8 w-8 text-secondary" />
-                  <span className="text-secondary font-bold tracking-wider text-sm uppercase"><Link href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance</Link> & Liability</span>
+                  <span className="text-secondary font-bold tracking-wider text-sm uppercase">Insurance & Liability</span>
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold font-serif text-primary" data-testid="heading-insurance">
                   Workplace Insurance and Liability
@@ -301,7 +301,7 @@ export default function WorkplaceInjuryPage() {
                         </li>
                         <li className="flex items-start gap-2 text-sm text-muted-foreground">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          Property owners (<Link href="/practice-areas/slip-and-fall" className="text-primary hover:underline font-semibold">premises liability</Link>)
+                          Property owners (premises liability)
                         </li>
                         <li className="flex items-start gap-2 text-sm text-muted-foreground">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -441,7 +441,7 @@ export default function WorkplaceInjuryPage() {
                   <div className="h-20 w-20 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-6">
                     <DollarSign className="h-10 w-10 text-secondary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3"><Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">Maximum Compensation</Link></h3>
+                  <h3 className="text-xl font-bold mb-3">Maximum Compensation</h3>
                   <p className="text-gray-400 leading-relaxed">
                     We don't stop at workers' comp. By identifying third-party defendants, we 
                     pursue full damages including pain and suffering, which workers' comp 
@@ -522,7 +522,7 @@ export default function WorkplaceInjuryPage() {
                   Free Case Evaluation
                 </h2>
                 <p className="text-muted-foreground mt-4">
-                  Fill out the form below and one of our workplace injury attorneys will 
+                  Fill out the form below and one of our <Link href="/practice-areas/workplace-injury" className="text-black hover:underline font-semibold">workplace injury</Link> attorneys will 
                   contact you within 24 hours.
                 </p>
               </motion.div>

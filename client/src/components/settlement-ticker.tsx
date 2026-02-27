@@ -11,7 +11,7 @@ export function SettlementTicker() {
           </div>
           <div>
             <p className="text-xs text-gray-500 uppercase font-bold">Just Settled</p>
-            <p className="font-bold text-primary">$1,250,000 <span className="text-xs font-normal text-gray-400">- <Link href="/practice-areas/truck-accident" className="text-primary hover:underline font-semibold">Truck Accident</Link></span></p>
+            <p className="font-bold text-primary">$1,250,000 <span className="text-xs font-normal text-gray-400">- <Link href="/practice-areas/truck-accident" className="text-black hover:underline font-semibold">Truck Accident</Link></span></p>
           </div>
         </div>
       </div>

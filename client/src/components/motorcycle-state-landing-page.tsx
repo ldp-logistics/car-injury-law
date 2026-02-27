@@ -69,7 +69,7 @@ export default function MotorcycleStateLandingPage({ data }: MotorcycleStateLand
       />
 
       <main>
-        {/* H1: Motorcycle <Link href="/practice-areas/car-accident" className="text-primary hover:underline font-semibold">Crash</Link> Lawyers in [STATE] */}
+        {/* H1: Motorcycle Crash Lawyers in [STATE] */}
         <div id="overview" className="relative bg-slate-900 min-h-[600px] flex items-center">
           <div 
             className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
@@ -114,7 +114,7 @@ export default function MotorcycleStateLandingPage({ data }: MotorcycleStateLand
           </div>
         </div>
 
-        {/* H2: Experienced <Link href="/practice-areas/motorcycle-accident" className="text-primary hover:underline font-semibold">Motorcycle Accident Lawyers</Link> in [STATE] */}
+        {/* H2: Experienced Motorcycle Accident Lawyers in [STATE] */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
              <div className="grid lg:grid-cols-3 gap-12">
@@ -126,11 +126,11 @@ export default function MotorcycleStateLandingPage({ data }: MotorcycleStateLand
                     <div className="prose prose-lg text-gray-600 max-w-none">
                       <p>
                         Riding in {data.name} offers incredible freedom, but it also comes with unique risks. 
-                        When accidents happen, injured riders often face unfair prejudice from <Link href="/blog/dealing-with-insurance-adjusters" className="text-primary hover:underline font-semibold"><Link href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance</Link> adjusters</Link> 
+                        When accidents happen, injured riders often face unfair prejudice from <Link href="/blog/dealing-with-insurance-adjusters" className="text-primary hover:underline font-semibold">insurance adjusters</Link> 
                         and juries who assume the motorcyclist was reckless.
                       </p>
                       <p>
-                        Our experienced {data.name} motorcycle accident lawyers know how to combat this bias. 
+                        Our experienced {data.name} <Link href="/practice-areas/motorcycle-accident" className="text-black hover:underline font-semibold">motorcycle accident</Link> lawyers know how to combat this bias. 
                         We understand the specific traffic laws in {data.name}, including rules regarding lane splitting, 
                         helmet requirements, and right-of-way violations that frequently cause motorcycle crashes.
                       </p>
@@ -181,7 +181,7 @@ export default function MotorcycleStateLandingPage({ data }: MotorcycleStateLand
                     </div>
                  </div>
 
-                 {/* H2: Why Choose Car <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">Injury</Link> Law for Motorcycle Case? */}
+                 {/* H2: Why Choose Car Injury Law for Motorcycle Case? */}
                  <div>
                     <h2 className="text-3xl font-bold font-serif text-primary mb-6">
                       Why Choose Car Injury Law for Motorcycle Case?

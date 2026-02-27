@@ -67,7 +67,7 @@ export default function AboutPage() {
                   <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
                     <Award className="h-8 w-8 text-secondary mb-2" />
                     <h3 className="font-bold text-slate-900">Top 1% Selection</h3>
-                    <p className="text-sm text-slate-500">Only attorneys with 7-figure <Link href="/case-results" className="text-primary hover:underline font-semibold">verdict</Link> history.</p>
+                    <p className="text-sm text-slate-500">Only attorneys with 7-figure <Link href="/case-results" className="text-black hover:underline font-semibold">verdict</Link> history.</p>
                   </div>
                   <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
                     <Scale className="h-8 w-8 text-secondary mb-2" />
@@ -86,7 +86,7 @@ export default function AboutPage() {
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold font-serif text-slate-900 mb-4">Our Vetting Process</h2>
               <p className="text-slate-600 max-w-2xl mx-auto">
-                We turn down 90% of attorneys who ask to join our <Link href="/join-network" className="text-primary hover:underline font-semibold">referral network</Link>. We only work with the best.
+                We turn down 90% of attorneys who ask to join our referral network. We only work with the best.
               </p>
             </div>
 

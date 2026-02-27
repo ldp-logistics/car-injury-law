@@ -42,7 +42,7 @@ export default function CaseResultsPage() {
       <main className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-secondary font-bold tracking-wider text-sm uppercase">Proven <Link href="/case-results" className="text-primary hover:underline font-semibold">Track Record</Link></span>
+            <span className="text-secondary font-bold tracking-wider text-sm uppercase">Proven Track Record</span>
             <h1 className="text-4xl md:text-5xl font-bold font-serif text-slate-900 mt-2 mb-6">
               Real Results. Real Recoveries.
             </h1>

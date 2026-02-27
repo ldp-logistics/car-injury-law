@@ -89,7 +89,7 @@ export default function TruckStateLandingPage({ data }: TruckStateLandingPagePro
                 </h1>
                 <p className="text-xl text-gray-300 max-w-xl leading-relaxed">
                   Hit by an 18-wheeler? We hold trucking companies accountable in {data.name}.
-                  <Link href="/about" className="text-primary hover:underline font-semibold">Our attorneys</Link> know FMCSA regulations and fight for maximum <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link>.
+                  <Link href="/about" className="text-black hover:underline font-semibold">Our attorneys</Link> know FMCSA regulations and fight for maximum compensation.
                 </p>
                 <div className="flex flex-col gap-3 pt-4">
                   <div className="flex items-center gap-3 text-white">
@@ -138,7 +138,7 @@ export default function TruckStateLandingPage({ data }: TruckStateLandingPagePro
                     </div>
                  </div>
 
-                 {/* H2: Truck Accident <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance</Link> Coverage in [STATE] */}
+                 {/* H2: Truck Accident Insurance Coverage in [STATE] */}
                  <div>
                     <h2 className="text-3xl font-bold font-serif text-primary mb-6">
                       Truck Accident Insurance Coverage in {data.name}
@@ -209,7 +209,7 @@ export default function TruckStateLandingPage({ data }: TruckStateLandingPagePro
                           <h3 className="font-bold text-lg text-primary">Industry Knowledge</h3>
                           <p className="text-gray-600">
                             We work with accident reconstructionists and trucking industry experts to 
-                            build an undeniable case of <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">negligence</Link>.
+                            build an undeniable case of negligence.
                           </p>
                         </div>
                       </div>
@@ -219,7 +219,7 @@ export default function TruckStateLandingPage({ data }: TruckStateLandingPagePro
                  {/* SEO Content Section */}
                  <SeoContentSection service="Truck Accident Lawyer" location={data.name} />
 
-                 {/* H2: Speak With Our <Link href="/practice-areas/truck-accident" className="text-primary hover:underline font-semibold">Truck Accident <Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">Lawyer</Link></Link> in [STATE] Today. */}
+                 {/* H2: Speak With Our <Link href="/practice-areas/truck-accident" className="text-primary hover:underline font-semibold">Truck Accident Lawyer</Link> in [STATE] Today. */}
                  <div className="bg-slate-900 text-white p-8 rounded-2xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 opacity-10">
                        <Truck className="h-64 w-64 -mr-16 -mt-16" />

@@ -63,7 +63,7 @@ export default function AttorneyProfilePage() {
                   <Award className="h-4 w-4" /> Network Director
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold font-serif mb-4">
-                  <Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">Saad Admani</Link>, <span className="text-secondary">Esq.</span>
+                  Saad Admani, <span className="text-secondary">Esq.</span>
                 </h1>
                 <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl">
                   "My goal wasn't just to build a law firm. It was to build a nationwide force that could stand up to the biggest insurance companies in America."
@@ -97,7 +97,7 @@ export default function AttorneyProfilePage() {
                 <h2 className="text-3xl font-bold font-serif text-primary mb-6">Biography</h2>
                 <div className="prose prose-lg text-slate-600">
                   <p>
-                    Saad Admani is the founder and managing attorney of <a href="https://www.admanilaw.com" target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:underline">Admani Law</a>. A graduate of Rutgers Law School, Saad began his career with a singular focus: leveling the playing field for <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">injury</Link> victims.
+                    Saad Admani is the founder and managing attorney of <a href="https://www.admanilaw.com" target="_blank" rel="noopener noreferrer" className="text-primary font-bold hover:underline">Admani Law</a>. A graduate of Rutgers Law School, Saad began his career with a singular focus: leveling the playing field for injury victims.
                   </p>
                   <p>
                     Recognizing that no single attorney can be an expert in every jurisdiction, Saad architected the <strong>CarInjuryLaw.com Network</strong>. This curated alliance connects victims with vetted, high-performing trial attorneys in their specific local jurisdiction, ensuring that every client gets "home court advantage" while backed by the resources of a national brand.

@@ -59,7 +59,7 @@ export function PolicyChecker() {
               
               <div className="mt-6 pt-6 border-t border-gray-100">
                 <div className="bg-blue-50 p-4 rounded-lg text-sm text-blue-800 mb-4">
-                  <strong>Tip:</strong> Uninsured Motorist (UM) coverage is the most important protection you can buy. It protects YOU if you are hit by a driver with no <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance</Link>.
+                  <strong>Tip:</strong> Uninsured Motorist (UM) coverage is the most important protection you can buy. It protects YOU if you are hit by a driver with no insurance.
                 </div>
                 <Button className="w-full font-bold">Get Free Policy Review</Button>
               </div>

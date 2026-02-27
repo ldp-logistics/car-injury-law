@@ -23,7 +23,7 @@ export function PracticeAreasGrid() {
             Comprehensive Injury Representation
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            We focus exclusively on <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">personal injury</Link> law. This specialization allows us to win cases that general practitioners lose.
+            We focus exclusively on <Link href="/practice-areas/personal-injury" className="text-black hover:underline font-semibold">personal injury</Link> law. This specialization allows us to win cases that general practitioners lose.
           </p>
         </div>
 

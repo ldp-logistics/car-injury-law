@@ -95,7 +95,7 @@ export default function SlipAndFallPage() {
                 transition={{ duration: 0.6 }}
               >
                 <span className="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-6 tracking-wide">
-                  <Link href="/practice-areas/slip-and-fall" className="text-primary hover:underline font-semibold">Premises Liability</Link> Experts
+                  Premises Liability Experts
                 </span>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif leading-tight" data-testid="hero-heading">
                   Slip and Fall Lawyers
@@ -174,7 +174,7 @@ export default function SlipAndFallPage() {
                       <h3 className="font-bold text-primary text-lg mb-2">Duty to Repair</h3>
                       <p className="text-muted-foreground text-sm">
                         Known hazards must be repaired within a reasonable time. Failure to fix 
-                        dangerous conditions is evidence of <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">negligence</Link>.
+                        dangerous conditions is evidence of negligence.
                       </p>
                     </CardContent>
                   </Card>
@@ -209,7 +209,7 @@ export default function SlipAndFallPage() {
                 </h2>
                 <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
                   Different types of properties carry different insurance policies. We identify 
-                  all available coverage to maximize your <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link>.
+                  all available coverage to maximize your compensation.
                 </p>
               </motion.div>
 
@@ -460,7 +460,7 @@ export default function SlipAndFallPage() {
                   <p className="text-gray-400 leading-relaxed">
                     We work on a contingency fee basis—you pay nothing unless we win. This 
                     allows us to thoroughly investigate your case and fight property owners 
-                    and their <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance companies</Link>.
+                    and their <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance companies</Link>.
                   </p>
                 </motion.div>
               </div>

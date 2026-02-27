@@ -30,7 +30,7 @@ export default function UnderrideAccidentPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-flex items-center gap-2 text-secondary font-bold uppercase tracking-wider mb-4 text-sm">
-                  <ShieldAlert className="h-4 w-4" /> Catastrophic <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">Injury</Link> Unit
+                  <ShieldAlert className="h-4 w-4" /> Catastrophic Injury Unit
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold font-serif mb-6">
                   Underride <span className="text-secondary">Crashes</span>

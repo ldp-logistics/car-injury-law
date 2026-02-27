@@ -99,7 +99,7 @@ export default function MotorcycleAccidentPage() {
                   Advocates for the Riding Community
                 </span>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif leading-tight" data-testid="hero-heading">
-                  <Link href="/practice-areas/motorcycle-accident" className="text-primary hover:underline font-semibold">Motorcycle <Link href="/practice-areas/car-accident" className="text-primary hover:underline font-semibold">Crash</Link></Link> Lawyers
+                  <Link href="/practice-areas/motorcycle-accident" className="text-primary hover:underline font-semibold">Motorcycle Crash</Link> Lawyers
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
                   Insurance companies and juries often blame the rider first. We don't let them. 
@@ -210,7 +210,7 @@ export default function MotorcycleAccidentPage() {
                 </h2>
                 <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
                   Motorcycle insurance works differently than car insurance. We help you understand 
-                  your coverage options and maximize every avenue for <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link>.
+                  your coverage options and maximize every avenue for compensation.
                 </p>
               </motion.div>
 
@@ -239,7 +239,7 @@ export default function MotorcycleAccidentPage() {
                         </li>
                         <li className="flex items-start gap-2 text-sm text-muted-foreground">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                          <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">Personal injury</Link> protection (PIP)
+                          Personal injury protection (PIP)
                         </li>
                         <li className="flex items-start gap-2 text-sm text-muted-foreground">
                           <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
@@ -361,7 +361,7 @@ export default function MotorcycleAccidentPage() {
                       <h3 className="text-2xl font-bold mb-4">Protecting Rider's Rights</h3>
                       <p className="text-primary/80 leading-relaxed mb-6">
                         From the moment you contact us, we become your shield. We handle all 
-                        communication with <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance companies</Link>, preserve critical evidence, and 
+                        communication with <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance companies</Link>, preserve critical evidence, and 
                         ensure your rights as a rider are never compromised.
                       </p>
                       <ul className="space-y-3">

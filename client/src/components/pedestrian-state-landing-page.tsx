@@ -69,7 +69,7 @@ export default function PedestrianStateLandingPage({ data }: PedestrianStateLand
       />
 
       <main>
-        {/* H1: <Link href="/practice-areas/pedestrian-injury" className="text-primary hover:underline font-semibold">Pedestrian <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">Injury</Link></Link> Lawyers in [STATE] */}
+        {/* H1: <Link href="/practice-areas/pedestrian-injury" className="text-primary hover:underline font-semibold">Pedestrian Injury</Link> Lawyers in [STATE] */}
         <div id="overview" className="relative bg-slate-900 min-h-[600px] flex items-center">
           <div 
             className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
@@ -137,7 +137,7 @@ export default function PedestrianStateLandingPage({ data }: PedestrianStateLand
                     </div>
                  </div>
 
-                 {/* H2: Pedestrian Injury <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance</Link> Coverage in [STATE] */}
+                 {/* H2: Pedestrian Injury Insurance Coverage in [STATE] */}
                  <div>
                     <h2 className="text-3xl font-bold font-serif text-primary mb-6">
                       Pedestrian Injury Insurance Coverage in {data.name}
@@ -176,7 +176,7 @@ export default function PedestrianStateLandingPage({ data }: PedestrianStateLand
                       <p>
                         In hit-and-run cases, which are all too common in {data.name}, we work with police and 
                         private investigators to track down the responsible driver. If they cannot be found, 
-                        we help you access your own insurance benefits.
+                        we help you access your own <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance</Link> benefits.
                       </p>
                     </div>
                  </div>

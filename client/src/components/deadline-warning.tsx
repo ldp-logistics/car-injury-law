@@ -16,7 +16,7 @@ export function DeadlineWarning() {
               Urgent: Statute of Limitations Warning
             </h3>
             <p className="text-gray-600 leading-relaxed mb-4">
-              Legal deadlines (Statutes of Limitations) restrict the time you have to file a lawsuit. If you wait too long, <strong className="text-destructive">you will be forever barred from receiving <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">compensation</Link></strong>, regardless of how severe your injuries are.
+              Legal deadlines (Statutes of Limitations) restrict the time you have to file a lawsuit. If you wait too long, <strong className="text-destructive">you will be forever barred from receiving compensation</strong>, regardless of how severe your injuries are.
             </p>
             <div className="flex flex-wrap gap-2 text-sm font-medium">
               <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full border border-red-200">Evidence Disappears</span>

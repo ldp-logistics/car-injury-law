@@ -58,10 +58,10 @@ export function SeoContentSection({ service, location, type = "state" }: SeoCont
             {/* Introduction - The "Hook" */}
             <div>
               <p>
-                If you or a loved one has recently been involved in a serious incident in <strong>{location}</strong>, finding the right <strong>{keywords[0]}</strong> is likely the most important decision you will face this year. The aftermath of an accident—whether it’s a collision on {location} highways or a <Link href="/practice-areas/workplace-injury" className="text-primary hover:underline font-semibold">workplace injury</Link>—can be overwhelming. Medical bills pile up, <Link href="/blog/dealing-with-insurance-adjusters" className="text-primary hover:underline font-semibold"><Link href="/vs-insurance" className="text-primary hover:underline font-semibold">insurance</Link> adjusters</Link> start calling, and physical pain can make it impossible to think clearly.
+                If you or a loved one has recently been involved in a serious incident in <strong>{location}</strong>, finding the right <strong>{keywords[0]}</strong> is likely the most important decision you will face this year. The aftermath of an accident—whether it’s a collision on {location} highways or a <Link href="/practice-areas/workplace-injury" className="text-black hover:underline font-semibold">workplace injury</Link>—can be overwhelming. Medical bills pile up, <Link href="/blog/dealing-with-insurance-adjusters" className="text-primary hover:underline font-semibold">insurance adjusters</Link> start calling, and physical pain can make it impossible to think clearly.
               </p>
               <p>
-                That is exactly why CarInjuryLaw.com exists. We connect residents of {location} with vetted, high-performing <Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">legal counsel</Link>. Whether you are searching for a <strong>{keywords[2]}</strong> to handle a complex collision claim or need an aggressive <strong>{keywords[3]}</strong> to fight a denied insurance policy, our network ensures you have "home court advantage" with attorneys who know the local judges, courts, and defense tactics in {location}.
+                That is exactly why CarInjuryLaw.com exists. We connect residents of {location} with vetted, high-performing legal counsel. Whether you are searching for a <strong>{keywords[2]}</strong> to handle a complex collision claim or need an aggressive <strong>{keywords[3]}</strong> to fight a denied insurance policy, our network ensures you have "home court advantage" with attorneys who know the local judges, courts, and defense tactics in {location}.
               </p>
             </div>
 
@@ -96,10 +96,10 @@ export function SeoContentSection({ service, location, type = "state" }: SeoCont
             <div>
               <h3 className="text-2xl font-bold text-slate-900 mb-4">How to Choose the Best {service} for Your Case</h3>
               <p>
-                Not all lawyers are created equal. When searching for a <strong>{keywords[9]}</strong> in {location}, you need to look beyond the billboards. You need an experienced <strong>{keywords[10]}</strong> who has a proven <Link href="/case-results" className="text-primary hover:underline font-semibold">track record</Link> of actually going to trial, not just settling for pennies.
+                Not all lawyers are created equal. When searching for a <strong>{keywords[9]}</strong> in {location}, you need to look beyond the billboards. You need an experienced <strong>{keywords[10]}</strong> who has a proven track record of actually going to trial, not just settling for pennies.
               </p>
               <p>
-                Our network focuses on connecting you with attorneys who specialize in your specific type of case. If you slipped on an icy sidewalk or wet floor, a generalist might miss key evidence that a dedicated <strong>{keywords[4]}</strong> would catch immediately. If a loved one was lost due to <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">negligence</Link>, a compassionate <strong>{keywords[12]}</strong> can help your family navigate the complex <Link href="/practice-areas/wrongful-death" className="text-primary hover:underline font-semibold">wrongful death</Link> statutes in {location} with dignity and resolve.
+                Our network focuses on connecting you with attorneys who specialize in your specific type of case. If you slipped on an icy sidewalk or wet floor, a generalist might miss key evidence that a dedicated <strong>{keywords[4]}</strong> would catch immediately. If a loved one was lost due to negligence, a compassionate <strong>{keywords[12]}</strong> can help your family navigate the complex wrongful death statutes in {location} with dignity and resolve.
               </p>
             </div>
 

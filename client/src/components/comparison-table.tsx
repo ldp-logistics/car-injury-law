@@ -12,7 +12,7 @@ export function ComparisonTable() {
             Us vs. The Rest
           </h2>
           <p className="text-muted-foreground mt-4">
-            Not all law firms are created equal. See why we are the choice for serious <Link href="/practice-areas/personal-injury" className="text-primary hover:underline font-semibold">injury</Link> cases.
+            Not all law firms are created equal. See why we are the choice for serious injury cases.
           </p>
         </div>
 
@@ -29,10 +29,10 @@ export function ComparisonTable() {
                 </div>
               </div>
               <div className="col-span-1 text-center py-4 font-bold text-gray-600">
-                General <Link href="/attorneys/saad-admani" className="text-primary hover:underline font-semibold">Attorney</Link>
+                General Attorney
               </div>
               <div className="col-span-1 text-center py-4 font-bold text-gray-600">
-                <Link href="/vs-insurance" className="text-primary hover:underline font-semibold">Insurance Adjuster</Link>
+                Insurance Adjuster
               </div>
             </div>
 
