@@ -4,7 +4,7 @@ WORKDIR /app
 
 # Install dependencies
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 
 # Copy source and build
 COPY . .
@@ -15,7 +15,7 @@ FROM node:20-alpine AS api
 WORKDIR /app
 COPY package*.json ./
 # Only install production dependencies
-RUN npm ci --omit=dev
+RUN npm install --omit=dev
 COPY --from=builder /app/dist ./dist
 
 # The API needs dist/public existing to serve index.html with dynamic SEO tags
