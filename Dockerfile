@@ -23,7 +23,7 @@ ENV NODE_ENV=production
 ENV PORT=5000
 EXPOSE 5000
 
-CMD ["npm", "run", "start"]
+CMD ["node", "dist/index.js"]
 
 # Stage 3: Nginx Frontend (Serves static assets and proxies Node)
 FROM nginx:alpine AS web

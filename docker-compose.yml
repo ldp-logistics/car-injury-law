@@ -18,16 +18,25 @@ services:
       - api
     networks:
       - traefik_public
+      - default
     labels:
       - "traefik.enable=true"
+      # Tell Traefik which network to route traffic through, as the container is on multiple networks
+      - "traefik.docker.network=traefik_public"
+      
+      # HTTP Router: Catches Port 80 and redirects to HTTPS
+      - "traefik.http.routers.carinjurylaw-http.rule=Host(`${DOMAIN:-www.carinjurylaw.com}`) || Host(`${BARE_DOMAIN:-carinjurylaw.com}`)"
+      - "traefik.http.routers.carinjurylaw-http.entrypoints=web"
+      - "traefik.http.routers.carinjurylaw-http.middlewares=https-redirect"
+      - "traefik.http.middlewares.https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.https-redirect.redirectscheme.permanent=true"
+
+      # HTTPS Router: Handles secure traffic
       - "traefik.http.routers.carinjurylaw.rule=Host(`${DOMAIN:-www.carinjurylaw.com}`) || Host(`${BARE_DOMAIN:-carinjurylaw.com}`)"
       - "traefik.http.routers.carinjurylaw.entrypoints=websecure"
       - "traefik.http.routers.carinjurylaw.tls=true"
       - "traefik.http.routers.carinjurylaw.tls.certresolver=myresolver"
       - "traefik.http.services.carinjurylaw.loadbalancer.server.port=80"
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      - "traefik.http.routers.carinjurylaw.middlewares=redirect-to-https"
-
 networks:
   traefik_public:
     external: true
