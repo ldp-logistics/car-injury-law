@@ -11,6 +11,19 @@ interface MetaTags {
     ogImage: string;
 }
 
+// Default SEO metadata used for routes that don't have specific overrides.
+// These should mirror the fallbacks used by the client-side SeoHead component
+// so that server-rendered pages and client updates remain consistent.
+const DEFAULT_META: MetaTags = {
+    title: "Car Injury Law | Nationwide Accident Attorneys",
+    description: "Expert car accident and personal injury representation nationwide. We fight insurance companies to maximize your settlement. Free consultation 24/7.",
+    keywords: "car accident lawyer, personal injury attorney, truck accident lawyer",
+    canonical: "https://www.carinjurylaw.com/",
+    ogTitle: "Car Injury Law | Nationwide Accident Attorneys",
+    ogDescription: "Expert car accident and personal injury representation nationwide. We fight insurance companies to maximize your settlement. Free consultation 24/7.",
+    ogImage: "https://www.carinjurylaw.com/og-image.jpg",
+};
+
 
 function generateTagsHtml(meta: MetaTags): string {
     // Ensure we escape strings properly to avoid XSS or broken HTML
