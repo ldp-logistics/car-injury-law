@@ -62,9 +62,6 @@ app.use((req, res, next) => {
   if (app.get("env") === "development") {
     const { setupVite } = await import("./vite");
     await setupVite(app, server);
-
-    // Development mein bhi meta tags inject karne ke liye yeh placeholder
-    // Vite middleware khud handling karta hai, lekin ensure karein vite.ts check ho chuka hai.
   } else {
     const distPath = path.resolve(process.cwd(), "dist/public");
 
@@ -72,7 +69,7 @@ app.use((req, res, next) => {
       throw new Error(`Build directory not found: ${distPath}`);
     }
 
-    app.use(express.static(distPath, { index: false })); // Index: false zaroori hai taake custom route chale
+    app.use(express.static(distPath, { index: false }));
 
     app.get("*", async (req, res, next) => {
       try {
@@ -82,7 +79,8 @@ app.use((req, res, next) => {
         // Dynamic Meta Tags generation
         const metaTags = getMetaTagsHtml(req.originalUrl);
 
-        // Yahan replacement ho rahi hai
+        // FIX: Yahan placeholder ko sahi target karna hai
+        // Taake tags <html> se pehle na aayein balkay ki jagah aayein
         const html = template.replace("", metaTags);
 
         res.status(200).set({ "Content-Type": "text/html" }).send(html);
