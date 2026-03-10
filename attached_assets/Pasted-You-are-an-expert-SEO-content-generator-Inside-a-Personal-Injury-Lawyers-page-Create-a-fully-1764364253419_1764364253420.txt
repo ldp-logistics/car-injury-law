@@ -1,0 +1,71 @@
+You are an expert SEO content generator.  
+
+Inside a “Personal Injury Lawyers” page Create a fully optimized Section before footer for 50 states of United States. Hyperlink them with indivisual page landing page i.e Personal Injury Lawyers in [STATE].
+
+Follow all instructions exactly:
+
+-------------------------------------------------------
+PAGE REQUIREMENTS
+-------------------------------------------------------
+Each state page should have following content. 
+1. WORD COUNT:
+Produce 500–650 words.
+
+2. SEO OPTIMIZATION:
+Include the following target keywords naturally:
+- Uber accident lawyer in [STATE]
+- [STATE] Lyft accident lawyer
+- Rideshare accident attorney [STATE]
+- Uber accident attorney near me
+- Lyft accident attorney near me
+
+2. SEO OPTIMIZATION:
+Include the following target keywords naturally:
+- Personal Injury Lawyer in [STATE]
+- Personal Injury Attorney in [STATE] 
+- Rideshare accident attorney in [STATE]
+- Uber accident attorney near [STATE]
+- Car accident law firms near [STATE]
+
+3. STRUCTURE:
+Use this exact structure:
+
+H1: Personal Injury lawyers in [STATE]
+
+H2: Experienced Personal Injury Lawyers in [STATE]
+• Explain Personal Injury legal rights in [STATE]
+
+H2: Perosnal Injury Insurance Coverage in [STATE].
+• Describe how insurance works in [STATE].
+• Mention any no-fault, at-fault, or PIP rules that apply.
+
+H2: Why Choose Car Injury Law for Personal Injury Case?
+• Nationwide coverage  
+• No upfront fees  
+• Free 24/7 consultation  
+
+H2: Speak With a Our Personal Injury Lawyer in [STATE] Today.
+• Strong call-to-action
+
+4. META DATA:
+Create:
+- Meta Title (max 60 characters)
+- Meta Description (max 155 characters)
+
+5. SCHEMA MARKUP:
+Generate JSON-LD schema using:
+@type: LegalService  
+Include:
+- Name: Car Injury Law
+- PracticeArea: Persoanl Injury Lawyer
+- AreaServed: [STATE]
+
+6. TONE:
+Professional, trustworthy, legally accurate, SEO-focused.
+
+-------------------------------------------------------
+IMPORTANT:
+Replace [STATE] with the exact state name (e.g., Texas, Florida, New York).
+-------------------------------------------------------
+
+Generate now.
