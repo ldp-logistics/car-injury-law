@@ -69,6 +69,7 @@ app.use((req, res, next) => {
       throw new Error(`Build directory not found: ${distPath}`);
     }
 
+    // static files serve karte waqt index.html ko skip karein taake hum khud inject kar saken
     app.use(express.static(distPath, { index: false }));
 
     app.get("*", async (req, res, next) => {
@@ -76,12 +77,14 @@ app.use((req, res, next) => {
         const indexPath = path.resolve(distPath, "index.html");
         let template = await fs.promises.readFile(indexPath, "utf-8");
 
-        // Dynamic Meta Tags generation
         const metaTags = getMetaTagsHtml(req.originalUrl);
 
-        // FIX: Yahan placeholder ko sahi target karna hai
-        // Taake tags <html> se pehle na aayein balkay ki jagah aayein
-        const html = template.replace("", metaTags);
+        let html;
+        if (template.includes("")) {
+          html = template.replace("", metaTags);
+        } else {
+          html = template.replace("<head>", `<head>\n${metaTags}`);
+        }
 
         res.status(200).set({ "Content-Type": "text/html" }).send(html);
       } catch (e) {
