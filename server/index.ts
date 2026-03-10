@@ -69,7 +69,7 @@ app.use((req, res, next) => {
       throw new Error(`Build directory not found: ${distPath}`);
     }
 
-    // static files serve karte waqt index.html ko skip karein taake hum khud inject kar saken
+    // Static files serve karte waqt index:false lazmi hai
     app.use(express.static(distPath, { index: false }));
 
     app.get("*", async (req, res, next) => {
@@ -79,12 +79,8 @@ app.use((req, res, next) => {
 
         const metaTags = getMetaTagsHtml(req.originalUrl);
 
-        let html;
-        if (template.includes("")) {
-          html = template.replace("", metaTags);
-        } else {
-          html = template.replace("<head>", `<head>\n${metaTags}`);
-        }
+
+        const html = template.replace("<head>", `<head>\n${metaTags}`);
 
         res.status(200).set({ "Content-Type": "text/html" }).send(html);
       } catch (e) {
