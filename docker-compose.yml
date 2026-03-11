@@ -1,18 +1,16 @@
 services:
   api:
-    build:
-      context: .
-      target: api
+    image: ldplogistics/carinjurylaw-api:latest
     restart: unless-stopped
     environment:
       - NODE_ENV=production
       - PORT=5000
+      - DOMAIN=${DOMAIN:-www.domain.com}
+      - BARE_DOMAIN=${BARE_DOMAIN:-domain.com}
 
 
   web:
-    build:
-      context: .
-      target: web
+    image: ldplogistics/carinjurylaw-web:latest
     restart: unless-stopped
     depends_on:
       - api
@@ -25,14 +23,14 @@ services:
       - "traefik.docker.network=traefik_public"
       
       # HTTP Router: Catches Port 80 and redirects to HTTPS
-      - "traefik.http.routers.carinjurylaw-http.rule=Host(`${DOMAIN:-www.carinjurylaw.com}`) || Host(`${BARE_DOMAIN:-carinjurylaw.com}`)"
+      - "traefik.http.routers.carinjurylaw-http.rule=Host(`${DOMAIN:-www.domain.com}`) || Host(`${BARE_DOMAIN:-domain.com}`)"
       - "traefik.http.routers.carinjurylaw-http.entrypoints=web"
       - "traefik.http.routers.carinjurylaw-http.middlewares=https-redirect"
       - "traefik.http.middlewares.https-redirect.redirectscheme.scheme=https"
       - "traefik.http.middlewares.https-redirect.redirectscheme.permanent=true"
 
       # HTTPS Router: Handles secure traffic
-      - "traefik.http.routers.carinjurylaw.rule=Host(`${DOMAIN:-www.carinjurylaw.com}`) || Host(`${BARE_DOMAIN:-carinjurylaw.com}`)"
+      - "traefik.http.routers.carinjurylaw.rule=Host(`${DOMAIN:-www.domain.com}`) || Host(`${BARE_DOMAIN:-domain.com}`)"
       - "traefik.http.routers.carinjurylaw.entrypoints=websecure"
       - "traefik.http.routers.carinjurylaw.tls=true"
       - "traefik.http.routers.carinjurylaw.tls.certresolver=myresolver"

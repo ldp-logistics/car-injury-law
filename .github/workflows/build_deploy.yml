@@ -20,14 +20,15 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build & Push
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          file: Dockerfile
-          push: true
-          tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/${{ secrets.DOCKERHUB_IMAGE }}:latest
+      - name: Build & Push API image
+        run: |
+          docker build --target api -t ${{ secrets.DOCKERHUB_USERNAME }}/carinjurylaw-api:latest .
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/carinjurylaw-api:latest
+
+      - name: Build & Push Web image
+        run: |
+          docker build --target web -t ${{ secrets.DOCKERHUB_USERNAME }}/carinjurylaw-web:latest .
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/carinjurylaw-web:latest
 
   deploy:
     needs: build-and-push
