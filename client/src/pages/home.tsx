@@ -38,7 +38,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans pb-20 md:pb-0 overflow-x-hidden">
-      <SeoHead 
+      <SeoHead
         title="Car Accident Lawyer | Nationwide Injury Network | Admani Law"
         description="Admani Law Network: Top-rated car accident attorneys nationwide. We fight insurance companies to get you maximum compensation. Free case review."
         lastUpdated={currentDate}
@@ -127,7 +127,7 @@ export default function Home() {
         <CrashKitModal />
         <FaqSection />
         <CallbackScheduler />
-        
+
         <section className="py-20 bg-slate-900 text-white text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
           <div className="container mx-auto px-4 relative z-10">
@@ -135,11 +135,11 @@ export default function Home() {
               Don't Settle For Less.
             </h2>
             <p className="text-xl mb-10 max-w-2xl mx-auto opacity-90 leading-relaxed">
-              The <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance company</Link> has lawyers. You should too.<br/>
+              The <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance company</Link> has lawyers. You should too.<br />
               Call the Admani Law Network now.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button 
+              <button
                 onClick={scrollToForm}
                 className="bg-secondary text-primary font-bold py-4 px-8 rounded-lg text-xl hover:bg-secondary/90 transition-all shadow-xl transform hover:-translate-y-1 uppercase tracking-wide"
               >
@@ -153,9 +153,9 @@ export default function Home() {
           </div>
         </section>
       </main>
-      
+
       <StickyCta />
-      
+
       <Suspense fallback={null}>
         <ChatWidget />
         <ExitIntentModal />

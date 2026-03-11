@@ -12,8 +12,8 @@ interface MetaTags {
 }
 
 const DEFAULT_META: MetaTags = {
-    title: "Car Injury Law | Nationwide Accident Attorneys",
-    description: "Expert car accident and personal injury representation nationwide. We fight insurance companies to maximize your settlement. Free consultation 24/7.",
+    title: "Car Injury Law| Personal Injury Lawyers in USA | Nationwide Accident Attorneys",
+    description: "Expert car accident and personal injury lawyers in USA. We fight insurance companies to maximize your settlement. Free consultation 24/7.",
     keywords: "car accident lawyer, personal injury attorney, truck accident lawyer",
     canonical: "https://www.carinjurylaw.com/",
     ogTitle: "Car Injury Law | Nationwide Accident Attorneys",

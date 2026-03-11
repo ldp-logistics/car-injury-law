@@ -33,13 +33,12 @@ const staticRoutes = [
   '/practice-areas/slip-and-fall'
 ];
 
-const urls: Array<{loc: string, changefreq: string, priority: number}> = [];
+const urls: Array<{loc: string, priority: number}> = [];
 
 staticRoutes.forEach(route => {
   urls.push({
     loc: `${DOMAIN}${route === '/' ? '' : route}/`,
-    changefreq: 'weekly',
-    priority: 1.0
+    priority: 0.8
   });
 });
 
@@ -50,8 +49,7 @@ const slugs = [...blogContent.matchAll(/slug:\s*"([^"]+)"/g)].map(m => m[1]);
 slugs.forEach(slug => {
   urls.push({
     loc: `${DOMAIN}/blog/${slug}/`,
-    changefreq: 'weekly',
-    priority: 1.0
+    priority: 0.8
   });
 });
 
@@ -59,22 +57,22 @@ Object.values(STATE_DATA).forEach(state => {
   const stateNameSlug = state.name.toLowerCase().replace(/ /g, '-');
   
   // Practice areas by state
-  urls.push({ loc: `${DOMAIN}/personal-injury-lawyer/${stateNameSlug}/`, changefreq: 'weekly', priority: 1.0 });
-  urls.push({ loc: `${DOMAIN}/motorcycle-accident-lawyer/${stateNameSlug}/`, changefreq: 'weekly', priority: 1.0 });
-  urls.push({ loc: `${DOMAIN}/truck-accident-lawyer/${stateNameSlug}/`, changefreq: 'weekly', priority: 1.0 });
-  urls.push({ loc: `${DOMAIN}/pedestrian-injury-lawyer/${stateNameSlug}/`, changefreq: 'weekly', priority: 1.0 });
-  urls.push({ loc: `${DOMAIN}/bus-accident-lawyer/${stateNameSlug}/`, changefreq: 'weekly', priority: 1.0 });
-  urls.push({ loc: `${DOMAIN}/workplace-injury-lawyer/${stateNameSlug}/`, changefreq: 'weekly', priority: 1.0 });
-  urls.push({ loc: `${DOMAIN}/medical-malpractice-lawyer/${stateNameSlug}/`, changefreq: 'weekly', priority: 1.0 });
-  urls.push({ loc: `${DOMAIN}/slip-and-fall-lawyer/${stateNameSlug}/`, changefreq: 'weekly', priority: 1.0 });
+  urls.push({ loc: `${DOMAIN}/personal-injury-lawyer/${stateNameSlug}/`, priority: 0.8 });
+  urls.push({ loc: `${DOMAIN}/motorcycle-accident-lawyer/${stateNameSlug}/`, priority: 0.8 });
+  urls.push({ loc: `${DOMAIN}/truck-accident-lawyer/${stateNameSlug}/`, priority: 0.8 });
+  urls.push({ loc: `${DOMAIN}/pedestrian-injury-lawyer/${stateNameSlug}/`, priority: 0.8 });
+  urls.push({ loc: `${DOMAIN}/bus-accident-lawyer/${stateNameSlug}/`, priority: 0.8 });
+  urls.push({ loc: `${DOMAIN}/workplace-injury-lawyer/${stateNameSlug}/`, priority: 0.8 });
+  urls.push({ loc: `${DOMAIN}/medical-malpractice-lawyer/${stateNameSlug}/`, priority: 0.8 });
+  urls.push({ loc: `${DOMAIN}/slip-and-fall-lawyer/${stateNameSlug}/`, priority: 0.8 });
 
   // State landing pages
-  urls.push({ loc: `${DOMAIN}/${state.slug}/`, changefreq: 'weekly', priority: 1.0 });
+  urls.push({ loc: `${DOMAIN}/${state.slug}/`, priority: 0.8 });
 
   // Cities
   state.cityList.forEach(city => {
     const citySlug = city.toLowerCase().replace(/ /g, '-');
-    urls.push({ loc: `${DOMAIN}/${state.slug}/${citySlug}/`, changefreq: 'weekly', priority: 1.0 });
+    urls.push({ loc: `${DOMAIN}/${state.slug}/${citySlug}/`, priority: 0.8 });
   });
 });
 
@@ -84,7 +82,6 @@ xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 urls.forEach(u => {
   xml += `  <url>\n`;
   xml += `    <loc>${u.loc}</loc>\n`;
-  xml += `    <changefreq>${u.changefreq}</changefreq>\n`;
   // Ensure priority is always formatted with one decimal place
   xml += `    <priority>${u.priority.toFixed(1)}</priority>\n`;
   xml += `  </url>\n`;
