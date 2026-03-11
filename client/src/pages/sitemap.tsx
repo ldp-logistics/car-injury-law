@@ -5,26 +5,26 @@ import { STATE_DATA } from "@/data/state-data";
 
 export default function SitemapPage() {
   const practiceAreas = [
-    { name: "Personal Injury", href: "/practice-areas/personal-injury" },
-    { name: "Car Accidents", href: "/practice-areas/car-accident" },
-    { name: "Truck Accidents", href: "/practice-areas/truck-accident" },
-    { name: "Motorcycle Accidents", href: "/practice-areas/motorcycle-accident" },
-    { name: "Pedestrian Injury", href: "/practice-areas/pedestrian-injury" },
-    { name: "Bus & Transit Injury", href: "/practice-areas/bus-transit-injury" },
-    { name: "Workplace Injury", href: "/practice-areas/workplace-injury" },
-    { name: "Medical Malpractice", href: "/practice-areas/medical-malpractice" },
-    { name: "Slip & Fall", href: "/practice-areas/slip-and-fall" },
-    { name: "Wrongful Death", href: "/practice-areas/wrongful-death" },
-    { name: "Rideshare Accidents", href: "/practice-areas/rideshare-accident" },
+    { name: "Personal Injury", href: "/practice-areas/personal-injury/" },
+    { name: "Car Accidents", href: "/practice-areas/car-accident/" },
+    { name: "Truck Accidents", href: "/practice-areas/truck-accident/" },
+    { name: "Motorcycle Accidents", href: "/practice-areas/motorcycle-accident/" },
+    { name: "Pedestrian Injury", href: "/practice-areas/pedestrian-injury/" },
+    { name: "Bus & Transit Injury", href: "/practice-areas/bus-transit-injury/" },
+    { name: "Workplace Injury", href: "/practice-areas/workplace-injury/" },
+    { name: "Medical Malpractice", href: "/practice-areas/medical-malpractice/" },
+    { name: "Slip & Fall", href: "/practice-areas/slip-and-fall/" },
+    { name: "Wrongful Death", href: "/practice-areas/wrongful-death/" },
+    { name: "Rideshare Accidents", href: "/practice-areas/rideshare-accident/" },
   ];
 
   const resources = [
-    { name: "About Us", href: "/about" },
-    { name: "Legal Blog", href: "/blog" },
-    { name: "Glossary", href: "/glossary" },
-    { name: "Vs Insurance", href: "/vs-insurance" },
-    { name: "Settlement Calculator", href: "/settlement-calculator" },
-    { name: "Join Network", href: "/join-network" },
+    { name: "About Us", href: "/about/" },
+    { name: "Legal Blog", href: "/blog/" },
+    { name: "Glossary", href: "/glossary/" },
+    { name: "Vs Insurance", href: "/vs-insurance/" },
+    { name: "Settlement Calculator", href: "/settlement-calculator/" },
+    { name: "Join Network", href: "/join-network/" },
   ];
 
   return (

@@ -53,19 +53,24 @@ export async function setupVite(app: Express, server: Server) {
         "index.html",
       );
 
-      // always reload the index.html file from disk incase it changes
+      // Reload the index.html file
       let template = await fs.promises.readFile(clientTemplate, "utf-8");
-      template = template.replace(
-        `src="/src/main.tsx"`,
-        `src="/src/main.tsx?v=${nanoid()}"`,
-      );
 
-      // Inject dynamic SEO meta tags
-      const metaTags = getMetaTagsHtml(url);
-      template = template.replace("<!-- SEO_META_TAGS -->", metaTags);
-
+      // 1. First, let Vite transform the HTML (injects HMR scripts, etc.)
       const page = await vite.transformIndexHtml(url, template);
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
+
+      // 2. Then, inject our dynamic SEO meta tags into the placeholder
+      const metaTags = getMetaTagsHtml(url);
+
+      // 3. Final replacement including cache-busting for main.tsx
+      const finalHtml = page
+        .replace("", metaTags)
+        .replace(
+          `src="/src/main.tsx"`,
+          `src="/src/main.tsx?v=${nanoid()}"`
+        );
+
+      res.status(200).set({ "Content-Type": "text/html" }).end(finalHtml);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
       next(e);
@@ -82,18 +87,18 @@ export function serveStatic(app: Express) {
     );
   }
 
-  app.use(express.static(distPath));
+  // index: false ensures our custom catch-all route handles the index.html injection
+  app.use(express.static(distPath, { index: false }));
 
-  // fall through to index.html if the file doesn't exist
   app.use("*", async (req, res, next) => {
     try {
       const indexPath = path.resolve(distPath, "index.html");
       let template = await fs.promises.readFile(indexPath, "utf-8");
 
       const metaTags = getMetaTagsHtml(req.originalUrl);
-      template = template.replace("<!-- SEO_META_TAGS -->", metaTags);
+      const finalHtml = template.replace("", metaTags);
 
-      res.status(200).set({ "Content-Type": "text/html" }).end(template);
+      res.status(200).set({ "Content-Type": "text/html" }).end(finalHtml);
     } catch (e) {
       next(e);
     }

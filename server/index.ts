@@ -11,25 +11,19 @@ export function log(message: string, source = "express") {
     second: "2-digit",
     hour12: true,
   });
-
   console.log(`${formattedTime} [${source}] ${message}`);
 }
 
-
 const app = express();
 
-declare module 'http' {
-  interface IncomingMessage {
-    rawBody: unknown
-  }
-}
 app.use(express.json({
-  verify: (req, _res, buf) => {
+  verify: (req: any, _res, buf) => {
     req.rawBody = buf;
   }
 }));
 app.use(express.urlencoded({ extended: false }));
 
+// Request Logging Middleware
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -48,15 +42,10 @@ app.use((req, res, next) => {
       if (capturedJsonResponse) {
         logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
       }
-
-      if (logLine.length > 80) {
-        logLine = logLine.slice(0, 79) + "…";
-      }
-
+      if (logLine.length > 80) logLine = logLine.slice(0, 79) + "…";
       log(logLine);
     }
   });
-
   next();
 });
 
@@ -66,57 +55,42 @@ app.use((req, res, next) => {
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";
-
     res.status(status).json({ message });
     throw err;
   });
 
-  // importantly only setup vite in development and after
-  // setting up all the other routes so the catch-all route
-  // doesn't interfere with the other routes
   if (app.get("env") === "development") {
     const { setupVite } = await import("./vite");
     await setupVite(app, server);
   } else {
-    serveStatic(app);
-  }
-
-  function serveStatic(app: Express) {
     const distPath = path.resolve(process.cwd(), "dist/public");
 
     if (!fs.existsSync(distPath)) {
-      throw new Error(
-        `Could not find the build directory: ${distPath}, make sure to build the client first`,
-      );
+      throw new Error(`Build directory not found: ${distPath}`);
     }
 
-    app.use(express.static(distPath));
+    // Static files serve karte waqt index:false lazmi hai
+    app.use(express.static(distPath, { index: false }));
 
-    // fall through to index.html if the file doesn't exist
-    app.use("*", async (req, res, next) => {
+    app.get("*", async (req, res, next) => {
       try {
         const indexPath = path.resolve(distPath, "index.html");
         let template = await fs.promises.readFile(indexPath, "utf-8");
 
         const metaTags = getMetaTagsHtml(req.originalUrl);
-        template = template.replace("<!-- SEO_META_TAGS -->", metaTags);
 
-        res.status(200).set({ "Content-Type": "text/html" }).end(template);
+
+        const html = template.replace("<head>", `<head>\n${metaTags}`);
+
+        res.status(200).set({ "Content-Type": "text/html" }).send(html);
       } catch (e) {
         next(e);
       }
     });
   }
 
-  // ALWAYS serve the app on the port specified in the environment variable PORT
-  // Other ports are firewalled. Default to 5000 if not specified.
-  // this serves both the API and the client.
-  // It is the only port that is not firewalled.
   const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-    port,
-    host: "0.0.0.0",
-  }, () => {
+  server.listen({ port, host: "0.0.0.0" }, () => {
     log(`serving on port ${port}`);
   });
 })();
