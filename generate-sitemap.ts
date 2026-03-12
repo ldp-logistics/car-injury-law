@@ -3,6 +3,7 @@ import { STATE_DATA } from './client/src/data/state-data.ts';
 import { SERVICE_SYNONYM_PAGES } from './client/src/data/service-synonym-pages.ts';
 import { NEAR_ME_PAGES } from './client/src/data/near-me-pages.ts';
 import { PRACTICE_AREA_PAGES } from './client/src/data/practice-area-pages.ts';
+import { BEST_PAGES } from './client/src/data/best-pages.ts';
 
 const DOMAIN = 'https://www.carinjurylaw.com';
 
@@ -102,6 +103,13 @@ NEAR_ME_PAGES.forEach(page => {
 });
 
 PRACTICE_AREA_PAGES.forEach(page => {
+  urls.push({ 
+    loc: `${DOMAIN}/${page.slug}/`, 
+    priority: 0.9
+  });
+});
+
+BEST_PAGES.forEach(page => {
   urls.push({ 
     loc: `${DOMAIN}/${page.slug}/`, 
     priority: 0.9

@@ -8,6 +8,7 @@ import { STATE_DATA } from "@/data/state-data";
 import { SERVICE_SYNONYM_PAGES } from "@/data/service-synonym-pages";
 import { NEAR_ME_PAGES } from "@/data/near-me-pages";
 import { PRACTICE_AREA_PAGES } from "@/data/practice-area-pages";
+import { BEST_PAGES } from "@/data/best-pages";
 import { LazyMotion, domAnimation } from "framer-motion";
 import Home from "@/pages/home";
 
@@ -33,6 +34,7 @@ const StateLandingPage = lazy(() => import("@/components/state-landing-page"));
 const CityLandingPage = lazy(() => import("@/pages/city-landing-page")); // City
 const ServiceSynonymPage = lazy(() => import("@/pages/seo/ServiceSynonymPage")); // SEO Synonyms
 const PracticeAreaPage = lazy(() => import("@/pages/seo/PracticeAreaPage")); // SEO Practice Areas
+const BestOfPage = lazy(() => import("@/pages/seo/BestOfPage")); // SEO Best/Top Pages
 
 // New Pages
 const AboutPage = lazy(() => import("@/pages/about"));
@@ -202,6 +204,13 @@ function Router() {
         {PRACTICE_AREA_PAGES.map((page) => (
           <Route key={page.slug} path={`/${page.slug}`}>
             {() => <PracticeAreaPage data={page} />}
+          </Route>
+        ))}
+
+        {/* SEO Best Of Routes */}
+        {BEST_PAGES.map((page) => (
+          <Route key={page.slug} path={`/${page.slug}`}>
+            {() => <BestOfPage data={page} />}
           </Route>
         ))}
 

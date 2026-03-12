@@ -2,6 +2,7 @@ import { STATE_DATA, type StateData } from "./state-data";
 import { SERVICE_SYNONYM_PAGES } from "../client/src/data/service-synonym-pages";
 import { NEAR_ME_PAGES } from "../client/src/data/near-me-pages";
 import { PRACTICE_AREA_PAGES } from "../client/src/data/practice-area-pages";
+import { BEST_PAGES } from "../client/src/data/best-pages";
 import he from "he";
 
 interface MetaTags {
@@ -94,25 +95,36 @@ export function getMetaTagsHtml(url: string): string {
 
     const segments = path.split('/').filter(Boolean);
 
-    // --- 3. Service Synonym Pages, Near Me Pages & Practice Area Pages ---
+    // --- 3. Service Synonym Pages, Near Me Pages, Practice Area Pages & Best Pages ---
     if (segments.length === 1) {
+        const bestPage = BEST_PAGES.find(p => p.slug === segments[0]);
         const pageData = 
           SERVICE_SYNONYM_PAGES.find(p => p.slug === segments[0]) || 
           NEAR_ME_PAGES.find(p => p.slug === segments[0]) ||
-          PRACTICE_AREA_PAGES.find(p => p.slug === segments[0]);
+          PRACTICE_AREA_PAGES.find(p => p.slug === segments[0]) ||
+          bestPage;
           
         if (pageData) {
             meta.title = pageData.title;
             meta.description = pageData.description;
             meta.keywords = pageData.keyword;
             
-            const schema = {
+            const schema: any = {
                 "@context": "https://schema.org",
                 "@type": "LegalService",
                 "name": "Car Injury Law",
                 "url": meta.canonical,
                 "description": meta.description
             };
+            
+            if (bestPage) {
+              schema.aggregateRating = {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "500",
+                "bestRating": "5"
+              };
+            }
             
             return generateTagsHtml(meta, schema);
         }
