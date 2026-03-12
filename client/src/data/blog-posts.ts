@@ -6,12 +6,14 @@ import rideshareImg from '@assets/stock_images/person_using_ridesha_e8a5f2d4.jpg
 import wrongfulDeathImg from '@assets/stock_images/courtroom_gavel_just_813cbcc0.jpg';
 import motorcycleImg from '@assets/stock_images/motorcycle_accident__cca69d76.jpg';
 import premisesImg from '@assets/stock_images/slippery_icy_sidewal_1105bfff.jpg';
-import uninsuredImg from '@assets/stock_images/insurance_adjuster_m_379ce0e9.jpg';
+import uninsuredImg from '@assets/stock_images/personal_injury_lawy_4d2da1ce.jpg';
 import tbiImg from '@assets/stock_images/doctor_looking_at_br_9fb5ce88.jpg';
 import pedestrianImg from '@assets/stock_images/pedestrian_in_crossw_3f19403c.jpg';
 import workersCompImg from '@assets/stock_images/construction_worker__ab3e6531.jpg';
 import carAccidentGuideImg from '@assets/stock_images/car_accident_guide.jpg';
 import complexCrashesImg from '@assets/stock_images/complex_crashes.jpg';
+import topTenImg from '@assets/stock_images/modern_minimalistic__0134d195.jpg';
+import complexCrashesAltImg from '@assets/stock_images/orange_legal_scale_i_f8f046be.jpg';
 
 export const BLOG_POSTS_DATA = [
   {
@@ -245,7 +247,7 @@ export const BLOG_POSTS_DATA = [
     date: "February 18, 2026",
     author: "Alicia Dawson",
     category: "Car Accidents",
-    image: carAccidentGuideImg,
+    image: topTenImg,
     readTime: "7 min read",
     takeaways: [
       "Prioritize safety and call 911 immediately after any collision.",
@@ -336,7 +338,7 @@ export const BLOG_POSTS_DATA = [
     date: "February 18, 2026",
     author: "Alicia Dawson",
     category: "Complex Claims",
-    image: complexCrashesImg,
+    image: complexCrashesAltImg,
     readTime: "8 min read",
     takeaways: [
       "Truck, motorcycle, and rideshare accidents involve complex liability and multiple insurance policies.",
