@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { lazy, Suspense } from "react";
 import { STATE_DATA } from "@/data/state-data";
 import { SERVICE_SYNONYM_PAGES } from "@/data/service-synonym-pages";
+import { NEAR_ME_PAGES } from "@/data/near-me-pages";
 import { LazyMotion, domAnimation } from "framer-motion";
 import Home from "@/pages/home";
 
@@ -183,6 +184,13 @@ function Router() {
 
         {/* SEO Service Synonym Routes */}
         {SERVICE_SYNONYM_PAGES.map((page) => (
+          <Route key={page.slug} path={`/${page.slug}`}>
+            {() => <ServiceSynonymPage data={page} />}
+          </Route>
+        ))}
+
+        {/* SEO Near Me Routes */}
+        {NEAR_ME_PAGES.map((page) => (
           <Route key={page.slug} path={`/${page.slug}`}>
             {() => <ServiceSynonymPage data={page} />}
           </Route>

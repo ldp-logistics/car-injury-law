@@ -220,6 +220,26 @@ export default function ServiceSynonymPage({ data }: ServiceSynonymPageProps) {
                   <li><strong>Sever Social Media Usage:</strong> Deactivate or completely restrict all social media accounts. Defense teams utilize extensive surveillance tactics, including scraping public digital profiles to discover any photographic evidence that contradicts your injury limitations.</li>
                 </ul>
 
+                {kw.includes("near me") && (
+                  <div className="my-10 bg-slate-50 border border-slate-200 rounded-xl p-8 shadow-sm">
+                    <h3 className="text-2xl font-bold font-serif text-primary mb-4">We Serve All 50 States — No Matter Where You Are</h3>
+                    <p className="mb-4 text-gray-700">
+                      When searching for a <strong className="text-primary">{data.keyword}</strong>, you need a law firm with nationwide reach and local expertise. Car Injury Law serves injury victims in all 50 states, partnering with the top litigators in every jurisdiction to ensure you receive world-class representation without ever leaving your home.
+                    </p>
+                    <p className="font-bold text-gray-900 mb-4">Top States We Serve:</p>
+                    <ul className="grid grid-cols-2 md:grid-cols-4 gap-3 text-secondary font-semibold">
+                      <li><Link href="/california" className="hover:underline">California</Link></li>
+                      <li><Link href="/texas" className="hover:underline">Texas</Link></li>
+                      <li><Link href="/florida" className="hover:underline">Florida</Link></li>
+                      <li><Link href="/new-york" className="hover:underline">New York</Link></li>
+                      <li><Link href="/illinois" className="hover:underline">Illinois</Link></li>
+                      <li><Link href="/georgia" className="hover:underline">Georgia</Link></li>
+                      <li><Link href="/ohio" className="hover:underline">Ohio</Link></li>
+                      <li><Link href="/pennsylvania" className="hover:underline">Pennsylvania</Link></li>
+                    </ul>
+                  </div>
+                )}
+
                 <p className="mt-8">
                   The statute of limitations—the aggressive legal ticking clock capping how long you have to formally file a lawsuit—began running the moment your accident happened. For more contextual intelligence regarding localized litigation parameters, we recommend reviewing <Link href={internalLinkUrl} className="text-blue-600 font-bold hover:underline">{internalLinkLabel}</Link>. Do not wait until your medical bills spiral out of control and vital evidence disappears into the ether.
                 </p>

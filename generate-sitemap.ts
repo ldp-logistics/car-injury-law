@@ -1,6 +1,7 @@
 import fs from 'fs';
 import { STATE_DATA } from './client/src/data/state-data.ts';
 import { SERVICE_SYNONYM_PAGES } from './client/src/data/service-synonym-pages.ts';
+import { NEAR_ME_PAGES } from './client/src/data/near-me-pages.ts';
 
 const DOMAIN = 'https://www.carinjurylaw.com';
 
@@ -86,6 +87,13 @@ Object.values(STATE_DATA).forEach(state => {
 });
 
 SERVICE_SYNONYM_PAGES.forEach(page => {
+  urls.push({ 
+    loc: `${DOMAIN}/${page.slug}/`, 
+    priority: 0.9
+  });
+});
+
+NEAR_ME_PAGES.forEach(page => {
   urls.push({ 
     loc: `${DOMAIN}/${page.slug}/`, 
     priority: 0.9
