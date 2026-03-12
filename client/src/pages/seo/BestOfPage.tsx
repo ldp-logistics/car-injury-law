@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 
 // Background image - reusing one of the premium assets
-import heroBg from "@assets/stock_images/smiling_lawyer_hands_47accf3a.jpg";
+import heroBg from "@assets/stock_images/personal_injury_lawy_4d2da1ce.jpg";
 
 interface BestOfPageProps {
   data: BestPageData;
