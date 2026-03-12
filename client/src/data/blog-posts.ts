@@ -17,7 +17,7 @@ export const BLOG_POSTS_DATA = [
   {
     slug: "new-york-personal-injury-lawyer-2026",
     title: "New York Personal Injury Lawyer: Complete Guide for 2026",
-    date: "March 1, 2026",
+    date: "March 11, 2026",
     author: "Alicia Dawson",
     category: "State Guides",
     image: carAccidentGuideImg,
@@ -131,7 +131,7 @@ export const BLOG_POSTS_DATA = [
   {
     slug: "new-jersey-personal-injury-lawyer-2026",
     title: "New Jersey Personal Injury Lawyer: What You Need to Know in 2026",
-    date: "February 15, 2026",
+    date: "March 03, 2026",
     author: "Alicia Dawson",
     category: "State Guides",
     image: complexCrashesImg,

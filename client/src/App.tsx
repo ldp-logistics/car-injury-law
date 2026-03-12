@@ -65,6 +65,7 @@ const WorkplaceInjuryPage = lazy(() => import("@/pages/practice-areas/workplace-
 const MedicalMalpracticePage = lazy(() => import("@/pages/practice-areas/medical-malpractice"));
 const MedicalMalpracticeStateLandingPage = lazy(() => import("@/components/medical-malpractice-state-landing-page"));
 const SlipAndFallPage = lazy(() => import("@/pages/practice-areas/slip-and-fall"));
+const StateStatisticsPage = lazy(() => import("@/pages/state-statistics"));
 
 // Loading fallback component
 function PageLoader() {
@@ -175,6 +176,13 @@ function Router() {
         {Object.values(STATE_DATA).map((state) => (
           <Route key={state.slug} path={`/${state.slug}`}>
             {() => <StateLandingPage data={state} />}
+          </Route>
+        ))}
+
+        {/* State Statistics Routes */}
+        {Object.values(STATE_DATA).map((state) => (
+          <Route key={`stats-${state.slug}`} path={`/car-accident-statistics/${state.name.toLowerCase().replace(/ /g, '-')}`}>
+            {() => <StateStatisticsPage data={state} />}
           </Route>
         ))}
 
