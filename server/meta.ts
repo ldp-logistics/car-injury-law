@@ -1,6 +1,7 @@
 import { STATE_DATA, type StateData } from "./state-data";
 import { SERVICE_SYNONYM_PAGES } from "../client/src/data/service-synonym-pages";
 import { NEAR_ME_PAGES } from "../client/src/data/near-me-pages";
+import { PRACTICE_AREA_PAGES } from "../client/src/data/practice-area-pages";
 import he from "he";
 
 interface MetaTags {
@@ -93,13 +94,17 @@ export function getMetaTagsHtml(url: string): string {
 
     const segments = path.split('/').filter(Boolean);
 
-    // --- 3. Service Synonym Pages & Near Me Pages ---
+    // --- 3. Service Synonym Pages, Near Me Pages & Practice Area Pages ---
     if (segments.length === 1) {
-        const synonymPage = SERVICE_SYNONYM_PAGES.find(p => p.slug === segments[0]) || NEAR_ME_PAGES.find(p => p.slug === segments[0]);
-        if (synonymPage) {
-            meta.title = synonymPage.title;
-            meta.description = synonymPage.description;
-            meta.keywords = synonymPage.keyword;
+        const pageData = 
+          SERVICE_SYNONYM_PAGES.find(p => p.slug === segments[0]) || 
+          NEAR_ME_PAGES.find(p => p.slug === segments[0]) ||
+          PRACTICE_AREA_PAGES.find(p => p.slug === segments[0]);
+          
+        if (pageData) {
+            meta.title = pageData.title;
+            meta.description = pageData.description;
+            meta.keywords = pageData.keyword;
             
             const schema = {
                 "@context": "https://schema.org",

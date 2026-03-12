@@ -7,6 +7,7 @@ import { lazy, Suspense } from "react";
 import { STATE_DATA } from "@/data/state-data";
 import { SERVICE_SYNONYM_PAGES } from "@/data/service-synonym-pages";
 import { NEAR_ME_PAGES } from "@/data/near-me-pages";
+import { PRACTICE_AREA_PAGES } from "@/data/practice-area-pages";
 import { LazyMotion, domAnimation } from "framer-motion";
 import Home from "@/pages/home";
 
@@ -31,6 +32,7 @@ const TermsOfService = lazy(() => import("@/pages/terms"));
 const StateLandingPage = lazy(() => import("@/components/state-landing-page"));
 const CityLandingPage = lazy(() => import("@/pages/city-landing-page")); // City
 const ServiceSynonymPage = lazy(() => import("@/pages/seo/ServiceSynonymPage")); // SEO Synonyms
+const PracticeAreaPage = lazy(() => import("@/pages/seo/PracticeAreaPage")); // SEO Practice Areas
 
 // New Pages
 const AboutPage = lazy(() => import("@/pages/about"));
@@ -193,6 +195,13 @@ function Router() {
         {NEAR_ME_PAGES.map((page) => (
           <Route key={page.slug} path={`/${page.slug}`}>
             {() => <ServiceSynonymPage data={page} />}
+          </Route>
+        ))}
+
+        {/* SEO Practice Area Routes */}
+        {PRACTICE_AREA_PAGES.map((page) => (
+          <Route key={page.slug} path={`/${page.slug}`}>
+            {() => <PracticeAreaPage data={page} />}
           </Route>
         ))}
 
