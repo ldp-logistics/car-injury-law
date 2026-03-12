@@ -28,7 +28,9 @@ const faqs = [
   }
 ];
 
-export function FaqSection() {
+export function FaqSection({ items }: { items?: { question: string, answer: string }[] }) {
+  const displayFaqs = items && items.length > 0 ? items : faqs;
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 max-w-4xl">
@@ -40,7 +42,7 @@ export function FaqSection() {
         </div>
 
         <Accordion type="single" collapsible className="w-full space-y-4">
-          {faqs.map((faq, index) => (
+          {displayFaqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`} className="border border-gray-100 rounded-lg px-6 bg-gray-50/50">
               <AccordionTrigger className="text-left font-bold text-lg text-primary hover:text-secondary hover:no-underline py-6">
                 {faq.question}

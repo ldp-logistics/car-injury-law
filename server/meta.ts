@@ -3,6 +3,7 @@ import { SERVICE_SYNONYM_PAGES } from "../client/src/data/service-synonym-pages"
 import { NEAR_ME_PAGES } from "../client/src/data/near-me-pages";
 import { PRACTICE_AREA_PAGES } from "../client/src/data/practice-area-pages";
 import { BEST_PAGES } from "../client/src/data/best-pages";
+import { STATE_SPECIFIC_PAGES } from "../client/src/data/state-specific-pages";
 import he from "he";
 
 interface MetaTags {
@@ -95,14 +96,17 @@ export function getMetaTagsHtml(url: string): string {
 
     const segments = path.split('/').filter(Boolean);
 
-    // --- 3. Service Synonym Pages, Near Me Pages, Practice Area Pages & Best Pages ---
+    // --- 3. Service Synonym Pages, Near Me Pages, Practice Area Pages, Best Pages & State Specific Pages ---
     if (segments.length === 1) {
         const bestPage = BEST_PAGES.find(p => p.slug === segments[0]);
+        const stateSpecificPage = STATE_SPECIFIC_PAGES.find(p => p.slug === segments[0]);
+        
         const pageData = 
           SERVICE_SYNONYM_PAGES.find(p => p.slug === segments[0]) || 
           NEAR_ME_PAGES.find(p => p.slug === segments[0]) ||
           PRACTICE_AREA_PAGES.find(p => p.slug === segments[0]) ||
-          bestPage;
+          bestPage ||
+          stateSpecificPage;
           
         if (pageData) {
             meta.title = pageData.title;
@@ -124,6 +128,17 @@ export function getMetaTagsHtml(url: string): string {
                 "reviewCount": "500",
                 "bestRating": "5"
               };
+            }
+            
+            if (stateSpecificPage && "state" in stateSpecificPage) {
+               // Fetch human readable state name
+               const stateDataObj = STATE_DATA[stateSpecificPage.state];
+               if (stateDataObj) {
+                 schema.areaServed = {
+                   "@type": "State",
+                   "name": stateDataObj.name
+                 };
+               }
             }
             
             return generateTagsHtml(meta, schema);
