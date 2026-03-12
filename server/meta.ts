@@ -1,4 +1,5 @@
 import { STATE_DATA, type StateData } from "./state-data";
+import { SERVICE_SYNONYM_PAGES } from "../client/src/data/service-synonym-pages";
 import he from "he";
 
 interface MetaTags {
@@ -90,6 +91,26 @@ export function getMetaTagsHtml(url: string): string {
     };
 
     const segments = path.split('/').filter(Boolean);
+
+    // --- 3. Service Synonym Pages ---
+    if (segments.length === 1) {
+        const synonymPage = SERVICE_SYNONYM_PAGES.find(p => p.slug === segments[0]);
+        if (synonymPage) {
+            meta.title = synonymPage.title;
+            meta.description = synonymPage.description;
+            meta.keywords = synonymPage.keyword;
+            
+            const schema = {
+                "@context": "https://schema.org",
+                "@type": "LegalService",
+                "name": "Car Injury Law",
+                "url": meta.canonical,
+                "description": meta.description
+            };
+            
+            return generateTagsHtml(meta, schema);
+        }
+    }
 
     // Statistics pages: /car-accident-statistics/{state}/
     if (segments.length === 2 && segments[0] === 'car-accident-statistics') {

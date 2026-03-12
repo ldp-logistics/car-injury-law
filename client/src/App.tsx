@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { lazy, Suspense } from "react";
 import { STATE_DATA } from "@/data/state-data";
+import { SERVICE_SYNONYM_PAGES } from "@/data/service-synonym-pages";
 import { LazyMotion, domAnimation } from "framer-motion";
 import Home from "@/pages/home";
 
@@ -28,6 +29,7 @@ const PrivacyPolicy = lazy(() => import("@/pages/privacy"));
 const TermsOfService = lazy(() => import("@/pages/terms"));
 const StateLandingPage = lazy(() => import("@/components/state-landing-page"));
 const CityLandingPage = lazy(() => import("@/pages/city-landing-page")); // City
+const ServiceSynonymPage = lazy(() => import("@/pages/seo/ServiceSynonymPage")); // SEO Synonyms
 
 // New Pages
 const AboutPage = lazy(() => import("@/pages/about"));
@@ -176,6 +178,13 @@ function Router() {
         {Object.values(STATE_DATA).map((state) => (
           <Route key={state.slug} path={`/${state.slug}`}>
             {() => <StateLandingPage data={state} />}
+          </Route>
+        ))}
+
+        {/* SEO Service Synonym Routes */}
+        {SERVICE_SYNONYM_PAGES.map((page) => (
+          <Route key={page.slug} path={`/${page.slug}`}>
+            {() => <ServiceSynonymPage data={page} />}
           </Route>
         ))}
 
