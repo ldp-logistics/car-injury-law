@@ -47,7 +47,7 @@ export default function MedicalMalpracticeStateLandingPage({ data }: MedicalMalp
             "name": data.name,
             "abbreviation": data.abbr
           },
-          "serviceType": "Medical Malpractice Lawyer",
+          
           "priceRange": "Contingency Fee",
           "knowsAbout": [
             "Medical Malpractice Claims",

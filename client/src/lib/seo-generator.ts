@@ -3,37 +3,37 @@ import { STATE_DATA } from "@/data/state-data";
 // Core static pages
 const CORE_PAGES = {
   "/": {
-    title: "Car Injury Law | Nationwide Accident & Injury Attorneys",
+    title: "Car Accident & Injury Attorneys | Car Injury Law",
     description: "Top-rated nationwide personal injury firm. We fight insurance companies to get you maximum compensation. Free case review. No win, no fee. Call 1-888-669-5559.",
     keywords: "car accident lawyer, injury attorney, truck accident, motorcycle crash, wrongful death"
   },
   "/es": {
-    title: "Abogados de Accidentes de Auto | Representación Nacional",
+    title: "Abogados de Accidentes de Auto | Car Injury Law",
     description: "Abogados de lesiones personales calificados a nivel nacional. Peleamos contra las compañías de seguros para obtener su máxima compensación. Consulta gratis.",
     keywords: "abogado de accidentes, lesiones personales, demanda, compensacion"
   },
   "/about": {
-    title: "About Admani Law | National Injury Network Director",
+    title: "About Admani Law | Car Injury Law",
     description: "Learn about Admani Law and founder Saad Admani. We connect accident victims with the top 1% of trial attorneys nationwide.",
     keywords: "Admani Law, Saad Admani, injury network, trial attorneys"
   },
   "/attorneys/saad-admani": {
-    title: "Saad Admani, Esq. | Network Director & Lead Attorney",
+    title: "Saad Admani, Esq. | Car Injury Law",
     description: "Saad Admani is the founder of Admani Law and Director of the CarInjuryLaw.com Network. Licensed in NJ & NY, specializing in high-stakes injury litigation.",
     keywords: "Saad Admani, attorney profile, injury lawyer bio, NJ lawyer"
   },
   "/join-network": {
-    title: "Join Our Attorney Network | Car Injury Law Referral Program",
+    title: "Join Our Attorney Network | Car Injury Law",
     description: "Expand your practice with high-quality personal injury leads. Join the Admani Law network of elite trial attorneys.",
     keywords: "attorney referral network, legal leads, injury case referrals"
   },
   "/settlement-calculator": {
-    title: "Car Accident Settlement Calculator | Estimate Your Case Value",
+    title: "Car Accident Settlement Calculator | Car Injury Law",
     description: "How much is your car accident case worth? Use our free settlement calculator to estimate compensation for medical bills, lost wages, and pain & suffering.",
     keywords: "settlement calculator, case value estimator, car accident compensation"
   },
   "/blog": {
-    title: "Legal Insights & Resources | Admani Law Blog",
+    title: "Legal Insights & Resources | Car Injury Law",
     description: "Expert articles on personal injury law, car accident settlements, and insurance claims. Stay informed with Admani Law.",
     keywords: "legal blog, injury law tips, accident guides"
   },
@@ -43,12 +43,12 @@ const CORE_PAGES = {
     keywords: "case results, settlement amounts, verdict history"
   },
   "/glossary": {
-    title: "Personal Injury Legal Glossary | Terms You Should Know",
+    title: "Personal Injury Legal Glossary | Car Injury Law",
     description: "Confused by legal jargon? Browse our comprehensive glossary of personal injury and insurance terms.",
     keywords: "legal glossary, injury law terms, insurance definitions"
   },
   "/vs-insurance": {
-    title: "You vs. The Insurance Company | Level the Playing Field",
+    title: "You vs. The Insurance Company | Car Injury Law",
     description: "Insurance companies have teams of lawyers. You should too. Learn how we fight their tactics to win your case.",
     keywords: "insurance tactics, claim denial, insurance adjuster"
   },
@@ -79,57 +79,57 @@ const CORE_PAGES = {
   },
   // Main Practice Areas
   "/practice-areas/truck-accident": {
-    title: "Truck Accident Lawyer | Semi-Truck Crash Attorneys",
+    title: "Truck Accident Lawyers | Car Injury Law",
     description: "Hit by a semi-truck? Our specialized truck accident lawyers fight trucking companies to get you justice. Federal regulations experts.",
     keywords: "truck accident lawyer, semi crash attorney, 18-wheeler accident"
   },
   "/practice-areas/motorcycle-accident": {
-    title: "Motorcycle Accident Lawyer | Biker Injury Attorneys",
+    title: "Motorcycle Accident Lawyers | Car Injury Law",
     description: "We ride, we understand. Aggressive representation for injured motorcyclists. We fight biker bias and get you paid.",
     keywords: "motorcycle accident lawyer, motorcycle injury attorney, biker lawyer"
   },
   "/practice-areas/wrongful-death": {
-    title: "Wrongful Death Attorneys | Compassionate Legal Help",
+    title: "Wrongful Death Attorneys | Car Injury Law",
     description: "Justice for your lost loved one. We handle wrongful death claims with compassion and aggression against those responsible.",
     keywords: "wrongful death lawyer, fatal accident attorney"
   },
   "/practice-areas/personal-injury": {
-    title: "Personal Injury Lawyer | Nationwide Injury Attorneys",
+    title: "Personal Injury Lawyers | Car Injury Law",
     description: "Injured due to negligence? We handle all types of injury cases. No fee unless we win. Free consultation.",
     keywords: "personal injury lawyer, injury attorney, accident lawyer"
   },
   "/practice-areas/rideshare-accident": {
-    title: "Uber & Lyft Accident Lawyer | Rideshare Injury Attorneys",
+    title: "Uber & Lyft Accident Lawyers | Car Injury Law",
     description: "Injured in an Uber or Lyft? Complex insurance policies require specialized legal help. We sue rideshare giants.",
     keywords: "uber accident lawyer, lyft accident attorney, rideshare injury"
   },
   "/practice-areas/car-accident": {
-    title: "Car Accident Lawyer | Auto Crash Attorneys",
+    title: "Car Accident Lawyers | Car Injury Law",
     description: "Leading car accident attorneys nationwide. We maximize settlements for crashes, rear-ends, and T-bone accidents.",
     keywords: "car accident lawyer, auto accident attorney, car crash help"
   },
   "/practice-areas/pedestrian-injury": {
-    title: "Pedestrian Accident Lawyer | Hit by Car Attorneys",
+    title: "Pedestrian Accident Lawyers | Car Injury Law",
     description: "Pedestrians have rights. If you were hit by a vehicle, we help you recover compensation for your serious injuries.",
     keywords: "pedestrian accident lawyer, hit by car attorney"
   },
   "/practice-areas/bus-transit-injury": {
-    title: "Bus & Public Transit Accident Lawyer",
+    title: "Bus & Public Transit Accident Lawyers | Car Injury Law",
     description: "Injured on a bus or train? We handle complex claims against public transit authorities and private bus companies.",
     keywords: "bus accident lawyer, transit injury attorney"
   },
   "/practice-areas/workplace-injury": {
-    title: "Workplace Injury Lawyer | Construction & Industrial Accidents",
+    title: "Workplace Injury Lawyers | Car Injury Law",
     description: "Injured on the job? We handle third-party liability claims for construction and industrial workplace accidents.",
     keywords: "workplace injury lawyer, construction accident attorney"
   },
   "/practice-areas/medical-malpractice": {
-    title: "Medical Malpractice Lawyer | Negligence Attorneys",
+    title: "Medical Malpractice Lawyers | Car Injury Law",
     description: "Harmed by a doctor or hospital? We hold medical professionals accountable for negligence and errors.",
     keywords: "medical malpractice lawyer, hospital negligence attorney"
   },
   "/practice-areas/slip-and-fall": {
-    title: "Slip and Fall Lawyer | Premises Liability Attorneys",
+    title: "Slip and Fall Lawyers | Car Injury Law",
     description: "Injured on unsafe property? We fight property owners and insurance companies in slip and fall cases.",
     keywords: "slip and fall lawyer, premises liability attorney"
   }
@@ -146,7 +146,7 @@ export function getSeoMetadata(path: string): { title: string; description: stri
   const stateMatch = Object.values(STATE_DATA).find(s => `/${s.slug}` === path);
   if (stateMatch) {
     return {
-      title: `${stateMatch.name} Car Accident Lawyer | No Win No Fee Attorneys`,
+      title: `${stateMatch.name} Car Accident Lawyer | Car Injury Law`,
       description: `Injured in ${stateMatch.name}? Our top-rated ${stateMatch.name} car accident lawyers fight for your maximum settlement. Statute of limitations is ${stateMatch.statute}. Free review.`,
       keywords: `${stateMatch.name} car accident lawyer, ${stateMatch.name} injury attorney, accident lawyer in ${stateMatch.name}`
     };
@@ -168,56 +168,56 @@ export function getSeoMetadata(path: string): { title: string; description: stri
     if (state) {
       if (practiceSlug === "personal-injury-lawyer") {
         return {
-          title: `${state.name} Personal Injury Lawyer | Accident Attorneys`,
+          title: `${state.name} Personal Injury Lawyer | Car Injury Law`,
           description: `Top-rated personal injury lawyers in ${state.name}. We handle car crashes, slip and falls, and workplace injuries across ${state.name}. Free consultation.`,
           keywords: `${state.name} personal injury lawyer, injury attorney ${state.name}`
         };
       }
       if (practiceSlug === "motorcycle-accident-lawyer") {
         return {
-          title: `${state.name} Motorcycle Accident Lawyer | Biker Attorneys`,
+          title: `${state.name} Motorcycle Accident Lawyer | Car Injury Law`,
           description: `Hit on your bike in ${state.name}? Our ${state.name} motorcycle accident lawyers fight for bikers rights. Get compensation for your injuries and bike repairs.`,
           keywords: `${state.name} motorcycle accident lawyer, biker attorney ${state.name}`
         };
       }
       if (practiceSlug === "truck-accident-lawyer") {
         return {
-          title: `${state.name} Truck Accident Lawyer | 18-Wheeler Crash Attorneys`,
+          title: `${state.name} Truck Accident Lawyer | Car Injury Law`,
           description: `Semi-truck crash in ${state.name}? We know ${state.name} trucking laws. Our aggressive attorneys fight trucking companies for maximum payouts.`,
           keywords: `${state.name} truck accident lawyer, 18-wheeler attorney ${state.name}`
         };
       }
       if (practiceSlug === "pedestrian-injury-lawyer") {
         return {
-          title: `${state.name} Pedestrian Accident Lawyer | Hit by Car`,
+          title: `${state.name} Pedestrian Accident Lawyer | Car Injury Law`,
           description: `Hit by a car in ${state.name}? Our pedestrian injury lawyers help victims recover medical costs and lost wages. Don't face insurance alone.`,
           keywords: `${state.name} pedestrian accident lawyer, hit by car attorney ${state.name}`
         };
       }
       if (practiceSlug === "bus-accident-lawyer") {
         return {
-          title: `${state.name} Bus Accident Lawyer | Transit Injury Attorneys`,
+          title: `${state.name} Bus Accident Lawyer | Car Injury Law`,
           description: `Injured on a bus in ${state.name}? We handle claims against ${state.name} transit authorities and private bus lines. Free case evaluation.`,
           keywords: `${state.name} bus accident lawyer, transit attorney ${state.name}`
         };
       }
       if (practiceSlug === "workplace-injury-lawyer") {
         return {
-          title: `${state.name} Workplace Injury Lawyer | Job Site Accidents`,
+          title: `${state.name} Workplace Injury Lawyer | Car Injury Law`,
           description: `Hurt on the job in ${state.name}? Beyond workers' comp, you may have a third-party claim. Talk to our ${state.name} workplace injury lawyers today.`,
           keywords: `${state.name} workplace injury lawyer, construction accident attorney ${state.name}`
         };
       }
       if (practiceSlug === "medical-malpractice-lawyer") {
         return {
-          title: `${state.name} Medical Malpractice Lawyer | Negligence Attorneys`,
+          title: `${state.name} Medical Malpractice Lawyer | Car Injury Law`,
           description: `Victim of medical negligence in ${state.name}? Our malpractice attorneys hold doctors and hospitals accountable. Justice for your family.`,
           keywords: `${state.name} medical malpractice lawyer, hospital negligence attorney ${state.name}`
         };
       }
       if (practiceSlug === "slip-and-fall-lawyer") {
         return {
-          title: `${state.name} Slip and Fall Lawyer | Premises Liability`,
+          title: `${state.name} Slip and Fall Lawyer | Car Injury Law`,
           description: `Slipped and fell in ${state.name}? Property owners must keep you safe. Our ${state.name} premises liability lawyers fight for your compensation.`,
           keywords: `${state.name} slip and fall lawyer, premises liability attorney ${state.name}`
         };
@@ -238,7 +238,7 @@ export function getSeoMetadata(path: string): { title: string; description: stri
                      || citySlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
       
       return {
-        title: `${cityName} Car Accident Lawyer | ${stateBySlug.name} Injury Attorneys`,
+        title: `${cityName} Car Accident Lawyer | Car Injury Law`,
         description: `Top-rated car accident lawyer in ${cityName}, ${stateBySlug.name}. Local representation for serious injury cases. Free consultation 24/7.`,
         keywords: `${cityName} car accident lawyer, ${cityName} injury attorney, accident lawyer in ${cityName}`
       };

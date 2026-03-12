@@ -47,7 +47,7 @@ export default function MotorcycleStateLandingPage({ data }: MotorcycleStateLand
             "name": data.name,
             "abbreviation": data.abbr
           },
-          "serviceType": "Motorcycle Accident Lawyer",
+          
           "priceRange": "Contingency Fee",
           "knowsAbout": [
             "Motorcycle Accident Claims",

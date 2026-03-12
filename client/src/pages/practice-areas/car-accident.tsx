@@ -63,7 +63,7 @@ export default function CarAccidentPage() {
             "@type": "Country",
             "name": "United States"
           },
-          "serviceType": "Car Accident Lawyer",
+          
           "knowsAbout": [
             "Car Accident Claims",
             "Personal Injury Protection",
@@ -616,3 +616,4 @@ export default function CarAccidentPage() {
     </div>
   );
 }
+

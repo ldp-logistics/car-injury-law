@@ -65,7 +65,7 @@ export default function WorkplaceInjuryPage() {
             "@type": "Country",
             "name": "United States"
           },
-          "serviceType": "Workplace Injury Lawyer",
+          
           "knowsAbout": [
             "Workers Compensation Claims",
             "Third-Party Liability",
@@ -642,3 +642,4 @@ export default function WorkplaceInjuryPage() {
     </div>
   );
 }
+

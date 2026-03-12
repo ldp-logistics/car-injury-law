@@ -47,7 +47,7 @@ export default function TruckStateLandingPage({ data }: TruckStateLandingPagePro
             "name": data.name,
             "abbreviation": data.abbr
           },
-          "serviceType": "Truck Accident Lawyer",
+          
           "priceRange": "Contingency Fee",
           "knowsAbout": [
             "Truck Accident Claims",

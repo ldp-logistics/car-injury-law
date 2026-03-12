@@ -55,7 +55,7 @@ export default function SitemapPage() {
               <h2 className="text-xl font-bold mb-4 border-b pb-2">Personal Injury Lawyers by State</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2">
                 {Object.values(STATE_DATA).map(state => (
-                  <Link key={state.slug} href={`/personal-injury-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
+                  <Link key={state.slug} href={`/personal-injury-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}/`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
                     {state.name} Personal Injury Lawyer
                   </Link>
                 ))}
@@ -67,13 +67,13 @@ export default function SitemapPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {Object.values(STATE_DATA).map(state => (
                   <div key={state.slug} className="space-y-2">
-                    <Link href={`/${state.slug}`} className="font-semibold text-gray-800 hover:text-primary hover:underline block">
+                    <Link href={`/${state.slug}/`} className="font-semibold text-gray-800 hover:text-primary hover:underline block">
                       {state.name} Car Accident Lawyer
                     </Link>
                     <ul className="pl-4 space-y-1 border-l-2 border-slate-100">
                       {state.cityList.map(city => (
                         <li key={city}>
-                          <Link href={`/${state.slug}/${city.toLowerCase().replace(/ /g, '-')}`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
+                          <Link href={`/${state.slug}/${city.toLowerCase().replace(/ /g, '-')}/`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
                             {city}, {state.abbr}
                           </Link>
                         </li>
@@ -88,7 +88,7 @@ export default function SitemapPage() {
               <h2 className="text-xl font-bold mb-4 border-b pb-2">Medical Malpractice Lawyers by State</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2">
                 {Object.values(STATE_DATA).map(state => (
-                  <Link key={state.slug} href={`/medical-malpractice-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
+                  <Link key={state.slug} href={`/medical-malpractice-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}/`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
                     {state.name} Medical Malpractice Lawyer
                   </Link>
                 ))}
@@ -99,7 +99,7 @@ export default function SitemapPage() {
               <h2 className="text-xl font-bold mb-4 border-b pb-2">Motorcycle Accident Lawyers by State</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2">
                 {Object.values(STATE_DATA).map(state => (
-                  <Link key={state.slug} href={`/motorcycle-accident-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
+                  <Link key={state.slug} href={`/motorcycle-accident-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}/`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
                     {state.name} Motorcycle Accident Lawyer
                   </Link>
                 ))}
@@ -110,7 +110,7 @@ export default function SitemapPage() {
               <h2 className="text-xl font-bold mb-4 border-b pb-2">Truck Accident Lawyers by State</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2">
                 {Object.values(STATE_DATA).map(state => (
-                  <Link key={state.slug} href={`/truck-accident-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
+                  <Link key={state.slug} href={`/truck-accident-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}/`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
                     {state.name} Truck Accident Lawyer
                   </Link>
                 ))}
@@ -121,7 +121,7 @@ export default function SitemapPage() {
               <h2 className="text-xl font-bold mb-4 border-b pb-2">Workplace Injury Lawyers by State</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2">
                 {Object.values(STATE_DATA).map(state => (
-                  <Link key={state.slug} href={`/workplace-injury-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
+                  <Link key={state.slug} href={`/workplace-injury-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}/`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
                     {state.name} Workplace Injury Lawyer
                   </Link>
                 ))}
@@ -132,7 +132,7 @@ export default function SitemapPage() {
               <h2 className="text-xl font-bold mb-4 border-b pb-2">Slip & Fall Lawyers by State</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2">
                 {Object.values(STATE_DATA).map(state => (
-                  <Link key={state.slug} href={`/slip-and-fall-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
+                  <Link key={state.slug} href={`/slip-and-fall-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}/`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
                     {state.name} Slip & Fall Lawyer
                   </Link>
                 ))}
@@ -143,7 +143,7 @@ export default function SitemapPage() {
               <h2 className="text-xl font-bold mb-4 border-b pb-2">Bus Accident Lawyers by State</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2">
                 {Object.values(STATE_DATA).map(state => (
-                  <Link key={state.slug} href={`/bus-accident-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
+                  <Link key={state.slug} href={`/bus-accident-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}/`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
                     {state.name} Bus Accident Lawyer
                   </Link>
                 ))}
@@ -154,7 +154,7 @@ export default function SitemapPage() {
               <h2 className="text-xl font-bold mb-4 border-b pb-2">Pedestrian Injury Lawyers by State</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-2">
                 {Object.values(STATE_DATA).map(state => (
-                  <Link key={state.slug} href={`/pedestrian-injury-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
+                  <Link key={state.slug} href={`/pedestrian-injury-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}/`} className="text-gray-600 hover:text-primary hover:underline text-sm block">
                     {state.name} Pedestrian Injury Lawyer
                   </Link>
                 ))}

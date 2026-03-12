@@ -47,7 +47,7 @@ export default function WorkplaceStateLandingPage({ data }: WorkplaceStateLandin
             "name": data.name,
             "abbreviation": data.abbr
           },
-          "serviceType": "Workplace Injury Lawyer",
+          
           "priceRange": "Contingency Fee",
           "knowsAbout": [
             "Workers Compensation Claims",

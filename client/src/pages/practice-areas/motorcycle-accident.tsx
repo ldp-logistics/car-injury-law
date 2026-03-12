@@ -66,7 +66,7 @@ export default function MotorcycleAccidentPage() {
             "@type": "Country",
             "name": "United States"
           },
-          "serviceType": "Motorcycle Accident Lawyer",
+          
           "knowsAbout": [
             "Motorcycle Accident Claims",
             "Biker Bias Defense",
@@ -627,3 +627,4 @@ export default function MotorcycleAccidentPage() {
     </div>
   );
 }
+

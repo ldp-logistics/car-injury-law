@@ -49,7 +49,10 @@ export function SeoHead({
   const description = propDescription || generatedSeo?.description || "Expert car accident and personal injury representation nationwide. We fight insurance companies to maximize your settlement. Free consultation 24/7.";
   const keywords = generatedSeo?.keywords || "car accident lawyer, personal injury attorney, truck accident lawyer";
   
-  const currentUrl = canonicalUrl || `https://www.carinjurylaw.com${location}`;
+  // Ensure trailing slash for consistency with sitemap and SSR meta tags
+  const cleanLocation = location === '/' ? '' : location.replace(/\/$/, "");
+  const defaultUrl = `https://www.carinjurylaw.com${cleanLocation}/`;
+  const currentUrl = canonicalUrl || defaultUrl;
 
   useEffect(() => {
     // 1. Update Title

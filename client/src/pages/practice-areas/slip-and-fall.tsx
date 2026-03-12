@@ -65,7 +65,7 @@ export default function SlipAndFallPage() {
             "@type": "Country",
             "name": "United States"
           },
-          "serviceType": "Slip and Fall Lawyer",
+          
           "knowsAbout": [
             "Premises Liability",
             "Property Owner Negligence",
@@ -621,3 +621,4 @@ export default function SlipAndFallPage() {
     </div>
   );
 }
+

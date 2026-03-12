@@ -12,11 +12,11 @@ interface MetaTags {
 }
 
 const DEFAULT_META: MetaTags = {
-    title: "Car Injury Law| Personal Injury Lawyers in USA | Nationwide Accident Attorneys",
+    title: "Car Accident & Injury Attorneys | Car Injury Law",
     description: "Expert car accident and personal injury lawyers in USA. We fight insurance companies to maximize your settlement. Free consultation 24/7.",
     keywords: "car accident lawyer, personal injury attorney, truck accident lawyer",
     canonical: "https://www.carinjurylaw.com/",
-    ogTitle: "Car Injury Law | Nationwide Accident Attorneys",
+    ogTitle: "Car Accident & Injury Attorneys | Car Injury Law",
     ogDescription: "Expert car accident and personal injury representation nationwide. We fight insurance companies to maximize your settlement. Free consultation 24/7.",
     ogImage: "https://www.carinjurylaw.com/og-image.jpg",
 };
@@ -68,14 +68,14 @@ export function getMetaTagsHtml(url: string): string {
     }
 
     if (path === '/about') {
-        meta.title = "About Us | Car Injury Law | Nationwide Attorneys";
+        meta.title = "About Admani Law | Car Injury Law";
         meta.description = "Learn about Car Injury Law and lead trial attorney Saad Admani.";
     }
     else if (path.includes('/practice-areas/')) {
         const area = path.split('/').pop()?.replace(/-/g, ' ');
         const formattedArea = toCityCase(area || "");
 
-        meta.title = `${formattedArea} Lawyers | Nationwide Representation | Car Injury Law`;
+        meta.title = `${formattedArea} Lawyers | Car Injury Law`;
         meta.description = `Injured in a ${formattedArea.toLowerCase()} accident? Our experienced attorneys fight for the compensation you deserve.`;
     }
 
@@ -94,11 +94,11 @@ export function getMetaTagsHtml(url: string): string {
 
         if (stateData) {
             if (segments.length === 1) {
-                meta.title = `${stateData.name} Car Accident Lawyer | Max Compensation`;
+                meta.title = `${stateData.name} Car Accident Lawyer | Car Injury Law`;
                 meta.description = `Top-rated car accident lawyers in ${stateData.name}. We know the ${stateData.statute} statute of limitations.`;
             } else if (segments.length === 2) {
                 const cityName = toCityCase(segments[1]);
-                meta.title = `${cityName}, ${stateData.abbr} Car Accident Lawyer | Top Local Attorneys`;
+                meta.title = `${cityName}, ${stateData.abbr} Car Accident Lawyer | Car Injury Law`;
                 meta.description = `Injured in ${cityName}, ${stateData.abbr}? Our expert lawyers fight for your settlement.`;
             }
         }

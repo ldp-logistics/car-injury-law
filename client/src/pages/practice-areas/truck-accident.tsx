@@ -67,7 +67,7 @@ export default function TruckAccidentPage() {
             "@type": "Country",
             "name": "United States"
           },
-          "serviceType": "Truck Accident Lawyer",
+          
           "knowsAbout": [
             "FMCSA Regulations",
             "Commercial Vehicle Accidents",
@@ -643,3 +643,4 @@ export default function TruckAccidentPage() {
     </div>
   );
 }
+

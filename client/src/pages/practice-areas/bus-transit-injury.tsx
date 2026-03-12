@@ -65,7 +65,7 @@ export default function BusTransitInjuryPage() {
             "@type": "Country",
             "name": "United States"
           },
-          "serviceType": "Bus Accident Lawyer",
+          
           "knowsAbout": [
             "Bus Accident Claims",
             "Common Carrier Liability",
@@ -616,3 +616,4 @@ export default function BusTransitInjuryPage() {
     </div>
   );
 }
+

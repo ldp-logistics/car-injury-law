@@ -47,7 +47,7 @@ export default function PedestrianStateLandingPage({ data }: PedestrianStateLand
             "name": data.name,
             "abbreviation": data.abbr
           },
-          "serviceType": "Pedestrian Injury Lawyer",
+          
           "priceRange": "Contingency Fee",
           "knowsAbout": [
             "Pedestrian Accident Claims",

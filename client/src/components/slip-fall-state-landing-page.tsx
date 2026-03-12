@@ -47,7 +47,7 @@ export default function SlipFallStateLandingPage({ data }: SlipFallStateLandingP
             "name": data.name,
             "abbreviation": data.abbr
           },
-          "serviceType": "Slip and Fall Lawyer",
+          
           "priceRange": "Contingency Fee",
           "knowsAbout": [
             "Premises Liability",

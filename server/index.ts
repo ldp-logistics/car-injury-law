@@ -72,6 +72,15 @@ app.use((req, res, next) => {
     // Static files serve karte waqt index:false lazmi hai
     app.use(express.static(distPath, { index: false }));
 
+    // Explicitly 404 missing XML/TXT sitemaps to prevent the React SPA catchall 
+    // from returning 200 OK HTML. This fixes "Page in multiple sitemaps" SEO ghosts.
+    app.use((req, res, next) => {
+      if (req.path.match(/\.(xml|txt|rss|atom|json)$/)) {
+        return res.status(404).send("Not Found");
+      }
+      next();
+    });
+
     app.get("*", async (req, res, next) => {
       try {
         const indexPath = path.resolve(distPath, "index.html");

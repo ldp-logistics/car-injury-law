@@ -57,16 +57,16 @@ export function NavBar() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-4 lg:gap-8">
             <div className="flex items-center gap-6 mr-4">
-              <Link href="/about">
+              <Link href="/about/">
                 <span className="text-primary/80 font-bold hover:text-primary transition-colors text-sm uppercase tracking-wide cursor-pointer">About</span>
               </Link>
-              <Link href="/blog">
+              <Link href="/blog/">
                 <span className="text-primary/80 font-bold hover:text-primary transition-colors text-sm uppercase tracking-wide cursor-pointer">Insights</span>
               </Link>
-              <Link href="/glossary">
+              <Link href="/glossary/">
                 <span className="text-primary/80 font-bold hover:text-primary transition-colors text-sm uppercase tracking-wide cursor-pointer">Glossary</span>
               </Link>
-              <Link href="/settlement-calculator">
+              <Link href="/settlement-calculator/">
                 <span className="text-primary/80 font-bold hover:text-primary transition-colors text-sm uppercase tracking-wide cursor-pointer">Calculator</span>
               </Link>
             </div>
@@ -120,10 +120,10 @@ export function NavBar() {
                      <p className="text-xs text-gray-500 uppercase tracking-wider font-bold mt-1">A Division of <a href="https://www.admanilaw.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">Admani Law</a></p>
                    </div>
 
-                  <Link href="/about" onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">About Us</Link>
-                  <Link href="/blog" onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">Legal Insights</Link>
-                  <Link href="/settlement-calculator" onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">Calculator</Link>
-                  <Link href="/join-network" onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">Attorney Referral</Link>
+                  <Link href="/about/" onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">About Us</Link>
+                  <Link href="/blog/" onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">Legal Insights</Link>
+                  <Link href="/settlement-calculator/" onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">Calculator</Link>
+                  <Link href="/join-network/" onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">Attorney Referral</Link>
                   
                   <div className="h-px bg-gray-200 my-2" />
                   <div className="flex justify-between items-center">

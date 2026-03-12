@@ -47,7 +47,7 @@ export default function StateLandingPage({ data }: StateLandingPageProps) {
             "name": data.name,
             "abbreviation": data.abbr
           },
-          "serviceType": "Car Accident Lawyer",
+          
           "priceRange": "Contingency Fee",
           "knowsAbout": [
             "Car Accident Claims",

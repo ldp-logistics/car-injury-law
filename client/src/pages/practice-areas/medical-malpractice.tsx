@@ -66,7 +66,7 @@ export default function MedicalMalpracticePage() {
             "@type": "Country",
             "name": "United States"
           },
-          "serviceType": "Medical Malpractice Lawyer",
+          
           "knowsAbout": [
             "Surgical Errors",
             "Misdiagnosis Claims",
@@ -640,3 +640,4 @@ export default function MedicalMalpracticePage() {
     </div>
   );
 }
+

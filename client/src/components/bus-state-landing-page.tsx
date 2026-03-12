@@ -47,7 +47,7 @@ export default function BusStateLandingPage({ data }: BusStateLandingPageProps) 
             "name": data.name,
             "abbreviation": data.abbr
           },
-          "serviceType": "Bus Accident Lawyer",
+          
           "priceRange": "Contingency Fee",
           "knowsAbout": [
             "Bus Accident Claims",

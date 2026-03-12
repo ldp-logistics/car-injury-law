@@ -65,7 +65,7 @@ export default function PedestrianInjuryPage() {
             "@type": "Country",
             "name": "United States"
           },
-          "serviceType": "Pedestrian Injury Lawyer",
+          
           "knowsAbout": [
             "Pedestrian Accident Claims",
             "Crosswalk Safety Laws",
@@ -620,3 +620,4 @@ export default function PedestrianInjuryPage() {
     </div>
   );
 }
+
