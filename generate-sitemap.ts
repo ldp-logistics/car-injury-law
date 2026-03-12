@@ -76,6 +76,14 @@ Object.values(STATE_DATA).forEach(state => {
   });
 });
 
+Object.values(STATE_DATA).forEach(state => {
+  const stateNameSlug = state.name.toLowerCase().replace(/ /g, '-');
+  urls.push({ 
+    loc: `${DOMAIN}/car-accident-statistics/${stateNameSlug}/`, 
+    priority: 0.9  // Higher priority than regular pages
+  });
+});
+
 let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
 xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 

@@ -76,7 +76,7 @@ export const STATE_DATA: Record<string, StateData> = {
     faultSystem: "Pure Comparative Negligence",
     minInsurance: "$30,000 / $60,000",
     avgSettlement: "$40,000 - $160,000",
-    cityList: ["Los Angeles", "San Diego", "San Jose", "San Francisco", "Fresno", "Sacramento"],
+    cityList: ["Los Angeles", "San Diego", "San Jose", "San Francisco", "Fresno", "Sacramento", "Long Beach", "Oakland", "Bakersfield", "Anaheim", "Stockton", "Riverside", "Irvine", "Santa Ana", "Chula Vista"],
     nearbyStates: ["nevada", "arizona", "oregon"],
     bgImage: "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?q=80&w=2070&auto=format&fit=crop",
     warning: {
@@ -128,7 +128,7 @@ export const STATE_DATA: Record<string, StateData> = {
     faultSystem: "No-Fault (Pure)",
     minInsurance: "$10,000 / $20,000",
     avgSettlement: "$35,000 - $120,000",
-    cityList: ["Miami", "Tampa", "Orlando", "Jacksonville", "Fort Lauderdale"],
+    cityList: ["Miami", "Tampa", "Orlando", "Jacksonville", "Fort Lauderdale", "St. Petersburg", "Hialeah", "Port St. Lucie", "Cape Coral", "Tallahassee", "Pembroke Pines", "Hollywood"],
     nearbyStates: ["georgia", "alabama"],
     bgImage: "https://images.unsplash.com/photo-1535498730771-e735b998cd29?q=80&w=2070&auto=format&fit=crop",
      warning: {
@@ -180,7 +180,7 @@ export const STATE_DATA: Record<string, StateData> = {
     faultSystem: "Modified Comparative Negligence",
     minInsurance: "$25,000 / $50,000",
     avgSettlement: "$40,000 - $140,000",
-    cityList: ["Chicago", "Aurora", "Naperville", "Joliet", "Rockford"],
+    cityList: ["Chicago", "Aurora", "Naperville", "Joliet", "Rockford", "Springfield", "Elgin", "Peoria", "Champaign", "Waukegan"],
     nearbyStates: ["wisconsin", "indiana", "missouri", "iowa"],
     bgImage: "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?q=80&w=2070&auto=format&fit=crop"
   },
@@ -384,7 +384,7 @@ export const STATE_DATA: Record<string, StateData> = {
     faultSystem: "Modified Comparative Negligence",
     minInsurance: "$15,000 / $30,000",
     avgSettlement: "$45,000 - $150,000",
-    cityList: ["Newark", "Jersey City", "Paterson", "Elizabeth"],
+    cityList: ["Newark", "Jersey City", "Paterson", "Elizabeth", "Edison", "Woodbridge", "Lakewood", "Toms River", "Hamilton", "Trenton"],
     nearbyStates: ["new-york", "pennsylvania", "delaware"],
     bgImage: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop"
   },
@@ -408,7 +408,7 @@ export const STATE_DATA: Record<string, StateData> = {
     faultSystem: "No-Fault (Serious Injury Threshold)",
     minInsurance: "$25,000 / $50,000",
     avgSettlement: "$50,000 - $175,000",
-    cityList: ["New York City", "Buffalo", "Rochester", "Yonkers"],
+    cityList: ["New York City", "Buffalo", "Rochester", "Yonkers", "Syracuse", "Albany", "New Rochelle", "Mount Vernon", "Schenectady", "Utica", "White Plains", "Troy"],
     nearbyStates: ["new-jersey", "connecticut", "pennsylvania"],
     bgImage: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?q=80&w=2070&auto=format&fit=crop"
   },
@@ -544,7 +544,7 @@ export const STATE_DATA: Record<string, StateData> = {
     faultSystem: "Modified Comparative (51% Bar)",
     minInsurance: "$30,000 / $60,000",
     avgSettlement: "$35,000 - $130,000",
-    cityList: ["Houston", "San Antonio", "Dallas", "Austin"],
+    cityList: ["Houston", "San Antonio", "Dallas", "Austin", "Fort Worth", "El Paso", "Arlington", "Corpus Christi", "Plano", "Lubbock", "Laredo", "Irving", "Garland", "Frisco", "McKinney"],
     nearbyStates: ["louisiana", "oklahoma", "new-mexico", "arkansas"],
     bgImage: "https://images.unsplash.com/photo-1531218150217-54595bc2b934?q=80&w=2070&auto=format&fit=crop"
   },
