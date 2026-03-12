@@ -26,11 +26,8 @@ const DEFAULT_META: MetaTags = {
     ogImage: "https://www.carinjurylaw.com/og-image.jpg",
 };
 
-function generateTagsHtml(meta: MetaTags, schema?: object): string {
+function generateTagsHtml(meta: MetaTags): string {
     const escape = he.encode;
-    const schemaTag = schema 
-      ? `\n    <script type="application/ld+json">${JSON.stringify(schema)}</script>`
-      : '';
     return `
     <title>${escape(meta.title)}</title>
     <meta name="description" content="${escape(meta.description)}" />
@@ -47,7 +44,7 @@ function generateTagsHtml(meta: MetaTags, schema?: object): string {
     <meta property="twitter:url" content="${escape(meta.canonical)}" />
     <meta property="twitter:title" content="${escape(meta.ogTitle)}" />
     <meta property="twitter:description" content="${escape(meta.ogDescription)}" />
-    <meta property="twitter:image" content="${escape(meta.ogImage)}" />${schemaTag}
+    <meta property="twitter:image" content="${escape(meta.ogImage)}" />
   `;
 }
 
@@ -113,35 +110,7 @@ export function getMetaTagsHtml(url: string): string {
             meta.description = pageData.description;
             meta.keywords = pageData.keyword;
             
-            const schema: any = {
-                "@context": "https://schema.org",
-                "@type": "LegalService",
-                "name": "Car Injury Law",
-                "url": meta.canonical,
-                "description": meta.description
-            };
-            
-            if (bestPage) {
-              schema.aggregateRating = {
-                "@type": "AggregateRating",
-                "ratingValue": "4.9",
-                "reviewCount": "500",
-                "bestRating": "5"
-              };
-            }
-            
-            if (stateSpecificPage && "state" in stateSpecificPage) {
-               // Fetch human readable state name
-               const stateDataObj = STATE_DATA[stateSpecificPage.state];
-               if (stateDataObj) {
-                 schema.areaServed = {
-                   "@type": "State",
-                   "name": stateDataObj.name
-                 };
-               }
-            }
-            
-            return generateTagsHtml(meta, schema);
+            return generateTagsHtml(meta);
         }
     }
 
@@ -153,18 +122,9 @@ export function getMetaTagsHtml(url: string): string {
         meta.description = `${stateData.name} car accident statistics and data. Fault system: ${stateData.faultSystem}. Statute of limitations: ${stateData.statute}. Average settlements ${stateData.avgSettlement}. Know your rights — free consultation.`;
         meta.keywords = `${stateData.name} car accident statistics, ${stateData.abbr} car crash data 2025, ${stateData.name} accident lawyer`;
         
-        // Add Article + LegalService schema
-        const schema = {
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": meta.title,
-          "description": meta.description,
-          "url": canonical,
-          "author": { "@type": "Organization", "name": "Car Injury Law" }
-        };
         meta.ogTitle = meta.title;
         meta.ogDescription = meta.description;
-        return generateTagsHtml({ ...meta, canonical }, schema);
+        return generateTagsHtml({ ...meta, canonical });
       }
     }
 
@@ -189,18 +149,6 @@ export function getMetaTagsHtml(url: string): string {
 
             if (stateData) {
                 const practiceLabel = PRACTICE_AREAS[firstSegment];
-                const schema = {
-                    "@context": "https://schema.org",
-                    "@type": "LegalService",
-                    "name": "Car Injury Law",
-                    "url": canonical,
-                    "serviceType": [practiceLabel],
-                    "areaServed": {
-                        "@type": "State",
-                        "name": stateData.name
-                    }
-                };
-
                 meta.title = `${stateData.name} ${practiceLabel} | Car Injury Law`;
                 meta.description = `Need a ${practiceLabel} in ${stateData.name}? Our attorneys handle ${practiceLabel} cases under ${stateData.name}'s ${stateData.faultSystem} system. ${stateData.statute} to file. Free consultation. Call 24/7.`;
                 meta.keywords = `${practiceLabel.toLowerCase()} ${stateData.name}, ${stateData.name} ${practiceLabel.toLowerCase()}, personal injury attorney ${stateData.abbr}`;
@@ -208,7 +156,7 @@ export function getMetaTagsHtml(url: string): string {
                 meta.ogTitle = meta.title;
                 meta.ogDescription = meta.description;
 
-                return generateTagsHtml(meta, schema);
+                return generateTagsHtml(meta);
             }
         }
 
@@ -216,69 +164,23 @@ export function getMetaTagsHtml(url: string): string {
         const stateData = getStateData(firstSegment);
 
         if (stateData) {
-            let schema: any = undefined;
-
             if (segments.length === 1) {
                 meta.title = `${stateData.name} Car Accident Lawyer | Free Consultation | Car Injury Law`;
                 meta.description = `Top-rated car accident lawyers in ${stateData.name}. ${stateData.faultSystem} state. Statute of limitations: ${stateData.statute}. Average settlement ${stateData.avgSettlement}. Call 24/7 — free consultation.`;
                 meta.keywords = `car accident lawyer ${stateData.name}, ${stateData.name} car accident attorney, personal injury lawyer ${stateData.abbr}`;
                 
-                const legalServiceSchema = {
-                    "@type": "LegalService",
-                    "name": "Car Injury Law",
-                    "url": canonical,
-                    "areaServed": {
-                        "@type": "State",
-                        "name": stateData.name
-                    }
-                };
-
-                if (stateData.faq && stateData.faq.length > 0) {
-                    const faqSchema = {
-                        "@type": "FAQPage",
-                        "mainEntity": stateData.faq.map(f => ({
-                            "@type": "Question",
-                            "name": f.question,
-                            "acceptedAnswer": {
-                                "@type": "Answer",
-                                "text": f.answer
-                            }
-                        }))
-                    };
-
-                    schema = {
-                        "@context": "https://schema.org",
-                        "@graph": [legalServiceSchema, faqSchema]
-                    };
-                } else {
-                    schema = {
-                        "@context": "https://schema.org",
-                        ...legalServiceSchema
-                    };
-                }
-
             } else if (segments.length === 2) {
                 const cityName = toCityCase(segments[1]);
                 meta.title = `${cityName} Car Accident Lawyer | ${stateData.name} | Car Injury Law`;
                 meta.description = `Injured in a car accident in ${cityName}, ${stateData.abbr}? Our attorneys know ${stateData.name}'s ${stateData.faultSystem} laws. ${stateData.statute} to file. Avg settlement ${stateData.avgSettlement}. Free case review.`;
                 meta.keywords = `car accident lawyer ${cityName}, ${cityName} ${stateData.abbr} car accident attorney, personal injury lawyer ${cityName}`;
 
-                schema = {
-                    "@context": "https://schema.org",
-                    "@type": "LegalService",
-                    "name": "Car Injury Law",
-                    "url": canonical,
-                    "areaServed": {
-                        "@type": "City",
-                        "name": cityName
-                    }
-                };
             }
 
             meta.ogTitle = meta.title;
             meta.ogDescription = meta.description;
 
-            return generateTagsHtml(meta, schema);
+            return generateTagsHtml(meta);
         }
     }
 
