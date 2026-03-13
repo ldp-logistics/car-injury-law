@@ -1,34 +1,39 @@
 import React, { useMemo } from "react";
 import { useLocation } from "wouter";
-import { Helmet } from "react-helmet";
-import { Building2, MapPin, Phone, Shield, Star, Scale, Gavel, Users, Clock, Languages } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/footer";
-import LegalConsultationForm from "@/components/LegalConsultationForm";
-import { Card, CardContent } from "@/components/ui/card";
-import { nearMePages } from "@/data/near-me-pages";
-import InternalLinksFooter from "@/components/seo/InternalLinksFooter";
-import SEOContentSection from "@/components/seo/SEOContentSection";
+import { NavBar } from "@/components/nav-bar";
+import { Footer } from "@/components/footer";
+import { LeadForm } from "@/components/lead-form";
+import { SeoHead } from "@/components/seo-head";
+import { SERVICE_SYNONYM_PAGES, type ServiceSynonymData } from "@/data/service-synonym-pages";
 import { NEAR_ME_PAGES } from "@/data/near-me-pages";
+import { Building2, Shield, Star, Scale, Clock, Users, Gavel } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
+import SEOContentSection from "@/components/seo/SEOContentSection";
 
 const NearMePage = () => {
   const [location] = useLocation();
   
   const data = useMemo(() => {
     const slug = location.split("/").filter(Boolean).pop() || "";
-    return nearMePages.find(p => p.slug === slug) || nearMePages[0];
+    const matched = NEAR_ME_PAGES.find((p: ServiceSynonymData) => p.slug === slug);
+    return matched || NEAR_ME_PAGES[0];
   }, [location]);
 
   if (!data) return null;
 
+  const currentDate = new Date().toISOString();
+
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <title>{data.title}</title>
-        <meta name="description" content={data.description} />
-      </Helmet>
+      <SeoHead 
+        title={data.title}
+        description={data.description}
+        canonicalUrl={`https://www.carinjurylaw.com/${data.slug}/`}
+        lastUpdated={currentDate}
+      />
 
-      <Header />
+      <NavBar />
 
       <main>
         {/* Banner Section */}
@@ -130,7 +135,7 @@ const NearMePage = () => {
                   <Card className="shadow-xl border-none">
                     <CardContent className="pt-6">
                       <h3 className="text-2xl font-bold mb-6 text-center">Free Case Review</h3>
-                      <LegalConsultationForm />
+                      <LeadForm />
                     </CardContent>
                   </Card>
                 </div>

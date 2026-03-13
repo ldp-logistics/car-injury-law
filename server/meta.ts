@@ -4,6 +4,12 @@ import { NEAR_ME_PAGES } from "../client/src/data/near-me-pages";
 import { PRACTICE_AREA_PAGES } from "../client/src/data/practice-area-pages";
 import { BEST_PAGES } from "../client/src/data/best-pages";
 import { STATE_SPECIFIC_PAGES } from "../client/src/data/state-specific-pages";
+import {
+    buildLegalServiceSchema,
+    buildLocalBusinessSchema,
+    buildBreadcrumbSchema,
+    SITE_URL
+} from './schema-builder';
 import he from "he";
 
 interface MetaTags {
@@ -80,6 +86,7 @@ function generateTagsHtml(meta: MetaTags, path: string): string {
     <meta property="twitter:title" content="${escape(meta.ogTitle)}" />
     <meta property="twitter:description" content="${escape(meta.ogDescription)}" />
     <meta property="twitter:image" content="${escape(meta.ogImage)}" />
+    ${meta.schema ? `<script type="application/ld+json">${JSON.stringify(meta.schema)}</script>` : ''}
   `;
 }
 
@@ -92,6 +99,10 @@ export interface PageData {
     h1: string;
     title: string;
     description: string;
+    keyword?: string;
+    faqs?: Array<{ question: string; answer: string }>;
+    slug?: string;
+    state?: string;
 }
 
 export function getPageData(url: string): PageData | null {
@@ -125,7 +136,10 @@ export function getPageData(url: string): PageData | null {
             return {
                 h1: pageData.h1 || pageData.title,
                 title: pageData.title,
-                description: pageData.description
+                description: pageData.description,
+                keyword: pageData.keyword,
+                faqs: pageData.contentBlocks?.faqs,
+                slug: pageData.slug
             };
         }
     }
@@ -173,7 +187,7 @@ export function getMetaTagsHtml(url: string): string {
     const path = urlObj.pathname;
     const canonical = getBaseUrl(path);
 
-    let meta = { ...DEFAULT_META, canonical };
+    let meta: MetaTags = { ...DEFAULT_META, canonical };
 
     const pageData = getPageData(url);
     if (pageData) {
@@ -181,6 +195,53 @@ export function getMetaTagsHtml(url: string): string {
         meta.description = fixDescription(pageData.description, pageData.h1);
         meta.ogTitle = meta.title;
         meta.ogDescription = meta.description;
+
+        // Unified Schema Generation
+        if (pageData.slug) {
+            // Check if it's a state-specific page vs regular SEO page
+            const matchedState = Object.values(STATE_DATA).find(s => s.slug === pageData.state);
+            
+            meta.schema = buildLegalServiceSchema(
+                pageData.keyword || pageData.h1,
+                pageData.description,
+                SITE_URL + '/' + pageData.slug + '/',
+                matchedState?.name || 'United States',
+                pageData.faqs
+            );
+        }
+
+        // Handle dynamic state pages (LocalBusiness)
+        const segments = path.split('/').filter(Boolean);
+        if (segments.length === 1) {
+            const stateData = Object.values(STATE_DATA).find(s => s.slug === segments[0]);
+            if (stateData) {
+                meta.schema = buildLocalBusinessSchema(
+                    stateData.name,
+                    SITE_URL + '/' + stateData.slug + '/'
+                );
+            }
+        }
+
+        if (process.env.NODE_ENV === 'development') {
+            const validateSchema = (schema: object) => {
+                const str = JSON.stringify(schema);
+                if (!str.includes('@context')) {
+                    console.error('Schema missing @context');
+                }
+                if (!str.includes('@type')) {
+                    console.error('Schema missing @type');
+                }
+                if (!str.includes('aggregateRating')) {
+                    console.warn('Schema missing aggregateRating');
+                }
+                if (!str.includes('telephone')) {
+                    console.warn('Schema missing telephone');
+                }
+                return schema;
+            };
+            if (meta.schema) validateSchema(meta.schema);
+        }
+
         return generateTagsHtml(meta, path);
     }
 
