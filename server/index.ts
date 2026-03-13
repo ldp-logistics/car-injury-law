@@ -3,6 +3,7 @@ import { registerRoutes } from "./routes";
 import fs from "fs";
 import path from "path";
 import { getMetaTagsHtml } from "./meta";
+import compression from "compression";
 
 export function log(message: string, source = "express") {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
@@ -16,12 +17,31 @@ export function log(message: string, source = "express") {
 
 const app = express();
 
+// 1. Gzip Compression (Fixes "Not compressed" issue)
+app.use(compression());
+
 app.use(express.json({
   verify: (req: any, _res, buf) => {
     req.rawBody = buf;
   }
 }));
 app.use(express.urlencoded({ extended: false }));
+
+// 2. Trailing Slash Enforcement (Fixes "Non-canonical page in sitemap" ghosts)
+app.use((req, res, next) => {
+  if (req.path !== '/' && req.path.endsWith('/') && !req.path.match(/\.(xml|txt|rss|atom|json|png|jpg|jpeg|gif|svg|webp|js|css)$/)) {
+    // Current behavior: if it HAS a slash, we are fine. 
+    // Wait, usually the issue is missing slug? 
+    // Ahrefs usually complains if sitemap has /path/ but server serves /path
+    // Or vice versa. Let's force /path/ for all HTML routes.
+    next();
+  } else if (req.path !== '/' && !req.path.endsWith('/') && !req.path.match(/\.(xml|txt|rss|atom|json|png|jpg|jpeg|gif|svg|webp|js|css)$/)) {
+    const query = req.url.slice(req.path.length);
+    res.redirect(301, req.path + '/' + query);
+  } else {
+    next();
+  }
+});
 
 // Request Logging Middleware
 app.use((req, res, next) => {

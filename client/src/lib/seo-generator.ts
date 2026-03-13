@@ -142,104 +142,57 @@ export function getSeoMetadata(path: string): { title: string; description: stri
     return CORE_PAGES[path as keyof typeof CORE_PAGES];
   }
 
-  // 2. Dynamic State Pages (e.g., /california)
-  const stateMatch = Object.values(STATE_DATA).find(s => `/${s.slug}` === path);
+  // 2. Dynamic State Pages (e.g., /california-car-accident-lawyer/)
+  const stateMatch = Object.values(STATE_DATA).find(s => `/${s.slug}` === path || `/${s.slug}/` === path);
   if (stateMatch) {
     return {
-      title: `${stateMatch.name} Car Accident Lawyer | Car Injury Law`,
-      description: `Injured in ${stateMatch.name}? Our top-rated ${stateMatch.name} car accident lawyers fight for your maximum settlement. Statute of limitations is ${stateMatch.statute}. Free review.`,
+      title: `${stateMatch.name} Car Accident Lawyer | Free Consultation`,
+      description: `Injured in ${stateMatch.name}? Our top-rated lawyers fight for your maximum settlement. Statute: ${stateMatch.statute}. Free review.`,
       keywords: `${stateMatch.name} car accident lawyer, ${stateMatch.name} injury attorney, accident lawyer in ${stateMatch.name}`
     };
   }
 
-  // 3. Dynamic Practice Area State Pages (e.g., /truck-accident-lawyer/texas)
-  // We need to parse the URL: /practice-slug/state-slug
-  const parts = path.split('/').filter(Boolean); // ["truck-accident-lawyer", "texas"]
+  // 3. Dynamic Practice Area State Pages (e.g., /truck-accident-lawyer/texas/)
+  const parts = path.split('/').filter(Boolean);
   
   if (parts.length === 2) {
     const [practiceSlug, stateSlug] = parts;
     
-    // Find state from the URL slug (e.g., "texas" from "texas-car-accident-lawyer" OR just "texas")
-    // Note: In App.tsx, routes are like: /truck-accident-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}
-    // So stateSlug is like "new-jersey"
-    
+    // Find state from the URL slug
     const state = Object.values(STATE_DATA).find(s => s.name.toLowerCase().replace(/ /g, '-') === stateSlug);
     
     if (state) {
-      if (practiceSlug === "personal-injury-lawyer") {
+      const PRACTICE_LABELS: Record<string, string> = {
+        "personal-injury-lawyer": "Personal Injury",
+        "motorcycle-accident-lawyer": "Motorcycle Accident",
+        "truck-accident-lawyer": "Truck Accident",
+        "pedestrian-injury-lawyer": "Pedestrian Injury",
+        "bus-accident-lawyer": "Bus Accident",
+        "workplace-injury-lawyer": "Workplace Injury",
+        "medical-malpractice-lawyer": "Medical Malpractice",
+        "slip-and-fall-lawyer": "Slip and Fall"
+      };
+
+      if (PRACTICE_LABELS[practiceSlug]) {
+        const label = PRACTICE_LABELS[practiceSlug];
         return {
-          title: `${state.name} Personal Injury Lawyer | Car Injury Law`,
-          description: `Top-rated personal injury lawyers in ${state.name}. We handle car crashes, slip and falls, and workplace injuries across ${state.name}. Free consultation.`,
-          keywords: `${state.name} personal injury lawyer, injury attorney ${state.name}`
-        };
-      }
-      if (practiceSlug === "motorcycle-accident-lawyer") {
-        return {
-          title: `${state.name} Motorcycle Accident Lawyer | Car Injury Law`,
-          description: `Hit on your bike in ${state.name}? Our ${state.name} motorcycle accident lawyers fight for bikers rights. Get compensation for your injuries and bike repairs.`,
-          keywords: `${state.name} motorcycle accident lawyer, biker attorney ${state.name}`
-        };
-      }
-      if (practiceSlug === "truck-accident-lawyer") {
-        return {
-          title: `${state.name} Truck Accident Lawyer | Car Injury Law`,
-          description: `Semi-truck crash in ${state.name}? We know ${state.name} trucking laws. Our aggressive attorneys fight trucking companies for maximum payouts.`,
-          keywords: `${state.name} truck accident lawyer, 18-wheeler attorney ${state.name}`
-        };
-      }
-      if (practiceSlug === "pedestrian-injury-lawyer") {
-        return {
-          title: `${state.name} Pedestrian Accident Lawyer | Car Injury Law`,
-          description: `Hit by a car in ${state.name}? Our pedestrian injury lawyers help victims recover medical costs and lost wages. Don't face insurance alone.`,
-          keywords: `${state.name} pedestrian accident lawyer, hit by car attorney ${state.name}`
-        };
-      }
-      if (practiceSlug === "bus-accident-lawyer") {
-        return {
-          title: `${state.name} Bus Accident Lawyer | Car Injury Law`,
-          description: `Injured on a bus in ${state.name}? We handle claims against ${state.name} transit authorities and private bus lines. Free case evaluation.`,
-          keywords: `${state.name} bus accident lawyer, transit attorney ${state.name}`
-        };
-      }
-      if (practiceSlug === "workplace-injury-lawyer") {
-        return {
-          title: `${state.name} Workplace Injury Lawyer | Car Injury Law`,
-          description: `Hurt on the job in ${state.name}? Beyond workers' comp, you may have a third-party claim. Talk to our ${state.name} workplace injury lawyers today.`,
-          keywords: `${state.name} workplace injury lawyer, construction accident attorney ${state.name}`
-        };
-      }
-      if (practiceSlug === "medical-malpractice-lawyer") {
-        return {
-          title: `${state.name} Medical Malpractice Lawyer | Car Injury Law`,
-          description: `Victim of medical negligence in ${state.name}? Our malpractice attorneys hold doctors and hospitals accountable. Justice for your family.`,
-          keywords: `${state.name} medical malpractice lawyer, hospital negligence attorney ${state.name}`
-        };
-      }
-      if (practiceSlug === "slip-and-fall-lawyer") {
-        return {
-          title: `${state.name} Slip and Fall Lawyer | Car Injury Law`,
-          description: `Slipped and fell in ${state.name}? Property owners must keep you safe. Our ${state.name} premises liability lawyers fight for your compensation.`,
-          keywords: `${state.name} slip and fall lawyer, premises liability attorney ${state.name}`
+          title: `${state.name} ${label} Lawyer | Car Injury Law`,
+          description: `Need a ${label.toLowerCase()} lawyer in ${state.name}? We fight for maximum compensation. Free consultation. Call 24/7.`,
+          keywords: `${state.name} ${label.toLowerCase()} lawyer, injury attorney ${state.name}`
         };
       }
     }
     
-    // Check for City Pages: /state-slug/city-slug (e.g., /texas/houston)
-    // stateSlug is actually the first part in this case?
-    // Route definition: path={`/${state.slug}/${citySlug}`}
-    // Example: /texas-car-accident-lawyer/houston
-    
+    // Check for City Pages: /texas-car-accident-lawyer/houston
     const stateBySlug = Object.values(STATE_DATA).find(s => s.slug === parts[0]);
     if (stateBySlug) {
       const citySlug = parts[1];
-      // Try to match city slug back to a city name roughly
-      // We can just capitalize it for the title if exact match isn't easy, or loop cityList
       const cityName = stateBySlug.cityList.find(c => c.toLowerCase().replace(/ /g, '-') === citySlug) 
                      || citySlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
       
       return {
-        title: `${cityName} Car Accident Lawyer | Car Injury Law`,
-        description: `Top-rated car accident lawyer in ${cityName}, ${stateBySlug.name}. Local representation for serious injury cases. Free consultation 24/7.`,
+        title: `${cityName} Car Accident Lawyer | ${stateBySlug.abbr}`,
+        description: `Top-rated car accident lawyer in ${cityName}, ${stateBySlug.abbr}. Local representation for serious injury cases. Free consultation.`,
         keywords: `${cityName} car accident lawyer, ${cityName} injury attorney, accident lawyer in ${cityName}`
       };
     }

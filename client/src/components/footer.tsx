@@ -69,15 +69,21 @@ export function Footer() {
             <h3 className="font-bold mb-6 text-lg font-serif text-secondary">National Coverage</h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-gray-500 font-medium">
               <li><Link href="/alabama-car-accident-lawyer/" className="hover:text-white transition-colors">Alabama</Link></li>
+              <li><Link href="/arizona-car-accident-lawyer/" className="hover:text-white transition-colors">Arizona</Link></li>
               <li><Link href="/california-car-accident-lawyer/" className="hover:text-white transition-colors">California</Link></li>
+              <li><Link href="/colorado-car-accident-lawyer/" className="hover:text-white transition-colors">Colorado</Link></li>
               <li><Link href="/florida-car-accident-lawyer/" className="text-white font-bold hover:text-secondary transition-colors">Florida</Link></li>
               <li><Link href="/georgia-car-accident-lawyer/" className="hover:text-white transition-colors">Georgia</Link></li>
               <li><Link href="/illinois-car-accident-lawyer/" className="hover:text-white transition-colors">Illinois</Link></li>
+              <li><Link href="/maryland-car-accident-lawyer/" className="hover:text-white transition-colors">Maryland</Link></li>
+              <li><Link href="/michigan-car-accident-lawyer/" className="hover:text-white transition-colors">Michigan</Link></li>
               <li><Link href="/new-jersey-car-accident-lawyer/" className="text-white font-bold hover:text-secondary transition-colors">New Jersey</Link></li>
               <li><Link href="/new-york-car-accident-lawyer/" className="hover:text-white transition-colors">New York</Link></li>
+              <li><Link href="/north-carolina-car-accident-lawyer/" className="hover:text-white transition-colors">North Carolina</Link></li>
+              <li><Link href="/ohio-car-accident-lawyer/" className="hover:text-white transition-colors">Ohio</Link></li>
               <li><Link href="/pennsylvania-car-accident-lawyer/" className="hover:text-white transition-colors">Pennsylvania</Link></li>
               <li><Link href="/texas-car-accident-lawyer/" className="hover:text-white transition-colors">Texas</Link></li>
-              <li><Link href="/ohio-car-accident-lawyer/" className="hover:text-white transition-colors">Ohio</Link></li>
+              <li><Link href="/virginia-car-accident-lawyer/" className="hover:text-white transition-colors">Virginia</Link></li>
             </ul>
             <div className="mt-4 pt-4 border-t border-white/10">
               <Link href="/sitemap/" className="text-sm text-secondary hover:text-white transition-colors font-bold flex items-center gap-2 bg-white/5 p-2 rounded-md border border-white/10 hover:bg-white/10">

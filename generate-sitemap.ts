@@ -10,44 +10,41 @@ const DOMAIN = 'https://www.carinjurylaw.com';
 
 const staticRoutes = [
   '/',
-  '/es',
-  '/about',
-  '/attorneys/saad-admani',
-  '/join-network',
-  '/settlement-calculator',
-  '/blog',
-  '/case-results',
-  '/glossary',
-  '/vs-insurance',
-  '/sitemap',
-  '/privacy',
-  '/terms',
-  '/safety-resources',
-  '/practice-areas/truck-accident',
-  '/practice-areas/truck-accident/jackknife',
-  '/practice-areas/truck-accident/underride',
-  '/practice-areas/motorcycle-accident',
-  '/practice-areas/wrongful-death',
-  '/practice-areas/personal-injury',
-  '/practice-areas/rideshare-accident',
-  '/practice-areas/car-accident',
-  '/practice-areas/pedestrian-injury',
-  '/practice-areas/bus-transit-injury',
-  '/practice-areas/workplace-injury',
-  '/practice-areas/medical-malpractice',
-  '/practice-areas/slip-and-fall'
+  '/about/',
+  '/attorneys/saad-admani/',
+  '/join-network/',
+  '/settlement-calculator/',
+  '/blog/',
+  '/case-results/',
+  '/glossary/',
+  '/vs-insurance/',
+  '/sitemap/',
+  '/safety-resources/',
+  '/practice-areas/truck-accident/',
+  '/practice-areas/truck-accident/jackknife/',
+  '/practice-areas/truck-accident/underride/',
+  '/practice-areas/motorcycle-accident/',
+  '/practice-areas/wrongful-death/',
+  '/practice-areas/personal-injury/',
+  '/practice-areas/rideshare-accident/',
+  '/practice-areas/car-accident/',
+  '/practice-areas/pedestrian-injury/',
+  '/practice-areas/bus-transit-injury/',
+  '/practice-areas/workplace-injury/',
+  '/practice-areas/medical-malpractice/',
+  '/practice-areas/slip-and-fall/'
 ];
 
 const urls: Array<{loc: string, priority: number}> = [];
 
 staticRoutes.forEach(route => {
   urls.push({
-    loc: `${DOMAIN}${route === '/' ? '' : route}/`,
+    loc: `${DOMAIN}${route}`,
     priority: 0.8
   });
 });
 
-// Extract blog slugs via regex to avoid import issues with assets
+// Extract blog slugs via regex
 const blogContent = fs.readFileSync('./client/src/data/blog-posts.ts', 'utf-8');
 const slugs = [...blogContent.matchAll(/slug:\s*"([^"]+)"/g)].map(m => m[1]);
 
@@ -85,7 +82,7 @@ Object.values(STATE_DATA).forEach(state => {
   const stateNameSlug = state.name.toLowerCase().replace(/ /g, '-');
   urls.push({ 
     loc: `${DOMAIN}/car-accident-statistics/${stateNameSlug}/`, 
-    priority: 0.9  // Higher priority than regular pages
+    priority: 0.9 
   });
 });
 

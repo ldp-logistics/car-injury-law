@@ -5,10 +5,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.carinjurylaw.com/es/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.carinjurylaw.com/about/</loc>
     <priority>0.8</priority>
   </url>
@@ -42,14 +38,6 @@
   </url>
   <url>
     <loc>https://www.carinjurylaw.com/sitemap/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carinjurylaw.com/privacy/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.carinjurylaw.com/terms/</loc>
     <priority>0.8</priority>
   </url>
   <url>

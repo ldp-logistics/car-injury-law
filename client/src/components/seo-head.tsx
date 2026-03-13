@@ -24,6 +24,7 @@ interface SeoHeadProps {
   ogType?: "website" | "article" | "profile";
   schema?: Record<string, any>;
   lastUpdated?: string;
+  lang?: string;
 }
 
 export function SeoHead({ 
