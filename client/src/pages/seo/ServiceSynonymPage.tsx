@@ -12,6 +12,8 @@ import { Link } from "wouter";
 import { useEffect, useState } from "react";
 import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
 import { internalLink } from "@/utils/link-helper";
+import SEOContentSection from "@/components/seo/SEOContentSection";
+import { SERVICE_SYNONYM_PAGES } from "@/data/service-synonym-pages";
 
 // For the background image, let's just pick one of our highest quality dynamic options.
 import heroBg from "@assets/stock_images/car_accident_crash_s_fd800196.jpg";
@@ -249,6 +251,35 @@ export default function ServiceSynonymPage({ data }: ServiceSynonymPageProps) {
                 <p className="font-bold text-lg mt-6">
                   Contact Car Injury Law today. When you need a powerful, unyielding {data.keyword}, we step into the courtroom fully prepared to dominate the proceedings and reclaim your future.
                 </p>
+
+                <SEOContentSection 
+                  whyChoose={data.contentBlocks.whyChoose}
+                  howWeHelp={data.contentBlocks.howWeHelp}
+                  faqs={data.contentBlocks.faqs}
+                  keyword={data.keyword}
+                />
+
+                {/* Related Pages Section */}
+                {(() => {
+                  const related = SERVICE_SYNONYM_PAGES
+                    .filter(p => p.slug !== data.slug)
+                    .slice(0, 6);
+
+                  return (
+                    <div className="border-t mt-10 pt-6 px-4">
+                      <p className="font-semibold text-gray-700 mb-3">Related Services</p>
+                      <div className="flex flex-wrap gap-3">
+                        {related.map(p => (
+                          <a key={p.slug}
+                            href={'/' + p.slug + '/'}
+                            className="text-blue-600 text-sm hover:underline">
+                            {p.keyword}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
 
             </div>

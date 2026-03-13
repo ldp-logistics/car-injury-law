@@ -2,7 +2,7 @@ import express, { type Express, type Request, type Response, type NextFunction }
 import { registerRoutes } from "./routes";
 import fs from "fs";
 import path from "path";
-import { getMetaTagsHtml } from "./meta";
+import { getMetaTagsHtml, getPageData } from "./meta";
 import compression from "compression";
 
 export function log(message: string, source = "express") {
@@ -107,9 +107,14 @@ app.use((req, res, next) => {
         let template = await fs.promises.readFile(indexPath, "utf-8");
 
         const metaTags = getMetaTagsHtml(req.originalUrl);
+        const pageData = getPageData(req.originalUrl);
 
-
-        const html = template.replace("<head>", `<head>\n${metaTags}`);
+        let html = template.replace("<head>", `<head>\n${metaTags}`);
+        
+        if (pageData && pageData.h1) {
+          // Inject hidden H1 for SEO crawlers if they only read initial HTML
+          html = html.replace('<div id="root">', `<div id="root"><h1 style="display:none">${pageData.h1}</h1>`);
+        }
 
         res.status(200).set({ "Content-Type": "text/html" }).send(html);
       } catch (e) {

@@ -37,6 +37,7 @@ const ServiceSynonymPage = lazy(() => import("@/pages/seo/ServiceSynonymPage"));
 const PracticeAreaPage = lazy(() => import("@/pages/seo/PracticeAreaPage")); // SEO Practice Areas
 const BestOfPage = lazy(() => import("@/pages/seo/BestOfPage")); // SEO Best/Top Pages
 const StateSpecificPage = lazy(() => import("@/pages/seo/StateSpecificPage")); // SEO State Pages
+const NearMePage = lazy(() => import("@/pages/seo/NearMePage"));
 
 // New Pages
 const AboutPage = lazy(() => import("@/pages/about"));
@@ -198,7 +199,7 @@ function Router() {
         {/* SEO Near Me Routes */}
         {NEAR_ME_PAGES.map((page) => (
           <Route key={page.slug} path={`/${page.slug}`}>
-            {() => <ServiceSynonymPage data={page} />}
+            {() => <NearMePage />}
           </Route>
         ))}
 

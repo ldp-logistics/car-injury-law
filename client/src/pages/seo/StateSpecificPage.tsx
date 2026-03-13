@@ -12,6 +12,8 @@ import { Link, useRoute } from "wouter";
 import { FaqSection } from "@/components/faq-section";
 import { internalLink } from "@/utils/link-helper";
 import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
+import SEOContentSection from "@/components/seo/SEOContentSection";
+import { STATE_SPECIFIC_PAGES } from "@/data/state-specific-pages";
 
 interface StateSpecificPageProps {
   data: StateSpecificPageData;
@@ -171,6 +173,34 @@ export default function StateSpecificPage({ data }: StateSpecificPageProps) {
                   </div>
                 )}
 
+                <SEOContentSection 
+                  whyChoose={data.contentBlocks.whyChoose}
+                  howWeHelp={data.contentBlocks.howWeHelp}
+                  faqs={data.contentBlocks.faqs}
+                  keyword={data.keyword}
+                />
+
+                {/* Related Pages Section */}
+                {(() => {
+                  const related = STATE_SPECIFIC_PAGES
+                    .filter(p => p.slug !== data.slug)
+                    .slice(0, 6);
+
+                  return (
+                    <div className="border-t mt-10 pt-6 px-4">
+                      <p className="font-semibold text-gray-700 mb-3">Related Services</p>
+                      <div className="flex flex-wrap gap-3">
+                        {related.map(p => (
+                          <a key={p.slug}
+                            href={'/' + p.slug + '/'}
+                            className="text-blue-600 text-sm hover:underline">
+                            {p.keyword}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
 
               {/* Sidebar: State Local Links */}

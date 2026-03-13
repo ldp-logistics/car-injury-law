@@ -10,6 +10,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { internalLink } from "@/utils/link-helper";
 import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
+import SEOContentSection from "@/components/seo/SEOContentSection";
+import { PRACTICE_AREA_PAGES } from "@/data/practice-area-pages";
 
 // Let's use an authoritative courtroom/legal background for general practice areas
 import heroBg from "@assets/stock_images/courtroom_gavel_just_813cbcc0.jpg";
@@ -125,6 +127,35 @@ export default function PracticeAreaPage({ data }: PracticeAreaPageProps) {
                     </li>
                   </ul>
                 </div>
+
+                <SEOContentSection 
+                  whyChoose={data.contentBlocks.whyChoose}
+                  howWeHelp={data.contentBlocks.howWeHelp}
+                  faqs={data.contentBlocks.faqs}
+                  keyword={data.keyword}
+                />
+
+                {/* Related Pages Section */}
+                {(() => {
+                  const related = PRACTICE_AREA_PAGES
+                    .filter(p => p.slug !== data.slug)
+                    .slice(0, 6);
+
+                  return (
+                    <div className="border-t mt-10 pt-6 px-4">
+                      <p className="font-semibold text-gray-700 mb-3">Related Services</p>
+                      <div className="flex flex-wrap gap-3">
+                        {related.map(p => (
+                          <a key={p.slug}
+                            href={'/' + p.slug + '/'}
+                            className="text-blue-600 text-sm hover:underline">
+                            {p.keyword}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
 
               {/* Sidebar: Related Practice Areas */}

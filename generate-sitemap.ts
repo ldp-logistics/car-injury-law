@@ -121,7 +121,7 @@ STATE_SPECIFIC_PAGES.forEach(page => {
   });
 });
 
-// URL format validator
+// URL and Content validator
 urls.forEach(u => {
   if (!u.loc.startsWith('https://www.')) {
     console.error('BAD URL (No WWW):', u.loc);
@@ -132,6 +132,38 @@ urls.forEach(u => {
     u.loc = u.loc.endsWith('/') ? u.loc : u.loc + '/';
   }
 });
+
+// Content Quality Validator for SEO Pages
+console.log('\n--- Running SEO Content Validation ---');
+let errors = 0;
+
+const validatePage = (page: any, source: string) => {
+  const desc = page.description || '';
+  if (desc.length < 130 || desc.length > 155) {
+    console.warn(`[${source}] Meta Description Length Error (${desc.length}): ${page.slug}`);
+    errors++;
+  }
+  if (desc.endsWith('...')) {
+    console.warn(`[${source}] Meta Description Truncated: ${page.slug}`);
+    errors++;
+  }
+  if (!page.h1) {
+    console.error(`[${source}] Missing H1: ${page.slug}`);
+    errors++;
+  }
+};
+
+SERVICE_SYNONYM_PAGES.forEach(p => validatePage(p, 'ServiceSynonym'));
+NEAR_ME_PAGES.forEach(p => validatePage(p, 'NearMe'));
+PRACTICE_AREA_PAGES.forEach(p => validatePage(p, 'PracticeArea'));
+BEST_PAGES.forEach(p => validatePage(p, 'BestOf'));
+STATE_SPECIFIC_PAGES.forEach(p => validatePage(p, 'StateSpecific'));
+
+if (errors > 0) {
+  console.log(`\nValidation finished with ${errors} warnings/errors.\n`);
+} else {
+  console.log('All SEO pages passed validation (H1 present, Description 130-155 chars).\n');
+}
 
 let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
 xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;

@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { internalLink } from "@/utils/link-helper";
 import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
+import SEOContentSection from "@/components/seo/SEOContentSection";
 
 // Background image - reusing one of the premium assets
 import heroBg from "@assets/stock_images/personal_injury_lawy_4d2da1ce.jpg";
@@ -180,18 +181,34 @@ export default function BestOfPage({ data }: BestOfPageProps) {
                   </Button>
                 </div>
 
-                {/* Related Best Pages */}
-                <div className="pt-12 border-t border-slate-200">
-                  <h3 className="text-xl font-bold font-serif text-primary mb-6">More Top-Rated Legal Services</h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {BEST_PAGES.filter(p => p.slug !== data.slug).slice(0, 6).map((page, i) => (
-                      <Link key={i} href={internalLink(page.slug)} className="text-blue-700 hover:text-secondary font-semibold hover:underline flex items-center gap-2">
-                        <span className="text-secondary opacity-50">•</span> {page.title.split('|')[0].trim()}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
+                <SEOContentSection 
+                  whyChoose={data.contentBlocks.whyChoose}
+                  howWeHelp={data.contentBlocks.howWeHelp}
+                  faqs={data.contentBlocks.faqs}
+                  keyword={data.keyword}
+                />
 
+                {/* Related Pages Section */}
+                {(() => {
+                  const related = BEST_PAGES
+                    .filter(p => p.slug !== data.slug)
+                    .slice(0, 6);
+
+                  return (
+                    <div className="border-t mt-10 pt-6 px-4">
+                      <p className="font-semibold text-gray-700 mb-3">Related Services</p>
+                      <div className="flex flex-wrap gap-3">
+                        {related.map(p => (
+                          <a key={p.slug}
+                            href={'/' + p.slug + '/'}
+                            className="text-blue-600 text-sm hover:underline">
+                            {p.keyword}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
               
               {/* Sidebar Form */}

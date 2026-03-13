@@ -28,10 +28,36 @@ const DEFAULT_META: MetaTags = {
 };
 
 
-function sanitizeDescription(desc: string): string {
-    const clean = desc.trim();
-    if (clean.length <= 160) return clean;
-    return clean.substring(0, 157) + '...';
+function fixDescription(
+    desc: string,
+    keyword: string
+): string {
+    const cleaned = desc.trim();
+
+    if (cleaned.length >= 120 &&
+        cleaned.length <= 160) {
+        return cleaned;
+    }
+
+    if (cleaned.length > 160) {
+        return cleaned.substring(0, 157) + '...';
+    }
+
+    if (cleaned.length < 120) {
+        const suffixes = [
+            ' Free consultation 24/7. No win no fee. Call now.',
+            ' Speak with an attorney free today. No upfront costs.',
+            ' Get a free case review today. We fight for maximum compensation.',
+            ' Call 24/7 for free legal advice. No win no fee guarantee.',
+            ' Free case evaluation available now. All 50 states served.'
+        ]
+        const suffix = suffixes[
+            Math.abs(keyword.length) % suffixes.length
+        ]
+        return (cleaned + suffix).substring(0, 160);
+    }
+
+    return cleaned;
 }
 
 function generateTagsHtml(meta: MetaTags, path: string): string {
@@ -62,12 +88,16 @@ function getBaseUrl(urlPath: string): string {
     return 'https://www.carinjurylaw.com' + cleanPath + '/';
 }
 
-export function getMetaTagsHtml(url: string): string {
+export interface PageData {
+    h1: string;
+    title: string;
+    description: string;
+}
+
+export function getPageData(url: string): PageData | null {
     const urlObj = new URL(url, 'http://localhost');
     const path = urlObj.pathname;
-    const canonical = getBaseUrl(path);
-
-    let meta = { ...DEFAULT_META, canonical };
+    const segments = path.split('/').filter(Boolean);
 
     const toCityCase = (str: string) => {
         return decodeURIComponent(str)
@@ -76,118 +106,97 @@ export function getMetaTagsHtml(url: string): string {
             .join(' ');
     }
 
-    // --- 1. Static & Practice Area Routes ---
-    if (path === '/') {
-        return generateTagsHtml(meta, path);
-    }
-
-    if (path === '/about' || path === '/about/') {
-        meta.title = "About Admani Law | Car Injury Law";
-        meta.description = "Learn about Car Injury Law and lead trial attorney Saad Admani.";
-    }
-    else if (path.includes('/practice-areas/')) {
-        const segments = path.split('/').filter(Boolean);
-        const area = segments[segments.length - 1].replace(/-/g, ' ');
-        const formattedArea = toCityCase(area || "");
-
-        meta.title = `${formattedArea} Lawyers | Car Injury Law`;
-        meta.description = `Injured in a ${formattedArea.toLowerCase()} accident? Our attorneys fight for your compensation. Free consultation.`;
-    }
-
-    // --- 2. Dynamic State & City Routes ---
     const getStateData = (slugPart: string): StateData | undefined => {
         return Object.values(STATE_DATA).find(
             (s) => s.slug === slugPart || s.name.toLowerCase().replace(/ /g, '-') === slugPart
         );
     };
 
-    const segments = path.split('/').filter(Boolean);
-
-    // --- 3. SEO Pages ---
+    // --- 1. SEO Data Files ---
     if (segments.length === 1) {
         const pageData =
-            SERVICE_SYNONYM_PAGES.find(p => p.slug === segments[0]) ||
-            NEAR_ME_PAGES.find(p => p.slug === segments[0]) ||
-            PRACTICE_AREA_PAGES.find(p => p.slug === segments[0]) ||
-            BEST_PAGES.find(p => p.slug === segments[0]) ||
-            STATE_SPECIFIC_PAGES.find(p => p.slug === segments[0]);
+            (SERVICE_SYNONYM_PAGES.find(p => p.slug === segments[0]) as any) ||
+            (NEAR_ME_PAGES.find(p => p.slug === segments[0]) as any) ||
+            (PRACTICE_AREA_PAGES.find(p => p.slug === segments[0]) as any) ||
+            (BEST_PAGES.find(p => p.slug === segments[0]) as any) ||
+            (STATE_SPECIFIC_PAGES.find(p => p.slug === segments[0]) as any);
 
         if (pageData) {
-            meta.title = pageData.title;
-            meta.description = sanitizeDescription(pageData.description);
-            meta.keywords = pageData.keyword;
-
-            return generateTagsHtml(meta, path);
+            return {
+                h1: pageData.h1 || pageData.title,
+                title: pageData.title,
+                description: pageData.description
+            };
         }
     }
 
-    // Statistics pages
+    // --- 2. Dynamic City/State / Statistics ---
     if (segments.length === 2 && segments[0] === 'car-accident-statistics') {
         const stateData = getStateData(segments[1]);
         if (stateData) {
-            meta.title = `${stateData.name} Car Accident Stats 2025 | Car Injury Law`;
-            meta.description = `${stateData.name} car accident statistics and data. Statute of limitations: ${stateData.statute}. Know your rights.`;
-            meta.keywords = `${stateData.name} car accident statistics, ${stateData.abbr} crash data, ${stateData.name} lawyer`;
-
-            meta.ogTitle = meta.title;
-            meta.ogDescription = meta.description;
-            return generateTagsHtml(meta, path);
+            const title = `${stateData.name} Car Accident Stats 2025 | Car Injury Law`;
+            return {
+                h1: `${stateData.name} Car Accident Statistics`,
+                title,
+                description: `${stateData.name} car accident statistics and data. Statute of limitations: ${stateData.statute}. Know your rights.`
+            };
         }
     }
 
     if (segments.length > 0) {
         const firstSegment = segments[0];
-
-        const PRACTICE_AREAS: Record<string, string> = {
-            'personal-injury-lawyer': 'Personal Injury',
-            'motorcycle-accident-lawyer': 'Motorcycle Accident',
-            'truck-accident-lawyer': 'Truck Accident',
-            'pedestrian-injury-lawyer': 'Pedestrian Injury',
-            'bus-accident-lawyer': 'Bus Accident',
-            'workplace-injury-lawyer': 'Workplace Injury',
-            'medical-malpractice-lawyer': 'Medical Malpractice',
-            'slip-and-fall-lawyer': 'Slip and Fall'
-        };
-
-        if (PRACTICE_AREAS[firstSegment] && segments.length === 2) {
-            const stateSlug = segments[1];
-            const stateData = getStateData(stateSlug);
-
-            if (stateData) {
-                const practiceLabel = PRACTICE_AREAS[firstSegment];
-                meta.title = `${stateData.name} ${practiceLabel} Lawyer | Car Injury Law`;
-                meta.description = `Need a ${practiceLabel.toLowerCase()} lawyer in ${stateData.name}? We handle ${stateData.name} cases. Free consultation. Call 24/7.`;
-                meta.keywords = `${practiceLabel.toLowerCase()} ${stateData.name}, ${stateData.name} lawyer, injury attorney ${stateData.abbr}`;
-
-                meta.ogTitle = meta.title;
-                meta.ogDescription = meta.description;
-
-                return generateTagsHtml(meta, path);
-            }
-        }
-
         const stateData = getStateData(firstSegment);
 
         if (stateData) {
             if (segments.length === 1) {
-                meta.title = `${stateData.name} Car Accident Lawyer | Free Consultation`;
-                meta.description = `Top-rated car accident lawyers in ${stateData.name}. ${stateData.faultSystem} state. Statute: ${stateData.statute}. Call 24/7.`;
-
+                return {
+                    h1: `${stateData.name} Car Accident Lawyer`,
+                    title: `${stateData.name} Car Accident Lawyer | Free Consultation`,
+                    description: `Top-rated car accident lawyers in ${stateData.name}. ${stateData.faultSystem} state. Statute: ${stateData.statute}. Call 24/7.`
+                };
             } else if (segments.length === 2) {
                 const cityName = toCityCase(segments[1]);
-                meta.title = `${cityName} Car Accident Lawyer | ${stateData.abbr} | Car Injury Law`;
-                meta.description = `Injured in ${cityName}, ${stateData.abbr}? Our attorneys know ${stateData.name} laws. ${stateData.statute} to file. Free case review.`;
+                return {
+                    h1: `${cityName} Car Accident Lawyer`,
+                    title: `${cityName} Car Accident Lawyer | ${stateData.abbr} | Car Injury Law`,
+                    description: `Injured in ${cityName}, ${stateData.abbr}? Our attorneys know ${stateData.name} laws. ${stateData.statute} to file. Free case review.`
+                };
             }
-
-            meta.ogTitle = meta.title;
-            meta.ogDescription = meta.description;
-
-            return generateTagsHtml(meta, path);
         }
     }
 
+    return null;
+}
+
+export function getMetaTagsHtml(url: string): string {
+    const urlObj = new URL(url, 'http://localhost');
+    const path = urlObj.pathname;
+    const canonical = getBaseUrl(path);
+
+    let meta = { ...DEFAULT_META, canonical };
+
+    const pageData = getPageData(url);
+    if (pageData) {
+        meta.title = pageData.title;
+        meta.description = fixDescription(pageData.description, pageData.h1);
+        meta.ogTitle = meta.title;
+        meta.ogDescription = meta.description;
+        return generateTagsHtml(meta, path);
+    }
+
+    // Fallbacks for non-SEO-data pages
+    if (path === '/') {
+        meta.description = fixDescription(meta.description, "car injury law");
+        return generateTagsHtml(meta, path);
+    }
+
+    if (path === '/about' || path === '/about/') {
+        meta.title = "About Admani Law | Car Injury Law";
+        meta.description = fixDescription("Learn about Car Injury Law and lead trial attorney Saad Admani.", "about");
+    }
+
     meta.ogTitle = meta.title;
-    meta.ogDescription = meta.description;
+    meta.ogDescription = fixDescription(meta.description, "default");
 
     return generateTagsHtml(meta, path);
 }
