@@ -6,7 +6,7 @@ export const NEAR_ME_PAGES: ServiceSynonymData[] = [
     slug: "personal-injury-lawyer-near-me", 
     keyword: "personal injury lawyer near me", 
     title: "Personal Injury Lawyer Near Me | Car Injury Law", 
-    description: "Find a top personal injury lawyer near you. Car Injury Law serves all 50 states. Free consultation 24/7. No win no fee.", 
+    description: "Looking for a top-rated personal injury lawyer near you? Car Injury Law serves all 50 states with 24/7 consultations and a no-win, no-fee guarantee.",
     h1: "Personal Injury Lawyer Near Me — Serving Every State in the USA",
     internalLinks: [
       { label: "Car Accident Lawyer Near Me", href: internalLink("car-accident-lawyer-near-me") },
@@ -18,7 +18,7 @@ export const NEAR_ME_PAGES: ServiceSynonymData[] = [
     slug: "car-accident-lawyer-near-me", 
     keyword: "car accident lawyer near me", 
     title: "Car Accident Lawyer Near Me | Car Injury Law", 
-    description: "Find a car accident lawyer near you today. Serving all 50 states. Free consultation 24/7. No win no fee.", 
+    description: "Need a car accident lawyer near you? We provide expert legal help in all 50 states. Free 24/7 consultations. You don't pay anything unless we win your case.",
     h1: "Car Accident Lawyer Near Me — Local Accident Legal Help Near You",
     internalLinks: [
       { label: "Personal Injury Lawyer Near Me", href: internalLink("personal-injury-lawyer-near-me") },
@@ -30,7 +30,7 @@ export const NEAR_ME_PAGES: ServiceSynonymData[] = [
     slug: "injury-lawyer-near-me", 
     keyword: "injury lawyer near me", 
     title: "Injury Lawyer Near Me | Car Injury Law", 
-    description: "Find an experienced injury lawyer near you. Car Injury Law available 24/7 in all 50 states. Free case review.", 
+    description: "Connect with an experienced injury lawyer near you today. Car Injury Law is available 24/7 across the USA. Start your free case review with our experts now.",
     h1: "Injury Lawyer Near Me — We Serve Your Area 24/7",
     internalLinks: [
       { label: "Personal Injury Lawyer Near Me", href: internalLink("personal-injury-lawyer-near-me") },
@@ -41,7 +41,7 @@ export const NEAR_ME_PAGES: ServiceSynonymData[] = [
     slug: "truck-accident-attorney-near-me", 
     keyword: "truck accident attorney near me", 
     title: "Truck Accident Attorney Near Me | Car Injury Law", 
-    description: "Find a truck accident attorney near you. Serving all 50 states. Free consultation 24/7. No win no fee.", 
+    description: "Find an expert truck accident attorney near you today. Car Injury Law serves all 50 states with free 24/7 consultations to help you get the money you deserve.",
     h1: "Truck Accident Attorney Near Me — Local Truck Accident Help",
     internalLinks: [
       { label: "Car Accident Attorney Near Me", href: internalLink("car-accident-attorney-near-me") },
@@ -52,7 +52,7 @@ export const NEAR_ME_PAGES: ServiceSynonymData[] = [
     slug: "car-accident-attorney-near-me", 
     keyword: "car_accident_attorney_near_me", 
     title: "Car Accident Attorney Near Me | Car Injury Law", 
-    description: "Find a car accident attorney near you today. Car Injury Law serves all 50 states. Free consultation 24/7.", 
+    description: "Find an expert car accident attorney near you today. Car Injury Law serves all 50 states with free 24/7 consultations to help you get the money you deserve.",
     h1: "Car Accident Attorney Near Me — We Are Right In Your Corner",
     internalLinks: [
       { label: "Car Accident Lawyer Near Me", href: internalLink("car-accident-lawyer-near-me") },
@@ -63,7 +63,7 @@ export const NEAR_ME_PAGES: ServiceSynonymData[] = [
     slug: "personal-injury-attorneys-near-me", 
     keyword: "personal injury attorneys near me", 
     title: "Personal Injury Attorneys Near Me | Car Injury Law", 
-    description: "Find personal injury attorneys near you. Serving all 50 states. Free case review 24/7. No win no fee.", 
+    description: "Looking for personal injury attorneys near you? Car Injury Law serves all 50 states with free 24/7 case reviews. Get the expert legal help you deserve.",
     h1: "Personal Injury Attorneys Near Me — Serving Victims Everywhere",
     internalLinks: [
       { label: "PI Lawyers Near Me", href: internalLink("pi-lawyers-near-me") },
@@ -85,7 +85,7 @@ export const NEAR_ME_PAGES: ServiceSynonymData[] = [
     slug: "injury-attorneys-near-me", 
     keyword: "injury attorneys near me", 
     title: "Injury Attorneys Near Me | Car Injury Law", 
-    description: "Find injury attorneys near you today. Serving all 50 states. Free consultation. No win no fee.", 
+    description: "Find dedicated injury attorneys near you today. We serve all 50 states with free consultations and a no-win, no-fee guarantee. Call our team 24/7.",
     h1: "Injury Attorneys Near Me — We Serve Every State in the USA",
     internalLinks: [
       { label: "Personal Injury Attorneys Near Me", href: internalLink("personal-injury-attorneys-near-me") },
@@ -107,7 +107,7 @@ export const NEAR_ME_PAGES: ServiceSynonymData[] = [
     slug: "personal-injury-law-firms-near-me", 
     keyword: "personal injury law firms near me", 
     title: "Personal Injury Law Firms Near Me | Car Injury Law", 
-    description: "Find top personal injury law firms near you. Serving all 50 states. Free consultation 24/7. No win no fee.", 
+    description: "Find top-rated personal injury law firms near you. We serve all 50 states with free 24/7 consultations and a no-win, no-fee guarantee. Call our team today.",
     h1: "Personal Injury Law Firms Near Me — Top Rated Firms Near You",
     internalLinks: [
       { label: "Best Personal Injury Attorneys", href: internalLink("best-personal-injury-attorneys") },
@@ -129,7 +129,7 @@ export const NEAR_ME_PAGES: ServiceSynonymData[] = [
     slug: "auto-accident-attorney-near-me", 
     keyword: "auto accident attorney near me", 
     title: "Auto Accident Attorney Near Me | Car Injury Law", 
-    description: "Find an auto accident attorney near you today. Serving all 50 states. Free consultation 24/7. No win no fee.", 
+    description: "Need an auto accident attorney near you? Car Injury Law provides expert legal help in all 50 states. Free 24/7 consultations. No fees unless we win.",
     h1: "Auto Accident Attorney Near Me — We Serve Your Area",
     internalLinks: [
       { label: "Auto Accident Lawyers Near Me", href: internalLink("auto-accident-lawyers-near-me") },
@@ -162,7 +162,7 @@ export const NEAR_ME_PAGES: ServiceSynonymData[] = [
     slug: "lyft-accident-lawyer-near-me", 
     keyword: "lyft accident lawyer near me", 
     title: "Lyft Accident Lawyer Near Me | Car Injury Law", 
-    description: "Find a Lyft accident lawyer near you today. Serving all 50 states. Free case review. No win no fee.", 
+    description: "Looking for a Lyft accident lawyer near you? Car Injury Law provides expert legal help in all 50 states. Free 24/7 consultations. No fees unless we win.",
     h1: "Lyft Accident Lawyer Near Me — Local Rideshare Accident Help",
     internalLinks: [
       { label: "Uber Accident Lawyer Near Me", href: internalLink("uber-accident-lawyer-near-me") },
@@ -228,7 +228,7 @@ export const NEAR_ME_PAGES: ServiceSynonymData[] = [
     slug: "construction-accident-lawyer-near-me", 
     keyword: "construction accident lawyer near me", 
     title: "Construction Accident Lawyer Near Me | Car Injury Law", 
-    description: "Find a construction accident lawyer near you. Serving all 50 states. Free case review 24/7. No win no fee.", 
+    description: "Find an expert construction accident lawyer near you. Car Injury Law serves all 50 states with free 24/7 case reviews and no-win, no-fee representation.",
     h1: "Construction Accident Lawyer Near Me — We Serve Your Area",
     internalLinks: [
       { label: "Construction Accident Attorney", href: internalLink("construction-accident-attorney") },
@@ -250,7 +250,7 @@ export const NEAR_ME_PAGES: ServiceSynonymData[] = [
     slug: "personal-injury-firms-near-me", 
     keyword: "personal injury firms near me", 
     title: "Personal Injury Firms Near Me | Car Injury Law", 
-    description: "Find top personal injury firms near you. Serving all 50 states. Free case review. No win no fee.", 
+    description: "Find top-rated personal injury firms near you today. Car Injury Law serves all 50 states with free 24/7 consultations and a no-win, no-fee guarantee.",
     h1: "Personal Injury Firms Near Me — Top Rated Firms Serving You",
     internalLinks: [
       { label: "Personal Injury Law Firms Near Me", href: internalLink("personal-injury-law-firms-near-me") },
@@ -261,7 +261,7 @@ export const NEAR_ME_PAGES: ServiceSynonymData[] = [
     slug: "lawyer-injury-near-me", 
     keyword: "lawyer injury near me", 
     title: "Injury Lawyer Near Me | Car Injury Law", 
-    description: "Find an injury lawyer near you today. Serving all 50 states. Free consultation. No win no fee.", 
+    description: "Need an injury lawyer near you today? Car Injury Law serves all 50 states with free 24/7 consultations. We fight for the compensation you deserve.",
     h1: "Injury Lawyer Near Me — Fighting For Local Injury Victims",
     internalLinks: [
       { label: "Personal Injury Lawyer Near Me", href: internalLink("personal-injury-lawyer-near-me") },
@@ -338,7 +338,7 @@ export const NEAR_ME_PAGES: ServiceSynonymData[] = [
     slug: "best-lawyers-for-truck-accidents", 
     keyword: "best lawyers for truck accidents", 
     title: "Best Lawyers For Truck Accidents | Car Injury Law", 
-    description: "Rated among the best lawyers for truck accidents in the USA. Free case review. No fees until we win.", 
+    description: "Rated among the best lawyers for truck accidents in the USA. Car Injury Law provides expert representation with no fees until we win your injury case.",
     h1: "Best Lawyers For Truck Accidents — Proven Results For Victims",
     internalLinks: [
       { label: "Best Truck Accident Lawyer", href: internalLink("best-truck-accident-lawyer") },
