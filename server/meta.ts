@@ -18,7 +18,7 @@ interface MetaTags {
 }
 
 const DEFAULT_META: MetaTags = {
-    title: "Car Accident & Injury Attorneys | Car Injury Law",
+    title: "Car Accident and Personal Injury Attorneys | Car Injury Law",
     description: "Expert car accident and personal injury lawyers. We fight insurance companies to maximize your settlement. Free consultation 24/7.",
     keywords: "car accident lawyer, personal injury attorney, truck accident lawyer",
     canonical: "https://www.carinjurylaw.com/",
@@ -29,14 +29,14 @@ const DEFAULT_META: MetaTags = {
 
 
 function sanitizeDescription(desc: string): string {
-  const clean = desc.trim();
-  if (clean.length <= 160) return clean;
-  return clean.substring(0, 157) + '...';
+    const clean = desc.trim();
+    if (clean.length <= 160) return clean;
+    return clean.substring(0, 157) + '...';
 }
 
 function generateTagsHtml(meta: MetaTags, path: string): string {
     const escape = he.encode;
-    
+
     return `
     <title>${escape(meta.title)}</title>
     <meta name="description" content="${escape(meta.description)}" />
@@ -105,34 +105,34 @@ export function getMetaTagsHtml(url: string): string {
 
     // --- 3. SEO Pages ---
     if (segments.length === 1) {
-        const pageData = 
-          SERVICE_SYNONYM_PAGES.find(p => p.slug === segments[0]) || 
-          NEAR_ME_PAGES.find(p => p.slug === segments[0]) ||
-          PRACTICE_AREA_PAGES.find(p => p.slug === segments[0]) ||
-          BEST_PAGES.find(p => p.slug === segments[0]) ||
-          STATE_SPECIFIC_PAGES.find(p => p.slug === segments[0]);
-          
+        const pageData =
+            SERVICE_SYNONYM_PAGES.find(p => p.slug === segments[0]) ||
+            NEAR_ME_PAGES.find(p => p.slug === segments[0]) ||
+            PRACTICE_AREA_PAGES.find(p => p.slug === segments[0]) ||
+            BEST_PAGES.find(p => p.slug === segments[0]) ||
+            STATE_SPECIFIC_PAGES.find(p => p.slug === segments[0]);
+
         if (pageData) {
             meta.title = pageData.title;
             meta.description = sanitizeDescription(pageData.description);
             meta.keywords = pageData.keyword;
-            
+
             return generateTagsHtml(meta, path);
         }
     }
 
     // Statistics pages
     if (segments.length === 2 && segments[0] === 'car-accident-statistics') {
-      const stateData = getStateData(segments[1]);
-      if (stateData) {
-        meta.title = `${stateData.name} Car Accident Stats 2025 | Car Injury Law`;
-        meta.description = `${stateData.name} car accident statistics and data. Statute of limitations: ${stateData.statute}. Know your rights.`;
-        meta.keywords = `${stateData.name} car accident statistics, ${stateData.abbr} crash data, ${stateData.name} lawyer`;
-        
-        meta.ogTitle = meta.title;
-        meta.ogDescription = meta.description;
-        return generateTagsHtml(meta, path);
-      }
+        const stateData = getStateData(segments[1]);
+        if (stateData) {
+            meta.title = `${stateData.name} Car Accident Stats 2025 | Car Injury Law`;
+            meta.description = `${stateData.name} car accident statistics and data. Statute of limitations: ${stateData.statute}. Know your rights.`;
+            meta.keywords = `${stateData.name} car accident statistics, ${stateData.abbr} crash data, ${stateData.name} lawyer`;
+
+            meta.ogTitle = meta.title;
+            meta.ogDescription = meta.description;
+            return generateTagsHtml(meta, path);
+        }
     }
 
     if (segments.length > 0) {
@@ -158,7 +158,7 @@ export function getMetaTagsHtml(url: string): string {
                 meta.title = `${stateData.name} ${practiceLabel} Lawyer | Car Injury Law`;
                 meta.description = `Need a ${practiceLabel.toLowerCase()} lawyer in ${stateData.name}? We handle ${stateData.name} cases. Free consultation. Call 24/7.`;
                 meta.keywords = `${practiceLabel.toLowerCase()} ${stateData.name}, ${stateData.name} lawyer, injury attorney ${stateData.abbr}`;
-                
+
                 meta.ogTitle = meta.title;
                 meta.ogDescription = meta.description;
 
@@ -172,7 +172,7 @@ export function getMetaTagsHtml(url: string): string {
             if (segments.length === 1) {
                 meta.title = `${stateData.name} Car Accident Lawyer | Free Consultation`;
                 meta.description = `Top-rated car accident lawyers in ${stateData.name}. ${stateData.faultSystem} state. Statute: ${stateData.statute}. Call 24/7.`;
-                
+
             } else if (segments.length === 2) {
                 const cityName = toCityCase(segments[1]);
                 meta.title = `${cityName} Car Accident Lawyer | ${stateData.abbr} | Car Injury Law`;
