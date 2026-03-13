@@ -39,12 +39,12 @@ export function Footer() {
             <h3 className="font-bold mb-6 text-lg font-serif text-secondary">Company</h3>
             <ul className="space-y-3 text-gray-400 font-medium">
               <li><Link href={internalLink("")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Home</Link></li>
-              <li><Link href={internalLink("about")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>About Admani Law</Link></li>
-              <li><Link href={internalLink("case-results")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Case Results</Link></li>
-              <li><Link href={internalLink("vs-insurance")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Vs. Insurance</Link></li>
-              <li><Link href={internalLink("safety-resources")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Safety Resources</Link></li>
-              <li><Link href={internalLink("join-network")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Join Network (Attorneys)</Link></li>
-              <li><Link href={internalLink("blog")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Legal Insights</Link></li>
+              <li><Link href={internalLink("about/")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>About Admani Law</Link></li>
+              <li><Link href={internalLink("case-results/")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Case Results</Link></li>
+              <li><Link href={internalLink("vs-insurance/")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Vs. Insurance</Link></li>
+              <li><Link href={internalLink("safety-resources/")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Safety Resources</Link></li>
+              <li><Link href={internalLink("join-network/")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Join Network (Attorneys)</Link></li>
+              <li><Link href={internalLink("blog/")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Legal Insights</Link></li>
               <li><button onClick={scrollToForm} className="hover:text-white transition-colors text-left flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Contact Us</button></li>
             </ul>
           </div>

@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 
 interface InternalLinksFooterProps {
   links?: { label: string; href: string }[];
@@ -19,7 +20,7 @@ export function InternalLinksFooter({ links, title = "Related Legal Resources" }
             {links.map((link, index) => (
               <Link 
                 key={index} 
-                href={link.href}
+                href={internalLink(link.href)}
                 className="text-primary/70 hover:text-secondary font-medium transition-colors flex items-center gap-2 group"
               >
                 <span className="h-1.5 w-1.5 rounded-full bg-secondary group-hover:scale-125 transition-transform" />

@@ -124,10 +124,12 @@ STATE_SPECIFIC_PAGES.forEach(page => {
 // URL format validator
 urls.forEach(u => {
   if (!u.loc.startsWith('https://www.')) {
-    console.error('BAD URL in sitemap:', u.loc);
+    console.error('BAD URL (No WWW):', u.loc);
   }
   if (!u.loc.endsWith('/')) {
-    console.error('Missing trailing slash:', u.loc);
+    console.error('BAD URL (No Trailing Slash):', u.loc);
+    // Auto-fix if missing
+    u.loc = u.loc.endsWith('/') ? u.loc : u.loc + '/';
   }
 });
 
