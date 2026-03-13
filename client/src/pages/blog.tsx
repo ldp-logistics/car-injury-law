@@ -14,7 +14,7 @@ export default function BlogPage() {
       <SeoHead 
         title="Legal Insights & Resources | Admani Law Blog"
         description="Expert articles on personal injury law, car accident settlements, and insurance claims. Stay informed with Admani Law."
-        canonicalUrl="https://www.carinjurylaw.com/blog"
+        canonicalUrl="https://www.carinjurylaw.com/blog/"
       />
       <NavBar />
       

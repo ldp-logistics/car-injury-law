@@ -13,7 +13,7 @@ export default function JackknifeAccidentPage() {
       <SeoHead 
         title="Jackknife Truck Accident Lawyer | Admani Law"
         description="Jackknife accidents are often caused by braking errors or equipment failure. Our specialized truck accident team knows how to prove liability."
-        canonicalUrl="https://www.carinjurylaw.com/practice-areas/truck-accident/jackknife"
+        canonicalUrl="https://www.carinjurylaw.com/practice-areas/truck-accident/jackknife/"
       />
       <NavBar />
       <Breadcrumbs 

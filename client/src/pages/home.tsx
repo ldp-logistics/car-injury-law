@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { Suspense, lazy } from "react";
 import { NavBar } from "@/components/nav-bar";
 import { HeroSection } from "@/components/hero-section";
@@ -135,7 +136,7 @@ export default function Home() {
               Don't Settle For Less.
             </h2>
             <p className="text-xl mb-10 max-w-2xl mx-auto opacity-90 leading-relaxed">
-              The <Link href="/vs-insurance/" className="text-black hover:underline font-semibold">insurance company</Link> has lawyers. You should too.<br />
+              The <Link href={internalLink("vs-insurance")} className="text-black hover:underline font-semibold">insurance company</Link> has lawyers. You should too.<br />
               Call the Admani Law Network now.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">

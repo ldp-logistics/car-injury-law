@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { SeoContentSection } from "@/components/seo-content-section";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
@@ -129,7 +130,7 @@ export default function CityLandingPage({ stateData, city }: CityLandingPageProp
                   <ul>
                     <li>Intersections with high crash rates in {city}</li>
                     <li>Local hospital lien negotiations</li>
-                    <li>Dealing with {stateData.name} specific <Link href="/blog/dealing-with-insurance-adjusters" className="text-primary hover:underline font-semibold">insurance adjusters</Link></li>
+                    <li>Dealing with {stateData.name} specific <Link href={internalLink("blog/dealing-with-insurance-adjusters")} className="text-primary hover:underline font-semibold">insurance adjusters</Link></li>
                   </ul>
                 </article>
               </section>

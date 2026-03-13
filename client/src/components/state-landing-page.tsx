@@ -8,6 +8,7 @@ import { CheckCircle, MapPin, Shield, AlertTriangle, Gavel, Phone, Scale, Dollar
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { StateData } from "@/data/state-data";
 import { SeoHead } from "@/components/seo-head";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -131,7 +132,7 @@ export default function StateLandingPage({ data }: StateLandingPageProps) {
                       </p>
                       <p>
                         Car accident victims often face mounting medical bills, lost wages, and physical pain. 
-                        <Link href="/vs-insurance" className="text-black hover:underline font-semibold">Insurance companies</Link> often try to settle quickly for less than your case is worth. 
+                        <Link href={internalLink("vs-insurance")} className="text-black hover:underline font-semibold">Insurance companies</Link> often try to settle quickly for less than your case is worth. 
                         We protect your rights and ensure you pursue the full damages you are entitled to 
                         under {data.name} law.
                       </p>

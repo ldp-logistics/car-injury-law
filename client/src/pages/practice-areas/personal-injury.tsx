@@ -1,4 +1,5 @@
 import { NavBar } from "@/components/nav-bar";
+import { internalLink } from "@/utils/link-helper";
 import { Footer } from "@/components/footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { LeadForm } from "@/components/lead-form";
@@ -25,7 +26,7 @@ export default function PersonalInjuryPage() {
       <SeoHead 
         title="Personal Injury Lawyer | Nationwide Accident Attorney Services"
         description="Injured in an accident? Our experienced personal injury lawyers fight for maximum compensation. No win, no fee. Free 24/7 consultation."
-        canonicalUrl="https://www.carinjurylaw.com/practice-areas/personal-injury"
+        canonicalUrl="https://www.carinjurylaw.com/practice-areas/personal-injury/"
       />
       {/* Inject JSON-LD Schema */}
       <script type="application/ld+json">
@@ -52,7 +53,7 @@ export default function PersonalInjuryPage() {
                   <span className="text-secondary">Lawyers</span>
                 </h1>
                 <p className="text-xl text-gray-300 max-w-xl leading-relaxed">
-                  When negligence causes harm, you need a powerful advocate. We connect you with top-rated <Link href="/practice-areas/personal-injury" className="text-black hover:underline font-semibold">personal injury</Link> attorneys across the nation to fight for your rights.
+                  When negligence causes harm, you need a powerful advocate. We connect you with top-rated <Link href={internalLink("practice-areas/personal-injury")} className="text-black hover:underline font-semibold">personal injury</Link> attorneys across the nation to fight for your rights.
                 </p>
                 <div className="space-y-3 pt-4">
                   {["No Win, No Fee Guarantee", "Millions Recovered for Clients", "Available 24/7 Nationwide"].map((item, i) => (

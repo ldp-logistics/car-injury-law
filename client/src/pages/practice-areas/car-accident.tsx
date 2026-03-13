@@ -1,4 +1,5 @@
 import { SeoContentSection } from "@/components/seo-content-section";
+import { internalLink } from "@/utils/link-helper";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { SeoHead } from "@/components/seo-head";
@@ -39,7 +40,7 @@ export default function CarAccidentPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = "/thank-you";
+    window.location.href = internalLink("thank-you");
   };
 
   const currentDate = new Date().toISOString();
@@ -50,13 +51,13 @@ export default function CarAccidentPage() {
         title="Car Accident Lawyer | Expert Legal Representation | Car Injury Law"
         description="Injured in a car crash? Our expert car accident lawyers fight for your rights. Get the compensation you deserve. Free 24/7 consultation."
         lastUpdated={currentDate}
-        canonicalUrl="https://www.carinjurylaw.com/practice-areas/car-accident"
+        canonicalUrl="https://www.carinjurylaw.com/practice-areas/car-accident/"
         schema={{
           "@context": "https://schema.org",
           "@type": "LegalService",
           "name": "Car Injury Law",
           "description": "Expert car accident lawyers fighting for victims' rights nationwide",
-          "url": "https://www.carinjurylaw.com/practice-areas/car-accident",
+          "url": "https://www.carinjurylaw.com/practice-areas/car-accident/",
           "telephone": "1-888-669-5559",
           "priceRange": "Contingency Fee (No Win No Fee)",
           "areaServed": {
@@ -372,7 +373,7 @@ export default function CarAccidentPage() {
                       <h3 className="text-2xl font-bold mb-4">Full Damage Calculation</h3>
                       <p className="text-primary/80 leading-relaxed mb-6">
                         We meticulously calculate every element of your damages to ensure you 
-                        receive full compensation. <Link href="/vs-insurance" className="text-black hover:underline font-semibold">Insurance companies</Link> often undervalue claims—we 
+                        receive full compensation. <Link href={internalLink("vs-insurance")} className="text-black hover:underline font-semibold">Insurance companies</Link> often undervalue claims—we 
                         fight for what you actually deserve.
                       </p>
                       <ul className="space-y-3">
@@ -563,8 +564,8 @@ export default function CarAccidentPage() {
 
                       <p className="text-xs text-center text-muted-foreground">
                         By submitting this form, you agree to our{" "}
-                        <Link href="/privacy" className="underline">Privacy Policy</Link> and{" "}
-                        <Link href="/terms" className="underline">Terms of Service</Link>.
+                        <Link href={internalLink("privacy")} className="underline">Privacy Policy</Link> and{" "}
+                        <Link href={internalLink("terms")} className="underline">Terms of Service</Link>.
                       </p>
                     </form>
                   </CardContent>

@@ -8,6 +8,7 @@ import { CheckCircle, MapPin, Shield, AlertTriangle, Gavel, Phone, Scale, Stetho
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { StateData } from "@/data/state-data";
 import { SeoHead } from "@/components/seo-head";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -63,8 +64,8 @@ export default function MedicalMalpracticeStateLandingPage({ data }: MedicalMalp
       
       <Breadcrumbs 
         items={[
-          { label: "Locations", href: "/#locations" },
-          { label: "Practice Areas", href: "/practice-areas/medical-malpractice" },
+          { label: "Locations", href: internalLink("#locations") },
+          { label: "Practice Areas", href: internalLink("practice-areas/medical-malpractice") },
           { label: `${data.name} Medical Malpractice Lawyer` }
         ]} 
       />
@@ -89,7 +90,7 @@ export default function MedicalMalpracticeStateLandingPage({ data }: MedicalMalp
                   Medical Malpractice Lawyers in <span className="text-secondary">{data.name}</span>
                 </h1>
                 <p className="text-xl text-gray-300 max-w-xl leading-relaxed">
-                  Injured by a doctor or hospital in {data.name}? We fight powerful healthcare systems and <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance companies</Link> to get you the justice you deserve.
+                  Injured by a doctor or hospital in {data.name}? We fight powerful healthcare systems and <Link href={internalLink("vs-insurance")} className="text-black hover:underline font-semibold">insurance companies</Link> to get you the justice you deserve.
                 </p>
                 <div className="flex flex-col gap-3 pt-4">
                   <div className="flex items-center gap-3 text-white">

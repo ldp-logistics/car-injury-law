@@ -8,6 +8,7 @@ import { CheckCircle, MapPin, Shield, AlertTriangle, Gavel, Phone, Scale, Bike, 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { StateData } from "@/data/state-data";
 import { SeoHead } from "@/components/seo-head";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -62,8 +63,8 @@ export default function MotorcycleStateLandingPage({ data }: MotorcycleStateLand
       
       <Breadcrumbs 
         items={[
-          { label: "Locations", href: "/#locations" },
-          { label: "Practice Areas", href: "/practice-areas/motorcycle-accident" },
+          { label: "Locations", href: internalLink("#locations") },
+          { label: "Practice Areas", href: internalLink("practice-areas/motorcycle-accident") },
           { label: `${data.name} Motorcycle Accident Lawyer` }
         ]} 
       />
@@ -126,11 +127,11 @@ export default function MotorcycleStateLandingPage({ data }: MotorcycleStateLand
                     <div className="prose prose-lg text-gray-600 max-w-none">
                       <p>
                         Riding in {data.name} offers incredible freedom, but it also comes with unique risks. 
-                        When accidents happen, injured riders often face unfair prejudice from <Link href="/blog/dealing-with-insurance-adjusters" className="text-primary hover:underline font-semibold">insurance adjusters</Link> 
+                        When accidents happen, injured riders often face unfair prejudice from <Link href={internalLink("blog/dealing-with-insurance-adjusters")} className="text-primary hover:underline font-semibold">insurance adjusters</Link> 
                         and juries who assume the motorcyclist was reckless.
                       </p>
                       <p>
-                        Our experienced {data.name} <Link href="/practice-areas/motorcycle-accident" className="text-black hover:underline font-semibold">motorcycle accident</Link> lawyers know how to combat this bias. 
+                        Our experienced {data.name} <Link href={internalLink("practice-areas/motorcycle-accident")} className="text-black hover:underline font-semibold">motorcycle accident</Link> lawyers know how to combat this bias. 
                         We understand the specific traffic laws in {data.name}, including rules regarding lane splitting, 
                         helmet requirements, and right-of-way violations that frequently cause motorcycle crashes.
                       </p>

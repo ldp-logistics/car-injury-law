@@ -29,6 +29,7 @@ import {
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { LeadForm } from "@/components/lead-form";
 import { STATE_DATA } from "@/data/state-data";
 
@@ -41,7 +42,7 @@ export default function BusTransitInjuryPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = "/thank-you";
+    window.location.href = internalLink("thank-you");
   };
 
   const currentDate = new Date().toISOString();
@@ -52,13 +53,13 @@ export default function BusTransitInjuryPage() {
         title="Bus Accident Lawyer | Public Transit Claims | Car Injury Law"
         description="Injured on a bus or public transit? Our experienced bus accident lawyers navigate government immunity laws and fight for your compensation. Free 24/7 consultation."
         lastUpdated={currentDate}
-        canonicalUrl="https://www.carinjurylaw.com/practice-areas/bus-transit-injury"
+        canonicalUrl="https://www.carinjurylaw.com/practice-areas/bus-transit-injury/"
         schema={{
           "@context": "https://schema.org",
           "@type": "LegalService",
           "name": "Car Injury Law",
           "description": "Expert bus accident lawyers handling public transit injury claims against government agencies and private carriers",
-          "url": "https://www.carinjurylaw.com/practice-areas/bus-transit-injury",
+          "url": "https://www.carinjurylaw.com/practice-areas/bus-transit-injury/",
           "telephone": "1-888-669-5559",
           "priceRange": "Contingency Fee (No Win No Fee)",
           "areaServed": {
@@ -496,7 +497,7 @@ export default function BusTransitInjuryPage() {
                   Free Case Evaluation
                 </h2>
                 <p className="text-muted-foreground mt-4">
-                  Fill out the form below and one of our <Link href="/practice-areas/bus-transit-injury" className="text-black hover:underline font-semibold">bus accident</Link> attorneys will 
+                  Fill out the form below and one of our <Link href={internalLink("practice-areas/bus-transit-injury")} className="text-black hover:underline font-semibold">bus accident</Link> attorneys will 
                   contact you within 24 hours.
                 </p>
               </motion.div>
@@ -568,8 +569,8 @@ export default function BusTransitInjuryPage() {
 
                       <p className="text-xs text-center text-muted-foreground">
                         By submitting this form, you agree to our{" "}
-                        <Link href="/privacy" className="underline">Privacy Policy</Link> and{" "}
-                        <Link href="/terms" className="underline">Terms of Service</Link>.
+                        <Link href={internalLink("privacy")} className="underline">Privacy Policy</Link> and{" "}
+                        <Link href={internalLink("terms")} className="underline">Terms of Service</Link>.
                       </p>
                     </form>
                   </CardContent>

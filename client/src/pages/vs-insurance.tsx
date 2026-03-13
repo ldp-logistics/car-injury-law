@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,7 @@ export default function VsInsurancePage() {
       <SeoHead 
         title="Admani Law vs. Insurance Adjusters | Don't Settle For Less"
         description="See the difference between handling a claim yourself vs. hiring Admani Law. We fight for maximum compensation while adjusters fight to pay you zero."
-        canonicalUrl="https://www.carinjurylaw.com/vs-insurance"
+        canonicalUrl="https://www.carinjurylaw.com/vs-insurance/"
       />
       <NavBar />
       
@@ -23,7 +24,7 @@ export default function VsInsurancePage() {
               Us vs. <span className="text-destructive">Them</span>
             </h1>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              The <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance adjuster</Link> works for the shareholders. We work for <strong>you</strong>. See the difference in results.
+              The <Link href={internalLink("vs-insurance")} className="text-black hover:underline font-semibold">insurance adjuster</Link> works for the shareholders. We work for <strong>you</strong>. See the difference in results.
             </p>
           </div>
 

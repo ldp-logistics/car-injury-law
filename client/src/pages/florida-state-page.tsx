@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { StickyCta } from "@/components/sticky-cta";
@@ -102,10 +103,10 @@ export default function FloridaStatePage() {
           <div className="grid lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2 space-y-12">
               <section>
-                <h2 className="text-3xl font-bold font-serif text-primary mb-6">Why You Need a {STATE_DATA.name} <Link href="/practice-areas/car-accident" className="text-primary hover:underline font-semibold">Car Accident Lawyer</Link></h2>
+                <h2 className="text-3xl font-bold font-serif text-primary mb-6">Why You Need a {STATE_DATA.name} <Link href={internalLink("practice-areas/car-accident")} className="text-primary hover:underline font-semibold">Car Accident Lawyer</Link></h2>
                 <div className="prose prose-lg text-gray-600 max-w-none">
                   <p>
-                    {STATE_DATA.name}'s traffic laws are unique due to the strict <strong>No-Fault (PIP)</strong> system. This means you must first turn to your own <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance company</Link> for coverage, regardless of who caused the crash. However, PIP coverage is often insufficient for serious injuries.
+                    {STATE_DATA.name}'s traffic laws are unique due to the strict <strong>No-Fault (PIP)</strong> system. This means you must first turn to your own <Link href={internalLink("vs-insurance")} className="text-black hover:underline font-semibold">insurance company</Link> for coverage, regardless of who caused the crash. However, PIP coverage is often insufficient for serious injuries.
                   </p>
                   <p>
                     Our network of attorneys in {STATE_DATA.name} knows how to break through the "tort threshold" to sue the at-fault driver for pain and suffering, lost wages, and medical bills that exceed your PIP limits. We have recovered millions for clients in cities like {STATE_DATA.cityList.join(", ")}.

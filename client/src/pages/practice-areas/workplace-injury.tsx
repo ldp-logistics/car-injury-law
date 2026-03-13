@@ -29,6 +29,7 @@ import {
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { LeadForm } from "@/components/lead-form";
 import { STATE_DATA } from "@/data/state-data";
 
@@ -41,7 +42,7 @@ export default function WorkplaceInjuryPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = "/thank-you";
+    window.location.href = internalLink("thank-you");
   };
 
   const currentDate = new Date().toISOString();
@@ -52,7 +53,7 @@ export default function WorkplaceInjuryPage() {
         title="Workplace Injury Lawyer | Job Site Accident Experts | Car Injury Law"
         description="Injured at work? Our workplace injury lawyers go beyond workers' comp to find every source of compensation. We investigate OSHA violations and third-party liability. Free consultation."
         lastUpdated={currentDate}
-        canonicalUrl="https://www.carinjurylaw.com/practice-areas/workplace-injury"
+        canonicalUrl="https://www.carinjurylaw.com/practice-areas/workplace-injury/"
         schema={{
           "@context": "https://schema.org",
           "@type": "LegalService",
@@ -522,7 +523,7 @@ export default function WorkplaceInjuryPage() {
                   Free Case Evaluation
                 </h2>
                 <p className="text-muted-foreground mt-4">
-                  Fill out the form below and one of our <Link href="/practice-areas/workplace-injury" className="text-black hover:underline font-semibold">workplace injury</Link> attorneys will 
+                  Fill out the form below and one of our <Link href={internalLink("practice-areas/workplace-injury")} className="text-black hover:underline font-semibold">workplace injury</Link> attorneys will 
                   contact you within 24 hours.
                 </p>
               </motion.div>
@@ -594,8 +595,8 @@ export default function WorkplaceInjuryPage() {
 
                       <p className="text-xs text-center text-muted-foreground">
                         By submitting this form, you agree to our{" "}
-                        <Link href="/privacy" className="underline">Privacy Policy</Link> and{" "}
-                        <Link href="/terms" className="underline">Terms of Service</Link>.
+                        <Link href={internalLink("privacy")} className="underline">Privacy Policy</Link> and{" "}
+                        <Link href={internalLink("terms")} className="underline">Terms of Service</Link>.
                       </p>
                     </form>
                   </CardContent>

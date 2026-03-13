@@ -19,7 +19,7 @@ export default function AttorneyProfilePage() {
       <SeoHead 
         title="Saad Admani, Esq. | Network Director & Lead Attorney"
         description="Saad Admani is the founder of Admani Law and Director of the CarInjuryLaw.com Network. Licensed in NJ & NY, specializing in high-stakes injury litigation."
-        canonicalUrl="https://www.carinjurylaw.com/attorneys/saad-admani"
+        canonicalUrl="https://www.carinjurylaw.com/attorneys/saad-admani/"
         ogImage={attorneyImg}
         ogType="profile"
         schema={{

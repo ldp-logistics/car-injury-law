@@ -35,7 +35,7 @@ export default function CaseResultsPage() {
       <SeoHead 
         title="Case Results & Settlements | Admani Law"
         description="View our track record of multi-million dollar settlements. Real results for real clients in truck accidents, car crashes, and wrongful death cases."
-        canonicalUrl="https://www.carinjurylaw.com/case-results"
+        canonicalUrl="https://www.carinjurylaw.com/case-results/"
       />
       <NavBar />
       

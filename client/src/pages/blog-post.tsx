@@ -7,6 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, Share2, ArrowLeft, Lightbulb } from "lucide-react";
 import { Link, useRoute } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { BLOG_POSTS_DATA } from "@/data/blog-posts";
 import attorneyImg from "@assets/alicia_dawson_paralegal.jpg";
 
@@ -58,7 +59,7 @@ export default function BlogPostPage() {
       <main className="pt-10 pb-20">
         {/* Article Header */}
         <div className="container mx-auto px-4 max-w-4xl">
-          <Link href="/blog" className="inline-flex items-center text-sm font-bold text-gray-500 hover:text-primary mb-6 transition-colors">
+          <Link href={internalLink("blog")} className="inline-flex items-center text-sm font-bold text-gray-500 hover:text-primary mb-6 transition-colors">
             <ArrowLeft className="h-4 w-4 mr-2" /> Back to Blog
           </Link>
           
@@ -130,7 +131,7 @@ export default function BlogPostPage() {
             <div className="flex-1 text-center md:text-left">
               <h2 className="text-xl font-bold font-serif text-primary mb-2">About the Author</h2>
               <p className="text-gray-600 mb-4 text-sm">
-                Alicia Dawson is a Senior Paralegal at Car Injury Law with over 15 years of experience in <Link href="/practice-areas/personal-injury" className="text-black hover:underline font-semibold">personal injury</Link> claims. She specializes in case management, client advocacy, and navigating complex insurance procedures to support accident victims.
+                Alicia Dawson is a Senior Paralegal at Car Injury Law with over 15 years of experience in <Link href={internalLink("practice-areas/personal-injury")} className="text-black hover:underline font-semibold">personal injury</Link> claims. She specializes in case management, client advocacy, and navigating complex insurance procedures to support accident victims.
               </p>
               <Button onClick={scrollToForm} className="bg-secondary text-primary font-bold hover:bg-secondary/90">
                 Get a Free Case Evaluation

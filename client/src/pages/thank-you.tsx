@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, ArrowRight, Phone } from "lucide-react";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { useEffect } from "react";
 
 export default function ThankYou() {
@@ -77,7 +78,7 @@ export default function ThankYou() {
           </div>
 
           <div className="pt-8">
-            <Link href="/">
+            <Link href={internalLink("")}>
               <Button variant="link" className="text-slate-500 hover:text-slate-900">
                 Return to Homepage <ArrowRight className="ml-2 h-4 w-4" />
               </Button>

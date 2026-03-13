@@ -29,6 +29,7 @@ import {
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { LeadForm } from "@/components/lead-form";
 import { STATE_DATA } from "@/data/state-data";
 
@@ -41,7 +42,7 @@ export default function SlipAndFallPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = "/thank-you";
+    window.location.href = internalLink("thank-you");
   };
 
   const currentDate = new Date().toISOString();
@@ -52,13 +53,13 @@ export default function SlipAndFallPage() {
         title="Slip and Fall Lawyer | Premises Liability Experts | Car Injury Law"
         description="Injured in a slip and fall accident? Our premises liability lawyers prove property owner negligence. We document hazards and check maintenance records. Free consultation."
         lastUpdated={currentDate}
-        canonicalUrl="https://www.carinjurylaw.com/practice-areas/slip-and-fall"
+        canonicalUrl="https://www.carinjurylaw.com/practice-areas/slip-and-fall/"
         schema={{
           "@context": "https://schema.org",
           "@type": "LegalService",
           "name": "Car Injury Law",
           "description": "Expert slip and fall lawyers specializing in premises liability and proving property owner negligence",
-          "url": "https://www.carinjurylaw.com/practice-areas/slip-and-fall",
+          "url": "https://www.carinjurylaw.com/practice-areas/slip-and-fall/",
           "telephone": "1-888-669-5559",
           "priceRange": "Contingency Fee (No Win No Fee)",
           "areaServed": {
@@ -460,7 +461,7 @@ export default function SlipAndFallPage() {
                   <p className="text-gray-400 leading-relaxed">
                     We work on a contingency fee basis—you pay nothing unless we win. This 
                     allows us to thoroughly investigate your case and fight property owners 
-                    and their <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance companies</Link>.
+                    and their <Link href={internalLink("vs-insurance")} className="text-black hover:underline font-semibold">insurance companies</Link>.
                   </p>
                 </motion.div>
               </div>
@@ -573,8 +574,8 @@ export default function SlipAndFallPage() {
 
                       <p className="text-xs text-center text-muted-foreground">
                         By submitting this form, you agree to our{" "}
-                        <Link href="/privacy" className="underline">Privacy Policy</Link> and{" "}
-                        <Link href="/terms" className="underline">Terms of Service</Link>.
+                        <Link href={internalLink("privacy")} className="underline">Privacy Policy</Link> and{" "}
+                        <Link href={internalLink("terms")} className="underline">Terms of Service</Link>.
                       </p>
                     </form>
                   </CardContent>

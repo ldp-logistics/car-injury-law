@@ -36,7 +36,7 @@ export default function HomeES() {
         title="Abogados de Accidentes de Auto | Admani Law"
         description="La red oficial de Admani Law. Abogados de accidentes de auto a nivel nacional luchando por su compensación máxima. Si no ganamos, no cobramos."
         lastUpdated={currentDate}
-        canonicalUrl="https://www.carinjurylaw.com/es"
+        canonicalUrl="https://www.carinjurylaw.com/es/"
         lang="es"
       />
 

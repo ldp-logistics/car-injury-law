@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { STATE_DATA } from "@/data/state-data";
@@ -25,7 +26,7 @@ export function InteractiveMap() {
             National Reach. <span className="text-secondary">Local Power.</span>
           </h3>
           <p className="text-slate-600 text-lg leading-relaxed">
-            We don't just have a license; we have a <strong>network</strong>. Admani Law has boots on the ground in all 50 states. Select your region to find your local <Link href="/about" className="text-black hover:underline font-semibold">legal team</Link>.
+            We don't just have a license; we have a <strong>netowrk</strong>. Admani Law has boots on the ground in all 50 states. Select your region to find your local <Link href={internalLink("about")} className="text-black hover:underline font-semibold">legal team</Link>.
           </p>
 
           <div className="grid grid-cols-2 gap-4">

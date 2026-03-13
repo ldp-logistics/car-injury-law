@@ -8,6 +8,7 @@ import { CheckCircle, MapPin, Shield, AlertTriangle, Gavel, Phone, Scale, Bus, B
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { StateData } from "@/data/state-data";
 import { SeoHead } from "@/components/seo-head";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -62,8 +63,8 @@ export default function BusStateLandingPage({ data }: BusStateLandingPageProps) 
       
       <Breadcrumbs 
         items={[
-          { label: "Locations", href: "/#locations" },
-          { label: "Practice Areas", href: "/practice-areas/bus-transit-injury" },
+          { label: "Locations", href: internalLink("#locations") },
+          { label: "Practice Areas", href: internalLink("practice-areas/bus-transit-injury") },
           { label: `${data.name} Bus Accident Lawyer` }
         ]} 
       />
@@ -88,7 +89,7 @@ export default function BusStateLandingPage({ data }: BusStateLandingPageProps) 
                   Bus Injury Lawyers in <span className="text-secondary">{data.name}</span>
                 </h1>
                 <p className="text-xl text-gray-300 max-w-xl leading-relaxed">
-                  Injured on <Link href="/practice-areas/bus-transit-injury" className="text-black hover:underline font-semibold">public transit</Link> or hit by a bus? We navigate the complex sovereign immunity laws 
+                  Injured on <Link href={internalLink("practice-areas/bus-transit-injury")} className="text-black hover:underline font-semibold">public transit</Link> or hit by a bus? We navigate the complex sovereign immunity laws 
                   and fight for maximum compensation in {data.name}.
                 </p>
                 <div className="flex flex-col gap-3 pt-4">

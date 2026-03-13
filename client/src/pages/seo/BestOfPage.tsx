@@ -5,9 +5,11 @@ import { ChatWidget } from "@/components/chat-widget";
 import { LeadForm } from "@/components/lead-form";
 import { SeoHead } from "@/components/seo-head";
 import { BestPageData, BEST_PAGES } from "@/data/best-pages";
-import { Star, ShieldCheck, Trophy, BadgeCheck, MessageSquareQuote } from "lucide-react";
+import { Star, ShieldCheck, Trophy, BadgeCheck, MessageSquareQuote, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
+import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
 
 // Background image - reusing one of the premium assets
 import heroBg from "@assets/stock_images/personal_injury_lawy_4d2da1ce.jpg";
@@ -183,7 +185,7 @@ export default function BestOfPage({ data }: BestOfPageProps) {
                   <h3 className="text-xl font-bold font-serif text-primary mb-6">More Top-Rated Legal Services</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {BEST_PAGES.filter(p => p.slug !== data.slug).slice(0, 6).map((page, i) => (
-                      <Link key={i} href={`/${page.slug}`} className="text-blue-700 hover:text-secondary font-semibold hover:underline flex items-center gap-2">
+                      <Link key={i} href={internalLink(page.slug)} className="text-blue-700 hover:text-secondary font-semibold hover:underline flex items-center gap-2">
                         <span className="text-secondary opacity-50">•</span> {page.title.split('|')[0].trim()}
                       </Link>
                     ))}
@@ -209,6 +211,8 @@ export default function BestOfPage({ data }: BestOfPageProps) {
           </div>
         </section>
 
+        <InternalLinksFooter links={data.internalLinks} />
+
       </main>
       
       <StickyCta />
@@ -217,5 +221,3 @@ export default function BestOfPage({ data }: BestOfPageProps) {
     </div>
   );
 }
-// Import required icons missing in standard lucide import line
-import { Clock } from "lucide-react";

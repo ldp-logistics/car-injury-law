@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,7 @@ export default function CalculatorPage() {
       <SeoHead 
         title="Car Accident Settlement Calculator | Admani Law"
         description="How much is your car accident case worth? Use our free settlement calculator to estimate your compensation for medical bills, lost wages, and pain & suffering."
-        canonicalUrl="https://www.carinjurylaw.com/settlement-calculator"
+        canonicalUrl="https://www.carinjurylaw.com/settlement-calculator/"
       />
       <NavBar />
       
@@ -23,7 +24,7 @@ export default function CalculatorPage() {
               Car Accident <span className="text-secondary">Settlement Calculator</span>
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
-              Find out what your case could be worth in seconds. Our advanced algorithm considers medical expenses, property damage, and pain & suffering multipliers used by <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance companies</Link>.
+              Find out what your case could be worth in seconds. Our advanced algorithm considers medical expenses, property damage, and pain & suffering multipliers used by <Link href={internalLink("vs-insurance")} className="text-black hover:underline font-semibold">insurance companies</Link>.
             </p>
           </div>
 

@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -58,7 +59,7 @@ export function SeoContentSection({ service, location, type = "state" }: SeoCont
             {/* Introduction - The "Hook" */}
             <div>
               <p>
-                If you or a loved one has recently been involved in a serious incident in <strong>{location}</strong>, finding the right <strong>{keywords[0]}</strong> is likely the most important decision you will face this year. The aftermath of an accident—whether it’s a collision on {location} highways or a <Link href="/practice-areas/workplace-injury" className="text-black hover:underline font-semibold">workplace injury</Link>—can be overwhelming. Medical bills pile up, <Link href="/blog/dealing-with-insurance-adjusters" className="text-primary hover:underline font-semibold">insurance adjusters</Link> start calling, and physical pain can make it impossible to think clearly.
+                If you or a loved one has recently been involved in a serious incident in <strong>{location}</strong>, finding the right <strong>{keywords[0]}</strong> is likely the most important decision you will face this year. The aftermath of an accident—whether it’s a collision on {location} highways or a <Link href={internalLink("practice-areas/workplace-injury")} className="text-black hover:underline font-semibold">workplace injury</Link>—can be overwhelming. Medical bills pile up, <Link href={internalLink("blog/dealing-with-insurance-adjusters")} className="text-primary hover:underline font-semibold">insurance adjusters</Link> start calling, and physical pain can make it impossible to think clearly.
               </p>
               <p>
                 That is exactly why CarInjuryLaw.com exists. We connect residents of {location} with vetted, high-performing legal counsel. Whether you are searching for a <strong>{keywords[2]}</strong> to handle a complex collision claim or need an aggressive <strong>{keywords[3]}</strong> to fight a denied insurance policy, our network ensures you have "home court advantage" with attorneys who know the local judges, courts, and defense tactics in {location}.

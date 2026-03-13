@@ -64,7 +64,7 @@ export default function GlossaryPage() {
       <SeoHead 
         title="Legal Glossary | Personal Injury Terms Defined"
         description="Confused by legal jargon? Our comprehensive glossary defines common personal injury terms like Subrogation, Tort, and Contingency Fees."
-        canonicalUrl="https://www.carinjurylaw.com/glossary"
+        canonicalUrl="https://www.carinjurylaw.com/glossary/"
       />
       <NavBar />
       

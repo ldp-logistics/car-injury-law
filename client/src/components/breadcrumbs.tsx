@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { ChevronRight, Home } from "lucide-react";
 
 interface BreadcrumbsProps {
@@ -14,7 +15,7 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
       <div className="container mx-auto px-4">
         <ol className="flex items-center flex-wrap gap-2">
           <li className="flex items-center">
-            <Link href="/" className="hover:text-primary transition-colors flex items-center gap-1">
+            <Link href={internalLink("")} className="hover:text-primary transition-colors flex items-center gap-1">
               <Home className="h-4 w-4" />
               <span className="sr-only">Home</span>
             </Link>

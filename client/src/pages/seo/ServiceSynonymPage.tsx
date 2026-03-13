@@ -10,6 +10,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 import { useEffect, useState } from "react";
+import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
+import { internalLink } from "@/utils/link-helper";
 
 // For the background image, let's just pick one of our highest quality dynamic options.
 import heroBg from "@assets/stock_images/car_accident_crash_s_fd800196.jpg";
@@ -29,35 +31,35 @@ export default function ServiceSynonymPage({ data }: ServiceSynonymPageProps) {
   const kw = data.keyword.toLowerCase();
 
   // Decide the practice area link dynamically
-  let internalLinkUrl = "/practice-areas/personal-injury";
+  let internalLinkUrl = internalLink("practice-areas/personal-injury");
   let internalLinkLabel = "your personal injury options";
   
   if (kw.includes("car") || kw.includes("auto") || kw.includes("traffic")) {
-    internalLinkUrl = "/practice-areas/car-accident";
+    internalLinkUrl = internalLink("practice-areas/car-accident");
     internalLinkLabel = "detailed car accident legal process";
   } else if (kw.includes("truck")) {
-    internalLinkUrl = "/practice-areas/truck-accident";
+    internalLinkUrl = internalLink("practice-areas/truck-accident");
     internalLinkLabel = "commercial trucking lawsuit procedures";
   } else if (kw.includes("motorcycle") || kw.includes("bicycle") || kw.includes("bike")) {
-    internalLinkUrl = "/practice-areas/motorcycle-accident";
+    internalLinkUrl = internalLink("practice-areas/motorcycle-accident");
     internalLinkLabel = "two-wheeled accident rights";
   } else if (kw.includes("pedestrian")) {
-    internalLinkUrl = "/practice-areas/pedestrian-injury";
+    internalLinkUrl = internalLink("practice-areas/pedestrian-injury");
     internalLinkLabel = "pedestrian crosswalk injury guidelines";
   } else if (kw.includes("bus")) {
-    internalLinkUrl = "/practice-areas/bus-transit-injury";
+    internalLinkUrl = internalLink("practice-areas/bus-transit-injury");
     internalLinkLabel = "transit accident protocols";
   } else if (kw.includes("work") || kw.includes("construction")) {
-    internalLinkUrl = "/practice-areas/workplace-injury";
+    internalLinkUrl = internalLink("practice-areas/workplace-injury");
     internalLinkLabel = "workplace defect and workers claims";
   } else if (kw.includes("slip") || kw.includes("fall") || kw.includes("premises")) {
-    internalLinkUrl = "/practice-areas/slip-and-fall";
+    internalLinkUrl = internalLink("practice-areas/slip-and-fall");
     internalLinkLabel = "premises liability regulations";
   } else if (kw.includes("über") || kw.includes("uber") || kw.includes("lyft") || kw.includes("rideshare")) {
-    internalLinkUrl = "/practice-areas/rideshare-accident";
+    internalLinkUrl = internalLink("practice-areas/rideshare-accident");
     internalLinkLabel = "ridesharing liability coverage limits";
   } else if (kw.includes("death")) {
-    internalLinkUrl = "/practice-areas/wrongful-death";
+    internalLinkUrl = internalLink("practice-areas/wrongful-death");
     internalLinkLabel = "wrongful death lawsuit timelines";
   }
 
@@ -132,6 +134,7 @@ export default function ServiceSynonymPage({ data }: ServiceSynonymPageProps) {
                 <p>
                   Insurance companies understand precisely how much a claim is worth. Their internal algorithms continuously calculate risk, projecting future medical deterioration and diminished earning capacity. Without a battle-tested {data.keyword} on your side, you are actively forfeiting your right to access the full spectrum of compensation. They leverage your inexperience. They exploit your financial desperation. Only by retaining seasoned trial counsel can you immediately halt this predatory interference.
                 </p>
+                
 
                 <h2 className="text-3xl font-bold font-serif text-primary mt-12">Understanding The Strategic Approach Of A {data.keyword}</h2>
                 <p>
@@ -228,14 +231,14 @@ export default function ServiceSynonymPage({ data }: ServiceSynonymPageProps) {
                     </p>
                     <p className="font-bold text-gray-900 mb-4">Top States We Serve:</p>
                     <ul className="grid grid-cols-2 md:grid-cols-4 gap-3 text-secondary font-semibold">
-                      <li><Link href="/california" className="hover:underline">California</Link></li>
-                      <li><Link href="/texas" className="hover:underline">Texas</Link></li>
-                      <li><Link href="/florida" className="hover:underline">Florida</Link></li>
-                      <li><Link href="/new-york" className="hover:underline">New York</Link></li>
-                      <li><Link href="/illinois" className="hover:underline">Illinois</Link></li>
-                      <li><Link href="/georgia" className="hover:underline">Georgia</Link></li>
-                      <li><Link href="/ohio" className="hover:underline">Ohio</Link></li>
-                      <li><Link href="/pennsylvania" className="hover:underline">Pennsylvania</Link></li>
+                      <li><Link href={internalLink("california-car-accident-lawyer")} className="hover:underline">California</Link></li>
+                      <li><Link href={internalLink("texas-car-accident-lawyer")} className="hover:underline">Texas</Link></li>
+                      <li><Link href={internalLink("florida-car-accident-lawyer")} className="hover:underline">Florida</Link></li>
+                      <li><Link href={internalLink("new-york-car-accident-lawyer")} className="hover:underline">New York</Link></li>
+                      <li><Link href={internalLink("illinois-car-accident-lawyer")} className="hover:underline">Illinois</Link></li>
+                      <li><Link href={internalLink("georgia-car-accident-lawyer")} className="hover:underline">Georgia</Link></li>
+                      <li><Link href={internalLink("ohio-car-accident-lawyer")} className="hover:underline">Ohio</Link></li>
+                      <li><Link href={internalLink("pennsylvania-car-accident-lawyer")} className="hover:underline">Pennsylvania</Link></li>
                     </ul>
                   </div>
                 )}
@@ -251,6 +254,8 @@ export default function ServiceSynonymPage({ data }: ServiceSynonymPageProps) {
             </div>
           </div>
         </section>
+
+        <InternalLinksFooter links={data.internalLinks} />
 
       </main>
       

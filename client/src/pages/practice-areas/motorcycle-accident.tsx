@@ -1,4 +1,5 @@
 import { SeoContentSection } from "@/components/seo-content-section";
+import { internalLink } from "@/utils/link-helper";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { SeoHead } from "@/components/seo-head";
@@ -42,7 +43,7 @@ export default function MotorcycleAccidentPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = "/thank-you";
+    window.location.href = internalLink("thank-you");
   };
 
   const currentDate = new Date().toISOString();
@@ -53,13 +54,13 @@ export default function MotorcycleAccidentPage() {
         title="Motorcycle Crash Lawyer | Protecting Riders' Rights | Car Injury Law"
         description="Injured in a motorcycle crash? We fight biker bias and protect riders' rights. Expert motorcycle accident lawyers. Free 24/7 consultation."
         lastUpdated={currentDate}
-        canonicalUrl="https://www.carinjurylaw.com/practice-areas/motorcycle-accident"
+        canonicalUrl="https://www.carinjurylaw.com/practice-areas/motorcycle-accident/"
         schema={{
           "@context": "https://schema.org",
           "@type": "LegalService",
           "name": "Car Injury Law",
           "description": "Expert motorcycle accident lawyers fighting biker bias and protecting riders' rights",
-          "url": "https://www.carinjurylaw.com/practice-areas/motorcycle-accident",
+          "url": "https://www.carinjurylaw.com/practice-areas/motorcycle-accident/",
           "telephone": "1-888-669-5559",
           "priceRange": "Contingency Fee (No Win No Fee)",
           "areaServed": {
@@ -99,7 +100,7 @@ export default function MotorcycleAccidentPage() {
                   Advocates for the Riding Community
                 </span>
                 <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif leading-tight" data-testid="hero-heading">
-                  <Link href="/practice-areas/motorcycle-accident" className="text-primary hover:underline font-semibold">Motorcycle Crash</Link> Lawyers
+                  <Link href={internalLink("practice-areas/motorcycle-accident")} className="text-primary hover:underline font-semibold">Motorcycle Crash</Link> Lawyers
                 </h1>
                 <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
                   Insurance companies and juries often blame the rider first. We don't let them. 
@@ -361,7 +362,7 @@ export default function MotorcycleAccidentPage() {
                       <h3 className="text-2xl font-bold mb-4">Protecting Rider's Rights</h3>
                       <p className="text-primary/80 leading-relaxed mb-6">
                         From the moment you contact us, we become your shield. We handle all 
-                        communication with <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance companies</Link>, preserve critical evidence, and 
+                        communication with <Link href={internalLink("vs-insurance")} className="text-black hover:underline font-semibold">insurance companies</Link>, preserve critical evidence, and 
                         ensure your rights as a rider are never compromised.
                       </p>
                       <ul className="space-y-3">
@@ -574,8 +575,8 @@ export default function MotorcycleAccidentPage() {
 
                       <p className="text-xs text-center text-muted-foreground">
                         By submitting this form, you agree to our{" "}
-                        <Link href="/privacy" className="underline">Privacy Policy</Link> and{" "}
-                        <Link href="/terms" className="underline">Terms of Service</Link>.
+                        <Link href={internalLink("privacy")} className="underline">Privacy Policy</Link> and{" "}
+                        <Link href={internalLink("terms")} className="underline">Terms of Service</Link>.
                       </p>
                     </form>
                   </CardContent>

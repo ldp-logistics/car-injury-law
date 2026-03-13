@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { useState } from "react";
 import { Slider } from "@/components/ui/slider";
 import { Button } from "@/components/ui/button";
@@ -127,7 +128,7 @@ export function CalculatorSection() {
                       {formatCurrency(estimatedValue)}
                     </div>
                     <p className="text-sm text-gray-400 max-w-xs mx-auto mt-6">
-                      *This is a preliminary estimate based on your inputs. Actual <Link href="/case-results" className="text-black hover:underline font-semibold">settlement</Link> amounts can vary significantly.
+                      *This is a preliminary estimate based on your inputs. Actual <Link href={internalLink("case-results")} className="text-black hover:underline font-semibold">settlement</Link> amounts can vary significantly.
                     </p>
                     <Button className="mt-8 bg-white text-primary hover:bg-gray-100 font-bold w-full">
                       Get Official Evaluation

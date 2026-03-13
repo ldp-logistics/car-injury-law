@@ -1,26 +1,60 @@
+import { internalLink } from "../utils/link-helper";
+
 export interface ServiceSynonymData {
   slug: string;
   keyword: string;
   title: string;
   description: string;
   h1: string;
+  internalLinks?: { label: string; href: string }[];
 }
 
 export const SERVICE_SYNONYM_PAGES: ServiceSynonymData[] = [
   // ── PERSONAL INJURY ──────────────────────────
-  { slug: "personal-injury-lawyer", keyword: "personal injury lawyer", title: "Personal Injury Lawyer | Car Injury Law", description: "Injured? Our personal injury lawyers fight insurance companies to maximize your settlement. Free consultation 24/7. No win no fee.", h1: "Personal Injury Lawyer — Maximum Compensation For You" },
-  { slug: "personal-injury-attorney", keyword: "personal injury attorney", title: "Personal Injury Attorney | Car Injury Law", description: "Top-rated personal injury attorneys fighting for accident victims nationwide. Free case review. No fee unless we win.", h1: "Personal Injury Attorney — Trusted By Thousands of Victims" },
-  { slug: "injury-lawyer", keyword: "injury lawyer", title: "Injury Lawyer | Car Injury Law — Free Consultation", description: "Experienced injury lawyers fighting for accident victims across the USA. No upfront costs. Free consultation 24/7.", h1: "Injury Lawyer — We Fight For Every Dollar You Deserve" },
-  { slug: "accident-lawyer", keyword: "accident lawyer", title: "Accident Lawyer | Car Injury Law — No Fee Unless You Win", description: "Accident lawyers fighting for maximum compensation across the USA. Free consultation 24/7. All accident types covered.", h1: "Accident Lawyer — Fighting For Every Dollar You Deserve" },
-  { slug: "injury-attorney", keyword: "injury attorney", title: "Injury Attorney | Car Injury Law — Call 24/7", description: "Top injury attorneys representing accident victims nationwide. Free case evaluation. No win no fee guarantee.", h1: "Injury Attorney — Aggressive Representation For Injury Victims" },
-  { slug: "auto-accident-attorney", keyword: "auto accident attorney", title: "Auto Accident Attorney | Car Injury Law", description: "Experienced auto accident attorneys recovering maximum compensation for crash victims. Free consultation. No fee unless we win.", h1: "Auto Accident Attorney — We Maximize Your Car Crash Settlement" },
-  { slug: "car-wreck-lawyer", keyword: "car wreck lawyer", title: "Car Wreck Lawyer | Car Injury Law — Free Case Review", description: "Car wreck lawyer fighting for accident victims across the USA. Free consultation 24/7. Maximum compensation guaranteed.", h1: "Car Wreck Lawyer — Get The Compensation You Deserve" },
-  { slug: "car-injury-lawyer", keyword: "car injury lawyer", title: "Car Injury Lawyer | Car Injury Law — Call Us Today", description: "Expert car injury lawyers fighting for maximum settlements. No upfront costs. Free consultation around the clock.", h1: "Car Injury Lawyer — Fighting For Injured Drivers Nationwide" },
-  { slug: "traffic-accident-lawyer", keyword: "traffic accident lawyer", title: "Traffic Accident Lawyer | Car Injury Law", description: "Traffic accident lawyers fighting for injury victims in all 50 states. Free consultation. No win no fee.", h1: "Traffic Accident Lawyer — Protecting Victims on Every Road" },
-  { slug: "car-accident-injury-lawyer", keyword: "car accident injury lawyer", title: "Car Accident Injury Lawyer | Car Injury Law", description: "Car accident injury lawyer maximizing compensation for crash victims. Free consultation 24/7. No fees until we win.", h1: "Car Accident Injury Lawyer — Maximum Compensation For Your Injuries" },
+  { slug: "personal-injury-lawyer", keyword: "personal injury lawyer", title: "Personal Injury Lawyer | Car Injury Law", description: "Injured? Our personal injury lawyers fight insurance companies to maximize your settlement. Free consultation 24/7. No win no fee.", h1: "Personal Injury Lawyer — Maximum Compensation For You", internalLinks: [
+    { label: "Personal Injury Attorney", href: internalLink("personal-injury-attorney") },
+    { label: "Injury Lawyer", href: internalLink("injury-lawyer") },
+    { label: "Accident Lawyer", href: internalLink("accident-lawyer") }
+  ]},
+  { slug: "personal-injury-attorney", keyword: "personal injury attorney", title: "Personal Injury Attorney | Car Injury Law", description: "Top-rated personal injury attorneys fighting for accident victims nationwide. Free case review. No fee unless we win.", h1: "Personal Injury Attorney — Trusted By Thousands of Victims", internalLinks: [
+    { label: "Personal Injury Lawyer", href: internalLink("personal-injury-lawyer") },
+    { label: "Injury Attorney", href: internalLink("injury-attorney") }
+  ]},
+  { slug: "injury-lawyer", keyword: "injury lawyer", title: "Injury Lawyer | Car Injury Law — Free Consultation", description: "Experienced injury lawyers fighting for accident victims across the USA. No upfront costs. Free consultation 24/7.", h1: "Injury Lawyer — We Fight For Every Dollar You Deserve", internalLinks: [
+    { label: "Personal Injury Lawyer", href: internalLink("personal-injury-lawyer") },
+    { label: "Accident and Injury Lawyers", href: internalLink("accident-and-injury-lawyers") }
+  ]},
+  { slug: "accident-lawyer", keyword: "accident lawyer", title: "Accident Lawyer | Car Injury Law — No Fee Unless You Win", description: "Accident lawyers fighting for maximum compensation across the USA. Free consultation 24/7. All accident types covered.", h1: "Accident Lawyer — Fighting For Every Dollar You Deserve", internalLinks: [
+    { label: "Personal Injury Lawyer", href: internalLink("personal-injury-lawyer") },
+    { label: "Auto Accident Attorney", href: internalLink("auto-accident-attorney") }
+  ]},
+  { slug: "injury-attorney", keyword: "injury attorney", title: "Injury Attorney | Car Injury Law — Call 24/7", description: "Top injury attorneys representing accident victims nationwide. Free case evaluation. No win no fee guarantee.", h1: "Injury Attorney — Aggressive Representation For Injury Victims", internalLinks: [
+    { label: "Injury Lawyer", href: internalLink("injury-lawyer") },
+    { label: "Accident and Injury Attorneys", href: internalLink("accident-and-injury-attorneys") }
+  ]},
+  { slug: "auto-accident-attorney", keyword: "auto accident attorney", title: "Auto Accident Attorney | Car Injury Law", description: "Experienced auto accident attorneys recovering maximum compensation for crash victims. Free consultation. No fee unless we win.", h1: "Auto Accident Attorney — We Maximize Your Car Crash Settlement", internalLinks: [
+    { label: "Car Wreck Lawyer", href: internalLink("car-wreck-lawyer") },
+    { label: "Car Injury Lawyer", href: internalLink("car-injury-lawyer") }
+  ]},
+  { slug: "car-wreck-lawyer", keyword: "car wreck lawyer", title: "Car Wreck Lawyer | Car Injury Law — Free Case Review", description: "Car wreck lawyer fighting for accident victims across the USA. Free consultation 24/7. Maximum compensation guaranteed.", h1: "Car Wreck Lawyer — Get The Compensation You Deserve", internalLinks: [
+    { label: "Auto Accident Attorney", href: internalLink("auto-accident-attorney") },
+    { label: "Traffic Accident Lawyer", href: internalLink("traffic-accident-lawyer") }
+  ]},
+  { slug: "car-injury-lawyer", keyword: "car injury lawyer", title: "Car Injury Lawyer | Car Injury Law — Call Us Today", description: "Expert car injury lawyers fighting for maximum settlements. No upfront costs. Free consultation around the clock.", h1: "Car Injury Lawyer — Fighting For Injured Drivers Nationwide", internalLinks: [
+    { label: "Car Accident Injury Lawyer", href: internalLink("car-accident-injury-lawyer") },
+    { label: "Personal Injury Lawyer", href: internalLink("personal-injury-lawyer") }
+  ]},
+  { slug: "traffic-accident-lawyer", keyword: "traffic accident lawyer", title: "Traffic Accident Lawyer | Car Injury Law", description: "Traffic accident lawyers fighting for injury victims in all 50 states. Free consultation. No win no fee.", h1: "Traffic Accident Lawyer — Protecting Victims on Every Road", internalLinks: [
+    { label: "Car Wreck Lawyer", href: internalLink("car-wreck-lawyer") },
+    { label: "Personal Injury lawyer", href: internalLink("personal-injury-lawyer") }
+  ]},
+  { slug: "car-accident-injury-lawyer", keyword: "car accident injury lawyer", title: "Car Accident Injury Lawyer | Car Injury Law", description: "Car accident injury lawyer maximizing compensation for crash victims. Free consultation 24/7. No fees until we win.", h1: "Car Accident Injury Lawyer — Maximum Compensation For Your Injuries", internalLinks: [
+    { label: "Car Injury Lawyer", href: internalLink("car-injury-lawyer") },
+    { label: "Auto Accident Attorney", href: internalLink("auto-accident-attorney") }
+  ]},
   { slug: "lawyer-for-personal-injury", keyword: "lawyer for personal injury", title: "Lawyer For Personal Injury | Car Injury Law", description: "Need a lawyer for personal injury? Our attorneys fight for maximum compensation. Free consultation available 24/7.", h1: "Lawyer For Personal Injury — We Are In Your Corner" },
   { slug: "personal-injury-firms", keyword: "personal injury firms", title: "Personal Injury Firms | Car Injury Law — Top Rated", description: "One of the top personal injury firms in the USA. Free case review. No win no fee. Available 24/7.", h1: "Personal Injury Firms — Why Car Injury Law Stands Out" },
-  { slug: "personal-injury-law", keyword: "personal injury law", title: "Personal Injury Law | Car Injury Law — Know Your Rights", description: "Understand personal injury law in the USA. Know your rights and how to maximize your compensation. Free legal consultation.", h1: "Personal Injury Law — Understanding Your Rights After An Injury" },
+  { slug: "personal-injury-law", keyword: "personal injury law", title: "Personal Injury Law | Car Injury Law — Know Your Rights", description: "Learn about personal injury law in the USA. Understand your rights and how to maximize your accident compensation today with our expert legal guide.", h1: "Personal Injury Law — Understanding Your Rights After An Injury" },
   { slug: "personal-accident-lawyer", keyword: "personal accident lawyer", title: "Personal Accident Lawyer | Car Injury Law", description: "Trusted personal accident lawyers fighting for injury victims across the USA. Free case review 24/7. No win no fee.", h1: "Personal Accident Lawyer — Fighting For Injured Victims" },
   { slug: "premises-liability-attorneys", keyword: "premises liability attorneys", title: "Premises Liability Attorneys | Car Injury Law", description: "Experienced premises liability attorneys fighting for injury victims. Slip and fall, unsafe property cases. Free consultation.", h1: "Premises Liability Attorneys — Injured On Someone Else's Property?" },
   { slug: "automobile-accident-attorneys", keyword: "automobile accident attorneys", title: "Automobile Accident Attorneys | Car Injury Law", description: "Expert automobile accident attorneys fighting for crash victims nationwide. Free consultation. No win no fee guarantee.", h1: "Automobile Accident Attorneys — Proven Results For Crash Victims" },
@@ -79,7 +113,10 @@ export const SERVICE_SYNONYM_PAGES: ServiceSynonymData[] = [
   { slug: "fort-smith-pedestrian-accident-lawyer", keyword: "fort smith pedestrian accident lawyer", title: "Fort Smith Pedestrian Accident Lawyer | Car Injury Law", description: "Expert pedestrian accident lawyer in Fort Smith, AR. Free consultation 24/7. No win no fee.", h1: "Fort Smith Pedestrian Accident Lawyer — Fighting For AR Victims" },
   { slug: "nampa-bus-accident-lawyer", keyword: "nampa bus accident lawyer", title: "Nampa Bus Accident Lawyer | Car Injury Law", description: "Trusted bus accident lawyer in Nampa, ID fighting for injury victims. Free consultation. No win no fee.", h1: "Nampa Bus Accident Lawyer — Fighting For Idaho Bus Accident Victims" },
   { slug: "gulfport-bus-accident-attorney", keyword: "gulfport bus accident attorney", title: "Gulfport Bus Accident Attorney | Car Injury Law", description: "Expert bus accident attorney in Gulfport, MS. Free case review 24/7. No fees until we win your case.", h1: "Gulfport Bus Accident Attorney — Fighting For MS Bus Victims" },
-  { slug: "wrongful-death-lawyer-hilo-hi", keyword: "wrongful death lawyer hilo hi", title: "Hilo HI Wrongful Death Lawyer | Car Injury Law", description: "Compassionate wrongful death lawyer in Hilo, Hawaii. Free consultation. No win no fee guarantee.", h1: "Wrongful Death Lawyer Hilo HI — Justice For Your Family" },
+  { slug: "wrongful-death-lawyer-hilo-hi", keyword: "wrongful death lawyer hilo hi", title: "Hilo HI Wrongful Death Lawyer | Car Injury Law", description: "Compassionate wrongful death lawyer in Hilo, Hawaii. Free consultation. No win no fee guarantee.", h1: "Wrongful Death Lawyer Hilo HI — Justice For Your Family", internalLinks: [
+    { label: "Wrongful Death Lawyer", href: internalLink("practice-areas/wrongful-death") },
+    { label: "Hilo Car Accident Lawyer", href: internalLink("hawaii/hilo") }
+  ]},
   
   // ── UBER / LYFT ───────────────────────────────
   { slug: "uber-accident-lawyer", keyword: "uber accident lawyer", title: "Uber Accident Lawyer | Car Injury Law", description: "Injured in an Uber? Our accident lawyers fight for maximum compensation. Free consultation 24/7. No win no fee.", h1: "Uber Accident Lawyer — Fighting For Rideshare Injury Victims" },
@@ -121,7 +158,10 @@ export const SERVICE_SYNONYM_PAGES: ServiceSynonymData[] = [
   { slug: "slip-and-fall-injury-lawyers", keyword: "slip and fall injury lawyers", title: "Slip and Fall Injury Lawyers | Car Injury Law", description: "Trusted slip and fall injury lawyers fighting for victims nationwide. Free case review 24/7. No win no fee.", h1: "Slip and Fall Injury Lawyers — Maximum Compensation For You" },
   { slug: "slip-and-fall-injury-attorneys", keyword: "slip and fall injury attorneys", title: "Slip and Fall Injury Attorneys | Car Injury Law", description: "Expert slip and fall injury attorneys fighting for premises liability victims. Free consultation 24/7.", h1: "Slip and Fall Injury Attorneys — Fighting For Every Victim" },
   { slug: "personal-injury-lawyer-slip-and-fall", keyword: "personal injury lawyer slip and fall", title: "Slip and Fall Personal Injury Lawyer | Car Injury Law", description: "Personal injury lawyers specializing in slip and fall cases. Free consultation. No fees until we win.", h1: "Personal Injury Lawyer Slip and Fall — We Fight For You" },
-  { slug: "slip-and-fall-law", keyword: "slip and fall law", title: "Slip and Fall Law | Car Injury Law — Know Your Rights", description: "Understand slip and fall law in the USA. Know your rights and how to get maximum compensation. Free consultation.", h1: "Slip and Fall Law — Understanding Your Rights After a Fall" },
+  { slug: "slip-and-fall-law", keyword: "slip and fall law", title: "Slip and Fall Law | Car Injury Law — Know Your Rights", description: "Understand slip and fall laws in the USA. Learn about your legal rights and how to secure maximum compensation after a fall from our expert firm.", h1: "Slip and Fall Law — Understanding Your Rights After a Fall", internalLinks: [
+    { label: "Slip and Fall Lawyer", href: internalLink("practice-areas/slip-and-fall") },
+    { label: "Premises Liability", href: internalLink("premises-liability-attorneys") }
+  ]},
   
   // ── NEAR ME HIGH INTENT ───────────────────────
   { slug: "personal-injury-lawyer-near-me", keyword: "personal injury lawyer near me", title: "Personal Injury Lawyer Near Me | Car Injury Law", description: "Find a personal injury lawyer near you. Car Injury Law serves all 50 states. Free consultation 24/7.", h1: "Personal Injury Lawyer Near Me — Serving Every State in the USA" },

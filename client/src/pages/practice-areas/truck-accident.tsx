@@ -1,4 +1,5 @@
 import { SeoContentSection } from "@/components/seo-content-section";
+import { internalLink } from "@/utils/link-helper";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { SeoHead } from "@/components/seo-head";
@@ -43,7 +44,7 @@ export default function TruckAccidentPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = "/thank-you";
+    window.location.href = internalLink("thank-you");
   };
 
   const currentDate = new Date().toISOString();
@@ -54,13 +55,13 @@ export default function TruckAccidentPage() {
         title="Truck Accident Lawyer | Commercial Vehicle Claims | Car Injury Law"
         description="Injured in a truck accident? Our experienced truck accident lawyers understand FMCSA regulations and fight against large trucking corporations. Free 24/7 consultation."
         lastUpdated={currentDate}
-        canonicalUrl="https://www.carinjurylaw.com/practice-areas/truck-accident"
+        canonicalUrl="https://www.carinjurylaw.com/practice-areas/truck-accident/"
         schema={{
           "@context": "https://schema.org",
           "@type": "LegalService",
           "name": "Car Injury Law",
           "description": "Expert truck accident lawyers fighting for victims against commercial trucking companies",
-          "url": "https://www.carinjurylaw.com/practice-areas/truck-accident",
+          "url": "https://www.carinjurylaw.com/practice-areas/truck-accident/",
           "telephone": "1-888-669-5559",
           "priceRange": "Contingency Fee (No Win No Fee)",
           "areaServed": {
@@ -191,14 +192,14 @@ export default function TruckAccidentPage() {
                 <div className="mt-12 pt-8 border-t border-slate-200">
                   <h3 className="text-2xl font-bold font-serif text-primary mb-6">Specific Types of Truck Accidents</h3>
                   <p className="text-lg leading-relaxed mb-6">
-                    <Link href="/practice-areas/truck-accident" className="text-black hover:underline font-semibold">Commercial truck</Link> crashes can happen in various ways, each with its own unique causes and federal regulations to consider. We handle all types of complex truck crash litigation, including:
+                    <Link href={internalLink("practice-areas/truck-accident")} className="text-black hover:underline font-semibold">Commercial truck</Link> crashes can happen in various ways, each with its own unique causes and federal regulations to consider. We handle all types of complex truck crash litigation, including:
                   </p>
                   <div className="grid md:grid-cols-2 gap-4">
-                    <Link href="/practice-areas/truck-accident/jackknife" className="flex items-center gap-3 p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors border border-slate-200 group">
+                    <Link href={internalLink("practice-areas/truck-accident-jackknife")} className="flex items-center gap-3 p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors border border-slate-200 group">
                       <Truck className="h-6 w-6 text-secondary group-hover:scale-110 transition-transform" />
                       <span className="font-bold text-primary group-hover:text-secondary transition-colors">Jackknife Accidents</span>
                     </Link>
-                    <Link href="/practice-areas/truck-accident/underride" className="flex items-center gap-3 p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors border border-slate-200 group">
+                    <Link href={internalLink("practice-areas/truck-accident-underride")} className="flex items-center gap-3 p-4 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors border border-slate-200 group">
                       <AlertTriangle className="h-6 w-6 text-secondary group-hover:scale-110 transition-transform" />
                       <span className="font-bold text-primary group-hover:text-secondary transition-colors">Underride Collisions</span>
                     </Link>
@@ -590,8 +591,8 @@ export default function TruckAccidentPage() {
 
                       <p className="text-xs text-center text-muted-foreground">
                         By submitting this form, you agree to our{" "}
-                        <Link href="/privacy" className="underline">Privacy Policy</Link> and{" "}
-                        <Link href="/terms" className="underline">Terms of Service</Link>.
+                        <Link href={internalLink("privacy")} className="underline">Privacy Policy</Link> and{" "}
+                        <Link href={internalLink("terms")} className="underline">Terms of Service</Link>.
                       </p>
                     </form>
                   </CardContent>

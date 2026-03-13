@@ -53,10 +53,16 @@ function generateSchema(meta: MetaTags, path: string): any {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": meta.title,
-        "description": meta.description,
+        "description": sanitizeDescription(meta.description),
         "url": meta.canonical,
         "mainEntity": baseSchema
     };
+}
+
+function sanitizeDescription(desc: string): string {
+  const clean = desc.trim();
+  if (clean.length <= 160) return clean;
+  return clean.substring(0, 157) + '...';
 }
 
 function generateTagsHtml(meta: MetaTags, path: string): string {
@@ -89,7 +95,7 @@ function generateTagsHtml(meta: MetaTags, path: string): string {
 
 function getBaseUrl(urlPath: string): string {
     const cleanPath = urlPath === '/' ? '' : urlPath.replace(/\/$/, "");
-    return `https://www.carinjurylaw.com${cleanPath}/`;
+    return 'https://www.carinjurylaw.com' + cleanPath + '/';
 }
 
 export function getMetaTagsHtml(url: string): string {
@@ -144,14 +150,9 @@ export function getMetaTagsHtml(url: string): string {
           
         if (pageData) {
             meta.title = pageData.title;
-            meta.description = pageData.description;
+            meta.description = sanitizeDescription(pageData.description);
             meta.keywords = pageData.keyword;
             
-            // Shorten description if too long (>160)
-            if (meta.description.length > 160) {
-                meta.description = meta.description.substring(0, 157) + "...";
-            }
-
             return generateTagsHtml(meta, path);
         }
     }

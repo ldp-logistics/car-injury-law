@@ -121,6 +121,16 @@ STATE_SPECIFIC_PAGES.forEach(page => {
   });
 });
 
+// URL format validator
+urls.forEach(u => {
+  if (!u.loc.startsWith('https://www.')) {
+    console.error('BAD URL in sitemap:', u.loc);
+  }
+  if (!u.loc.endsWith('/')) {
+    console.error('Missing trailing slash:', u.loc);
+  }
+});
+
 let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
 xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
@@ -135,4 +145,6 @@ urls.forEach(u => {
 xml += `</urlset>\n`;
 
 fs.writeFileSync('./client/public/sitemap.xml', xml);
-console.log('Sitemap generated successfully! Total URLs:', urls.length);
+
+console.log('Total URLs:', urls.length);
+console.log('Sitemap generated successfully');

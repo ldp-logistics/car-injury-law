@@ -8,6 +8,7 @@ import { CheckCircle, MapPin, Shield, AlertTriangle, Gavel, Phone, Scale, Buildi
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { StateData } from "@/data/state-data";
 import { SeoHead } from "@/components/seo-head";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -208,7 +209,7 @@ export default function SlipFallStateLandingPage({ data }: SlipFallStateLandingP
                           <h3 className="font-bold text-lg text-primary">Trial Ready</h3>
                           <p className="text-gray-600">
                             Many firms settle cheap. We are ready to take property owners and their insurance 
-                            companies to court if they refuse to offer a <Link href="/settlement-calculator" className="text-primary hover:underline font-semibold">fair settlement</Link>.
+                            companies to court if they refuse to offer a <Link href={internalLink("settlement-calculator")} className="text-primary hover:underline font-semibold">fair settlement</Link>.
                           </p>
                         </div>
                       </div>
@@ -228,7 +229,7 @@ export default function SlipFallStateLandingPage({ data }: SlipFallStateLandingP
                         Speak With Our Slip and Fall Lawyer in {data.name} Today
                       </h2>
                       <p className="text-gray-300 text-lg mb-8 max-w-2xl">
-                        <Link href="/practice-areas/slip-and-fall" className="text-black hover:underline font-semibold">Premises liability</Link> cases in {data.name} have a statute of limitations ({data.statute}). 
+                        <Link href={internalLink("practice-areas/slip-and-fall")} className="text-black hover:underline font-semibold">Premises liability</Link> cases in {data.name} have a statute of limitations ({data.statute}). 
                         The longer you wait, the harder it is to prove the dangerous condition existed. 
                         Contact us 24/7 for a free consultation.
                       </p>

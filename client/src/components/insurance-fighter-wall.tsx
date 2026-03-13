@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { Shield, CheckCircle, XCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -17,7 +18,7 @@ export function InsuranceFighterWall() {
             We Fight The Big Giants Every Day
           </h3>
           <p className="text-muted-foreground mt-2">
-            <Link href="/blog/dealing-with-insurance-adjusters" className="text-primary hover:underline font-semibold"><Link href="/vs-insurance" className="text-black hover:underline font-semibold">Insurance</Link> adjusters</Link> are trained to pay you less. We are trained to make them pay you more.
+            <Link href={internalLink("vs-insurance")} className="text-black hover:underline font-semibold">Insurance</Link> adjusters are trained to pay you less. We are trained to make them pay you more.
           </p>
         </div>
 

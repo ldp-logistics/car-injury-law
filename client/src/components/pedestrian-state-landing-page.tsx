@@ -8,6 +8,7 @@ import { CheckCircle, MapPin, Shield, AlertTriangle, Gavel, Phone, Scale, User, 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { StateData } from "@/data/state-data";
 import { SeoHead } from "@/components/seo-head";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -176,7 +177,7 @@ export default function PedestrianStateLandingPage({ data }: PedestrianStateLand
                       <p>
                         In hit-and-run cases, which are all too common in {data.name}, we work with police and 
                         private investigators to track down the responsible driver. If they cannot be found, 
-                        we help you access your own <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance</Link> benefits.
+                        we help you access your own <Link href={internalLink("vs-insurance")} className="text-black hover:underline font-semibold">insurance</Link> benefits.
                       </p>
                     </div>
                  </div>

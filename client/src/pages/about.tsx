@@ -1,5 +1,6 @@
 import { NavBar } from "@/components/nav-bar";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,7 +15,7 @@ export default function AboutPage() {
       <SeoHead
         title="About Admani Law | National Injury Network Director"
         description="Learn about Admani Law and founder Saad Admani. We connect accident victims with the top 1% of trial attorneys nationwide."
-        canonicalUrl="https://www.carinjurylaw.com/about"
+        canonicalUrl="https://www.carinjurylaw.com/about/"
       />
       <NavBar />
 
@@ -46,7 +47,7 @@ export default function AboutPage() {
                     loading="lazy"
                   />
                   <div className="absolute bottom-8 left-8 bg-white p-6 rounded shadow-xl max-w-xs">
-                    <Link href="/attorneys/saad-admani" className="font-bold text-slate-900 text-lg hover:text-secondary transition-colors inline-block mb-1">
+                    <Link href={internalLink("attorneys/saad-admani")} className="font-bold text-slate-900 text-lg hover:text-secondary transition-colors inline-block mb-1">
                       Saad Admani
                     </Link>
                     <p className="text-secondary font-bold text-sm uppercase tracking-wider">Network Director</p>
@@ -67,7 +68,7 @@ export default function AboutPage() {
                   <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
                     <Award className="h-8 w-8 text-secondary mb-2" />
                     <h3 className="font-bold text-slate-900">Top 1% Selection</h3>
-                    <p className="text-sm text-slate-500">Only attorneys with 7-figure <Link href="/case-results" className="text-black hover:underline font-semibold">verdict</Link> history.</p>
+                    <p className="text-sm text-slate-500">Only attorneys with 7-figure <Link href={internalLink("case-results")} className="text-black hover:underline font-semibold">verdict</Link> history.</p>
                   </div>
                   <div className="bg-slate-50 p-4 rounded-lg border border-slate-100">
                     <Scale className="h-8 w-8 text-secondary mb-2" />

@@ -30,6 +30,7 @@ import {
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { LeadForm } from "@/components/lead-form";
 import { STATE_DATA } from "@/data/state-data";
 
@@ -42,7 +43,7 @@ export default function MedicalMalpracticePage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.location.href = "/thank-you";
+    window.location.href = internalLink("thank-you");
   };
 
   const currentDate = new Date().toISOString();
@@ -53,13 +54,13 @@ export default function MedicalMalpracticePage() {
         title="Medical Malpractice Lawyer | Healthcare Negligence Claims | Car Injury Law"
         description="Injured by medical negligence? Our medical malpractice lawyers have the resources to fight hospital legal teams. We hire experts to prove healthcare negligence. Free consultation."
         lastUpdated={currentDate}
-        canonicalUrl="https://www.carinjurylaw.com/practice-areas/medical-malpractice"
+        canonicalUrl="https://www.carinjurylaw.com/practice-areas/medical-malpractice/"
         schema={{
           "@context": "https://schema.org",
           "@type": "LegalService",
           "name": "Car Injury Law",
           "description": "Expert medical malpractice lawyers fighting healthcare negligence with resources to take on hospital legal teams",
-          "url": "https://www.carinjurylaw.com/practice-areas/medical-malpractice",
+          "url": "https://www.carinjurylaw.com/practice-areas/medical-malpractice/",
           "telephone": "1-888-669-5559",
           "priceRange": "Contingency Fee (No Win No Fee)",
           "areaServed": {
@@ -583,8 +584,8 @@ export default function MedicalMalpracticePage() {
 
                       <p className="text-xs text-center text-muted-foreground">
                         By submitting this form, you agree to our{" "}
-                        <Link href="/privacy" className="underline">Privacy Policy</Link> and{" "}
-                        <Link href="/terms" className="underline">Terms of Service</Link>.
+                        <Link href={internalLink("privacy")} className="underline">Privacy Policy</Link> and{" "}
+                        <Link href={internalLink("terms")} className="underline">Terms of Service</Link>.
                       </p>
                     </form>
                   </CardContent>
@@ -614,7 +615,7 @@ export default function MedicalMalpracticePage() {
                 </h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
                   We have built a network of experienced medical malpractice attorneys across all 50 states 
-                  to ensure you get the best <Link href="/about" className="text-black hover:underline font-semibold">legal representation</Link> near you.
+                  to ensure you get the best <Link href={internalLink("about")} className="text-black hover:underline font-semibold">legal representation</Link> near you.
                 </p>
               </div>
               

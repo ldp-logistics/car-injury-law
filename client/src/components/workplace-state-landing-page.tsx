@@ -8,6 +8,7 @@ import { CheckCircle, MapPin, Shield, AlertTriangle, Gavel, Phone, HardHat, Buil
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { StateData } from "@/data/state-data";
 import { SeoHead } from "@/components/seo-head";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -166,7 +167,7 @@ export default function WorkplaceStateLandingPage({ data }: WorkplaceStateLandin
                             <h3 className="font-bold text-lg mb-2">Third-Party Liability</h3>
                             <p className="text-sm">
                               If a negligent third party (like a subcontractor, equipment manufacturer, or careless driver) 
-                              caused your injury, you can file a <Link href="/practice-areas/personal-injury" className="text-black hover:underline font-semibold">personal injury</Link> lawsuit against them in {data.name} courts 
+                              caused your injury, you can file a <Link href={internalLink("practice-areas/personal-injury")} className="text-black hover:underline font-semibold">personal injury</Link> lawsuit against them in {data.name} courts 
                               for full damages, including pain and suffering.
                             </p>
                           </CardContent>

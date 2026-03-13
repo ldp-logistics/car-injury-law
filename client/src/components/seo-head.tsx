@@ -53,7 +53,12 @@ export function SeoHead({
   // Ensure trailing slash for consistency with sitemap and SSR meta tags
   const cleanLocation = location === '/' ? '' : location.replace(/\/$/, "");
   const defaultUrl = `https://www.carinjurylaw.com${cleanLocation}/`;
-  const currentUrl = canonicalUrl || defaultUrl;
+  
+  // Defensive: Force trailing slash on canonicalUrl if it's passed without one
+  let currentUrl = canonicalUrl || defaultUrl;
+  if (currentUrl && !currentUrl.endsWith('/')) {
+    currentUrl += '/';
+  }
 
   useEffect(() => {
     // 1. Update Title

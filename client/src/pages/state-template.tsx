@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { SeoContentSection } from "@/components/seo-content-section";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
@@ -187,7 +188,7 @@ export default function StatePage() {
                     <div className="space-y-4 mt-6">
                       <div className="bg-white/10 p-3 rounded">
                         <p className="text-2xl font-bold text-secondary">$1,250,000</p>
-                        <p className="text-sm text-gray-300"><Link href="/practice-areas/truck-accident" className="text-black hover:underline font-semibold">Truck Accident</Link> Settlement</p>
+                        <p className="text-sm text-gray-300"><Link href={internalLink("practice-areas/truck-accident")} className="text-black hover:underline font-semibold">Truck Accident</Link> Settlement</p>
                       </div>
                       <div className="bg-white/10 p-3 rounded">
                         <p className="text-2xl font-bold text-secondary">$450,000</p>

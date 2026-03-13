@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ReferralModal } from "./referral-modal";
+import { internalLink } from "@/utils/link-helper";
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +20,9 @@ export function NavBar() {
   const handleLangChange = (l: string) => {
     setLang(l);
     if (l === "ES") {
-      setLocation("/es/");
+      setLocation(internalLink("es"));
     } else {
-      setLocation("/");
+      setLocation(internalLink(""));
     }
   };
 
@@ -40,7 +41,7 @@ export function NavBar() {
       <nav className="container mx-auto px-4">
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link href="/" className="flex flex-col justify-center cursor-pointer group">
+          <Link href={internalLink("")} className="flex flex-col justify-center cursor-pointer group">
             <div className="flex items-center gap-2">
               <div className="bg-primary text-white h-10 w-10 flex items-center justify-center rounded-sm font-serif font-bold text-xl shadow-md group-hover:bg-primary/90 transition-colors">
                 C
@@ -57,16 +58,16 @@ export function NavBar() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-4 lg:gap-8">
             <div className="flex items-center gap-6 mr-4">
-              <Link href="/about/">
+              <Link href={internalLink("about")}>
                 <span className="text-primary/80 font-bold hover:text-primary transition-colors text-sm uppercase tracking-wide cursor-pointer">About</span>
               </Link>
-              <Link href="/blog/">
+              <Link href={internalLink("blog")}>
                 <span className="text-primary/80 font-bold hover:text-primary transition-colors text-sm uppercase tracking-wide cursor-pointer">Insights</span>
               </Link>
-              <Link href="/glossary/">
+              <Link href={internalLink("glossary")}>
                 <span className="text-primary/80 font-bold hover:text-primary transition-colors text-sm uppercase tracking-wide cursor-pointer">Glossary</span>
               </Link>
-              <Link href="/settlement-calculator/">
+              <Link href={internalLink("settlement-calculator")}>
                 <span className="text-primary/80 font-bold hover:text-primary transition-colors text-sm uppercase tracking-wide cursor-pointer">Calculator</span>
               </Link>
             </div>
@@ -120,10 +121,10 @@ export function NavBar() {
                      <p className="text-xs text-gray-500 uppercase tracking-wider font-bold mt-1">A Division of <a href="https://www.admanilaw.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">Admani Law</a></p>
                    </div>
 
-                  <Link href="/about/" onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">About Us</Link>
-                  <Link href="/blog/" onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">Legal Insights</Link>
-                  <Link href="/settlement-calculator/" onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">Calculator</Link>
-                  <Link href="/join-network/" onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">Attorney Referral</Link>
+                  <Link href={internalLink("about")} onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">About Us</Link>
+                  <Link href={internalLink("blog")} onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">Legal Insights</Link>
+                  <Link href={internalLink("settlement-calculator")} onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">Calculator</Link>
+                  <Link href={internalLink("join-network")} onClick={() => setIsOpen(false)} className="text-lg font-bold text-primary">Attorney Referral</Link>
                   
                   <div className="h-px bg-gray-200 my-2" />
                   <div className="flex justify-between items-center">

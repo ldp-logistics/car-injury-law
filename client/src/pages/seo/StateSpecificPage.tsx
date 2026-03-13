@@ -10,6 +10,8 @@ import { MapPin, Shield, Clock, AlertTriangle, ChevronRight, DollarSign, Scale, 
 import { Button } from "@/components/ui/button";
 import { Link, useRoute } from "wouter";
 import { FaqSection } from "@/components/faq-section";
+import { internalLink } from "@/utils/link-helper";
+import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
 
 interface StateSpecificPageProps {
   data: StateSpecificPageData;
@@ -179,7 +181,7 @@ export default function StateSpecificPage({ data }: StateSpecificPageProps) {
                     {stateData.cityList.map((city) => {
                       const citySlug = city.toLowerCase().replace(/\s+/g, '-');
                       return (
-                        <Link key={citySlug} href={`/${stateData.slug}/${citySlug}`} className="flex items-center gap-2 group hover:text-secondary transition-colors font-semibold">
+                        <Link key={citySlug} href={internalLink(`${stateData.slug}/${citySlug}`)} className="flex items-center gap-2 group hover:text-secondary transition-colors font-semibold">
                           <ChevronRight className="h-4 w-4 text-primary group-hover:translate-x-1 transition-transform" />
                           <span>{city}</span>
                         </Link>
@@ -194,7 +196,7 @@ export default function StateSpecificPage({ data }: StateSpecificPageProps) {
                          {stateData.nearbyStates.map(state => {
                            const nearbyStateData = STATE_DATA[state];
                            return nearbyStateData ? (
-                             <Link key={state} href={`/${nearbyStateData.slug}`} className="text-sm bg-white border border-slate-200 px-3 py-1.5 rounded-full hover:border-secondary hover:text-secondary transition-colors font-medium">
+                             <Link key={state} href={internalLink(nearbyStateData.slug)} className="text-sm bg-white border border-slate-200 px-3 py-1.5 rounded-full hover:border-secondary hover:text-secondary transition-colors font-medium">
                                {nearbyStateData.name}
                              </Link>
                            ) : null;
@@ -214,6 +216,8 @@ export default function StateSpecificPage({ data }: StateSpecificPageProps) {
             </div>
           </div>
         </section>
+
+        <InternalLinksFooter links={data.internalLinks} />
 
       </main>
       

@@ -8,6 +8,7 @@ import { CheckCircle, MapPin, Shield, AlertTriangle, Gavel, Phone, Scale, Truck,
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { StateData } from "@/data/state-data";
 import { SeoHead } from "@/components/seo-head";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -89,7 +90,7 @@ export default function TruckStateLandingPage({ data }: TruckStateLandingPagePro
                 </h1>
                 <p className="text-xl text-gray-300 max-w-xl leading-relaxed">
                   Hit by an 18-wheeler? We hold trucking companies accountable in {data.name}.
-                  <Link href="/about" className="text-black hover:underline font-semibold">Our attorneys</Link> know FMCSA regulations and fight for maximum compensation.
+                  <Link href={internalLink("about")} className="text-black hover:underline font-semibold">Our attorneys</Link> know FMCSA regulations and fight for maximum compensation.
                 </p>
                 <div className="flex flex-col gap-3 pt-4">
                   <div className="flex items-center gap-3 text-white">

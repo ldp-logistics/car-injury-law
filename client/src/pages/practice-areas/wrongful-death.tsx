@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { SeoContentSection } from "@/components/seo-content-section";
+import { internalLink } from "@/utils/link-helper";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { StickyCta } from "@/components/sticky-cta";
@@ -13,7 +14,7 @@ export default function WrongfulDeathPage() {
       <SeoHead 
         title="Wrongful Death Attorneys | Compassionate Legal Help"
         description="If you lost a loved one due to negligence, we can help you find justice. Admani Law connects families with top wrongful death litigators."
-        canonicalUrl="https://www.carinjurylaw.com/practice-areas/wrongful-death"
+        canonicalUrl="https://www.carinjurylaw.com/practice-areas/wrongful-death/"
       />
       <NavBar />
       
@@ -59,7 +60,7 @@ export default function WrongfulDeathPage() {
             <section>
               <h2 className="text-3xl font-bold font-serif text-primary mb-6">We Handle The Legal Burden</h2>
               <p className="text-lg text-slate-600 mb-4">
-                During this difficult time, the last thing you should worry about is arguing with <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance companies</Link>. Our attorneys handle every aspect of the claim so you can focus on grieving and healing.
+                During this difficult time, the last thing you should worry about is arguing with <Link href={internalLink("vs-insurance")} className="text-black hover:underline font-semibold">insurance companies</Link>. Our attorneys handle every aspect of the claim so you can focus on grieving and healing.
               </p>
             </section>
 

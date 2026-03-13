@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { SeoContentSection } from "@/components/seo-content-section";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
@@ -90,7 +91,7 @@ export default function PersonalInjuryStatePage({ stateData }: PersonalInjurySta
                   ) : (
                     `Personal Injury Lawyer in ${stateName}`
                   )}
-                </strong> acts as your shield against <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance companies</Link> who try to devalue your claim.
+                </strong> acts as your shield against <Link href={internalLink("vs-insurance")} className="text-black hover:underline font-semibold">insurance companies</Link> who try to devalue your claim.
               </p>
               <p className="text-lg text-slate-700 mb-4 leading-relaxed">
                 Whether it's a car crash on {stateName} highways, a slip and fall, or a workplace accident, our network of <strong>Personal Injury Attorneys in {stateName}</strong> is dedicated to restoring your financial stability.

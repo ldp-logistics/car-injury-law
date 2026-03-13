@@ -13,7 +13,7 @@ export default function UnderrideAccidentPage() {
       <SeoHead 
         title="Underride Truck Accident Lawyer | Admani Law"
         description="Underride crashes are among the deadliest accidents on the road. We fight for families affected by inadequate side guards and rear guards."
-        canonicalUrl="https://www.carinjurylaw.com/practice-areas/truck-accident/underride"
+        canonicalUrl="https://www.carinjurylaw.com/practice-areas/truck-accident/underride/"
       />
       <NavBar />
       <Breadcrumbs 

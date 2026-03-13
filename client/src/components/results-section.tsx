@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useState, useRef } from "react";
 import { useInView } from "framer-motion";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 
 const results = [
   {
@@ -86,7 +87,7 @@ export function ResultsSection() {
               We have recovered over $500 Million for our clients. While every case is unique, our dedication to winning is constant.
             </p>
           </div>
-          <Link href="/case-results">
+          <Link href={internalLink("case-results")}>
             <button className="hidden md:flex items-center gap-2 text-primary font-bold border-b-2 border-secondary pb-1 hover:text-secondary transition-colors mt-6 md:mt-0">
               VIEW ALL CASE RESULTS
               <ArrowUpRight className="h-4 w-4" />
@@ -114,7 +115,7 @@ export function ResultsSection() {
         </div>
         
         <div className="mt-8 text-center md:hidden">
-          <Link href="/case-results">
+          <Link href={internalLink("case-results")}>
             <button className="flex items-center justify-center w-full gap-2 text-primary font-bold border border-gray-200 rounded-lg py-4 hover:bg-gray-50 transition-colors">
               VIEW ALL CASE RESULTS
               <ArrowUpRight className="h-4 w-4" />

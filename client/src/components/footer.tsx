@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 
 export function Footer() {
   const scrollToForm = () => {
@@ -37,13 +38,13 @@ export function Footer() {
           <div>
             <h3 className="font-bold mb-6 text-lg font-serif text-secondary">Company</h3>
             <ul className="space-y-3 text-gray-400 font-medium">
-              <li><Link href="/" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Home</Link></li>
-              <li><Link href="/about/" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>About <a href="https://www.admanilaw.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Admani Law</a></Link></li>
-              <li><Link href="/case-results/" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Case Results</Link></li>
-              <li><Link href="/vs-insurance/" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Vs. Insurance</Link></li>
-              <li><Link href="/safety-resources/" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Safety Resources</Link></li>
-              <li><Link href="/join-network/" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Join Network (Attorneys)</Link></li>
-              <li><Link href="/blog/" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Legal Insights</Link></li>
+              <li><Link href={internalLink("")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Home</Link></li>
+              <li><Link href={internalLink("about")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>About Admani Law</Link></li>
+              <li><Link href={internalLink("case-results")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Case Results</Link></li>
+              <li><Link href={internalLink("vs-insurance")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Vs. Insurance</Link></li>
+              <li><Link href={internalLink("safety-resources")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Safety Resources</Link></li>
+              <li><Link href={internalLink("join-network")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Join Network (Attorneys)</Link></li>
+              <li><Link href={internalLink("blog")} className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Legal Insights</Link></li>
               <li><button onClick={scrollToForm} className="hover:text-white transition-colors text-left flex items-center gap-2"><span className="w-1 h-1 bg-secondary rounded-full"></span>Contact Us</button></li>
             </ul>
           </div>
@@ -51,56 +52,56 @@ export function Footer() {
           <div>
             <h3 className="font-bold mb-6 text-lg font-serif text-secondary">Practice Areas</h3>
             <ul className="space-y-3 text-gray-400 font-medium text-sm">
-              <li><Link href="/practice-areas/truck-accident/" className="hover:text-white transition-colors">Truck Accidents</Link></li>
-              <li><Link href="/practice-areas/motorcycle-accident/" className="hover:text-white transition-colors">Motorcycle Crashes</Link></li>
-              <li><Link href="/practice-areas/wrongful-death/" className="hover:text-white transition-colors">Wrongful Death</Link></li>
-              <li><Link href="/practice-areas/personal-injury/" className="hover:text-white transition-colors">Personal Injury</Link></li>
-              <li><Link href="/practice-areas/rideshare-accident/" className="hover:text-white transition-colors">Uber/Lyft Accidents</Link></li>
-              <li><Link href="/practice-areas/car-accident/" className="hover:text-white transition-colors">Car Accidents</Link></li>
-              <li><Link href="/practice-areas/pedestrian-injury/" className="hover:text-white transition-colors">Pedestrian Injury</Link></li>
-              <li><Link href="/practice-areas/bus-transit-injury/" className="hover:text-white transition-colors">Bus & Transit Accidents</Link></li>
-              <li><Link href="/practice-areas/workplace-injury/" className="hover:text-white transition-colors">Workplace Injury</Link></li>
-              <li><Link href="/practice-areas/medical-malpractice/" className="hover:text-white transition-colors">Medical Malpractice</Link></li>
-              <li><Link href="/practice-areas/slip-and-fall/" className="hover:text-white transition-colors">Slip & Fall</Link></li>
+              <li><Link href={internalLink("practice-areas/truck-accident")} className="hover:text-white transition-colors">Truck Accidents</Link></li>
+              <li><Link href={internalLink("practice-areas/motorcycle-accident")} className="hover:text-white transition-colors">Motorcycle Crashes</Link></li>
+              <li><Link href={internalLink("practice-areas/wrongful-death")} className="hover:text-white transition-colors">Wrongful Death</Link></li>
+              <li><Link href={internalLink("practice-areas/personal-injury")} className="hover:text-white transition-colors">Personal Injury</Link></li>
+              <li><Link href={internalLink("practice-areas/rideshare-accident")} className="hover:text-white transition-colors">Uber/Lyft Accidents</Link></li>
+              <li><Link href={internalLink("practice-areas/car-accident")} className="hover:text-white transition-colors">Car Accidents</Link></li>
+              <li><Link href={internalLink("practice-areas/pedestrian-injury")} className="hover:text-white transition-colors">Pedestrian Injury</Link></li>
+              <li><Link href={internalLink("practice-areas/bus-transit-injury")} className="hover:text-white transition-colors">Bus & Transit Accidents</Link></li>
+              <li><Link href={internalLink("practice-areas/workplace-injury")} className="hover:text-white transition-colors">Workplace Injury</Link></li>
+              <li><Link href={internalLink("practice-areas/medical-malpractice")} className="hover:text-white transition-colors">Medical Malpractice</Link></li>
+              <li><Link href={internalLink("practice-areas/slip-and-fall")} className="hover:text-white transition-colors">Slip & Fall</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-bold mb-6 text-lg font-serif text-secondary">National Coverage</h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-gray-500 font-medium">
-              <li><Link href="/alabama-car-accident-lawyer/" className="hover:text-white transition-colors">Alabama</Link></li>
-              <li><Link href="/arizona-car-accident-lawyer/" className="hover:text-white transition-colors">Arizona</Link></li>
-              <li><Link href="/california-car-accident-lawyer/" className="hover:text-white transition-colors">California</Link></li>
-              <li><Link href="/colorado-car-accident-lawyer/" className="hover:text-white transition-colors">Colorado</Link></li>
-              <li><Link href="/florida-car-accident-lawyer/" className="text-white font-bold hover:text-secondary transition-colors">Florida</Link></li>
-              <li><Link href="/georgia-car-accident-lawyer/" className="hover:text-white transition-colors">Georgia</Link></li>
-              <li><Link href="/illinois-car-accident-lawyer/" className="hover:text-white transition-colors">Illinois</Link></li>
-              <li><Link href="/maryland-car-accident-lawyer/" className="hover:text-white transition-colors">Maryland</Link></li>
-              <li><Link href="/michigan-car-accident-lawyer/" className="hover:text-white transition-colors">Michigan</Link></li>
-              <li><Link href="/new-jersey-car-accident-lawyer/" className="text-white font-bold hover:text-secondary transition-colors">New Jersey</Link></li>
-              <li><Link href="/new-york-car-accident-lawyer/" className="hover:text-white transition-colors">New York</Link></li>
-              <li><Link href="/north-carolina-car-accident-lawyer/" className="hover:text-white transition-colors">North Carolina</Link></li>
-              <li><Link href="/ohio-car-accident-lawyer/" className="hover:text-white transition-colors">Ohio</Link></li>
-              <li><Link href="/pennsylvania-car-accident-lawyer/" className="hover:text-white transition-colors">Pennsylvania</Link></li>
-              <li><Link href="/texas-car-accident-lawyer/" className="hover:text-white transition-colors">Texas</Link></li>
-              <li><Link href="/virginia-car-accident-lawyer/" className="hover:text-white transition-colors">Virginia</Link></li>
+              <li><Link href={internalLink("alabama-car-accident-lawyer")} className="hover:text-white transition-colors">Alabama</Link></li>
+              <li><Link href={internalLink("arizona-car-accident-lawyer")} className="hover:text-white transition-colors">Arizona</Link></li>
+              <li><Link href={internalLink("california-car-accident-lawyer")} className="hover:text-white transition-colors">California</Link></li>
+              <li><Link href={internalLink("colorado-car-accident-lawyer")} className="hover:text-white transition-colors">Colorado</Link></li>
+              <li><Link href={internalLink("florida-car-accident-lawyer")} className="text-white font-bold hover:text-secondary transition-colors">Florida</Link></li>
+              <li><Link href={internalLink("georgia-car-accident-lawyer")} className="hover:text-white transition-colors">Georgia</Link></li>
+              <li><Link href={internalLink("illinois-car-accident-lawyer")} className="hover:text-white transition-colors">Illinois</Link></li>
+              <li><Link href={internalLink("maryland-car-accident-lawyer")} className="hover:text-white transition-colors">Maryland</Link></li>
+              <li><Link href={internalLink("michigan-car-accident-lawyer")} className="hover:text-white transition-colors">Michigan</Link></li>
+              <li><Link href={internalLink("new-jersey-car-accident-lawyer")} className="text-white font-bold hover:text-secondary transition-colors">New Jersey</Link></li>
+              <li><Link href={internalLink("new-york-car-accident-lawyer")} className="hover:text-white transition-colors">New York</Link></li>
+              <li><Link href={internalLink("north-carolina-car-accident-lawyer")} className="hover:text-white transition-colors">North Carolina</Link></li>
+              <li><Link href={internalLink("ohio-car-accident-lawyer")} className="hover:text-white transition-colors">Ohio</Link></li>
+              <li><Link href={internalLink("pennsylvania-car-accident-lawyer")} className="hover:text-white transition-colors">Pennsylvania</Link></li>
+              <li><Link href={internalLink("texas-car-accident-lawyer")} className="hover:text-white transition-colors">Texas</Link></li>
+              <li><Link href={internalLink("virginia-car-accident-lawyer")} className="hover:text-white transition-colors">Virginia</Link></li>
             </ul>
-            <div className="mt-4 pt-4 border-t border-white/10">
-              <Link href="/sitemap/" className="text-sm text-secondary hover:text-white transition-colors font-bold flex items-center gap-2 bg-white/5 p-2 rounded-md border border-white/10 hover:bg-white/10">
-                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                View All Locations & Sitemap
-              </Link>
-            </div>
+              <div className="mt-4 pt-4 border-t border-white/10">
+                <Link href={internalLink("sitemap")} className="text-sm text-secondary hover:text-white transition-colors font-bold flex items-center gap-2 bg-white/5 p-2 rounded-md border border-white/10 hover:bg-white/10">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                  View All Locations & Sitemap
+                </Link>
+              </div>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} CarInjuryLaw.com. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0 font-medium">
-            <Link href="/sitemap/" className="hover:text-white transition-colors">Sitemap</Link>
-            <Link href="/privacy/" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms/" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link href="/join-network/" className="hover:text-white transition-colors">Attorney Portal</Link>
+            <Link href={internalLink("sitemap")} className="hover:text-white transition-colors">Sitemap</Link>
+            <Link href={internalLink("privacy")} className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href={internalLink("terms")} className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href={internalLink("join-network")} className="hover:text-white transition-colors">Attorney Portal</Link>
           </div>
         </div>
 

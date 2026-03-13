@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle, Home, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -30,7 +31,7 @@ export default function NotFound() {
           </p>
 
           <div className="grid gap-3 mb-8">
-            <Link href="/">
+            <Link href={internalLink("")}>
               <Button className="w-full bg-primary font-bold h-12 text-lg">
                 <Home className="mr-2 h-5 w-5" /> Return Home
               </Button>

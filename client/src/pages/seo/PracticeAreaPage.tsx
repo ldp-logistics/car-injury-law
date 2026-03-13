@@ -8,6 +8,8 @@ import { PracticeAreaPageData } from "@/data/practice-area-pages";
 import { Shield, Clock, CheckCircle, Scale, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { internalLink } from "@/utils/link-helper";
+import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
 
 // Let's use an authoritative courtroom/legal background for general practice areas
 import heroBg from "@assets/stock_images/courtroom_gavel_just_813cbcc0.jpg";
@@ -130,47 +132,47 @@ export default function PracticeAreaPage({ data }: PracticeAreaPageProps) {
                 <div className="bg-slate-900 text-white rounded-xl p-6 sticky top-24 shadow-xl">
                   <h3 className="text-xl font-bold font-serif mb-6 border-b border-white/20 pb-4">Comprehensive Legal Representation</h3>
                   <div className="space-y-3">
-                    <Link href="/practice-areas/car-accident" className="flex items-center gap-2 group hover:text-secondary transition-colors">
+                    <Link href={internalLink("practice-areas/car-accident")} className="flex items-center gap-2 group hover:text-secondary transition-colors">
                       <ChevronRight className="h-4 w-4 text-secondary group-hover:translate-x-1 transition-transform" />
                       <span>Car Accidents</span>
                     </Link>
-                    <Link href="/practice-areas/truck-accident" className="flex items-center gap-2 group hover:text-secondary transition-colors">
+                    <Link href={internalLink("practice-areas/truck-accident")} className="flex items-center gap-2 group hover:text-secondary transition-colors">
                       <ChevronRight className="h-4 w-4 text-secondary group-hover:translate-x-1 transition-transform" />
                       <span>Truck Accidents</span>
                     </Link>
-                    <Link href="/practice-areas/motorcycle-accident" className="flex items-center gap-2 group hover:text-secondary transition-colors">
+                    <Link href={internalLink("practice-areas/motorcycle-accident")} className="flex items-center gap-2 group hover:text-secondary transition-colors">
                       <ChevronRight className="h-4 w-4 text-secondary group-hover:translate-x-1 transition-transform" />
                       <span>Motorcycle Accidents</span>
                     </Link>
-                    <Link href="/practice-areas/personal-injury" className="flex items-center gap-2 group hover:text-secondary transition-colors">
+                    <Link href={internalLink("practice-areas/personal-injury")} className="flex items-center gap-2 group hover:text-secondary transition-colors">
                       <ChevronRight className="h-4 w-4 text-secondary group-hover:translate-x-1 transition-transform" />
                       <span>Personal Injury</span>
                     </Link>
-                    <Link href="/practice-areas/slip-and-fall" className="flex items-center gap-2 group hover:text-secondary transition-colors">
+                    <Link href={internalLink("practice-areas/slip-and-fall")} className="flex items-center gap-2 group hover:text-secondary transition-colors">
                       <ChevronRight className="h-4 w-4 text-secondary group-hover:translate-x-1 transition-transform" />
                       <span>Slip and Fall</span>
                     </Link>
-                    <Link href="/practice-areas/wrongful-death" className="flex items-center gap-2 group hover:text-secondary transition-colors">
+                    <Link href={internalLink("practice-areas/wrongful-death")} className="flex items-center gap-2 group hover:text-secondary transition-colors">
                       <ChevronRight className="h-4 w-4 text-secondary group-hover:translate-x-1 transition-transform" />
                       <span>Wrongful Death</span>
                     </Link>
-                    <Link href="/practice-areas/pedestrian-injury" className="flex items-center gap-2 group hover:text-secondary transition-colors">
+                    <Link href={internalLink("practice-areas/pedestrian-injury")} className="flex items-center gap-2 group hover:text-secondary transition-colors">
                       <ChevronRight className="h-4 w-4 text-secondary group-hover:translate-x-1 transition-transform" />
                       <span>Pedestrian Injury</span>
                     </Link>
-                    <Link href="/practice-areas/bus-transit-injury" className="flex items-center gap-2 group hover:text-secondary transition-colors">
+                    <Link href={internalLink("practice-areas/bus-transit-injury")} className="flex items-center gap-2 group hover:text-secondary transition-colors">
                       <ChevronRight className="h-4 w-4 text-secondary group-hover:translate-x-1 transition-transform" />
                       <span>Bus & Transit Injury</span>
                     </Link>
-                    <Link href="/practice-areas/workplace-injury" className="flex items-center gap-2 group hover:text-secondary transition-colors">
+                    <Link href={internalLink("practice-areas/workplace-injury")} className="flex items-center gap-2 group hover:text-secondary transition-colors">
                       <ChevronRight className="h-4 w-4 text-secondary group-hover:translate-x-1 transition-transform" />
                       <span>Workplace Injury</span>
                     </Link>
-                    <Link href="/practice-areas/medical-malpractice" className="flex items-center gap-2 group hover:text-secondary transition-colors">
+                    <Link href={internalLink("practice-areas/medical-malpractice")} className="flex items-center gap-2 group hover:text-secondary transition-colors">
                       <ChevronRight className="h-4 w-4 text-secondary group-hover:translate-x-1 transition-transform" />
                       <span>Medical Malpractice</span>
                     </Link>
-                    <Link href="/practice-areas/rideshare-accident" className="flex items-center gap-2 group hover:text-secondary transition-colors">
+                    <Link href={internalLink("practice-areas/rideshare-accident")} className="flex items-center gap-2 group hover:text-secondary transition-colors">
                       <ChevronRight className="h-4 w-4 text-secondary group-hover:translate-x-1 transition-transform" />
                       <span>Rideshare Accidents</span>
                     </Link>
@@ -187,6 +189,8 @@ export default function PracticeAreaPage({ data }: PracticeAreaPageProps) {
             </div>
           </div>
         </section>
+
+        <InternalLinksFooter links={data.internalLinks} />
 
       </main>
       

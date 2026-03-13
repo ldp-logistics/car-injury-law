@@ -12,7 +12,7 @@ export default function SafetyResourcesPage() {
       <SeoHead 
         title="Safety Tools & Resources | Admani Law"
         description="Free safety tools for drivers: Create a digital Emergency (ICE) Card and take the Safe Driver Pledge. Community initiatives by Admani Law."
-        canonicalUrl="https://www.carinjurylaw.com/safety-resources"
+        canonicalUrl="https://www.carinjurylaw.com/safety-resources/"
       />
       <NavBar />
       
