@@ -42,7 +42,7 @@ export default function Home() {
         title="Car Accident Lawyer | Nationwide Injury Network | Admani Law"
         description="Admani Law Network: Top-rated car accident attorneys nationwide. We fight insurance companies to get you maximum compensation. Free case review."
         lastUpdated={currentDate}
-        canonicalUrl="https://www.carinjurylaw.com"
+        canonicalUrl="https://www.carinjurylaw.com/"
         schema={{
           "@context": "https://schema.org",
           "@type": "LegalService",
@@ -135,7 +135,7 @@ export default function Home() {
               Don't Settle For Less.
             </h2>
             <p className="text-xl mb-10 max-w-2xl mx-auto opacity-90 leading-relaxed">
-              The <Link href="/vs-insurance" className="text-black hover:underline font-semibold">insurance company</Link> has lawyers. You should too.<br />
+              The <Link href="/vs-insurance/" className="text-black hover:underline font-semibold">insurance company</Link> has lawyers. You should too.<br />
               Call the Admani Law Network now.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">

@@ -3,14 +3,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "wouter";
 
 const areas = [
-  { icon: Car, title: "Car Accidents", desc: "Rear-ends, T-bones, and rollovers.", href: "/practice-areas/car-accident" },
-  { icon: Truck, title: "Truck Accidents", desc: "18-wheelers and commercial vehicles.", href: "/practice-areas/truck-accident" },
-  { icon: Bike, title: "Motorcycle Crashes", desc: "Lane splitting and visibility cases.", href: "/practice-areas/motorcycle-accident" },
-  { icon: User, title: "Pedestrian Injury", desc: "Crosswalk and sidewalk negligence.", href: "/practice-areas/pedestrian-injury" },
-  { icon: Bus, title: "Bus/Transit", desc: "Public transportation incidents.", href: "/practice-areas/bus-transit-injury" },
-  { icon: HardHat, title: "Workplace Injury", desc: "Construction and industrial sites.", href: "/practice-areas/workplace-injury" },
-  { icon: Stethoscope, title: "Medical Malpractice", desc: "Surgical errors and misdiagnosis.", href: "/practice-areas/medical-malpractice" },
-  { icon: AlertOctagon, title: "Slip & Fall", desc: "Premises liability and negligence.", href: "/practice-areas/slip-and-fall" },
+  { icon: Car, title: "Car Accidents", desc: "Rear-ends, T-bones, and rollovers.", href: "/practice-areas/car-accident/" },
+  { icon: Truck, title: "Truck Accidents", desc: "18-wheelers and commercial vehicles.", href: "/practice-areas/truck-accident/" },
+  { icon: Bike, title: "Motorcycle Crashes", desc: "Lane splitting and visibility cases.", href: "/practice-areas/motorcycle-accident/" },
+  { icon: User, title: "Pedestrian Injury", desc: "Crosswalk and sidewalk negligence.", href: "/practice-areas/pedestrian-injury/" },
+  { icon: Bus, title: "Bus/Transit", desc: "Public transportation incidents.", href: "/practice-areas/bus-transit-injury/" },
+  { icon: HardHat, title: "Workplace Injury", desc: "Construction and industrial sites.", href: "/practice-areas/workplace-injury/" },
+  { icon: Stethoscope, title: "Medical Malpractice", desc: "Surgical errors and misdiagnosis.", href: "/practice-areas/medical-malpractice/" },
+  { icon: AlertOctagon, title: "Slip & Fall", desc: "Premises liability and negligence.", href: "/practice-areas/slip-and-fall/" },
 ];
 
 export function PracticeAreasGrid() {
@@ -23,7 +23,7 @@ export function PracticeAreasGrid() {
             Comprehensive Injury Representation
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            We focus exclusively on <Link href="/practice-areas/personal-injury" className="text-black hover:underline font-semibold">personal injury</Link> law. This specialization allows us to win cases that general practitioners lose.
+            We focus exclusively on <Link href="/practice-areas/personal-injury/" className="text-black hover:underline font-semibold">personal injury</Link> law. This specialization allows us to win cases that general practitioners lose.
           </p>
         </div>
 

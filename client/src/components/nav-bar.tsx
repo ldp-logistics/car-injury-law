@@ -19,7 +19,7 @@ export function NavBar() {
   const handleLangChange = (l: string) => {
     setLang(l);
     if (l === "ES") {
-      setLocation("/es");
+      setLocation("/es/");
     } else {
       setLocation("/");
     }
