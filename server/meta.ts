@@ -27,37 +27,6 @@ const DEFAULT_META: MetaTags = {
     ogImage: "https://www.carinjurylaw.com/og-image.jpg",
 };
 
-function generateSchema(meta: MetaTags, path: string): any {
-    const baseSchema = {
-        "@context": "https://schema.org",
-        "@type": "LegalService",
-        "name": "Car Injury Law",
-        "url": meta.canonical,
-        "logo": "https://www.carinjurylaw.com/logo.png",
-        "image": meta.ogImage,
-        "telephone": "1-888-669-5559",
-        "priceRange": "$$",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "95 Christopher Columbus Dr, 16th Floor",
-            "addressLocality": "Jersey City",
-            "addressRegion": "NJ",
-            "postalCode": "07302",
-            "addressCountry": "US"
-        }
-    };
-
-    if (path === '/') return baseSchema;
-
-    return {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": meta.title,
-        "description": sanitizeDescription(meta.description),
-        "url": meta.canonical,
-        "mainEntity": baseSchema
-    };
-}
 
 function sanitizeDescription(desc: string): string {
   const clean = desc.trim();
@@ -67,7 +36,6 @@ function sanitizeDescription(desc: string): string {
 
 function generateTagsHtml(meta: MetaTags, path: string): string {
     const escape = he.encode;
-    const schema = generateSchema(meta, path);
     
     return `
     <title>${escape(meta.title)}</title>
@@ -86,10 +54,6 @@ function generateTagsHtml(meta: MetaTags, path: string): string {
     <meta property="twitter:title" content="${escape(meta.ogTitle)}" />
     <meta property="twitter:description" content="${escape(meta.ogDescription)}" />
     <meta property="twitter:image" content="${escape(meta.ogImage)}" />
-
-    <script type="application/ld+json" id="ssr-schema">
-        ${JSON.stringify(schema)}
-    </script>
   `;
 }
 
