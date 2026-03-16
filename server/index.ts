@@ -111,7 +111,7 @@ app.use((req, res, next) => {
         const pageContent = getPageContent(req.originalUrl);
         const relatedLinks = getRelatedLinks(req.originalUrl);
 
-        let html = template.replace("<head>", `<head>\n${metaTags}`);
+        let html = template.replace("<head>", () => `<head>\n${metaTags}`);
         
         let injection = "";
         if (pageData && pageData.h1) {
@@ -120,7 +120,7 @@ app.use((req, res, next) => {
         injection += pageContent + relatedLinks;
 
         if (injection) {
-          html = html.replace('<div id="root">', `<div id="root">\n${injection}`);
+          html = html.replace('<div id="root">', () => `<div id="root">\n${injection}`);
         }
 
         res.status(200).set({ "Content-Type": "text/html" }).send(html);
