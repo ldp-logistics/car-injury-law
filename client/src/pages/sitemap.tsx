@@ -1,10 +1,10 @@
-import { SERVICE_SYNONYM_PAGES } from '../data/service-synonym-pages'
-import { NEAR_ME_PAGES } from '../data/near-me-pages'
-import { PRACTICE_AREA_PAGES } from '../data/practice-area-pages'
-import { BEST_PAGES } from '../data/best-pages'
-import { STATE_SPECIFIC_PAGES } from '../data/state-specific-pages'
-import { STATE_DATA } from '../data/state-data'
-import { BLOG_POSTS } from '../data/blog-posts'
+import { SERVICE_SYNONYM_PAGES } from '@/data/service-synonym-pages'
+import { NEAR_ME_PAGES } from '@/data/near-me-pages'
+import { PRACTICE_AREA_PAGES } from '@/data/practice-area-pages'
+import { BEST_PAGES } from '@/data/best-pages'
+import { STATE_SPECIFIC_PAGES } from '@/data/state-specific-pages'
+import { STATE_DATA } from '@/data/state-data'
+import { BLOG_POSTS_DATA } from '@/data/blog-posts'
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { SeoHead } from "@/components/seo-head";
@@ -327,7 +327,7 @@ export default function SitemapPage() {
           </h2>
           <div className="grid grid-cols-1
             md:grid-cols-2 gap-4">
-            {BLOG_POSTS.map(post => (
+            {BLOG_POSTS_DATA.map(post => (
               <a key={post.slug}
                 href={'/blog/' + post.slug + '/'}
                 className="text-primary text-sm font-medium p-3 bg-slate-50 rounded-lg border border-transparent hover:border-slate-200 hover:bg-slate-100 transition-all
