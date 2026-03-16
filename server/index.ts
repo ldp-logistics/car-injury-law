@@ -2,7 +2,7 @@ import express, { type Express, type Request, type Response, type NextFunction }
 import { registerRoutes } from "./routes";
 import fs from "fs";
 import path from "path";
-import { getMetaTagsHtml, getPageData } from "./meta";
+import { getMetaTagsHtml, getPageData, getPageContent, getRelatedLinks } from "./meta";
 import compression from "compression";
 
 export function log(message: string, source = "express") {
@@ -108,12 +108,19 @@ app.use((req, res, next) => {
 
         const metaTags = getMetaTagsHtml(req.originalUrl);
         const pageData = getPageData(req.originalUrl);
+        const pageContent = getPageContent(req.originalUrl);
+        const relatedLinks = getRelatedLinks(req.originalUrl);
 
         let html = template.replace("<head>", `<head>\n${metaTags}`);
         
+        let injection = "";
         if (pageData && pageData.h1) {
-          // Inject hidden H1 for SEO crawlers if they only read initial HTML
-          html = html.replace('<div id="root">', `<div id="root"><h1 style="display:none">${pageData.h1}</h1>`);
+          injection += `<h1 style="display:none">${pageData.h1}</h1>\n`;
+        }
+        injection += pageContent + relatedLinks;
+
+        if (injection) {
+          html = html.replace('<div id="root">', `<div id="root">\n${injection}`);
         }
 
         res.status(200).set({ "Content-Type": "text/html" }).send(html);

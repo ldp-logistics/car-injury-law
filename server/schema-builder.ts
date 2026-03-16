@@ -157,3 +157,48 @@ export const buildLocalBusinessSchema = (
     }
   ]
 });
+
+export const buildOrganizationSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": SITE_URL + "/#organization",
+  "name": SITE_NAME,
+  "url": SITE_URL,
+  "logo": SITE_URL + "/logo.png",
+  "telephone": SITE_PHONE,
+  "email": SITE_EMAIL,
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "US"
+  }
+});
+
+export const buildArticleSchema = (
+  title: string,
+  description: string,
+  url: string,
+  datePublished: string = "2024-01-01",
+  dateModified: string = "2025-01-01"
+) => ({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": url + "#article",
+  "headline": title,
+  "description": description,
+  "url": url,
+  "datePublished": datePublished,
+  "dateModified": dateModified,
+  "author": {
+    "@type": "Organization",
+    "name": SITE_NAME,
+    "url": SITE_URL
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": SITE_NAME,
+    "logo": {
+      "@type": "ImageObject",
+      "url": SITE_URL + "/logo.png"
+    }
+  }
+});
