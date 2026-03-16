@@ -32,6 +32,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { internalLink } from "@/utils/link-helper";
 import { LeadForm } from "@/components/lead-form";
+import InternalLinks from "@/components/InternalLinks";
 import { STATE_DATA } from "@/data/state-data";
 
 export default function BusTransitInjuryPage() {
@@ -593,25 +594,7 @@ export default function BusTransitInjuryPage() {
           </div>
         </section>
 
-        {/* Locations Section */}
-        <section className="py-12 bg-slate-50 border-t border-slate-200">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold font-serif text-primary mb-8 text-center">
-              Bus Injury Lawyers Serving All 50 States
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {Object.values(STATE_DATA).map((state) => (
-                <Link 
-                  key={state.slug} 
-                  href={`/bus-accident-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}`}
-                  className="text-sm text-muted-foreground hover:text-secondary hover:underline transition-colors"
-                >
-                  Bus Injury Lawyers in {state.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        <InternalLinks />
       </main>
 
       <RelatedLinks currentSlug="bus-transit-injury" />

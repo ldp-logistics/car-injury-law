@@ -11,6 +11,7 @@ import { Link } from "wouter";
 import { StateData } from "@/data/state-data";
 import { RelatedLinks } from "@/components/related-links";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import InternalLinks from "@/components/InternalLinks";
 
 interface StateStatisticsPageProps {
   data: StateData;
@@ -191,6 +192,7 @@ export default function StateStatisticsPage({ data }: StateStatisticsPageProps) 
              </div>
           </div>
         </section>
+        <InternalLinks />
       </main>
       
       <StickyCta />

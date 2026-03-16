@@ -14,6 +14,7 @@ import { internalLink } from "@/utils/link-helper";
 import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
 import SEOContentSection from "@/components/seo/SEOContentSection";
 import { STATE_SPECIFIC_PAGES } from "@/data/state-specific-pages";
+import InternalLinks from "@/components/InternalLinks";
 
 interface StateSpecificPageProps {
   data: StateSpecificPageData;
@@ -249,6 +250,7 @@ export default function StateSpecificPage({ data }: StateSpecificPageProps) {
 
         <InternalLinksFooter links={data.internalLinks} />
 
+        <InternalLinks />
       </main>
       
       <StickyCta />

@@ -7,6 +7,7 @@ import { StickyCta } from "@/components/sticky-cta";
 import { LeadForm } from "@/components/lead-form";
 import { CheckCircle, Heart, Users } from "lucide-react";
 import { SeoHead } from "@/components/seo-head";
+import InternalLinks from "@/components/InternalLinks";
 import { RelatedLinks } from "@/components/related-links";
 
 export default function WrongfulDeathPage() {
@@ -92,6 +93,7 @@ export default function WrongfulDeathPage() {
 
             {/* SEO Content Section */}
             <SeoContentSection service="Wrongful Death Lawyer" location="Nationwide" />
+            <InternalLinks />
           </div>
         </div>
       </main>

@@ -33,6 +33,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { internalLink } from "@/utils/link-helper";
 import { LeadForm } from "@/components/lead-form";
+import InternalLinks from "@/components/InternalLinks";
 import { STATE_DATA } from "@/data/state-data";
 
 export default function MedicalMalpracticePage() {
@@ -607,34 +608,7 @@ export default function MedicalMalpracticePage() {
             </div>
           </div>
         </section>
-        <section className="py-20 bg-slate-50 border-t border-slate-200">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold font-serif text-primary mb-4">
-                  Medical Malpractice Lawyers Nationwide
-                </h2>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                  We have built a network of experienced medical malpractice attorneys across all 50 states 
-                  to ensure you get the best <Link href={internalLink("about")} className="text-black hover:underline font-semibold">legal representation</Link> near you.
-                </p>
-              </div>
-              
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                {Object.values(STATE_DATA).map((state) => (
-                  <Link 
-                    key={state.slug} 
-                    href={`/medical-malpractice-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}`}
-                    className="text-sm text-slate-600 hover:text-secondary hover:font-semibold transition-colors flex items-center gap-2 p-2 rounded-lg hover:bg-white hover:shadow-sm"
-                  >
-                    <MapPin className="h-3 w-3 text-secondary/70" />
-                    Medical Malpractice Lawyers in {state.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <InternalLinks />
 
       </main>
 

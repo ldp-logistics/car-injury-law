@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { internalLink } from "@/utils/link-helper";
+import InternalLinks from "@/components/InternalLinks";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { StickyCta } from "@/components/sticky-cta";
@@ -224,6 +225,7 @@ export default function FloridaStatePage() {
           </div>
         </div>
 
+        <InternalLinks />
       </main>
       <RelatedLinks />
       <StickyCta />

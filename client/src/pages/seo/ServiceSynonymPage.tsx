@@ -14,6 +14,7 @@ import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
 import { internalLink } from "@/utils/link-helper";
 import SEOContentSection from "@/components/seo/SEOContentSection";
 import { SERVICE_SYNONYM_PAGES } from "@/data/service-synonym-pages";
+import InternalLinks from "@/components/InternalLinks";
 
 // For the background image, let's just pick one of our highest quality dynamic options.
 import heroBg from "@assets/stock_images/car_accident_crash_s_fd800196.jpg";
@@ -288,6 +289,7 @@ export default function ServiceSynonymPage({ data }: ServiceSynonymPageProps) {
 
         <InternalLinksFooter links={data.internalLinks} />
 
+        <InternalLinks />
       </main>
       
       <StickyCta />

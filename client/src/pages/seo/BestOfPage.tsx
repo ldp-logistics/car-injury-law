@@ -11,6 +11,7 @@ import { Link } from "wouter";
 import { internalLink } from "@/utils/link-helper";
 import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
 import SEOContentSection from "@/components/seo/SEOContentSection";
+import InternalLinks from "@/components/InternalLinks";
 
 // Background image - reusing one of the premium assets
 import heroBg from "@assets/stock_images/personal_injury_lawy_4d2da1ce.jpg";
@@ -230,6 +231,7 @@ export default function BestOfPage({ data }: BestOfPageProps) {
 
         <InternalLinksFooter links={data.internalLinks} />
 
+        <InternalLinks />
       </main>
       
       <StickyCta />

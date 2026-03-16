@@ -14,6 +14,8 @@ import SEOContentSection from "@/components/seo/SEOContentSection";
 import { PRACTICE_AREA_PAGES } from "@/data/practice-area-pages";
 import { SERVICE_SYNONYM_PAGES } from "@/data/service-synonym-pages";
 import { NEAR_ME_PAGES } from "@/data/near-me-pages";
+import { STATE_DATA } from "@/data/state-data";
+import InternalLinks from "@/components/InternalLinks";
 
 // Let's use an authoritative courtroom/legal background for general practice areas
 import heroBg from "@assets/stock_images/courtroom_gavel_just_813cbcc0.jpg";
@@ -148,21 +150,24 @@ export default function PracticeAreaPage({ data }: PracticeAreaPageProps) {
                   keyword={data.keyword}
                 />
 
-                {/* Related Pages Section */}
+                {/* Related Pages Section - Expanded for States */}
                 {(() => {
-                  const related = PRACTICE_AREA_PAGES
-                    .filter(p => p.slug !== data.slug)
-                    .slice(0, 6);
+                  const stateVariants = Object.values(STATE_DATA).map(state => ({
+                    href: `/${data.slug}/${state.slug}/`,
+                    label: `${data.keyword} in ${state.name}`
+                  }));
 
                   return (
-                    <div className="border-t mt-10 pt-6 px-4">
-                      <p className="font-semibold text-gray-700 mb-3">Related Services</p>
-                      <div className="flex flex-wrap gap-3">
-                        {related.map(p => (
-                          <a key={p.slug}
-                            href={'/' + p.slug + '/'}
-                            className="text-blue-600 text-sm hover:underline">
-                            {p.keyword}
+                    <div className="border-t mt-16 pt-8 px-4">
+                      <h3 className="text-xl font-bold text-primary mb-6">Expert Legal Representation Across the USA</h3>
+                      <p className="text-gray-600 mb-6 italic">We serve victims in every major jurisdiction. Select your state to learn about local laws and how we can help your specific case:</p>
+                      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-2 gap-x-4">
+                        {stateVariants.map((variant, idx) => (
+                          <a key={idx}
+                            href={variant.href}
+                            className="text-blue-600 text-xs hover:underline flex items-center gap-1">
+                            <ChevronRight className="h-3 w-3 text-secondary" />
+                            {variant.label}
                           </a>
                         ))}
                       </div>
@@ -236,52 +241,7 @@ export default function PracticeAreaPage({ data }: PracticeAreaPageProps) {
 
         <InternalLinksFooter links={data.internalLinks} />
 
-        <div className="border-t mt-10 pt-6 px-4 pb-10">
-          <div className="mb-6">
-            <p className="font-semibold text-gray-700 mb-3 text-sm">
-              Other Practice Areas
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {relatedPracticeAreas.map(p => (
-                <a key={p.slug}
-                  href={'/' + p.slug + '/'} 
-                  className="text-blue-600 text-sm hover:underline">
-                  {p.keyword}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div className="mb-6">
-            <p className="font-semibold text-gray-700 mb-3 text-sm">
-              Related Legal Services
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {relatedServices.map(p => (
-                <a key={p.slug}
-                  href={'/' + p.slug + '/'} 
-                  className="text-blue-600 text-sm hover:underline">
-                  {p.keyword}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <p className="font-semibold text-gray-700 mb-3 text-sm">
-              Find a Lawyer Near You
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {nearMeLinks.map(p => (
-                <a key={p.slug}
-                  href={'/' + p.slug + '/'} 
-                  className="text-blue-600 text-sm hover:underline">
-                  {p.keyword}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
+        <InternalLinks />
       </main>
       
       <StickyCta />

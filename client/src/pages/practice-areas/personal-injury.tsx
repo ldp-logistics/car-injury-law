@@ -8,6 +8,7 @@ import { SeoHead } from "@/components/seo-head";
 import { RelatedLinks } from "@/components/related-links";
 import stockImage from '@assets/stock_images/personal_injury_lawy_4d2da1ce.jpg';
 import { Link } from "wouter";
+import InternalLinks from "@/components/InternalLinks";
 import { STATE_DATA } from "@/data/state-data";
 
 export default function PersonalInjuryPage() {
@@ -155,21 +156,7 @@ export default function PersonalInjuryPage() {
               </button>
             </section>
 
-            {/* States Section */}
-            <section className="border-t pt-12">
-              <h2 className="text-2xl font-bold font-serif text-primary mb-8 text-center">Find Personal Injury Lawyers in Your State</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-sm">
-                {Object.values(STATE_DATA).map((state) => (
-                  <Link 
-                    key={state.slug} 
-                    href={`/personal-injury-lawyer/${state.name.toLowerCase().replace(/ /g, '-')}`}
-                    className="text-slate-600 hover:text-secondary hover:underline transition-colors"
-                  >
-                    Personal Injury Lawyers in {state.name}
-                  </Link>
-                ))}
-              </div>
-            </section>
+            <InternalLinks />
 
           </div>
         </div>

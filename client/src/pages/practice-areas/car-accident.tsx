@@ -30,6 +30,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { LeadForm } from "@/components/lead-form";
+import InternalLinks from "@/components/InternalLinks";
 import { STATE_DATA } from "@/data/state-data";
 
 export default function CarAccidentPage() {
@@ -588,30 +589,7 @@ export default function CarAccidentPage() {
           </div>
         </section>
 
-        {/* Locations Section */}
-        <section className="py-12 bg-slate-50 border-t border-slate-200">
-          <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold font-serif text-primary mb-8 text-center">
-              Car Accident Lawyers Serving All 50 States
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-              {Object.values(STATE_DATA).map((state) => (
-                <Link 
-                  key={state.slug} 
-                  href={`/${state.slug}`}
-                  className="text-sm text-muted-foreground hover:text-secondary hover:underline transition-colors"
-                >
-                  Car Accident Lawyers in {state.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* SEO Content Section */}
-        <div className="container mx-auto px-4 py-16">
-          <SeoContentSection service="Car Accident Lawyer" location="Nationwide" />
-        </div>
+        <InternalLinks />
       </main>
 
       <RelatedLinks currentSlug="car-accident" />
