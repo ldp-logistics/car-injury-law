@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Award, BookOpen, Scale, Briefcase, GraduationCap } from "lucide-react";
+import { RelatedLinks } from "@/components/related-links";
 import attorneyImg from "@assets/admani_1763525477578.jpg";
 
 export default function AttorneyProfilePage() {
@@ -155,6 +156,7 @@ export default function AttorneyProfilePage() {
         </div>
       </main>
 
+      <RelatedLinks currentSlug="attorney-profile" />
       <StickyCta />
       <Footer />
     </div>

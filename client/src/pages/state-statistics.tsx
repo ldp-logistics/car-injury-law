@@ -9,6 +9,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { StateData } from "@/data/state-data";
+import { RelatedLinks } from "@/components/related-links";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 
 interface StateStatisticsPageProps {
@@ -193,6 +194,7 @@ export default function StateStatisticsPage({ data }: StateStatisticsPageProps) 
       </main>
       
       <StickyCta />
+      <RelatedLinks />
       <ChatWidget />
       <Footer />
     </div>

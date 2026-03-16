@@ -6,6 +6,7 @@ import { LeadForm } from "@/components/lead-form";
 import { SeoHead } from "@/components/seo-head";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CheckCircle, ShieldAlert, Truck } from "lucide-react";
+import { RelatedLinks } from "@/components/related-links";
 
 export default function UnderrideAccidentPage() {
   return (
@@ -61,6 +62,7 @@ export default function UnderrideAccidentPage() {
         </div>
       </main>
 
+      <RelatedLinks currentSlug="truck-accident-underride" />
       <StickyCta />
       <Footer />
     </div>

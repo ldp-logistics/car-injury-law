@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { StickyCta } from "@/components/sticky-cta";
 import { SeoHead } from "@/components/seo-head";
 import { CheckCircle, Award, Scale, Users, Briefcase } from "lucide-react";
+import { RelatedLinks } from "@/components/related-links";
 import admaniImage from "@/assets/admani.jpg";
 
 export default function AboutPage() {
@@ -124,6 +125,7 @@ export default function AboutPage() {
         </section>
       </main>
 
+      <RelatedLinks currentSlug="about" />
       <StickyCta />
       <Footer />
     </div>

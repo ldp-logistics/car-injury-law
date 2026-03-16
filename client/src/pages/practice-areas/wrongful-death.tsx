@@ -7,6 +7,7 @@ import { StickyCta } from "@/components/sticky-cta";
 import { LeadForm } from "@/components/lead-form";
 import { CheckCircle, Heart, Users } from "lucide-react";
 import { SeoHead } from "@/components/seo-head";
+import { RelatedLinks } from "@/components/related-links";
 
 export default function WrongfulDeathPage() {
   return (
@@ -95,6 +96,7 @@ export default function WrongfulDeathPage() {
         </div>
       </main>
 
+      <RelatedLinks currentSlug="wrongful-death" />
       <StickyCta />
       <Footer />
     </div>

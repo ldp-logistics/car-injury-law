@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle } from "lucide-react";
 import { SeoHead } from "@/components/seo-head";
+import { RelatedLinks } from "@/components/related-links";
 
 export default function JoinNetworkPage() {
   return (
@@ -110,6 +111,7 @@ export default function JoinNetworkPage() {
         </div>
       </main>
 
+      <RelatedLinks currentSlug="join-network" />
       <Footer />
     </div>
   );

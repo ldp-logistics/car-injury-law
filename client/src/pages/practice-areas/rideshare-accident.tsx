@@ -7,6 +7,7 @@ import { StickyCta } from "@/components/sticky-cta";
 import { LeadForm } from "@/components/lead-form";
 import { CheckCircle, Car, Shield } from "lucide-react";
 import { SeoHead } from "@/components/seo-head";
+import { RelatedLinks } from "@/components/related-links";
 
 export default function RideshareAccidentPage() {
   return (
@@ -92,6 +93,7 @@ export default function RideshareAccidentPage() {
         </div>
       </main>
 
+      <RelatedLinks currentSlug="rideshare-accident" />
       <StickyCta />
       <Footer />
     </div>

@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { StickyCta } from "@/components/sticky-cta";
 import { LeadForm } from "@/components/lead-form";
 import { CheckCircle, MapPin, Shield, AlertTriangle, Gavel, Navigation } from "lucide-react";
+import { RelatedLinks } from "@/components/related-links";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -211,6 +212,7 @@ export default function CityLandingPage({ stateData, city }: CityLandingPageProp
           </div>
         </div>
       </main>
+      <RelatedLinks />
       <StickyCta />
       <Footer />
     </div>

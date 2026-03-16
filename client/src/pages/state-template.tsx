@@ -7,6 +7,7 @@ import { StickyCta } from "@/components/sticky-cta";
 import { ChatWidget } from "@/components/chat-widget";
 import { LeadForm } from "@/components/lead-form";
 import { CheckCircle, MapPin, Shield, AlertTriangle, Clock, Gavel } from "lucide-react";
+import { RelatedLinks } from "@/components/related-links";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -209,6 +210,7 @@ export default function StatePage() {
         </div>
 
       </main>
+      <RelatedLinks />
       <StickyCta />
       <ChatWidget />
       <Footer />

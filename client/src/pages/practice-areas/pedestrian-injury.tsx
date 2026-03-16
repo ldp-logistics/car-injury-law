@@ -1,5 +1,6 @@
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
+import { RelatedLinks } from "@/components/related-links";
 import { SeoHead } from "@/components/seo-head";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -617,6 +618,7 @@ export default function PedestrianInjuryPage() {
         </section>
       </main>
 
+      <RelatedLinks currentSlug="pedestrian-injury" />
       <Footer />
     </div>
   );

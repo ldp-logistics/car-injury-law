@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Check, X } from "lucide-react";
 import { SeoHead } from "@/components/seo-head";
 import { StickyCta } from "@/components/sticky-cta";
+import { RelatedLinks } from "@/components/related-links";
 
 export default function VsInsurancePage() {
   return (
@@ -95,6 +96,7 @@ export default function VsInsurancePage() {
         </div>
       </main>
 
+      <RelatedLinks currentSlug="vs-insurance" />
       <StickyCta />
       <Footer />
     </div>

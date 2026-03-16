@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { SeoHead } from "@/components/seo-head";
+import { RelatedLinks } from "@/components/related-links";
 
 const GLOSSARY_TERMS = [
   {
@@ -103,6 +104,7 @@ export default function GlossaryPage() {
         </div>
       </main>
 
+      <RelatedLinks currentSlug="glossary" />
       <Footer />
     </div>
   );

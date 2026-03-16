@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { CASE_RESULTS } from "@/data/case-results-data";
 import { Filter, Trophy } from "lucide-react";
+import { RelatedLinks } from "@/components/related-links";
 import { Badge } from "@/components/ui/badge";
 
 export default function CaseResultsPage() {
@@ -106,6 +107,7 @@ export default function CaseResultsPage() {
         </div>
       </main>
 
+      <RelatedLinks currentSlug="case-results" />
       <StickyCta />
       <Footer />
     </div>

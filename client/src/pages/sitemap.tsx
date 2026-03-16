@@ -2,6 +2,7 @@ import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
 import { Link } from "wouter";
 import { STATE_DATA } from "@/data/state-data";
+import { RelatedLinks } from "@/components/related-links";
 
 export default function SitemapPage() {
   const practiceAreas = [
@@ -163,6 +164,7 @@ export default function SitemapPage() {
           </div>
         </div>
       </main>
+      <RelatedLinks currentSlug="sitemap" />
       <Footer />
     </div>
   );

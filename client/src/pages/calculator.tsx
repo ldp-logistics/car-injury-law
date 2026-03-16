@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { CalculatorSection } from "@/components/calculator-section";
 import { StickyCta } from "@/components/sticky-cta";
 import { SeoHead } from "@/components/seo-head";
+import { RelatedLinks } from "@/components/related-links";
 
 export default function CalculatorPage() {
   return (
@@ -54,6 +55,7 @@ export default function CalculatorPage() {
         </div>
       </main>
 
+      <RelatedLinks currentSlug="settlement-calculator" />
       <StickyCta />
       <Footer />
     </div>

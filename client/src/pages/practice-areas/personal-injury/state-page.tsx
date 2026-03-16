@@ -7,6 +7,7 @@ import { StickyCta } from "@/components/sticky-cta";
 import { LeadForm } from "@/components/lead-form";
 import { CheckCircle, Shield, AlertTriangle, Scale } from "lucide-react";
 import { SeoHead } from "@/components/seo-head";
+import { RelatedLinks } from "@/components/related-links";
 import { StateData } from "@/data/state-data";
 import stockImage from '@assets/stock_images/personal_injury_lawy_4d2da1ce.jpg';
 
@@ -191,6 +192,7 @@ export default function PersonalInjuryStatePage({ stateData }: PersonalInjurySta
         </div>
       </main>
 
+      <RelatedLinks />
       <StickyCta />
       <Footer />
     </div>

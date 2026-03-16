@@ -6,6 +6,7 @@ import { LeadForm } from "@/components/lead-form";
 import { SeoHead } from "@/components/seo-head";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CheckCircle, AlertTriangle, Truck } from "lucide-react";
+import { RelatedLinks } from "@/components/related-links";
 
 export default function JackknifeAccidentPage() {
   return (
@@ -70,6 +71,7 @@ export default function JackknifeAccidentPage() {
         </div>
       </main>
 
+      <RelatedLinks currentSlug="truck-accident-jackknife" />
       <StickyCta />
       <Footer />
     </div>

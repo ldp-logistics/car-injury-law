@@ -5,6 +5,7 @@ import { SafeDriverPledge } from "@/components/safe-driver-pledge";
 import { EmergencyCardGenerator } from "@/components/emergency-card-generator";
 import { SeoHead } from "@/components/seo-head";
 import { StickyCta } from "@/components/sticky-cta";
+import { RelatedLinks } from "@/components/related-links";
 
 export default function SafetyResourcesPage() {
   return (
@@ -29,6 +30,7 @@ export default function SafetyResourcesPage() {
         <SafeDriverPledge />
       </main>
 
+      <RelatedLinks currentSlug="safety-resources" />
       <StickyCta />
       <Footer />
     </div>
