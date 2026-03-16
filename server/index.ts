@@ -661,17 +661,33 @@ app.use(express.json({
 }));
 app.use(express.urlencoded({ extended: false }));
 
-// 2. Trailing Slash Enforcement (Fixes "Non-canonical page in sitemap" ghosts)
+// 2. Trailing Slash Enforcement & Legacy /seo/ Redirects
 app.use((req, res, next) => {
-  if (req.path !== '/' && req.path.endsWith('/') && !req.path.match(/\.(xml|txt|rss|atom|json|png|jpg|jpeg|gif|svg|webp|js|css)$/)) {
-    // Current behavior: if it HAS a slash, we are fine. 
-    // Wait, usually the issue is missing slug? 
-    // Ahrefs usually complains if sitemap has /path/ but server serves /path
-    // Or vice versa. Let's force /path/ for all HTML routes.
-    next();
-  } else if (req.path !== '/' && !req.path.endsWith('/') && !req.path.match(/\.(xml|txt|rss|atom|json|png|jpg|jpeg|gif|svg|webp|js|css)$/)) {
-    const query = req.url.slice(req.path.length);
-    res.redirect(301, req.path + '/' + query);
+  const path = req.path;
+  const method = req.method;
+
+  // Skip for non-GET, root, Vite internals, assets, and anything with a dot
+  if (
+    method !== 'GET' ||
+    path === '/' ||
+    path.startsWith('/@') || 
+    path.startsWith('/src/') || 
+    path.startsWith('/node_modules/') ||
+    path.startsWith('/api/') ||
+    path.includes('.')
+  ) {
+    return next();
+  }
+
+  if (path.startsWith('/seo/')) {
+    const newPath = path.replace('/seo/', '/');
+    const query = req.url.slice(path.length);
+    log(`[SEO-REDIRECT] ${path} -> ${newPath}`, "seo-fix");
+    res.redirect(301, newPath + query);
+  } else if (!path.endsWith('/')) {
+    const query = req.url.slice(path.length);
+    log(`[SLASH-ENFORCE] ${path} -> ${path}/`, "seo-fix");
+    res.redirect(301, path + '/' + query);
   } else {
     next();
   }

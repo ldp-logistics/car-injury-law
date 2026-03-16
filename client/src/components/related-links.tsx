@@ -35,7 +35,7 @@ export function RelatedLinks({ currentSlug }: RelatedLinksProps) {
               {practiceLinks.map((p) => (
                 <li key={p.slug}>
                   <Link
-                    href={`/seo/${p.slug}/`}
+                    href={`/${p.slug}/`}
                     className="text-sm text-primary hover:underline"
                   >
                     {p.keyword.replace(/\b\w/g, (c) => c.toUpperCase())}
@@ -52,7 +52,7 @@ export function RelatedLinks({ currentSlug }: RelatedLinksProps) {
               {synonymLinks.map((p) => (
                 <li key={p.slug}>
                   <Link
-                    href={`/seo/${p.slug}/`}
+                    href={`/${p.slug}/`}
                     className="text-sm text-primary hover:underline"
                   >
                     {p.keyword.replace(/\b\w/g, (c) => c.toUpperCase())}
@@ -69,7 +69,7 @@ export function RelatedLinks({ currentSlug }: RelatedLinksProps) {
               {nearMeLinks.map((p) => (
                 <li key={p.slug}>
                   <Link
-                    href={`/seo/${p.slug}/`}
+                    href={`/${p.slug}/`}
                     className="text-sm text-primary hover:underline"
                   >
                     {p.keyword.replace(/\b\w/g, (c) => c.toUpperCase())}
