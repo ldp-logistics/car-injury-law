@@ -363,63 +363,115 @@ function getSsrContent(path: string): string {
 
   // ── Practice Areas ──────────────────────────────────────────────
   if (path.startsWith('/practice-areas/')) {
-    const practiceSlug = path
+    const slug = path
       .replace('/practice-areas/', '')
       .replace(/\/$/, '');
 
-    const practiceData = PRACTICE_AREA_SSR[practiceSlug];
+    const PRACTICE_AREA_CONTENT: Record<string, {title: string; content: string}> = {
+      'premises-liability': {
+        title: 'Premises Liability Lawyer',
+        content: 'Property owners have a legal duty to maintain safe premises. When they fail our premises liability lawyers fight for your compensation.'
+      },
+      'slip-and-fall-attorney': {
+        title: 'Slip and Fall Attorney',
+        content: 'Slip and fall accidents cause serious injuries. Our attorneys know how to prove negligence and maximize your settlement.'
+      },
+      'semi-truck-accident': {
+        title: 'Semi Truck Accident Lawyer',
+        content: 'Semi truck accidents cause catastrophic injuries. Our attorneys handle all aspects of commercial truck accident claims.'
+      },
+      'fatal-accident': {
+        title: 'Fatal Accident Lawyer',
+        content: 'Losing a loved one in a fatal accident is devastating. Our attorneys handle wrongful death claims with compassion and expertise.'
+      },
+      'truck-accident/jackknife': {
+        title: 'Jackknife Truck Accident Lawyer',
+        content: 'Jackknife truck accidents are among the most dangerous crashes. Our truck accident attorneys fight for maximum compensation.'
+      },
+      'truck-accident/underride': {
+        title: 'Underride Truck Accident Lawyer',
+        content: 'Underride truck accidents cause catastrophic injuries. Our attorneys know how to hold trucking companies fully accountable.'
+      },
+      'rideshare-accident': {
+        title: 'Rideshare Accident Lawyer',
+        content: 'Uber and Lyft accidents involve complex insurance issues. Our rideshare accident attorneys navigate these claims expertly.'
+      },
+      'pedestrian-injury': {
+        title: 'Pedestrian Injury Lawyer',
+        content: 'Pedestrian accident victims suffer serious injuries. Our attorneys fight aggressively for your maximum compensation and recovery.'
+      },
+      'medical-malpractice': {
+        title: 'Medical Malpractice Lawyer',
+        content: 'Medical errors cause serious harm to patients. Our medical malpractice attorneys hold negligent healthcare providers accountable.'
+      },
+      'bus-transit-injury': {
+        title: 'Bus and Transit Injury Lawyer',
+        content: 'Bus and transit accidents involve complex liability issues. Our attorneys handle all types of public and private transit claims.'
+      },
+      '18-wheeler-accident': {
+        title: '18 Wheeler Accident Lawyer',
+        content: '18 wheeler accidents cause devastating injuries. Our attorneys know federal trucking regulations and fight for maximum compensation.'
+      },
+      'wrongful-death-attorney': {
+        title: 'Wrongful Death Attorney',
+        content: 'Our wrongful death attorneys handle these sensitive cases with compassion while fighting aggressively for your family compensation.'
+      }
+    };
+
+    const practiceData = PRACTICE_AREA_CONTENT[slug] || PRACTICE_AREA_SSR[slug];
 
     if (practiceData) {
-      const faqs = practiceData.faqs
-        .map(f => `
+      const faqsList = (practiceData as any).faqs ? (practiceData as any).faqs
+        .map((f: any) => `
           <div>
             <h3>${f.question}</h3>
             <p>${f.answer}</p>
           </div>
-        `).join('');
+        `).join('') : '';
 
       return `
         <div id="ssr-content">
-          <h1>${practiceData.h1}</h1>
           <p>${practiceData.content}</p>
+          ${faqsList ? `
           <div>
             <h2>Frequently Asked Questions</h2>
-            ${faqs}
-          </div>
+            ${faqsList}
+          </div>` : ''}
         </div>
       `;
     }
+  }
+
+  // ── Attorneys ──────────────────────────────────────────────
+  if (path.startsWith('/attorneys/')) {
+    const attorneySlug = path
+      .replace('/attorneys/', '')
+      .replace(/\/$/, '');
+    const attorneyName = attorneySlug
+      .split('-')
+      .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ');
+    return `
+      <div id="ssr-content">
+        <p>${attorneyName} is a personal injury attorney at Car Injury Law serving clients across all 50 states. Free consultations available 24/7.</p>
+      </div>
+    `;
   }
 
   // ── About ────────────────────────────────────────────────────────
   if (path === '/about/' || path === '/about') {
     return `
       <div id="ssr-content">
-        <h1>About Car Injury Law</h1>
-        <p>Car Injury Law is a nationwide
-          personal injury law firm serving
-          accident victims across all 50 states.
-          Our experienced attorneys have recovered
-          millions for injured clients and are
-          available 24 hours a day 7 days a week
-          for free consultations with no upfront
-          costs and no win no fee guarantee.</p>
+        <p>About Car Injury Law: Car Injury Law is a nationwide personal injury law firm serving accident victims across all 50 states. Our experienced attorneys have recovered millions for injured clients and are available 24 hours a day 7 days a week for free consultations with no upfront costs and no win no fee guarantee.</p>
       </div>
     `;
   }
 
-  // ── Attorney Profile ─────────────────────────────────────────────
+  // ── Attorney Profile (Legacy/Index) ──────────────────────────────
   if (path === '/attorney-profile/' || path === '/attorney-profile') {
     return `
       <div id="ssr-content">
-        <h1>Our Attorneys | Car Injury Law</h1>
-        <p>Car Injury Law attorneys are experienced
-          personal injury lawyers dedicated to
-          fighting for maximum compensation for
-          accident victims across all 50 states.
-          Our legal team handles car accidents
-          truck accidents motorcycle crashes
-          slip and fall injuries and more.</p>
+        <p>Car Injury Law attorneys are experienced personal injury lawyers dedicated to fighting for maximum compensation for accident victims across all 50 states. Our legal team handles car accidents truck accidents motorcycle crashes slip and fall injuries and more.</p>
       </div>
     `;
   }
@@ -428,16 +480,7 @@ function getSsrContent(path: string): string {
   if (path === '/case-results/' || path === '/case-results') {
     return `
       <div id="ssr-content">
-        <h1>Case Results | Car Injury Law</h1>
-        <p>Car Injury Law has recovered millions
-          for injury victims across the United
-          States. Our attorneys have successfully
-          resolved thousands of personal injury
-          cases including car accidents truck
-          crashes motorcycle accidents and
-          workplace injuries. View our case
-          results to see what we have recovered
-          for clients like you.</p>
+        <p>Case Results: Car Injury Law has recovered millions for injury victims across the United States. Our attorneys have successfully resolved thousands of personal injury cases including car accidents truck crashes motorcycle accidents and workplace injuries. View our case results to see what we have recovered for clients like you.</p>
       </div>
     `;
   }
@@ -446,14 +489,7 @@ function getSsrContent(path: string): string {
   if (path === '/calculator/' || path === '/calculator') {
     return `
       <div id="ssr-content">
-        <h1>Car Accident Settlement Calculator | Car Injury Law</h1>
-        <p>Use our free car accident settlement
-          calculator to estimate the value of
-          your personal injury claim. Our tool
-          considers medical bills lost wages
-          pain and suffering and other damages
-          to give you a realistic estimate of
-          your potential settlement amount.</p>
+        <p>Car Accident Settlement Calculator: Use our free car accident settlement calculator to estimate the value of your personal injury claim. Our tool considers medical bills lost wages pain and suffering and other damages to give you a realistic estimate of your potential settlement amount.</p>
       </div>
     `;
   }
@@ -462,13 +498,7 @@ function getSsrContent(path: string): string {
   if (path === '/glossary/' || path === '/glossary') {
     return `
       <div id="ssr-content">
-        <h1>Personal Injury Legal Glossary | Car Injury Law</h1>
-        <p>Understanding legal terminology
-          is important when pursuing a personal
-          injury claim. Our comprehensive glossary
-          explains common legal terms used in
-          car accident and personal injury cases
-          in plain easy to understand language.</p>
+        <p>Personal Injury Legal Glossary: Understanding legal terminology is important when pursuing a personal injury claim. Our comprehensive glossary explains common legal terms used in car accident and personal injury cases in plain easy to understand language.</p>
       </div>
     `;
   }
@@ -477,13 +507,7 @@ function getSsrContent(path: string): string {
   if (path === '/join-network/' || path === '/join-network') {
     return `
       <div id="ssr-content">
-        <h1>Join Our Attorney Network | Car Injury Law</h1>
-        <p>Are you a personal injury attorney
-          looking to grow your practice?
-          Join the Car Injury Law attorney
-          network and connect with accident
-          victims in your area who need
-          experienced legal representation.</p>
+        <p>Join Our Attorney Network: Are you a personal injury attorney looking to grow your practice? Join the Car Injury Law attorney network and connect with accident victims in your area who need experienced legal representation.</p>
       </div>
     `;
   }
@@ -492,14 +516,7 @@ function getSsrContent(path: string): string {
   if (path === '/safety-resources/' || path === '/safety-resources') {
     return `
       <div id="ssr-content">
-        <h1>Road Safety Resources | Car Injury Law</h1>
-        <p>Car Injury Law is committed to
-          promoting road safety across America.
-          Our safety resources provide valuable
-          information about preventing car
-          accidents staying safe on the road
-          and what to do if you are involved
-          in an accident.</p>
+        <p>Road Safety Resources: Car Injury Law is committed to promoting road safety across America. Our safety resources provide valuable information about preventing car accidents staying safe on the road and what to do if you are involved in an accident.</p>
       </div>
     `;
   }
@@ -508,15 +525,7 @@ function getSsrContent(path: string): string {
   if (path === '/vs-insurance/' || path === '/vs-insurance') {
     return `
       <div id="ssr-content">
-        <h1>Fighting Insurance Companies | Car Injury Law</h1>
-        <p>Insurance companies have one goal
-          after an accident — pay you as little
-          as possible. Car Injury Law levels
-          the playing field. Our attorneys know
-          every tactic insurance adjusters use
-          to minimize claims and we counter
-          each one aggressively to maximize
-          your settlement.</p>
+        <p>Fighting Insurance Companies: Insurance companies have one goal after an accident — pay you as little as possible. Car Injury Law levels the playing field. Our attorneys know every tactic insurance adjusters use to minimize claims and we counter each one aggressively to maximize your settlement.</p>
       </div>
     `;
   }
@@ -525,11 +534,7 @@ function getSsrContent(path: string): string {
   if (path === '/sitemap/' || path === '/sitemap') {
     return `
       <div id="ssr-content">
-        <h1>Sitemap | Car Injury Law</h1>
-        <p>Browse the full sitemap of Car Injury Law
-          to find information about our practice areas
-          attorney profiles case results and resources
-          for accident victims across all 50 states.</p>
+        <p>Sitemap: Browse the full sitemap of Car Injury Law to find information about our practice areas attorney profiles case results and resources for accident victims across all 50 states.</p>
       </div>
     `;
   }
@@ -538,16 +543,7 @@ function getSsrContent(path: string): string {
   if (path === '/florida-car-accident-lawyer/' || path === '/florida-car-accident-lawyer') {
     return `
       <div id="ssr-content">
-        <h1>Florida Car Accident Lawyer | Car Injury Law</h1>
-        <p>If you were injured in a car accident
-          in Florida our experienced attorneys are
-          ready to fight for your maximum compensation.
-          Florida has strict no fault insurance laws
-          that make it critical to work with an
-          experienced car accident attorney.
-          We offer free consultations 24 hours
-          a day with no upfront costs and no win
-          no fee guarantee.</p>
+        <p>Florida Car Accident Lawyer: If you were injured in a car accident in Florida our experienced attorneys are ready to fight for your maximum compensation. Florida has strict no fault insurance laws that make it critical to work with an experienced car accident attorney. We offer free consultations 24 hours a day with no upfront costs and no win no fee guarantee.</p>
       </div>
     `;
   }
@@ -569,16 +565,7 @@ function getSsrContent(path: string): string {
 
     return `
       <div id="ssr-content">
-        <h1>Car Accident Lawyer in ${cityName} ${stateName} | Car Injury Law</h1>
-        <p>If you were injured in a car accident
-          in ${cityName} ${stateName} our
-          experienced attorneys are ready to
-          fight for your maximum compensation.
-          We offer free consultations 24 hours
-          a day with no upfront costs and
-          no win no fee guarantee. Serving
-          all of ${stateName} including
-          ${cityName} and surrounding areas.</p>
+        <p>Car Accident Lawyer in ${cityName} ${stateName}: If you were injured in a car accident in ${cityName} ${stateName} our experienced attorneys are ready to fight for your maximum compensation. We offer free consultations 24 hours a day with no upfront costs and no win no fee guarantee. Serving all of ${stateName} including ${cityName} and surrounding areas.</p>
       </div>
     `;
   }
@@ -595,16 +582,7 @@ function getSsrContent(path: string): string {
 
     return `
       <div id="ssr-content">
-        <h1>Car Accident Lawyer in ${stateName} | Car Injury Law</h1>
-        <p>If you were injured in a car accident
-          in ${stateName} our experienced attorneys
-          are ready to fight for your maximum
-          compensation. We handle all car accident
-          cases in ${stateName} including serious
-          injuries wrongful death and truck crashes.
-          Free consultations available 24 hours a day
-          with no upfront costs and no win no fee
-          guarantee.</p>
+        <p>Car Accident Lawyer in ${stateName}: If you were injured in a car accident in ${stateName} our experienced attorneys are ready to fight for your maximum compensation. We handle all car accident cases in ${stateName} including serious injuries wrongful death and truck crashes. Free consultations available 24 hours a day with no upfront costs and no win no fee guarantee.</p>
       </div>
     `;
   }
@@ -622,16 +600,7 @@ function getSsrContent(path: string): string {
 
     return `
       <div id="ssr-content">
-        <h1>Car Accident Statistics in ${stateName} | Car Injury Law</h1>
-        <p>Car accident statistics in
-          ${stateName} show the serious impact
-          of traffic crashes on residents
-          every year. Understanding these
-          statistics helps drivers stay safe
-          and helps accident victims understand
-          the importance of working with an
-          experienced car accident lawyer
-          to protect their rights.</p>
+        <p>Car Accident Statistics in ${stateName}: Car accident statistics in ${stateName} show the serious impact of traffic crashes on residents every year. Understanding these statistics helps drivers stay safe and helps accident victims understand the importance of working with an experienced car accident lawyer to protect their rights.</p>
       </div>
     `;
   }

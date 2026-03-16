@@ -31,16 +31,15 @@ export default function PracticeAreaPage({ data }: PracticeAreaPageProps) {
 
   const currentDate = new Date().toISOString();
 
-  const currentSlug = typeof window !== 'undefined' 
-    ? window.location.pathname.replace('/practice-areas/', '').replace(/\/$/, '')
+  const pathParts = typeof window !== 'undefined' 
+    ? window.location.pathname.split('/').filter(Boolean)
+    : [];
+  const stateSlug = pathParts[1];
+  const stateName = stateSlug
+    ? stateSlug.split('-')
+      .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ')
     : '';
-
-  const relatedPracticeAreas = PRACTICE_AREA_PAGES
-    .filter(p => !p.slug.includes(currentSlug))
-    .slice(0, 8);
-
-  const relatedServices = SERVICE_SYNONYM_PAGES.slice(0, 8);
-  const nearMeLinks = NEAR_ME_PAGES.slice(0, 6);
 
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans pb-20 md:pb-0">
@@ -69,7 +68,10 @@ export default function PracticeAreaPage({ data }: PracticeAreaPageProps) {
                   <span>{data.category} Representation</span>
                 </div>
                 <h1 className="text-4xl lg:text-5xl font-bold text-white font-serif leading-tight">
-                  {data.h1}
+                  {stateName
+                    ? `${data.keyword} in ${stateName} | Car Injury Law`
+                    : `${data.h1}`
+                  }
                 </h1>
                 
                 {/* Trust Bar */}

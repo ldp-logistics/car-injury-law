@@ -21,7 +21,9 @@ export default function BlogPage() {
       <main className="py-20 bg-slate-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold font-serif text-slate-900 mb-4">Legal Insights</h1>
+            <h1 className="text-4xl font-bold font-serif text-slate-900 mb-4">
+              Car Injury Law Blog | Legal Resources and Guides
+            </h1>
             <p className="text-xl text-slate-600">Resources to help you understand your rights.</p>
           </div>
 

@@ -22,7 +22,7 @@ export default function CalculatorPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold font-serif text-slate-900 mb-6">
-              Car Accident <span className="text-secondary">Settlement Calculator</span>
+              Car Accident Settlement Calculator | Car Injury Law
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
               Find out what your case could be worth in seconds. Our advanced algorithm considers medical expenses, property damage, and pain & suffering multipliers used by <Link href={internalLink("vs-insurance")} className="text-black hover:underline font-semibold">insurance companies</Link>.

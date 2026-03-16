@@ -64,7 +64,7 @@ export default function AttorneyProfilePage() {
                   <Award className="h-4 w-4" /> Network Director
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold font-serif mb-4">
-                  Saad Admani, <span className="text-secondary">Esq.</span>
+                  Saad Admani | Car Injury Law Attorney
                 </h1>
                 <p className="text-xl text-gray-300 mb-8 leading-relaxed max-w-2xl">
                   "My goal wasn't just to build a law firm. It was to build a nationwide force that could stand up to the biggest insurance companies in America."
