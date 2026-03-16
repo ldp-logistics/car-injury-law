@@ -1,3 +1,4 @@
+import { Link } from "wouter";
 import { internalLink } from "@/utils/link-helper";
 import { CONTACT_INFO } from "@/data/contact-info";
 
