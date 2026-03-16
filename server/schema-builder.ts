@@ -169,6 +169,10 @@ export const buildOrganizationSchema = () => ({
   "email": SITE_EMAIL,
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "101 Hudson Street, 21st Floor",
+    "addressLocality": "Jersey City",
+    "addressRegion": "NJ",
+    "postalCode": "07302",
     "addressCountry": "US"
   }
 });

@@ -82,7 +82,7 @@ function generateTagsHtml(meta: MetaTags, path: string): string {
     <meta property="og:title" content="${escape(meta.ogTitle)}" />
     <meta property="og:description" content="${escape(meta.ogDescription)}" />
     <meta property="og:image" content="${escape(meta.ogImage)}" />
-
+ 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="${escape(meta.canonical)}" />
     <meta property="twitter:title" content="${escape(meta.ogTitle)}" />
@@ -173,7 +173,7 @@ export function getPageData(url: string): PageData | null {
         }
     }
 
-    // --- 2. Dynamic City/State / Statistics ---
+    // --- 2. Dynamic City/State / Practice Area / Statistics ---
     // Statistics: /car-accident-statistics/texas/
     if (segments.length === 2 && segments[0] === 'car-accident-statistics') {
         const stateData = getStateData(segments[1]);
@@ -184,13 +184,60 @@ export function getPageData(url: string): PageData | null {
                 title,
                 description: `${stateData.name} car accident statistics and data. Statute of limitations: ${stateData.statute}. Know your rights.`,
                 slug: `car-accident-statistics/${segments[1]}`,
-                state: stateData.name.toLowerCase()
+                state: stateData.name.toLowerCase(),
+                keyword: `${stateData.name} car accident statistics`
+            };
+        }
+    }
+
+    // Practice Area + State: /motorcycle-accident-lawyer/texas/
+    const practiceAreaPrefixes = [
+        'motorcycle-accident-lawyer',
+        'truck-accident-lawyer',
+        'pedestrian-injury-lawyer',
+        'bus-accident-lawyer',
+        'scooter-accident-lawyer',
+        'bicycle-accident-lawyer',
+        'slip-and-fall-lawyer',
+        'dog-bite-lawyer',
+        'wrongful-death-lawyer'
+    ];
+
+    if (segments.length === 2 && practiceAreaPrefixes.includes(segments[0])) {
+        const stateData = getStateData(segments[1]);
+        if (stateData) {
+            const paName = toCityCase(segments[0].replace(/-lawyer/g, ''));
+            const kw = `${paName} in ${stateData.name}`;
+            return {
+                h1: `${paName} in ${stateData.name}`,
+                title: `${paName} in ${stateData.name} | Car Injury Law`,
+                description: `Expert ${paName} representation in ${stateData.name}. Free consultation 24/7. We maximize your settlement. No fees unless we win.`,
+                slug: `${segments[0]}/${segments[1]}`,
+                state: stateData.name.toLowerCase(),
+                keyword: kw
+            };
+        }
+    }
+
+    // Practice Area Slug Match (Fallback for standard SEO files)
+    if (segments.length === 2) {
+        const practiceAreaPage = PRACTICE_AREA_PAGES.find(p => p.slug === segments[0]);
+        const stateData = getStateData(segments[1]);
+        if (practiceAreaPage && stateData) {
+            const kw = `${practiceAreaPage.keyword} in ${stateData.name}`;
+            return {
+                h1: `${toCityCase(practiceAreaPage.keyword)} in ${stateData.name}`,
+                title: `${toCityCase(practiceAreaPage.keyword)} in ${stateData.name} | Car Injury Law`,
+                description: `Top rated ${practiceAreaPage.keyword} in ${stateData.name}. Free consultation 24/7. No fees unless we win. We fight for maximum results.`,
+                slug: `${segments[0]}/${segments[1]}`,
+                state: stateData.name.toLowerCase(),
+                keyword: kw,
+                contentBlocks: practiceAreaPage.contentBlocks
             };
         }
     }
 
     // City/State: /texas/ or /texas/houston/
-    // We also need to check if these slugs exist in STATE_SPECIFIC_PAGES if accessed via their full slug
     if (segments.length > 0) {
         const firstSegment = segments[0];
         const stateData = getStateData(firstSegment);
@@ -220,7 +267,6 @@ export function getPageData(url: string): PageData | null {
                     keyword: `${cityName} car accident lawyer`,
                     slug: `${segments[0]}/${segments[1]}`,
                     state: stateData.name.toLowerCase(),
-                    // City pages don't have dedicated data blocks yet, will use fallback in getPageContent
                 };
             }
         }
@@ -234,7 +280,9 @@ export function getPageContent(url: string): string {
     if (!data) return "";
 
     const segments = new URL(url, 'http://localhost').pathname.split('/').filter(Boolean);
-    const stateSlug = segments[0] === 'car-accident-statistics' ? segments[1] : segments[0];
+    const stateSlug = (segments[0] === 'car-accident-statistics' || PRACTICE_AREA_PAGES.some(p => p.slug === segments[0])) 
+        ? segments[1] 
+        : segments[0];
     const stateData = Object.values(STATE_DATA).find(s => 
         s.slug === stateSlug || 
         s.name.toLowerCase().replace(/ /g, '-') === stateSlug
@@ -306,7 +354,16 @@ export function getPageContent(url: string): string {
         `;
     }
 
-    return "";
+    // 3. Generic Fallback for static/other pages (About, Privacy, etc.)
+    return `
+        <div class="ssr-content" style="display:none">
+            <section>
+                <h2>Legal Representation and Resources</h2>
+                <p>Car Injury Law provides expert legal guidance and representation for personal injury victims. Our mission is to ensure that every client receives the highest quality advocacy and the maximum recovery possible under the law. We handle a wide range of cases, including motor vehicle accidents, workplace injuries, and catastrophic events.</p>
+                <p>Our team of dedicated trial attorneys is committed to transparency, integrity, and results. We understand the physical, emotional, and financial toll a serious injury can take on a family. That's why we offer free initial consultations and work on a contingency fee basis. If you have questions about your legal rights or need immediate assistance, our legal experts are available 24/7 to help you navigate your recovery.</p>
+            </section>
+        </div>
+    `;
 }
 
 // Helper to convert slug to Title Case
@@ -323,10 +380,10 @@ export function getRelatedLinks(url: string): string {
 
     let links = data.internalLinks || [];
 
-    // Fallback: If it's a state page, show city links
+    // Fallback: If it's a state page or practice-area+state page, show city links
     const segments = new URL(url, 'http://localhost').pathname.split('/').filter(Boolean);
-    if (links.length === 0 && segments.length === 1) {
-        const stateSlug = segments[0];
+    if (links.length === 0 && (segments.length === 1 || (segments.length === 2 && PRACTICE_AREA_PAGES.some(p => p.slug === segments[0])))) {
+        const stateSlug = (segments.length === 2) ? segments[1] : segments[0];
         const stateData = Object.values(STATE_DATA).find(s => 
             s.slug === stateSlug || 
             s.name.toLowerCase().replace(/ /g, '-') === stateSlug
@@ -366,17 +423,19 @@ export function getMetaTagsHtml(url: string): string {
         meta.ogTitle = meta.title;
         meta.ogDescription = meta.description;
 
-        // --- Schema Generation Logic ---
+        // --- Schema & Breadcrumb Generation ---
         const pageUrl = SITE_URL + (path === '/' ? '/' : path + '/');
-
+        
+        // 1. Core Schema
+        let mainSchema: any = null;
         if (path === '/') {
-            meta.schema = buildOrganizationSchema();
+            mainSchema = buildOrganizationSchema();
         } else if (segments[0] === 'car-accident-statistics') {
-            meta.schema = buildArticleSchema(pageData.title, pageData.description, pageUrl);
+            mainSchema = buildArticleSchema(pageData.title, pageData.description, pageUrl);
         } else if (pageData.slug && segments.length === 1 && !Object.values(STATE_DATA).some(s => s.slug === segments[0])) {
-            // Service Synonym / Near Me / Practice Area pages (LegalService)
+            // Service / Near Me / Practice Area pages (LegalService)
             const matchedState = Object.values(STATE_DATA).find(s => s.slug === pageData.state);
-            meta.schema = buildLegalServiceSchema(
+            mainSchema = buildLegalServiceSchema(
                 pageData.keyword || pageData.h1,
                 pageData.description,
                 pageUrl,
@@ -384,25 +443,62 @@ export function getMetaTagsHtml(url: string): string {
                 pageData.faqs
             );
         } else {
-            // State and City pages (LocalBusiness)
-            const stateData = Object.values(STATE_DATA).find(s => 
-                s.slug === segments[0] || s.name.toLowerCase().replace(/ /g, '-') === segments[0]
-            );
+            // State, City, or Practice Area+State
+            const stateSlug = segments[0] === 'car-accident-statistics' ? segments[1] : (segments.length === 2 && PRACTICE_AREA_PAGES.some(p => p.slug === segments[0]) ? segments[1] : segments[0]);
+            const stateData = Object.values(STATE_DATA).find(s => s.slug === stateSlug || s.name.toLowerCase().replace(/ /g, '-') === stateSlug);
+            
             if (stateData) {
-                meta.schema = buildLocalBusinessSchema(
-                    stateData.name,
-                    pageUrl
-                );
+                mainSchema = buildLocalBusinessSchema(stateData.name, pageUrl);
+            } else {
+                // Fallback to basic LegalService
+                mainSchema = buildLegalServiceSchema(pageData.h1, pageData.description, pageUrl);
             }
         }
 
-        if (process.env.NODE_ENV === 'development' && meta.schema) {
-            const validateSchema = (schema: object) => {
-                const str = JSON.stringify(schema);
-                if (!str.includes('@context')) console.error(`[Schema Error] ${path}: Missing @context`);
-                if (!str.includes('@type')) console.error(`[Schema Error] ${path}: Missing @type`);
-            };
-            validateSchema(meta.schema);
+        // 2. Breadcrumbs
+        const breadcrumbItems = [{ name: "Home", url: SITE_URL + "/" }];
+        if (segments.length === 1) {
+            breadcrumbItems.push({ name: pageData.h1, url: pageUrl });
+        } else if (segments.length === 2) {
+            if (segments[0] === 'car-accident-statistics') {
+                breadcrumbItems.push({ name: "Statistics", url: SITE_URL + "/car-accident-statistics/california/" }); // California as proxy for index
+                breadcrumbItems.push({ name: pageData.h1, url: pageUrl });
+            } else {
+                // Determine if it's practice-area/state or state/city
+                const practiceArea = PRACTICE_AREA_PAGES.find(p => p.slug === segments[0]);
+                if (practiceArea) {
+                    breadcrumbItems.push({ name: practiceArea.category || "Practice Areas", url: SITE_URL + "/" + practiceArea.slug + "/" });
+                    breadcrumbItems.push({ name: pageData.h1, url: pageUrl });
+                } else {
+                    const stateData = Object.values(STATE_DATA).find(s => s.slug === segments[0] || s.name.toLowerCase().replace(/ /g, '-') === segments[0]);
+                    if (stateData) {
+                        breadcrumbItems.push({ name: stateData.name, url: SITE_URL + "/" + stateData.slug + "/" });
+                    }
+                    breadcrumbItems.push({ name: pageData.h1, url: pageUrl });
+                }
+            }
+        }
+        
+        const { "@context": bcContext, ...breadcrumbSchema } = buildBreadcrumbSchema(breadcrumbItems);
+
+        // 3. Merge into Graph
+        const graph: any[] = [];
+        if (mainSchema?.["@graph"]) {
+            graph.push(...mainSchema["@graph"]);
+        } else if (mainSchema) {
+            const { "@context": _, ...rawSchema } = mainSchema;
+            graph.push(rawSchema);
+        }
+        graph.push(breadcrumbSchema);
+
+        meta.schema = {
+            "@context": "https://schema.org",
+            "@graph": graph
+        };
+
+        if (process.env.NODE_ENV === 'development') {
+            const str = JSON.stringify(meta.schema);
+            if (!str.includes('@context')) console.error(`[Schema Error] ${path}: Missing @context`);
         }
 
         return generateTagsHtml(meta, path);

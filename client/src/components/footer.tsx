@@ -1,5 +1,5 @@
-import { Link } from "wouter";
 import { internalLink } from "@/utils/link-helper";
+import { CONTACT_INFO } from "@/data/contact-info";
 
 export function Footer() {
   const scrollToForm = () => {
@@ -27,10 +27,10 @@ export function Footer() {
             <div className="flex flex-col">
               <span className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">Headquarters</span>
               <address className="text-sm text-gray-300 not-italic leading-relaxed">
-                <a href="https://www.admanilaw.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Admani Law</a><br />
-                95 Christopher Columbus Dr<br />
-                16th Floor<br />
-                Jersey City, NJ 07302
+                <a href={CONTACT_INFO.website} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{CONTACT_INFO.name}</a><br />
+                {CONTACT_INFO.address.street}<br />
+                {CONTACT_INFO.address.floor}<br />
+                {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state} {CONTACT_INFO.address.zip}
               </address>
             </div>
           </div>

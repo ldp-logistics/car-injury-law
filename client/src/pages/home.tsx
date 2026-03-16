@@ -54,7 +54,7 @@ export default function Home() {
           "priceRange": "Contingency Fee (No Win No Fee)",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "95 Christopher Columbus Dr, 16th Floor",
+            "streetAddress": "101 Hudson Street, 21st Floor",
             "addressLocality": "Jersey City",
             "addressRegion": "NJ",
             "postalCode": "07302",
