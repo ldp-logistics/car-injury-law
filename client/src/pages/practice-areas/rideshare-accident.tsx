@@ -7,7 +7,6 @@ import { StickyCta } from "@/components/sticky-cta";
 import { LeadForm } from "@/components/lead-form";
 import { CheckCircle, Car, Shield } from "lucide-react";
 import { SeoHead } from "@/components/seo-head";
-import InternalLinks from "@/components/InternalLinks";
 import { RelatedLinks } from "@/components/related-links";
 
 export default function RideshareAccidentPage() {
@@ -90,7 +89,6 @@ export default function RideshareAccidentPage() {
 
             {/* SEO Content Section */}
             <SeoContentSection service="Rideshare Accident Lawyer" location="Nationwide" />
-            <InternalLinks />
           </div>
         </div>
       </main>

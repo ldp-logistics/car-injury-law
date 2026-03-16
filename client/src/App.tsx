@@ -105,6 +105,7 @@ function Router() {
         <Route path="/glossary" component={GlossaryPage} />
         <Route path="/vs-insurance" component={VsInsurancePage} />
         <Route path="/sitemap" component={SitemapPage} />
+        <Route path="/sitemap/" component={SitemapPage} />
         <Route path="/thank-you" component={ThankYouPage} />
         <Route path="/privacy" component={PrivacyPolicy} />
         <Route path="/terms" component={TermsOfService} />

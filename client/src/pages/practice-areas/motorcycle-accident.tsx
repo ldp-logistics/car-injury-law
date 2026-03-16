@@ -33,7 +33,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { LeadForm } from "@/components/lead-form";
-import InternalLinks from "@/components/InternalLinks";
 import { STATE_DATA } from "@/data/state-data";
 
 export default function MotorcycleAccidentPage() {
@@ -600,7 +599,7 @@ export default function MotorcycleAccidentPage() {
           </div>
         </section>
 
-        <InternalLinks />
+
 
         {/* SEO Content Section */}
         <div className="container mx-auto px-4 py-16">

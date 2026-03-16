@@ -87,19 +87,13 @@ export function Footer() {
               <li><Link href={internalLink("texas-car-accident-lawyer")} className="hover:text-white transition-colors">Texas</Link></li>
               <li><Link href={internalLink("virginia-car-accident-lawyer")} className="hover:text-white transition-colors">Virginia</Link></li>
             </ul>
-              <div className="mt-4 pt-4 border-t border-white/10">
-                <Link href={internalLink("sitemap")} className="text-sm text-secondary hover:text-white transition-colors font-bold flex items-center gap-2 bg-white/5 p-2 rounded-md border border-white/10 hover:bg-white/10">
-                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                  View All Locations & Sitemap
-                </Link>
-              </div>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} CarInjuryLaw.com. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0 font-medium">
-            <Link href={internalLink("sitemap")} className="hover:text-white transition-colors">Sitemap</Link>
+            <a href="/sitemap/" className="text-blue-600 text-sm hover:underline">Site Map</a>
             <Link href={internalLink("privacy")} className="hover:text-white transition-colors">Privacy Policy</Link>
             <Link href={internalLink("terms")} className="hover:text-white transition-colors">Terms of Service</Link>
             <Link href={internalLink("join-network")} className="hover:text-white transition-colors">Attorney Portal</Link>

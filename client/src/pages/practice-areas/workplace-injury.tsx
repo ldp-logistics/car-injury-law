@@ -32,7 +32,6 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { internalLink } from "@/utils/link-helper";
 import { LeadForm } from "@/components/lead-form";
-import InternalLinks from "@/components/InternalLinks";
 import { STATE_DATA } from "@/data/state-data";
 
 export default function WorkplaceInjuryPage() {
@@ -620,7 +619,7 @@ export default function WorkplaceInjuryPage() {
           </div>
         </section>
 
-        <InternalLinks />
+
       </main>
 
       <RelatedLinks currentSlug="workplace-injury" />

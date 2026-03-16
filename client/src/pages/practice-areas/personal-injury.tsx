@@ -8,7 +8,6 @@ import { SeoHead } from "@/components/seo-head";
 import { RelatedLinks } from "@/components/related-links";
 import stockImage from '@assets/stock_images/personal_injury_lawy_4d2da1ce.jpg';
 import { Link } from "wouter";
-import InternalLinks from "@/components/InternalLinks";
 import { STATE_DATA } from "@/data/state-data";
 
 export default function PersonalInjuryPage() {
@@ -156,7 +155,7 @@ export default function PersonalInjuryPage() {
               </button>
             </section>
 
-            <InternalLinks />
+
 
           </div>
         </div>

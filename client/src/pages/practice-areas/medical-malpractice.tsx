@@ -33,7 +33,6 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { internalLink } from "@/utils/link-helper";
 import { LeadForm } from "@/components/lead-form";
-import InternalLinks from "@/components/InternalLinks";
 import { STATE_DATA } from "@/data/state-data";
 
 export default function MedicalMalpracticePage() {
@@ -608,7 +607,7 @@ export default function MedicalMalpracticePage() {
             </div>
           </div>
         </section>
-        <InternalLinks />
+
 
       </main>
 

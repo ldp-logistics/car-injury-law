@@ -30,7 +30,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { LeadForm } from "@/components/lead-form";
-import InternalLinks from "@/components/InternalLinks";
 import { STATE_DATA } from "@/data/state-data";
 
 export default function CarAccidentPage() {
@@ -589,7 +588,6 @@ export default function CarAccidentPage() {
           </div>
         </section>
 
-        <InternalLinks />
       </main>
 
       <RelatedLinks currentSlug="car-accident" />

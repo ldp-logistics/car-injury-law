@@ -8,9 +8,7 @@ import { SERVICE_SYNONYM_PAGES, type ServiceSynonymData } from "@/data/service-s
 import { NEAR_ME_PAGES } from "@/data/near-me-pages";
 import { Building2, Shield, Star, Scale, Clock, Users, Gavel } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
 import SEOContentSection from "@/components/seo/SEOContentSection";
-import InternalLinks from "@/components/InternalLinks";
 
 const NearMePage = () => {
   const [location] = useLocation();
@@ -166,10 +164,7 @@ const NearMePage = () => {
             </div>
           </div>
         </section>
-        <InternalLinks />
       </main>
-
-      <InternalLinksFooter links={data.internalLinks || []} />
       <Footer />
     </div>
   );

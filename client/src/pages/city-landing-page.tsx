@@ -19,7 +19,6 @@ import { StateData } from "@/data/state-data";
 import { SeoHead } from "@/components/seo-head";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { StatuteCountdown } from "@/components/statute-countdown";
-import InternalLinks from "@/components/InternalLinks";
 
 interface CityLandingPageProps {
   stateData: StateData;
@@ -212,7 +211,7 @@ export default function CityLandingPage({ stateData, city }: CityLandingPageProp
             </aside>
           </div>
         </div>
-        <InternalLinks />
+
       </main>
       <RelatedLinks />
       <StickyCta />

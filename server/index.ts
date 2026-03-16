@@ -360,6 +360,16 @@ const PRACTICE_AREA_SSR: Record<string, {
 };
 
 function getSsrContent(path: string): string {
+  if (path === '/sitemap' || path === '/sitemap/') {
+    return `
+      <div id="ssr-content">
+        <p>Complete directory of all Car Injury Law
+          pages including practice areas, state
+          pages, city pages, and legal resources
+          across all 50 United States.</p>
+      </div>
+    `;
+  }
 
   // ── Practice Areas ──────────────────────────────────────────────
   if (path.startsWith('/practice-areas/')) {

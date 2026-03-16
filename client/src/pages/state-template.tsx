@@ -1,6 +1,5 @@
 import { Link } from "wouter";
 import { internalLink } from "@/utils/link-helper";
-import InternalLinks from "@/components/InternalLinks";
 import { SeoContentSection } from "@/components/seo-content-section";
 import { NavBar } from "@/components/nav-bar";
 import { Footer } from "@/components/footer";
@@ -210,7 +209,7 @@ export default function StatePage() {
           </div>
         </div>
 
-        <InternalLinks />
+
       </main>
       <RelatedLinks />
       <StickyCta />

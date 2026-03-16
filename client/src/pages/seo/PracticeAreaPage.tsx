@@ -9,13 +9,11 @@ import { Shield, Clock, CheckCircle, Scale, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { internalLink } from "@/utils/link-helper";
-import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
 import SEOContentSection from "@/components/seo/SEOContentSection";
 import { PRACTICE_AREA_PAGES } from "@/data/practice-area-pages";
 import { SERVICE_SYNONYM_PAGES } from "@/data/service-synonym-pages";
 import { NEAR_ME_PAGES } from "@/data/near-me-pages";
 import { STATE_DATA } from "@/data/state-data";
-import InternalLinks from "@/components/InternalLinks";
 
 // Let's use an authoritative courtroom/legal background for general practice areas
 import heroBg from "@assets/stock_images/courtroom_gavel_just_813cbcc0.jpg";
@@ -241,9 +239,6 @@ export default function PracticeAreaPage({ data }: PracticeAreaPageProps) {
           </div>
         </section>
 
-        <InternalLinksFooter links={data.internalLinks} />
-
-        <InternalLinks />
       </main>
       
       <StickyCta />
