@@ -111,16 +111,16 @@ export function SeoContentSection({ service, location, type = "state" }: SeoCont
                  The "No-Win, No-Fee" Guarantee
                </h3>
                <p className="mb-6 text-gray-300">
-                 Many victims in {location} hesitate to call a lawyer because they fear the cost. This is a mistake. The best attorneys operate as a <strong>{keywords[11]}</strong>. This means you pay absolutely $0 upfront.
+                 Many victims in {location} hesitate to call a lawyer because they fear the cost. This is a mistake. The best attorneys operate as a {keywords[11]}. This means you pay absolutely $0 upfront.
                </p>
                <ul className="space-y-2 mb-6 text-sm">
                  <li className="flex gap-2"><CheckCircle className="h-5 w-5 text-secondary" /> No retainer fees.</li>
                  <li className="flex gap-2"><CheckCircle className="h-5 w-5 text-secondary" /> No hourly billing.</li>
                  <li className="flex gap-2"><CheckCircle className="h-5 w-5 text-secondary" /> We only get paid if we win your case.</li>
                </ul>
-               <p className="font-bold">
-                 Get your <strong>{keywords[14]}</strong> today. Call <a href="tel:1-888-669-5559" className="text-secondary hover:underline">1-888-669-5559</a> to speak with our team immediately.
-               </p>
+                <p>
+                  Get your {keywords[14]} today. Call <a href="tel:1-888-669-5559" className="hover:underline">1-888-669-5559</a> to speak with our team immediately.
+                </p>
             </div>
 
             {/* Final SEO Paragraph */}
