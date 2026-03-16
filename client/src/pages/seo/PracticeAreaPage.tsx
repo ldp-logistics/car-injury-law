@@ -12,6 +12,8 @@ import { internalLink } from "@/utils/link-helper";
 import { InternalLinksFooter } from "@/components/seo/InternalLinksFooter";
 import SEOContentSection from "@/components/seo/SEOContentSection";
 import { PRACTICE_AREA_PAGES } from "@/data/practice-area-pages";
+import { SERVICE_SYNONYM_PAGES } from "@/data/service-synonym-pages";
+import { NEAR_ME_PAGES } from "@/data/near-me-pages";
 
 // Let's use an authoritative courtroom/legal background for general practice areas
 import heroBg from "@assets/stock_images/courtroom_gavel_just_813cbcc0.jpg";
@@ -26,6 +28,17 @@ export default function PracticeAreaPage({ data }: PracticeAreaPageProps) {
   };
 
   const currentDate = new Date().toISOString();
+
+  const currentSlug = typeof window !== 'undefined' 
+    ? window.location.pathname.replace('/practice-areas/', '').replace(/\/$/, '')
+    : '';
+
+  const relatedPracticeAreas = PRACTICE_AREA_PAGES
+    .filter(p => !p.slug.includes(currentSlug))
+    .slice(0, 8);
+
+  const relatedServices = SERVICE_SYNONYM_PAGES.slice(0, 8);
+  const nearMeLinks = NEAR_ME_PAGES.slice(0, 6);
 
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans pb-20 md:pb-0">
@@ -223,6 +236,52 @@ export default function PracticeAreaPage({ data }: PracticeAreaPageProps) {
 
         <InternalLinksFooter links={data.internalLinks} />
 
+        <div className="border-t mt-10 pt-6 px-4 pb-10">
+          <div className="mb-6">
+            <p className="font-semibold text-gray-700 mb-3 text-sm">
+              Other Practice Areas
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {relatedPracticeAreas.map(p => (
+                <a key={p.slug}
+                  href={'/' + p.slug + '/'} 
+                  className="text-blue-600 text-sm hover:underline">
+                  {p.keyword}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <p className="font-semibold text-gray-700 mb-3 text-sm">
+              Related Legal Services
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {relatedServices.map(p => (
+                <a key={p.slug}
+                  href={'/' + p.slug + '/'} 
+                  className="text-blue-600 text-sm hover:underline">
+                  {p.keyword}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="font-semibold text-gray-700 mb-3 text-sm">
+              Find a Lawyer Near You
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {nearMeLinks.map(p => (
+                <a key={p.slug}
+                  href={'/' + p.slug + '/'} 
+                  className="text-blue-600 text-sm hover:underline">
+                  {p.keyword}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
       </main>
       
       <StickyCta />
