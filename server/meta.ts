@@ -149,6 +149,48 @@ export function getPageData(url: string): PageData | null {
         };
     }
 
+    if (path === '/settlement-calculator' || path === '/settlement-calculator/') {
+        return {
+            h1: "Car Accident Settlement Calculator",
+            title: "Car Accident Settlement Calculator 2025 | Car Injury Law",
+            description: "Estimate your car accident settlement value with our free calculator. Calculate medical bills, lost wages, and pain and suffering.",
+            slug: "calculator"
+        };
+    }
+
+    if (path === '/attorneys/saad-admani' || path === '/attorneys/saad-admani/') {
+        return {
+            h1: "Saad Admani - Lead Trial Attorney",
+            title: "Saad Admani | Personal Injury Trial Lawyer | Car Injury Law",
+            description: "Saad Admani is the lead trial attorney at Car Injury Law, dedicated to fighting for victims of serious accidents and catastrophic injuries.",
+            slug: "saad-admani"
+        };
+    }
+
+    // --- 0.5 Blog Pages ---
+    if (segments[0] === 'blog') {
+        if (segments.length === 1) {
+            return {
+                h1: "Car Accident & Injury Law Blog",
+                title: "Legal Insights & Car Accident News Blog | Car Injury Law",
+                description: "Stay informed with the latest legal insights, car accident news, and personal injury tips from our expert attorneys.",
+                slug: "blog-index"
+            };
+        } else if (segments.length === 2) {
+            // Individual blog post - we try to find it in the data
+            // Note: Since we don't want to import the whole blog data which might have image imports,
+            // we'll use a title-case generator for the H1 if we don't have the data.
+            // But for common ones, we can hardcode or just titles-case the slug.
+            const title = toCityCase(segments[1]);
+            return {
+                h1: title,
+                title: `${title} | Car Injury Law Blog`,
+                description: `Read about ${title} on the Car Injury Law blog. Expert legal insights and accident recovery advice.`,
+                slug: `blog/${segments[1]}`
+            };
+        }
+    }
+
     // --- 1. SEO Data Files (Matches slugs like 'personal-injury-lawyer') ---
     if (segments.length === 1) {
         const pageData =
@@ -200,7 +242,11 @@ export function getPageData(url: string): PageData | null {
         'bicycle-accident-lawyer',
         'slip-and-fall-lawyer',
         'dog-bite-lawyer',
-        'wrongful-death-lawyer'
+        'wrongful-death-lawyer',
+        'personal-injury-lawyer',
+        'workplace-injury-lawyer',
+        'car-accident-lawyer',
+        'medical-malpractice-lawyer'
     ];
 
     if (segments.length === 2 && practiceAreaPrefixes.includes(segments[0])) {
@@ -220,6 +266,21 @@ export function getPageData(url: string): PageData | null {
     }
 
     // Practice Area Slug Match (Fallback for standard SEO files)
+    if (segments.length === 2 && segments[0] === 'practice-areas') {
+        const practiceAreaPage = PRACTICE_AREA_PAGES.find(p => p.slug === segments[1]);
+        if (practiceAreaPage) {
+            return {
+                h1: practiceAreaPage.h1 || practiceAreaPage.title,
+                title: practiceAreaPage.title,
+                description: practiceAreaPage.description,
+                keyword: practiceAreaPage.keyword,
+                slug: `practice-areas/${segments[1]}`,
+                contentBlocks: practiceAreaPage.contentBlocks
+            };
+        }
+    }
+
+    // Practice Area + State Fallback (e.g. /jackknife/texas/)
     if (segments.length === 2) {
         const practiceAreaPage = PRACTICE_AREA_PAGES.find(p => p.slug === segments[0]);
         const stateData = getStateData(segments[1]);
